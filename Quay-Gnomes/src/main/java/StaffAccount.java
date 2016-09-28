@@ -13,7 +13,7 @@ import javax.validation.constraints.*;
 
 public class StaffAccount {
 
-	/** Named Query to find the staff account */
+	/** Named Query to find the Staff Account */
 	public static final String FIND_STAFF_ACCOUNT = "StaffAccount.findStaffAccount";
 
 	@Column (name = "username", nullable = false)
