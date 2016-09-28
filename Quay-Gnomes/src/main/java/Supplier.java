@@ -1,8 +1,21 @@
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
+@Entity
+@Table (name = "Supplier")
 public class Supplier {
-	
+		
+		@Column (name = "supplierName", nullable = false)
+		@NotNull
 		private String supplierName;
+		
+		@Column (name = "contactNumber", nullable = false)
+		@NotNull
 		private String contactNumber;
+		
+		@Id
+		@Column (name = "supplierID", nullable = false)
+		@NotNull
 		private int supplierID;
 		
 		public String getSupplierName() {
