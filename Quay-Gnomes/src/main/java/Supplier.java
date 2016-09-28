@@ -18,22 +18,40 @@ public class Supplier {
 		@NotNull
 		private int supplierID;
 		
-		public String getSupplierName() {
+		
+		/** Returns the Supplier name for the Supplier */
+		public String getSupplierName() 
+		{
 			return supplierName;
 		}
-		public void setSupplierName(String supplierName) {
+		
+		/** Sets the Name for the Supplier */
+		public void setSupplierName(String supplierName) 
+		{
 			this.supplierName = supplierName;
 		}
-		public String getContactNumber() {
+		
+		/** Returns the Contact Number for the Supplier */
+		public String getContactNumber() 
+		{
 			return contactNumber;
 		}
-		public void setContactNumber(String contactNumber) {
+		
+		/** Sets the Contact Number for the Supplier */
+		public void setContactNumber(String contactNumber) 
+		{
 			this.contactNumber = contactNumber;
 		}
-		public int getSupplierID() {
+		
+		/** Returns the ID for the Supplier */
+		public int getSupplierID() 
+		{
 			return supplierID;
 		}
-		public void setSupplierID(int supplierID) {
+		
+		/** Sets the ID for the Supplier*/
+		public void setSupplierID(int supplierID) 
+		{
 			this.supplierID = supplierID;
 		}
 }
