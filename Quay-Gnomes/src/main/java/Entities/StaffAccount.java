@@ -27,7 +27,7 @@ public class StaffAccount {
 
 
 	public StaffAccount(String userName, String Password) {
-		setUsername(userName);
+		setUserName(userName);
 		setPassword(Password);
 	}
 
@@ -38,7 +38,7 @@ public class StaffAccount {
 	}
 
 	/**Sets the User name for the StaffAccount*/
-	public void setUsername(String userName) 
+	public void setUserName(String userName) 
 	{
 		this.userName = userName;
 	}
