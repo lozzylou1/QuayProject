@@ -5,16 +5,22 @@ import javax.validation.constraints.*;
 @Table (name = "Supplier")
 
 @NamedQueries ({
-	@NamedQuery(name = Supplier.FIND_SUPPLIER,
+	@NamedQuery(name = Supplier.FIND_SUPPLIER_BY_NAME,
 			query = "SELECT supplierName, contactNumber, supplierID "
 					+ "FROM Supplier "
-					+ "WHERE supplierName = :supplierName")
+					+ "WHERE supplierName = :supplierName"),
+	@NamedQuery(name = Supplier.FIND_SUPPLIER_BY_ID,
+			query = "SELECT supplierName, contactNumber, supplierID "
+					+ "FROM Supplier "
+					+ "WHERE supplierID = :supplierID")
 })
 
 public class Supplier {
 
 	/** Named Query to find the Supplier */
-	public static final String FIND_SUPPLIER = "Supplier.findSupplier";
+	public static final String FIND_SUPPLIER_BY_NAME = "Supplier.findSupplierByName";
+	
+	public static final String FIND_SUPPLIER_BY_ID = "Supplier.findSupplierByID";
 
 	@Column (name = "supplierName", nullable = false)
 	@NotNull
@@ -29,6 +35,13 @@ public class Supplier {
 	@NotNull
 	private int supplierID;
 
+
+	public Supplier(String supplierName, String contactNumber, int supplierID) 
+	{
+		this.supplierName = supplierName;
+		this.contactNumber = contactNumber;
+		this.supplierID = supplierID;
+	}
 
 	/** Returns the Supplier name for the Supplier */
 	public String getSupplierName() 
