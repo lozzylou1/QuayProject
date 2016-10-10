@@ -2,26 +2,53 @@ package Managers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import DummyData.InitialData;
 import Entities.Product;
 
-public interface ProductManagerOffline {
+public class ProductManagerOffline implements ProductManager {
 	
-	public void persistProduct(Product p);
-	public void persistProducts(List<Product> p);
-	
-	public Product findById(int productID);
-	
-	
-	//read
-	public ArrayList<Product> getProducts();
+
+	@Inject
+	private InitialData initialData;
 	
 	
 	//create
-	public void createProduct(Product p);
+	@Override
+	public void createProduct(Product p){
+		
+	}
 	
 	//update
-	public void updateProduct(Product p);
-	
+	@Override
+	public void updateProduct(Product p){
+		
+	}
+
+	@Override
+	public void persistProducts(List<Product> p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Product findById(int productID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void persistProduct(Product p) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

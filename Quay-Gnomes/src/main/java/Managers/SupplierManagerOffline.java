@@ -7,8 +7,7 @@ import javax.inject.Inject;
 import DummyData.InitialData;
 import Entities.Supplier;
 
-public class SupplierManagerOffline 
-implements SupplierManager{
+public class SupplierManagerOffline implements SupplierManager{
 	
 	@Inject
 	private InitialData initialData;
