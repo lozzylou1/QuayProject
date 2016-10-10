@@ -2,8 +2,12 @@
 .settings/
 .classpath 
 .project
-
 target/
+
+Quay-Gnomes/.settings/
+Quay-Gnomes/.classpath 
+Quay-Gnomes/.project
+Quay-Gnomes/target/
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
