@@ -1,7 +1,7 @@
 package Managers;
 import java.util.ArrayList;
 
-import Entities.StaffAccount;
+import Entities.*;
 
 public interface StaffAccountManager {
 	
