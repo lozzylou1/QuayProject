@@ -10,7 +10,7 @@ public class PurchaseOrder {
 	private int productID;
 	private int staffID;
 
-	
+	/**returns purchase order ID */
 	public int getPurchaseOrderID() {
 		return purchaseOrderID;
 	}
