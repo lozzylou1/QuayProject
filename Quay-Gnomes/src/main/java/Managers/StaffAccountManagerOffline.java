@@ -1,20 +1,20 @@
 package Managers;
+
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
 import DummyData.InitialData;
-import Entities.StaffAccount;
+import Entities.*;
 
-public class StaffAccountManagerOffline 
-implements StaffAccountManager{
+
+public class StaffAccountManagerOffline implements StaffAccountManager{
 	
 	@Inject
 	private InitialData initialData;
 
 	@Override
 	public void persistStaffAccount(StaffAccount staffAccount) {
-		// TODO Auto-generated method stub
 		initialData.addStafAccount(staffAccount);
 	}
 
