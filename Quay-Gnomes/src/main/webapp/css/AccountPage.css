@@ -2,6 +2,7 @@
 	{
 		box-sizing:border-box;
 	}
+	
 	ul 
 	{
 		list-style-type: none;
@@ -43,6 +44,20 @@
 		border-radius: 4px;
 		padding: 12px 20px 12px 40px;
 	}
+	
+		input[type=username]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+		input[type=password]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
 
 	article
 	{
@@ -60,6 +75,16 @@
 	{
 		max-width: 100%;
 		height: auto;
+	}
+	
+	th, td 
+	{
+		padding: 5px;
+	}
+	
+	#login
+	{
+		background: #DCCBDA;
 	}
 	
 	#icon
@@ -89,9 +114,11 @@
 		cursor: pointer;
 	}
 	
-	th, td 
+	#Product_Nav
 	{
-		padding: 5px;
+		background: #DCCBDA;
+		padding: 25px;
+		margin: 25px;
 	}
 	
 	/* For mobile phones: */
