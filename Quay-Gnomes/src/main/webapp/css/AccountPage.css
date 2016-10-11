@@ -133,13 +133,33 @@ img {
 	}
 
 
+	
+	img 
+	{
+		max-width: 100%;
+		height: auto;
+	}
+	
+	#icon
+	{
+		float: right;
+	}
+	
+	#searchPane
+	{
+		width:auto;
+		float:left;
+	}
+	
+	#Product_Nav
+	{
+		background: #DCCBDA;
+		padding: 25px;
+		margin: 25px;
+	}
+	
+	/* For mobile phones: */
 
-
-
-
-
-
-/* For mobile phones: */
 [class*="col-"] {
 	float: left;
     padding: 15px;
@@ -162,7 +182,6 @@ img {
 	.col-m-5 {
 		width: 41.66%;
 	}
-<<<<<<< HEAD
 	.col-m-6 {
 		width: 50%;
 	}
