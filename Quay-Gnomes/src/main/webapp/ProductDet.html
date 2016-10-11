@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/ProductDetStyle.css">
-<meta charset="ISO-8859-1">
-<title>Product Details</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/ProductDet.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</meta>
+<style>
+</style>
 </head>
 <body>
+	<header>
+		<div class="row">
+			<div class="col-12 col-m-12">
+				<img src="img/logo1.png"> <input type="search"
+					placeholder="Search..." name="productsearch">
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+			</div>
+		</div>
+	</header>
 
-	<img src="img/logo1.png" alt="NB Gardens Logo"
-		style="width: 250px; height: 120px;">
-
-	<div id="SearchBar">
-		<p>Search</p>
-		<input type="text">
-	</div>
-
-	<hr>
-
-	<div id="NavigationBar">
-		<ul id="NavBar">
-			<li>Products</li>
-			<li>About Us</li>
-			<li>Contact Us</li>
+	<div class="row"></div>
+	<div class="col-12 col-m-12">
+		<ul>
+			<nav>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#aboutus">About Us</a></li>
+				<li><a href="#contactus">Contact Us</a></li>
+			</nav>
 		</ul>
+	</div>
 	</div>
 	<hr>
 	<div id="Breadcrumbs"></div>
 
 
 
-	<div id="ProductInfo">
-		<div id="ProductImages">
-			<img src="img/image1.png" alt="Product Image 1" style="width: 250px; height: 120px;" /> 
-			<img src="img/image2.png" alt="Product Image 2" style="width: 80px; height: 30px;" /> 
-			<img src="img/image3.png" alt="Product Image 3" style="width: 80px; height: 30px;" />
-			<img src="img/image4.png" alt="Product Image 3" style="width: 80px; height: 30px;" />
+
+	<div id ="standOut" class="row">
+
+		<div class="col-1 col-m-1">
 		</div>
 
-		<div id="ProductSpec">
-			<h1>Product Name</h1>
-			<h2>Price:</h2>
-			<h3>Catalogue Number:</h3>
-			<button type="button">Add To Basket</button>
+		<div class="col-3 col-m-3">
+				<img src="img/gotgnome.jpg" alt="Product Image 1" style="width: 500px; height: 500px;" /> 
+			<img src="img/got side.png" alt="Product Image 2" style="width: 80px; height: 100px;" /> 
+			<img src="img/gotback.png" alt="Product Image 3" style="width: 80px; height: 100px;" />
+			<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 80px; height: 100px;" />
 		</div>
-	</div>
-
-	<hr>
-	<div id="ProductDetails">
-		<div id="Description">
-			<h1>Description</h1>
-			<p>Item details go here...</p>
+		
+		<div class="col-7 col-m-6">
+			<h1> 'Game Of Gnomes' Garden Gnome</h1>
+			<h2>£19.99</h2>
+			<h3>Catalogue Number: 123456</h3>
+			
+			<button type="button">Add To Basket!</button>
+			
+			
+		</div>
+		
+		<div class="col-3">
+			
 		</div>
 
-		<div id="Dimensions">
-			<h2>Dimensions</h2>
-			<p>
-				Height: <br> Width: <br> Weight:
-			</p>
-		</div>
+
 	</div>
 
 
-	<hr>
-	<div id="SimilarItems">
-		<h1>Similar Items</h1>
-		<img src="img/image1.png" alt="Product Image 1"
-			style="width: 250px; height: 120px;"> <img src="img/image1.png"
-			alt="Product Image 1" style="width: 250px; height: 120px;"> <img
-			src="img/image1.png" alt="Product Image 1"
-			style="width: 250px; height: 120px;">
+
+
+
+
+
+	<div class="footer">
+		<p>Resize the browser window to see how the content respond to the
+			resizing.</p>
 	</div>
 
-	<hr>
-	<div id="ProductReviews">
-		<h2>Product Reviews</h2>
-	</div>
+
+
 </body>
 </html>
