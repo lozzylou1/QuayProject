@@ -25,8 +25,13 @@ ul {
 	border: 1px solid #DCCBDA;
 }
 
+
 li {
 	float: left;
+}
+
+li a:hover:not (.active ) {
+	background-color: #DCCBDA;
 }
 
 li a {
@@ -37,13 +42,13 @@ li a {
 	text-decoration: none;
 }
 
-
 .active {
 	background-color: #DCCBDA;
 	color: black;
 }
 
 input[type=search] {
+	width: auto;
 	border: 2px solid #ccc;
 	border-radius: 4px;
 	padding: 12px 20px 12px 40px;
@@ -56,11 +61,11 @@ article {
 	margin: 25px
 }
 
-
 img {
 	max-width: 100%;
 	height: auto;
 }
+
 
 #icon {
 	float: right;
@@ -102,18 +107,24 @@ btn-default {
 	background-color: #DCCBDA;
 }
 
-
 #Product_Nav {
 	background: #DCCBDA;
 	padding: 25px;
 	margin: 25px;
 }
 
+
+
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
 /* For mobile phones: */
 [class*="col-"] {
-	float: left;
-	padding: 15px;
+    width: 100%;
 }
+
 
 @media only screen and (min-width: 600px) {
 	/* For tablets: */

@@ -36,14 +36,32 @@
 	{
 		background-color: #DCCBDA;
 		color: black;
+	}	
+	
+	.button2:hover 
+	{
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 	
+	
 	input[type=search]
-	{		
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		padding: 12px 20px 12px 40px;
+	{	
+		width: 400px;
+		border: 2px solid #DCCBDA;
+		border-radius: 8px;
+		padding: 12px 10px 12px 20px;
 	}
+	
+	form 
+	{
+        width:500px;
+		height: 75px;
+		padding: 5px;
+        margin:50px auto;
+		background-color:#DCCBDA;
+		text-align: center;
+		border-radius: 8px
+	}	
 	
 		input[type=username]
 	{		
@@ -85,8 +103,7 @@
 	btn-default
 	{
 		background-color: #DCCBDA;
-	}
-	
+	}	
 	
 	img 
 	{
@@ -94,9 +111,16 @@
 		height: auto;
 	}
 	
-	th, td 
+	table, th, td 
 	{
-		padding: 5px;
+	
+		padding:5px;
+		text-align: center-left;
+	}
+
+	#table01
+	{
+		text-align: center-left;
 	}
 	
 	#login
@@ -109,33 +133,40 @@
 		float: right;
 	}
 	
-	#searchPane
-	{
-		width:auto;
-		float:left;
+	#searchBox
+	{		
+		background-color: #eaf8fc;
+		background-image: linear-gradient(#fff, #d4e8ec);
+		border-radius: 35px;    
+		border-width: 1px;
+		border-style: solid;
+		border-color: #c4d9df #a4c3ca #83afb7;            
+		width: 500px;
+		height: 35px;
+		padding: 10px;
+		margin: 100px auto 50px;
+		overflow: hidden;  
 	}
 	
-	#Product_Nav
+	#goldbutton
 	{
-<<<<<<< HEAD
+
 		background-color: #fcd247;
 		border: none;
 		border-radius: 8px;
 		border: 2px solid black;
 		color: black;
-		padding: 10px 27px;
+		padding: 10px 17px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 20px;
 		margin: 4px 2px;
 		cursor: pointer;
-	}
+	}	
 	
 	#Product_Nav
 	{
-=======
->>>>>>> a1c0945e9496d6b879457f4c9a8b7a8c1203248e
 		background: #DCCBDA;
 		padding: 25px;
 		margin: 25px;
