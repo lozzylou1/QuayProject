@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+			<link rel="stylesheet" href="home_style.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		</meta>
+	<style>
+	ul 
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #49274A;
+		border: 1px solid #DCCBDA;
+	}
+	
+	li 
+	{
+		float: left;		
+	}
+	
+	li a
+	{
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	li a:hover:not(.active)
+	{
+		background-color: #DCCBDA;
+	}
+	
+	.active
+	{
+		background-color: #DCCBDA;
+		color: black;
+	}
+	
+	input[type=search]
+	{
+		width: 50%;
+		box-sizing: border-box;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+
+	article
+	{
+		background-color : #DCCBDA;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 25px;
+	}
+	
+	btn-default
+	{
+		background-color #DCCBDA;
+	}
+	
+	</style>
+	</head>
+	<body>
+		<header>
+				<img src="img/logo1.png" width="256" height+"256">
+				<input type="search" placeholder="Search..." name="productsearch">
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-user"></span>
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+				</button>		
+		</header>
+		<ul>
+			<nav>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#aboutus">About Us</a></li>
+				<li><a href="#contactus">Contact Us</a></li>
+			</nav>
+		</ul>		
+		<br>
+		<article>
+			<div>
+				<h2>
+					Orders 
+					<button type="button" class="btn btn-default">Track Order</button> 
+				</h2>
+				<img src="img/logo1.png" width="256" height+"256">				
+			</div>
+			<p>
+			some text
+			</p>
+		</article>
+		<br>
+		<article>
+		<div>
+				<h2>
+					Account			
+					<button type="button" class="btn btn-default">Change Details</button>
+					<button type="button" class="btn btn-default">Adresses</button>
+				</h2>
+				<img src="img/logo1.png" width="256" height+"256">
+			</div>
+			<p>
+			some text
+			</p>
+		</article>
+		
+	</body>
+</html>
