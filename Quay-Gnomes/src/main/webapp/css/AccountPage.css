@@ -38,6 +38,21 @@
 		color: black;
 	}
 	
+	form {
+                width:500px;
+                margin:50px auto;
+	}	
+	
+	.button2:hover 
+	{
+		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	}
+	
+	.search
+	{
+		padding8px 15px;
+	}
+	
 	input[type=search]
 	{		
 		border: 2px solid #ccc;
@@ -85,9 +100,7 @@
 	btn-default
 	{
 		background-color: #DCCBDA;
-	}
-	
-	
+	}	
 	
 	img 
 	{
@@ -95,10 +108,12 @@
 		height: auto;
 	}
 	
-	th, td 
+	table, th, td 
 	{
-		padding: 5px;
-	}
+		border: 1px solid black;
+		padding:5px;
+		text-align: center;
+	}	
 	
 	#login
 	{
@@ -110,10 +125,19 @@
 		float: right;
 	}
 	
-	#searchPane
-	{
-		width:auto;
-		float:left;
+	#searchBox
+	{		
+		background-color: #eaf8fc;
+		background-image: linear-gradient(#fff, #d4e8ec);
+		border-radius: 35px;    
+		border-width: 1px;
+		border-style: solid;
+		border-color: #c4d9df #a4c3ca #83afb7;            
+		width: 500px;
+		height: 35px;
+		padding: 10px;
+		margin: 100px auto 50px;
+		overflow: hidden;  
 	}
 	
 	#goldbutton
@@ -124,14 +148,14 @@
 		border-radius: 8px;
 		border: 2px solid black;
 		color: black;
-		padding: 10px 27px;
+		padding: 10px 17px;
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;
 		font-size: 20px;
 		margin: 4px 2px;
 		cursor: pointer;
-	}
+	}	
 	
 	#Product_Nav
 	{

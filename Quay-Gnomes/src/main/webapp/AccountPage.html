@@ -13,20 +13,22 @@
 			<table class="col-12 col-m-12">
 				<tr>
 					<div>
-						<th><img  src="img/logo1.png"></th>
-						<th class="col-6 col-m-6">
-							<input type="search" placeholder="Search..." name="productsearch">
-								<button type="button" id="goldbutton">
-									<span class="glyphicon glyphicon-search"></span>
-								</button>
-							</input>
+						<th width="25%">
+							<img  src="img/logo1.png"></th>
+						<th width="50%">
+							<form id="searcbox" action="">
+								<input type="search" placeholder="Search..." name="productsearch" width="500px" required>
+									<button type="button" class="button2" id="goldbutton">
+										<span class="glyphicon glyphicon-search"></span>
+									</button>
+							</form>
 						</th>
 						<th>
-							<button type="button" id="goldbutton">
+							<button type="button" class="button2" id="goldbutton">
 								<span class="glyphicon glyphicon-user"></span>
 							</button>
 						
-							<button type="button" id="goldbutton">
+							<button type="button" class="button2" id="goldbutton">
 								<span class="glyphicon glyphicon-shopping-cart"></span>
 							</button>
 						</th >
@@ -35,9 +37,9 @@
 			</table>
 		</header>
 		
-		<div class="col-12 col-m-12">
+		<div>
 		<ul>
-			<nav>
+			<nav id="accountnav">
 				<li><a href="#products">Products</a></li>
 				<li><a href="#aboutus">About Us</a></li>
 				<li><a href="#contactus">Contact Us</a></li>
@@ -46,33 +48,33 @@
 		</div>
 		
 		<article>
-		<div>
-		<table class="col-11col-m-11">
-					
-				<tr>				
-					<th><h2>Orders</h2></th>	
-					<th><button type="button" id="goldbutton">Track Orders</button></th>				
-				</tr>
-				<tr>
-				<td>
-					<picture>
-						<source srcset="img/Mobile_Orders.png" media="(max-width: 600px)">
-						<source srcset="img/Orders.png">
-						<img src="Orders.png" alt="Orders">				
-					</picture>
-				</td>
-				<td>			
-					<p>
-					some text
-					</p>
-				</td>
-				<td>			
-					<p>
-					some text
-					</p>
-				</td>
-				</tr>
-			</table>
+			<div>
+				<table class="col-11col-m-11">
+						
+					<tr>				
+						<th><h2>Orders</h2></th>	
+						<th><button type="button" class="button2" id="goldbutton">Track Orders</button></th>				
+					</tr>
+					<tr>
+						<td>
+							<picture>
+								<source srcset="img/Mobile_Orders.png" media="(max-width: 600px)">
+								<source srcset="img/Orders.png">
+								<img src="Orders.png" alt="Orders">				
+							</picture>
+						</td>
+						<td>			
+							<p>
+							some text
+							</p>
+						</td>
+						<td>			
+							<p>
+							some text
+							</p>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</article>
 		<br>
@@ -83,8 +85,8 @@
 		<table class="col-11col-m-11">					
 				<tr>				
 					<th><h2>Account</h2></th>	
-					<th><button type="button" id="goldbutton">Change Details</button></th>
-					<th><button type="button" id="goldbutton">Adresses</button></th>
+					<th><button type="button" class="button2" id="goldbutton">Change <br> Details</button></th>
+					<th><button type="button" class="button2" id="goldbutton">Addresses</button></th>
 				
 				</tr>
 				<tr>
