@@ -1,94 +1,37 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="ISO-8859-1">
-			<link rel="stylesheet" href="home_style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="css/AccountPage.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</meta>
 	<style>
-	ul 
-	{
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		background-color: #49274A;
-		border: 1px solid #DCCBDA;
-	}
 	
-	li 
-	{
-		float: left;		
-	}
-	
-	li a
-	{
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
-	
-	li a:hover:not(.active)
-	{
-		background-color: #DCCBDA;
-	}
-	
-	.active
-	{
-		background-color: #DCCBDA;
-		color: black;
-	}
-	
-	input[type=search]
-	{
-		width: 50%;
-		box-sizing: border-box;
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		padding: 12px 20px 12px 40px;
-	}
-
-	article
-	{
-		background-color : #DCCBDA;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 25px;
-	}
-	
-	btn-default
-	{
-		background-color #DCCBDA;
-	}
 	
 	</style>
 	</head>
 	<body>
 		<header>
-				<img src="img/logo1.png" width="256" height+"256">
-				<input type="search" placeholder="Search..." name="productsearch">
-				<button type="button" class="btn btn-default">
+		<div class="col-12 col-m-12">
+			<img  src="img/logo1.png">
+			<input  type="search" placeholder="Search..." name="productsearch">
+			<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-search"></span>
 				</button>
-				<button type="button" class="btn btn-default">
-					<span class="glyphicon glyphicon-user"></span>
-				</button>
-				<button type="button" class="btn btn-default">
-					<span class="glyphicon glyphicon-shopping-cart"></span>
-				</button>		
+		</div>	
 		</header>
+		
+		<div class="col-12 col-m-12">
 		<ul>
 			<nav>
 				<li><a href="#products">Products</a></li>
 				<li><a href="#aboutus">About Us</a></li>
 				<li><a href="#contactus">Contact Us</a></li>
 			</nav>
-		</ul>		
-		<br>
+		</ul>
+		</div>
 		<article>
 			<div>
 				<h2>
@@ -101,7 +44,6 @@
 			some text
 			</p>
 		</article>
-		<br>
 		<article>
 		<div>
 				<h2>
