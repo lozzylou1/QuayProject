@@ -1,0 +1,61 @@
+#Header
+{
+	width:100%;
+	height:;
+}
+
+#NavBar
+{
+	list-style-type:none;
+	margin-left: auto;
+    margin-right: auto;
+	padding:0;
+	overflow:hidden;
+    background-color:#49274a;
+}
+
+li
+{
+    display: inline;
+	margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+}
+
+li a 
+{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+li a:hover 
+{
+    background-color: #111;
+}
+
+#Logo
+{
+}
+
+#Product_Nav
+{
+	margin-left: auto;
+    margin-right: auto;
+	display: table;
+	background-color:#dccbda;
+}
+
+#Product
+{
+	display: inline;
+	height:200px;
+	width:200px;
+	margin-left: auto;
+    margin-right: auto;
+	padding:25px;
+}
