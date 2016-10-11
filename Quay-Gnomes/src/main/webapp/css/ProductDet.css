@@ -16,6 +16,19 @@
 	padding: 15px;
 }
 
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 15px;
+	border-color: red;
+} 
+
+
+
 ul {
 	list-style-type: none;
 	margin: 0;
@@ -48,7 +61,7 @@ li a {
 }
 
 input[type=search] {
-	width: auto;
+	width: 800px;
 	border: 2px solid #ccc;
 	border-radius: 4px;
 	padding: 12px 20px 12px 40px;
@@ -112,6 +125,10 @@ btn-default {
 	padding: 25px;
 	margin: 25px;
 }
+
+
+
+
 
 
 
