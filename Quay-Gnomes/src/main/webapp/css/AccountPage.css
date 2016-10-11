@@ -1,25 +1,7 @@
-	*
+*
 	{
 	box-sizing:border-box;
 	}
-	
-	
-.row::after {
-	content: "";
-	clear: both;
-	display: block;
-}
-
-#footer {
-  	position:absolute;
-  	bottom:0;
-   	width: 95%;
-  	height:60px;   /* Height of the footer */
-  	background:#DCCBDA;
-	text-align: center;
-	font-size: 12px;
-	padding: 15px;
-}
 	
 	ul 
 	{
@@ -77,6 +59,20 @@
 		border-radius: 4px;
 		padding: 12px 20px 12px 40px;
 	}
+	
+		input[type=username]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+		input[type=password]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
 
 		input[type=username]
 	{		
@@ -123,12 +119,12 @@
 	{
 		background: #DCCBDA;
 	}
-
+	
 	#icon
 	{
 		float: right;
 	}
-
+	
 	#searchBox
 	{		
 		background-color: #eaf8fc;
@@ -160,14 +156,6 @@
 		margin: 4px 2px;
 		cursor: pointer;
 	}	
-	
-
-	#searchPane
-	{
-		width:auto;
-		float:left;
-		
-	}
 	
 	#Product_Nav
 	{
