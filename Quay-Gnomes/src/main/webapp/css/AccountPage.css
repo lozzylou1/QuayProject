@@ -36,11 +36,6 @@
 	{
 		background-color: #DCCBDA;
 		color: black;
-	}
-	
-	form {
-                width:500px;
-                margin:50px auto;
 	}	
 	
 	.button2:hover 
@@ -48,17 +43,25 @@
 		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 	}
 	
-	.search
-	{
-		padding8px 15px;
-	}
 	
 	input[type=search]
-	{		
-		border: 2px solid #ccc;
-		border-radius: 4px;
-		padding: 12px 20px 12px 40px;
+	{	
+		width: 400px;
+		border: 2px solid #DCCBDA;
+		border-radius: 8px;
+		padding: 12px 10px 12px 20px;
 	}
+	
+	form 
+	{
+        width:500px;
+		height: 75px;
+		padding: 5px;
+        margin:50px auto;
+		background-color:#DCCBDA;
+		text-align: center;
+		border-radius: 8px
+	}	
 	
 		input[type=username]
 	{		
@@ -110,10 +113,15 @@
 	
 	table, th, td 
 	{
-		border: 1px solid black;
+	
 		padding:5px;
-		text-align: center;
-	}	
+		text-align: center-left;
+	}
+
+	#table01
+	{
+		text-align: center-left;
+	}
 	
 	#login
 	{

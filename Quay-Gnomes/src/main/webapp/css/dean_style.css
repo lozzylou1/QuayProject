@@ -1,27 +1,128 @@
-* {
-	box-sizing: border-box;
-}
 
-ul {
+	*
+	{
+	box-sizing:border-box;
+	}
+	
+	ul 
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #49274A;
+		border: 1px solid #DCCBDA;
+	}
+	
+	li 
+	{
+		float: left;		
+	}
+	
+	li a
+	{
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	li a:hover:not(.active)
+	{
+		background-color: #DCCBDA;
+	}
+	
+	.active
+	{
+		background-color: #DCCBDA;
+		color: black;
+	}
+	
+	input[type=search]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+
+		input[type=username]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+		input[type=password]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+	article
+	{
+		background-color : #DCCBDA;
+		width: 95%;
+		padding: 25px;
+		margin: 25px
+	}
+	
+	#login{background: #DCCBDA;}
+	
+
+	btn-default
+	{
+		background-color: #DCCBDA;
+	}
+	
+	
+	img 
+	{
+		max-width: 100%;
+		height: auto;
+	}
+	
+	#icon
+	{
+		float: right;
+	}
+	
+	#searchPane
+	{
+		width:auto;
+		float:left;
+	}
+	
+	#Product_Nav
+	{
+		background: #DCCBDA;
+		padding: 25px;
+		margin: 25px;
+	}
+	
+	/* For mobile phones: */
+
+	ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 	background-color: #49274A;
 	border: 1px solid #DCCBDA;
-}
+	}
 
-li {
+	li {
 	float: left;
-}
+	}
 
-li a {
+	li a {
 	display: block;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
-}
+	}
 
 li a:hover:not (.active ) {
 	background-color: #DCCBDA;
