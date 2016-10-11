@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * 
 {
 	box-sizing: border-box;
@@ -63,6 +64,21 @@ article {
 }
 
 btn-default {background-color #DCCBDA;
+=======
+	*
+	{
+	box-sizing:border-box;
+	}
+	ul 
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #49274A;
+		border: 1px solid #DCCBDA;
+	}
+
 	
 }
 
@@ -83,6 +99,45 @@ img {
 #standOut{
 	background: #DCCBDA;
 }
+
+
+		input[type=username]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+		input[type=password]
+	{		
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		padding: 12px 20px 12px 40px;
+	}
+	
+	article
+	{
+		background-color : #DCCBDA;
+		width: 95%;
+		padding: 25px;
+		margin: 25px
+	}
+	
+	#login{background: #DCCBDA;}
+	
+
+	btn-default
+	{
+		background-color: #DCCBDA;
+
+	}
+
+
+
+
+
+
+
 
 /* For mobile phones: */
 [class*="col-"] {
@@ -107,12 +162,14 @@ img {
 	.col-m-5 {
 		width: 41.66%;
 	}
+<<<<<<< HEAD
 	.col-m-6 {
 		width: 50%;
 	}
 	.col-m-7 {
 		width: 58.33%;
-	}
+
+
 	.col-m-8 {
 		width: 66.66%;
 	}

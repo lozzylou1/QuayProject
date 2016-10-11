@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset= "ISO-8859-1" >
-</head>
-
+	<head>
+		<meta charset="ISO-8859-1">
+			<link rel="stylesheet" href="css/AccountPage.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+	</head>
 <body>
-<img src="Capture.png" alt"NB Gardens Logo" style= width:338px;height:276;">
-
-<br>
+		<header>
+				<img src="img/logo1.png" width="256" height+"256">
+				<input type="search" placeholder="Search..." name="productsearch">
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-search"></span>
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-user"></span>
+				</button>
+				<button type="button" class="btn btn-default">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+				</button>		
+		</header>
+		<ul>
+			<nav>
+				<li><a href="#products">Products</a></li>
+				<li><a href="#aboutus">About Us</a></li>
+				<li><a href="#contactus">Contact Us</a></li>
+			</nav>
+		</ul>		
+		<br>
 <br>
 <form action = "loginForm()">
-<div class="login-page">
+
+<div id="login" class="col-12 col-m-12">
+<article>
+
 <p>  
   <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Email" name="uname" required>
+    <input type="username" placeholder="Enter Email" name="uname" required>
 </p>
 
 <p>
@@ -24,6 +49,7 @@
 <p>
     <button type="submit">Login</button>
 </p>
+</article>
 	</div>
 
 

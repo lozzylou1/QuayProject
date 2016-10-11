@@ -1,0 +1,85 @@
+#Header
+{
+	width:100%;
+	height:;
+}
+
+#NavBar
+{
+	list-style-type:none;
+<<<<<<< HEAD
+	margin-left: auto;
+    margin-right: auto;
+=======
+	margin:0;
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+	padding:0;
+	overflow:hidden;
+    background-color:#49274a;
+}
+
+li
+{
+    display: inline;
+<<<<<<< HEAD
+	margin-left: auto;
+    margin-right: auto;
+	text-align:center;
+=======
+	float:left;
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+}
+
+li a 
+{
+<<<<<<< HEAD
+    display: inline-block;
+=======
+    display: block;
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+<<<<<<< HEAD
+	margin-left: auto;
+    margin-right: auto;
+=======
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+}
+
+li a:hover 
+{
+    background-color: #111;
+}
+
+#Logo
+{
+}
+
+#Product_Nav
+{
+	margin-left: auto;
+    margin-right: auto;
+<<<<<<< HEAD
+	display: table;
+	background-color:#dccbda;
+=======
+	position:relative;
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+}
+
+#Product
+{
+	display: inline;
+	height:200px;
+	width:200px;
+<<<<<<< HEAD
+	margin-left: auto;
+    margin-right: auto;
+	padding:25px;
+=======
+	position:relative;
+	
+>>>>>>> 517dfc4caad3112c34ad1d29ce024c9a181b09a9
+}
