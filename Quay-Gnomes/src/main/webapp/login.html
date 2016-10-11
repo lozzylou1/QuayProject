@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="css/AccountPage.css">
+<link rel="stylesheet" href="css/laura.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -14,18 +14,24 @@
 
 <body>
 	<header>
-		<img src="img/logo1.png" width="256"height+"256"> <input
-			type="search" placeholder="Search..." name="productsearch">
+		<img src="img/logo1.png" width="256"height="256"> 
+		<article>
+		<input class="col-8 col-m-8 type="search" placeholder="Search..." name="productsearch">
+				
 		<button type="button" class="btn btn-default">
 			<span class="glyphicon glyphicon-search"></span>
 		</button>
+		
 		<button type="button" class="btn btn-default">
 			<span class="glyphicon glyphicon-user"></span>
 		</button>
+		
 		<button type="button" class="btn btn-default">
 			<span class="glyphicon glyphicon-shopping-cart"></span>
 		</button>
+		</article>
 	</header>
+	
 	<ul>
 		<nav>
 			<li><a href="#products">Products</a></li>
@@ -33,12 +39,14 @@
 			<li><a href="#contactus">Contact Us</a></li>
 		</nav>
 	</ul>
+	
 	<br>
 	<br>
 	<form action="loginForm()">
+
 		<article>
 			<div id="login" align="center" class="col-12 col-m-12">
-			
+
 				<p>
 					<label><b>Username</b></label> <input type="username"
 						placeholder="Enter Email" name="uname" required>
@@ -50,11 +58,22 @@
 				</p>
 
 				<p>
+				<font color = "blue" size ="-1">
+						<u>Forgotten your password?</u>
+				</font>
+				</p>
+				
+				<p>
 					<button type="button" class="btn btn-default">Login</button>
 				</p>
 			</div>
-		</article>
 	</form>
+
+			<div id="footer" class="footer">
+				<p>Resize the browser window to see how the content respond to the
+				resizing.</p>
+			</div>
+		</article>
 </body>
 </html>
 
