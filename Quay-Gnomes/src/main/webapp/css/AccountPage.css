@@ -47,16 +47,14 @@
 	article
 	{
 		background-color : #DCCBDA;
-		width: 95%;
 		padding: 25px;
-		margin: 25px
+		margin:25px
 	}
 	
 	btn-default
 	{
 		background-color #DCCBDA;
-	}
-	
+	}	
 	
 	img 
 	{
@@ -73,6 +71,27 @@
 	{
 		width:auto;
 		float:left;
+	}
+	
+	#goldbutton 
+	{
+		background-color: #fcd247;
+		border: none;
+		border-radius: 8px;
+		border: 2px solid black;
+		color: black;
+		padding: 10px 27px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}
+	
+	th, td 
+	{
+		padding: 5px;
 	}
 	
 	/* For mobile phones: */

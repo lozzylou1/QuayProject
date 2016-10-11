@@ -7,20 +7,32 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</meta>
-	<style>
-	
-	
-	</style>
 	</head>
 	<body>
 		<header>
-		<div class="col-12 col-m-12">
-			<img  src="img/logo1.png">
-			<input  type="search" placeholder="Search..." name="productsearch">
-			<button type="button" class="btn btn-default">
-					<span class="glyphicon glyphicon-search"></span>
-				</button>
-		</div>	
+			<table class="col-12 col-m-12">
+				<tr>
+					<div>
+						<th><img  src="img/logo1.png"></th>
+						<th class="col-6 col-m-6">
+							<input type="search" placeholder="Search..." name="productsearch">
+								<button type="button" id="goldbutton">
+									<span class="glyphicon glyphicon-search"></span>
+								</button>
+							</input>
+						</th>
+						<th>
+							<button type="button" id="goldbutton">
+								<span class="glyphicon glyphicon-user"></span>
+							</button>
+						
+							<button type="button" id="goldbutton">
+								<span class="glyphicon glyphicon-shopping-cart"></span>
+							</button>
+						</th >
+					</div>
+				</tr>
+			</table>
 		</header>
 		
 		<div class="col-12 col-m-12">
@@ -32,31 +44,70 @@
 			</nav>
 		</ul>
 		</div>
-		<article>
-			<div>
-				<h2>
-					Orders 
-					<button type="button" class="btn btn-default">Track Order</button> 
-				</h2>
-				<img src="img/logo1.png" width="256" height+"256">				
-			</div>
-			<p>
-			some text
-			</p>
-		</article>
+		
 		<article>
 		<div>
-				<h2>
-					Account			
-					<button type="button" class="btn btn-default">Change Details</button>
-					<button type="button" class="btn btn-default">Adresses</button>
-				</h2>
-				<img src="img/logo1.png" width="256" height+"256">
+		<table class="col-11col-m-11">
+					
+				<tr>				
+					<th><h2>Orders</h2></th>	
+					<th><button type="button" id="goldbutton">Track Orders</button></th>				
+				</tr>
+				<tr>
+				<td>
+					<picture>
+						<source srcset="img/Mobile_Orders.png" media="(max-width: 600px)">
+						<source srcset="img/Orders.png">
+						<img src="Orders.png" alt="Orders">				
+					</picture>
+				</td>
+				<td>			
+					<p>
+					some text
+					</p>
+				</td>
+				<td>			
+					<p>
+					some text
+					</p>
+				</td>
+				</tr>
+			</table>
 			</div>
-			<p>
-			some text
-			</p>
 		</article>
-		
+		<br>
+		<hr>
+		<br>
+		<article>
+		<div>
+		<table class="col-11col-m-11">					
+				<tr>				
+					<th><h2>Account</h2></th>	
+					<th><button type="button" id="goldbutton">Change Details</button></th>
+					<th><button type="button" id="goldbutton">Adresses</button></th>
+				
+				</tr>
+				<tr>
+					<td>
+						<picture>
+							<source srcset="img/MobileAccountIcon.png" media="(max-width: 600px)">
+							<source srcset="img/AccountIcon.png">
+							<img src="AccountIcon.png" alt="Orders">				
+						</picture>
+					</td>
+					<td>			
+						<p>
+							some text
+						</p>
+					</td>
+					<td>			
+						<p>
+							some text
+						</p>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</article>		
 	</body>
 </html>
