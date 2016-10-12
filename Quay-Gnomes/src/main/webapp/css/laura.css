@@ -20,35 +20,32 @@
 	font-size: 12px;
 	padding: 15px;
 }
-	
-	ul 
-	{
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		background-color: #49274A;
-		border: 1px solid #DCCBDA;
-	}
-	
-	li 
-	{
-		float: left;		
-	}
-	
-	li a
-	{
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
-	
-	li a:hover:not(.active)
-	{
-		background-color: #DCCBDA;
-	}
+
+.nav 
+			{
+				color: #FFFFFF;
+			}
+			
+			form
+			{
+				background-color:#DCCBDA
+				width:25%;
+				height: 5%;
+				padding: 5px;
+				margin:1% auto;
+				background-color:#DCCBDA;
+				text-align: center;
+				border-radius: 8px
+			}
+			
+			input[type=search]
+			{	
+				width: 90%;
+				border: 2px solid #DCCBDA;
+				border-radius: 8px;
+				padding: 12px 10px 12px 20px;
+			}
+
 	
 	.active
 	{
