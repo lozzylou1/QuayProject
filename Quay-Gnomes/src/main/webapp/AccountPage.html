@@ -1,110 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-			
-			
-		</meta>
-		<style>
-			.nav 
-			{
-				color: #FFFFFF;
-			}
-			
-			form
-			{
-				background-color:#DCCBDA
-				width:25%;
-				height: 5%;
-				padding: 5px;
-				margin:1% auto;
-				background-color:#DCCBDA;
-				text-align: center;
-				border-radius: 8px
-			}
-			
-			input[type=search]
-			{	
-				width: 90%;
-				border: 2px solid #DCCBDA;
-				border-radius: 8px;
-				padding: 12px 10px 12px 20px;
-			}
-			
-		</style>
-	</head>
-	<body>
-		<header>		
-			
-			<img  src="img/logo1.png" style="max-width:100%">	
-			<form>
-				<input type="search" placeholder="Search..." name="productsearch">
-					<button class="btn btn-warning">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</input>
-			</form>									
-		</header>		
-		<nav class="navbar navbar-inverse" style="background-color:#49274A">
-		  <div class="container-fluid">
-			<div class="navbar-header">
-			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			  </button>
-			  <a class="navbar-brand" href="#">NBGardens</a>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-			  <ul class="nav navbar-nav">
-				<li><a href="#">Home</a></li>
-				<li class="dropdown">
-				  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
-				  <ul class="dropdown-menu">
-					<li><a href="#" >Products</a></li>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Contact Us</a></li>
-				  </ul>
-				</li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-			  </ul>
-			  <ul class="nav navbar-nav navbar-right">
-			  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			  </ul>
-			</div>
-		  </div>
-		</nav>
-		
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Catalogue</ui:define>
+	<ui:define name="maincontent">
 		<article>
 			<div>
-				<table class="table table-responsive" style="background-color:#DCCBDA">					
-					<tr>				
-						<th><h2>Orders</h2></th>	
-						<th><button class="btn btn-warning">Track Orders</button></th>			
+				<table class="table table-responsive"
+					style="background-color: #DCCBDA">
+					<tr>
+						<th><h2>Orders</h2></th>
+						<th><h:commandButton class="btn btn-warning">Track Orders</h:commandButton></th>
 					</tr>
 					<tr>
+						<td><picture>
+							<source srcset="img/Mobile_Orders.png" media="(max-width: 600px)">
+							<source srcset="img/Orders.png">
+							<img src="Orders.png" alt="Orders"></picture></td>
 						<td>
-							<picture>
-								<source srcset="img/Mobile_Orders.png" media="(max-width: 600px)">
-								<source srcset="img/Orders.png">
-								<img src="Orders.png" alt="Orders">				
-							</picture>
+							<p>some text</p>
 						</td>
-						<td>			
-							<p>
-							some text
-							</p>
-						</td>
-						<td>			
-							<p>
-							some text
-							</p>
+						<td>
+							<p>some text</p>
 						</td>
 					</tr>
 				</table>
@@ -113,37 +34,32 @@
 		<br>
 		<hr>
 		<br>
-		
+
 		<article>
 			<div>
-				<table class="table table-responsive" style="background-color:#DCCBDA">					
-					<tr>			
-						<th><h2>Account</h2></th>	
-						<th><button class="btn btn-warning">Change Details</button></th>
-						<th><button class="btn btn-warning">Adresses</button></th>					
+				<table class="table table-responsive"
+					style="background-color: #DCCBDA">
+					<tr>
+						<th><h2>Account</h2></th>
+						<th><h:commandButton class="btn btn-warning">Change Details</h:commandButton></th>
+						<th><h:commandButton class="btn btn-warning">Addresses</h:commandButton></th>
 					</tr>
 					<tr>
+						<td><picture>
+							<source srcset="img/MobileAccountIcon.png"
+								media="(max-width: 600px)">
+							<source srcset="img/AccountIcon.png">
+							<img src="AccountIcon.png" alt="Orders"></picture></td>
 						<td>
-							<picture>
-								<source srcset="img/MobileAccountIcon.png" media="(max-width: 600px)">
-								<source srcset="img/AccountIcon.png">
-								<img src="AccountIcon.png" alt="Orders">				
-							</picture>
+							<p>some text</p>
 						</td>
-						<td>			
-							<p>
-								some text
-							</p>
-						</td>
-						<td>			
-							<p>
-								some text
-							</p>
+						<td>
+							<p>some text</p>
 						</td>
 					</tr>
 				</table>
 			</div>
-		</article>	
-		
-	</body>
+		</article>
+	</ui:define>
+</ui:composition>
 </html>
