@@ -2,54 +2,87 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="css/laura.css">
+<link rel="stylesheet" href="css/ProductDet.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-
-<header>
-	
-		<img src="img/logo1.png" width="256"height="256"> 
-		
-		<div style="float:right;">
-		<button type="button" id="goldbutton" class="btn btn-default">
-		<span class="glyphicon glyphicon-user"></span>
-		</button>
-		
-		
-		<button type="button" id="goldbutton" class="btn btn-default">
-			<span class="glyphicon glyphicon-shopping-cart"></span>
-		</button>
-		</div>
-		
-		
-		<form style="text-align: center" >
-		<article>
-		<input class="col-8 col-m-8" type="search" placeholder="Search..." name="productsearch">
+<style>
+			.nav 
+			{
+				color: #FFFFFF;
+			}
 			
-		<button type="button" id="goldbutton" class="btn btn-default">
-			<span class="glyphicon glyphicon-search"></span>
-		</button>
-		</article>
-		</form>
-				
-	</header>
-	
-	<ul>
-		<nav>
-			<li><a href="#products">Products</a></li>
-			<li><a href="#aboutus">About Us</a></li>
-			<li><a href="#contactus">Contact Us</a></li>
-		</nav>
-	</ul>
-	
+			form
+			{
+				background-color:#DCCBDA
+				width:25%;
+				height: 5%;
+				padding: 5px;
+				margin:1% auto;
+				background-color:#DCCBDA;
+				text-align: center;
+				border-radius: 8px
+			}
+			
+			input[type=search]
+			{	
+				width: 90%;
+				border: 2px solid #DCCBDA;
+				border-radius: 8px;
+				padding: 12px 10px 12px 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<header>			
+			<div>
+				<img  src="img/logo1.png" style="max-width: 100%">	
+				<form>
+					<input type="search" placeholder="Search..." name="productsearch">
+						<button class="btn btn-warning">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</input>
+					</form>					
+			</div>				
+		</header>		
+	<nav class="navbar navbar-inverse" style="background-color:#49274A">
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">NBGardens</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+		  <ul class="nav navbar-nav">
+			<li><a href="#">Home</a></li>
+			<li class="dropdown">
+			  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				<li><a href="#" >Products</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">Contact Us</a></li>
+			  </ul>
+			</li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Contact Us</a></li>
+		  </ul>
+		  <ul class="nav navbar-nav navbar-right">
+		  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
 	<br>
 	<br>
 		
