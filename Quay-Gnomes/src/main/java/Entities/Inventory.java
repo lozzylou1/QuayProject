@@ -39,7 +39,7 @@ public class Inventory {
 	@Column (name = "allocatedStock", nullable = false)
 	private int allocatedStock;
 
-//..................................................................Constructor
+//.................................................................Constructor
 	
 	
 
