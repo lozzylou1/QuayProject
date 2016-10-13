@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough">	
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Create Account</ui:define>
+	<ui:define name="maincontent">
+
+
+	<article>
+		<div align="center" id="form">
+		<h1>Create Account</h1>
+		<br/>
+		<h:form>
+		
+		<h:outputLabel value="First Name"/>
+		<h:inputText value="#{account.firstName}"/>
+		
+		<h:outputLabel value="Surname"/>
+		<h:inputText value="#{account.surname}"/>
+		
+		<h:outputLabel value="Email Address"/>
+		<h:inputText value="#{account.email}" p:type="email"
+		required="true" requireMessage="Please Enter Email" 
+		/>
+		
+		<h:outputLabel value="Confirm Email Address"/>
+		<h:inputText value="#{account.confirmEmail}" p:type="email"
+		required="true" 
+		requireMessage="Please Confirm Email" 
+		/>
+		
+		
+		<h:outputLabel value="Password"/>
+		<h:inputSecret value="#{account.password}" 
+		required="true" 
+		requiremessage="Please enter a password"
+		/>
+		
+		<h:outputLabel value="Confirm Password"/>
+		<h:inputSecret value="#{account.confirmPassword}" 
+		required="true" 
+		requiremessage="Please enter a password"
+		/>
+		
+		<h:commandButton type="submit" action="#{account.registerAccount()}"
+		value="Register" />
+		
+		
+		
+		</h:form>
+	</div>	
+	</article>
+	
+
+</ui:define>
+</ui:composition>
+	<footer>
+	
+	Copyright © W3Schools.com
+	
+	</footer>
+</html>
