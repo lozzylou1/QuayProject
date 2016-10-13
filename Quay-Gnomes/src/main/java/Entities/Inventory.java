@@ -1,44 +1,53 @@
 package Entities;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "Inventory")
 
 public class Inventory {
-	
-
+//................................................................Declaration of Variables	
+  
 	@Id
 	@Column (name = "productID", nullable = false)
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int productID;
 	
 	@Column (name = "productName", nullable = false)
-	private String productName;
-	
+	private String productName;	
 	
 	@Column (name = "price", nullable = false)
 	private float price;
 	
-
 	@Column (name = "stockLevel", nullable = false)
 	private int stockLevel;
-	
-	
 
 	@Column (name = "productWeight", nullable = false)
 	private float weight;
 	
-	
 	@Column (name = "productDimensions", nullable = false)
-	private String dimensions;
+	private int dimensions;
+	
+	@Column (name = "threshold", nullable = false)
+	private int threshold;
+	
+	@Column (name = "allocatedStock", nullable = false)
+	private int allocatedStock;
+
+//..................................................................Constructor
 	
 	
+
+//................................................................ Getters and Setters 	
 	/** Returns the Stock Level */
 	public int getstockLevel()
-	{
-		
-			return stockLevel;
+	{		
+		return stockLevel;
 	}
 	
 	/** Sets Stock Level */
@@ -76,7 +85,6 @@ public class Inventory {
 	{
 		return productName;
 	}
-	
 	/** Sets Product name */
 	public void setproductName(String productName)
 	{
@@ -86,24 +94,14 @@ public class Inventory {
 	/** Get Product ID */
 	public int getproductId() 
 	{
-		return productId;
+		return productID;
 	}
 	
 	/** Set Product ID */
 	public void setproductId(int productId) 
 	{
-		this.productId = productId;
+		this.productID = productId;
 	}
-
-<<<<<<< HEAD
-	private int stockLevel;
-    private int threshold;
-=======
-	private int threshold;
->>>>>>> 9be384bd80f761fdd78944b419e89c8177716e59
-	private int allocatedStock;
-	private int productId;
-
 
 }
 
