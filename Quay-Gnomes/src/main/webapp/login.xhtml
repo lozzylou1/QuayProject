@@ -1,0 +1,51 @@
+
+<ui:composition
+xmlns="https://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:p="http://java.sun.com/jsf/passthrough"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+template="templates/main.xhtml">
+
+<meta charset="utf-8" />
+
+
+<ui:define name="title">
+Login
+</ui:define>
+
+<ui:define name="body">
+
+
+<br/>
+<br/>
+			
+			<div id="login" align="center" class="col-12 col-m-12">
+
+				<p>
+					<h:outputLabel><b>Username</b></h:outputLabel> <h:input type="username"
+						placeholder="Enter Email" name="uname" required="true"/>
+				</p>
+
+				<p>
+					<h:outputLabel><b>Password </b></h:outputLabel> <h:input type="password"
+						placeholder="Enter Password" name="psw" required="true"/>
+				</p>
+
+				<p>
+				<font color = "blue" size ="-1">
+						<u>Forgotten your password?</u>
+				</font>
+				</p>
+				
+				<p>
+					<h:commandButton type="button" action="#{user.userLogin()}" class="btn btn-default">Login</h:commandButton>
+				</p>
+			</div>
+
+			
+</ui:define>
+			
+</ui:composition>
+	
+				
