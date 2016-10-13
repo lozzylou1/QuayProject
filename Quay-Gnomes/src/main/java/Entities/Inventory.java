@@ -95,10 +95,13 @@ public class Inventory {
 		this.productId = productId;
 	}
 
+<<<<<<< HEAD
 	private int stockLevel;
     private int threshold;
+=======
+	private int threshold;
+>>>>>>> 9be384bd80f761fdd78944b419e89c8177716e59
 	private int allocatedStock;
-	private String productName;
 	private int productId;
 
 
