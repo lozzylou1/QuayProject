@@ -3,35 +3,7 @@
 	{
 	box-sizing:border-box;
 	}
-	
-	ul 
-	{
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		overflow: hidden;
-		background-color: #49274A;
-		border: 1px solid #DCCBDA;
-	}
-	
-	li 
-	{
-		float: left;		
-	}
-	
-	li a
-	{
-		display: block;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
-	
-	li a:hover:not(.active)
-	{
-		background-color: #DCCBDA;
-	}
+
 	
 	.active
 	{
@@ -103,26 +75,44 @@
 	
 	/* For mobile phones: */
 
-	ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #49274A;
-	border: 1px solid #DCCBDA;
+
+	#icon
+	{
+		float: right;
 	}
 
-	li {
-	float: left;
+	#searchBox
+	{		
+		background-color: #eaf8fc;
+		background-image: linear-gradient(#fff, #d4e8ec);
+		border-radius: 35px;    
+		border-width: 1px;
+		border-style: solid;
+		border-color: #c4d9df #a4c3ca #83afb7;            
+		width: 500px;
+		height: 35px;
+		padding: 10px;
+		margin: 100px auto 50px;
+		overflow: hidden;  
 	}
+	
+	#goldbutton
+	{
 
-	li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	}
+		background-color: #fcd247;
+		border: none;
+		border-radius: 8px;
+		border: 2px solid black;
+		color: black;
+		padding: 10px 17px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 20px;
+		margin: 4px 2px;
+		cursor: pointer;
+	}	
+	
 
 li a:hover:not (.active ) {
 	background-color: #DCCBDA;
@@ -180,11 +170,38 @@ img {
 	float: left;
 }
 
-#Product_Nav {
-	background: #DCCBDA;
-	padding: 25px;
-	margin: 25px;
-}
+#Product_Nav
+	{
+		background: #DCCBDA;
+		padding: 25px;
+		margin: 25px;
+	}
+	
+
+			.nav 
+			{
+				color: #FFFFFF;
+			}
+			
+			form
+			{
+				background-color:#DCCBDA
+				width:25%;
+				height: 5%;
+				padding: 5px;
+				margin:1% auto;
+				background-color:#DCCBDA;
+				text-align: center;
+				border-radius: 8px
+			}
+			
+		input[type=search]
+			{	
+				width: 90%;
+				border: 2px solid #DCCBDA;
+				border-radius: 8px;
+				padding: 12px 10px 12px 20px;
+			}
 
 /* For mobile phones: */
 [class*="col-"] {
