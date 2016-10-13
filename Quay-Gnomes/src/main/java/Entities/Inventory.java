@@ -33,20 +33,16 @@ public class Inventory {
 	@Column (name = "productDimensions", nullable = false)
 	private String dimensions;
 	
-
-	
-	
-	
 	
 	/** Returns the Stock Level */
-	public int getStockLevel()
+	public int getstockLevel()
 	{
 		
 			return stockLevel;
 	}
 	
 	/** Sets Stock Level */
-	public void setStockLevel(int stockLevel) 
+	public void setstockLevel(int stockLevel) 
 	{
 		this.stockLevel = stockLevel;
 	}
@@ -64,43 +60,43 @@ public class Inventory {
 	}
 	
 	/** Gets allocated stock */
-	public int getAllocatedStock() 
+	public int getallocatedStock() 
 	{
 		return allocatedStock;
 	}
 	
 	/** Sets allocated stock */
-	public void setAllocatedStock(int allocatedStock)
+	public void setallocatedStock(int allocatedStock)
 	{
 		this.allocatedStock = allocatedStock;
 	}
 	
 	/** Get Product name */
-	public String getProductName() 
+	public String getproductName() 
 	{
 		return productName;
 	}
 	
 	/** Sets Product name */
-	public void setProductName(String productName)
+	public void setproductName(String productName)
 	{
 		this.productName = productName;
 	}
 	
 	/** Get Product ID */
-	public int getProductId() 
+	public int getproductId() 
 	{
 		return productId;
 	}
 	
 	/** Set Product ID */
-	public void setProductId(int productId) 
+	public void setproductId(int productId) 
 	{
 		this.productId = productId;
 	}
 
 	private int stockLevel;
-	private int threshold;
+    private int threshold;
 	private int allocatedStock;
 	private String productName;
 	private int productId;
