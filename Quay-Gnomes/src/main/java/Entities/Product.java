@@ -36,7 +36,8 @@ public class Product {
 	
 	
 	
-	@Column (name = "productDimensions", nullable = false)
+	@Column (name = "produc"
+			+ "tDimensions", nullable = false)
 	private String dimensions;
 	
 	
