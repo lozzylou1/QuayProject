@@ -29,6 +29,6 @@ public class Search {
 	
 	public String search(String term) {
 		results = prodManager.findByName(term);
-		return "resultsPage";
+		return "ProductDet";
 	}
 }

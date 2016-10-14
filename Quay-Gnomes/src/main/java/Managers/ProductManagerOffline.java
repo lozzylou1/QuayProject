@@ -57,15 +57,24 @@ public class ProductManagerOffline implements ProductManager {
 	@Override
 	public List<Product> findByName(String term) {
 		List<Product> results = new ArrayList<>();
-		
-		for(Product p : initialData.getProducts())
-			if (p.getProductName().equalsIgnoreCase(term))
+
+
+		for(Product p : initialData.getProducts()){
+			if (p.getProductName().equalsIgnoreCase(term)){
 				results.add(p);
+			}
+		}
 		
-//		initialData.getProducts().forEach((Product p)->{
-//			if(p.getProductName().endsWith(term))
-//				results.add(p);
-//		});
+		if (results.size() == 0){
+			
+			System.out.println("No items found");
+			
+		} else {
+			System.out.println(results.toString());
+		}
+		
+		
+		
 		return results;
 	}
 }
