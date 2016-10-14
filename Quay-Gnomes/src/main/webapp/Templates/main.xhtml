@@ -19,10 +19,10 @@
 					<header>					
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%"/>	
 
-						<h:form class="form_design">	
-							<h:inputText type="search" placeholder="Search..." name="productsearch"
-							value="#{Search.term}"/>
-							<h:commandLink class="btn btn-warning" action="#{Search.findByName()}">
+						<h:form id="form_design">	
+							<h:inputText class="searchBar" placeholder="Search..." name="productsearch"
+							value="#{search.term}"/>
+							<h:commandLink class="btn btn-warning" action="#{search.findByName()}">
 								<span class="glyphicon glyphicon-search"></span>
 							</h:commandLink>					
 						</h:form>

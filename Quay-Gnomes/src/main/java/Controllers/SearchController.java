@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,7 @@ import Entities.Product;
 
 @Named("search")
 @SessionScoped
-
-public class Search {
+public class SearchController implements Serializable{
 
 	@Inject
 	private ProductManager prodManager;
@@ -30,5 +30,35 @@ public class Search {
 	public String search() {
 		results = prodManager.findByName(term);
 		return "ProductDet";
+	}
+
+
+	public Product getProduct() {
+		return product;
+	}
+
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+
+	public List<Product> getResults() {
+		return results;
+	}
+
+
+	public void setResults(List<Product> results) {
+		this.results = results;
+	}
+
+
+	public String getTerm() {
+		return term;
+	}
+
+
+	public void setTerm(String term) {
+		this.term = term;
 	}
 }
