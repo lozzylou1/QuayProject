@@ -24,8 +24,10 @@ public class InitialData {
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
-		//products.add(new Product(1, "Harry Potter Gnome", 19.99, N, ));
-		
+		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
+		products.add(new Product(2, "Zombie Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
+		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
+		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
 	}
 	
 	/**Returns the dummy list of suppliers */

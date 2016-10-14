@@ -7,8 +7,6 @@ import javax.validation.constraints.*;
 @Table (name = "CustomerAccount")
 
 public class CustomerAccount {
-	
-	
 		@Id
 		@Column (name = "customerID", nullable = false)
 		@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -19,7 +17,6 @@ public class CustomerAccount {
 	
 		@Column (name = "password", nullable = false)
 		private String password;
-	
 	
 		@Column (name = "contactNumber", nullable = false)
 		private String contactNumber;
@@ -35,7 +32,6 @@ public class CustomerAccount {
 	
 		@Column (name = "surname", nullable = false)
 		private String surname;
-
 		
 //........constructor.........................................................
 		public CustomerAccount(int ca_customerID, String ca_email, String ca_password, String ca_contactNumber, String ca_deliveryAddress, String ca_billingAddress, String ca_firstName, String ca_surname){

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Catalogue</ui:define>
+	<ui:define name="maincontent">
+
+	<article>
+		<div id="standOut" class="row">
+
+
+			<div class="col-1 col-m-1">
+			
+				<h:graphicImage value="img/got side.png"/> 
+				<br/>
+				<br/>
+				<h:graphicImage value="img/got back.png"/>
+				<br/>
+				<br/>
+				<h:graphicImage value="img/gotinuse2.png"/>
+				<br/>
+			</div>
+
+			<div class="col-3 col-m-3">
+				<img src="img/gotgnome.jpg" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
+
+
+			</div>
+
+			<div class="col-7 col-m-6">
+			
+			<h:outputText value="#{products.name}" />
+			<h:outputText value="#{products.price}" />
+			<h:outputText value="#{products.catalogueNumber}" />
+			
+		
+				
+			<h:commandButton value="Add To Basket" type="submit" action="#{basket.add()}"/>
+
+
+			</div>
+
+			<div class="col-3"></div>
+
+		</div>
+
+		
+
+		<div class="col-7 col-m-6">
+			<h2>Description</h2>
+			<h:outputText value="#{products.description}" />
+
+
+
+			<h2>Dimensions</h2>
+			<h:outputText value="#{products.dimensions}" />
+
+		</div>
+
+
+	</article>
+	
+		<hr/>
+
+
+
+	
+
+
+
+	<div class="col-12 col-m-12">
+	<h2>Similar Items..</h2>
+
+		
+				<div class="col-2 col-m-2"></div>
+		
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
+			</div>
+			
+			
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
+			</div>
+		
+		
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
+			</div>
+		
+		
+	</div>	
+
+
+	<div class="col-2"></div>
+	<div class="col-3 col-m-12">
+	
+	<h2>Product Reviews</h2>
+	<br/>
+	<h:outputText value="#{products.reviews.review1}" />
+	
+	<br/>
+
+	<h:outputText value="#{products.reviews.review2}" />
+	
+	
+
+
+</div>
+
+</ui:define>
+</ui:composition>
+</html>
