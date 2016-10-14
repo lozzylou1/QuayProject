@@ -7,7 +7,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://java.sun.com/jsf/passthrough"
-	template= "templates/imsTemplate">
+	template= "templates/imsTemplate.xhtml">
 	<meta charset= "utf-8" />
 	
 <body>
@@ -55,6 +55,11 @@
 	<br/>
 	<div class="main-content">
 	<h1>Suppliers</h1>
+		<input type="search" placeholder="Search..." class="productsearch">
+			<button class="btn btn-warning">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
+		</input>
 		<div class="table-content">
 			<table align="center" style="width:100%">
 				<tr>
