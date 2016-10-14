@@ -21,7 +21,7 @@ public class Search {
 	
 	public String search (int id){
 		product = prodManager.findById(id);
-		return "Products";
+		return "Product";
 	}
 	
 }
