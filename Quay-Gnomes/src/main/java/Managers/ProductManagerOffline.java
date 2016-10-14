@@ -62,6 +62,17 @@ public class ProductManagerOffline implements ProductManager {
 				results.add(p);
 			}
 		}
+		
+		if (results.size() == 0){
+			
+			System.out.println("No items found");
+			
+		} else {
+			System.out.println(results.toString());
+		}
+		
+		
+		
 		return results;
 	}
 }
