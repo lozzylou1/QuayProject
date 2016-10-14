@@ -32,11 +32,15 @@
 			</div>
 
 			<div class="col-7 col-m-6">
-			
-			<h:outputText value="#{products.name}" />
-			<h:outputText value="#{products.price}" />
-			<h:outputText value="#{products.catalogueNumber}" />
-			
+			<H1>
+			<h:outputText value="#{search.getProduct().getProductName()}" />
+			</H1>
+			<H1>
+			<h:outputText value="#{search.getProduct().getPrice()}" />
+			</H1>
+			<H1>
+			<h:outputText value="#{search.getProduct().getProductID()}" />
+			</H1>
 		
 				
 			<h:commandButton value="Add To Basket" type="submit" action="#{basket.add()}"/>
@@ -52,12 +56,12 @@
 
 		<div class="col-7 col-m-6">
 			<h2>Description</h2>
-			<h:outputText value="#{products.description}" />
+			<h:outputText value="" />
 
 
 
 			<h2>Dimensions</h2>
-			<h:outputText value="#{products.dimensions}" />
+			<h:outputText value="" />
 
 		</div>
 
@@ -101,11 +105,11 @@
 	
 	<h2>Product Reviews</h2>
 	<br/>
-	<h:outputText value="#{products.reviews.review1}" />
+	<h:outputText value="" />
 	
 	<br/>
 
-	<h:outputText value="#{products.reviews.review2}" />
+	<h:outputText value="" />
 	
 	
 

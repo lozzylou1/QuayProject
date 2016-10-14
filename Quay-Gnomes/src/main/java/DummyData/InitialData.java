@@ -62,7 +62,7 @@ public class InitialData {
 	}
 	
 	/**Add a StaffAccount to the dummy list of StaffAccounts*/
-	public void addStafAccount(StaffAccount staffAccount)
+	public void addStaffAccount(StaffAccount staffAccount)
 	{
 		staffAccounts.add(staffAccount);
 	}
@@ -82,6 +82,17 @@ public class InitialData {
 	public List<Product> getProducts() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public Product getProduct(String term)
+	{
+		for (Product product:products)
+		{
+			if (product.getProductName().equals(term))
+				return product;
+		}
+		return null;
+		
 	}
 
 }

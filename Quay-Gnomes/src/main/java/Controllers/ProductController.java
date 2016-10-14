@@ -9,7 +9,7 @@ import javax.inject.Named;
 import Managers.ProductManager;
 import Entities.Product;
 
-@Named("products")
+@Named("productController")
 @SessionScoped
 
 public class ProductController implements Serializable{
