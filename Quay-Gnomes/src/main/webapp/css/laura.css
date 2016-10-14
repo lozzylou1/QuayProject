@@ -3,6 +3,17 @@
 	box-sizing:border-box;
 	}
 	
+form 
+	{
+        width:500;
+		height: 45px;
+		padding: 5px;
+        margin:50px auto;
+		background-color:#DCCBDA;
+		text-align: center;
+		border-radius: 8px
+	}	
+	
 	
 .row::after {
 	content: "";
