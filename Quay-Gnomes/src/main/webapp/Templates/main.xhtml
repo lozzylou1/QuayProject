@@ -18,10 +18,7 @@
 				<body>	
 					<header>					
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%"/>	
-						<h:form id="form_design">
-							<h:inputText class="searchBar" placeholder="Search..." name="productsearch"
-							value="#{Search.term}"/>
-							<h:commandLink class="btn btn-warning" action="#{Search.search()}">
+							<h:commandLink class="btn btn-warning" action="#{Search.findByName()}">
 								<span class="glyphicon glyphicon-search"></span>
 							</h:commandLink>					
 						</h:form>

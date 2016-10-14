@@ -1,10 +1,14 @@
 package DummyData;
 import java.util.ArrayList;
+import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.ejb.Startup;
 import javax.inject.Singleton;
 
 import Entities.*;
 
+@Startup
 @Singleton
 public class InitialData {
 	
@@ -17,8 +21,11 @@ public class InitialData {
 	/**ArrayList of Products*/
 	private ArrayList<Product> products = new ArrayList<Product>();
 	
+	
+	
 	/**Creates the initial offline data*/
-	public InitialData()
+	@PostConstruct
+	public void setUpData()
 	{
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
@@ -64,6 +71,11 @@ public class InitialData {
 	public void setStaffAccounts(ArrayList<StaffAccount> staffAccounts)
 	{
 		this.staffAccounts = staffAccounts;
+	}
+
+	public List<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

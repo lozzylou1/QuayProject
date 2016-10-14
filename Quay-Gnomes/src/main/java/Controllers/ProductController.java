@@ -18,8 +18,8 @@ public class ProductController {
 	private Product product;
 
 	public String view(int id) {
-		product= prodManager.findById(id);
-		return"product";
+		product = prodManager.findById(id);
+		return "product";
 		}
 	
 
@@ -28,7 +28,7 @@ public class ProductController {
 		}
 	
 	public void setProduct(Product product){
-		this.product= product;
+		this.product = product;
 	}
 	
 }
