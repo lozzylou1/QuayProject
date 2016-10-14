@@ -20,10 +20,16 @@
 						<h:form>
 							<h:inputText type="search" placeholder="Search..." name="productsearch"
 							value="#{search.term}"/>
+
+								<h:commandButton class="btn btn-warning"
+								action="#{search.search()}"/>
+									<span class="glyphicon glyphicon-search"></span>						</form>			
+
 							<h:commandLink class="btn btn-warning" action="#{search.search()}">
 								<span class="glyphicon glyphicon-search"></span>
 							</h:commandLink>					
 						</h:form>			
+
 					<nav class="navbar navbar-inverse" style="background-color:#49274A">
 					  <div class="container-fluid">
 						<div class="navbar-header">

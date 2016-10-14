@@ -1,5 +1,10 @@
 package Controllers;
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
+import Entities.Product;
+import Managers.ProductManager;
 
 
 @Named("basket")
@@ -11,11 +16,11 @@ public class Basket {
 	
 	@Inject
 
-	private Basket basketManager;
+	private ProductManager Basket;
 	private Product product;
 
 	public String view(int id) {
-		product = basketManager.findById(id);
+		product = Basket.findById(id);
 		return"product";
 		}
 	
