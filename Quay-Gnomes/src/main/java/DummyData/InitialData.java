@@ -22,7 +22,7 @@ public class InitialData {
 	/**ArrayList of Products*/
 	private ArrayList<Product> products;
 	
-	
+	public InitialData() {}
 	
 	/**Creates the initial offline data*/
 	@PostConstruct
@@ -31,8 +31,10 @@ public class InitialData {
 		suppliers = new ArrayList<Supplier>();
 		staffAccounts =	new ArrayList<StaffAccount>();
 		products = new ArrayList<Product>();
+		
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
+		
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
 		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
