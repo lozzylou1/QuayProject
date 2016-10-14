@@ -2,11 +2,16 @@ package Managers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Product;
 
+
+@Default
+@Stateless
 public class ProductManagerOffline implements ProductManager {
 	
 
@@ -34,8 +39,7 @@ public class ProductManagerOffline implements ProductManager {
 
 	@Override
 	public Product findById(int productID) {
-		// TODO Auto-generated method stub
-		return null;
+		return  null;
 	}
 
 	@Override
@@ -49,8 +53,14 @@ public class ProductManagerOffline implements ProductManager {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
 
+	@Override
+	public List<Product> findByName(String term) {
+		List<Product> results = new ArrayList<>();
+		for(Product p : initialData.getProducts())
+			if (p.getProductName().equalsIgnoreCase(term))
+				results.add(p);
+		initialData.getProducts().forEach(action);
+		return results;
+	}
 }
