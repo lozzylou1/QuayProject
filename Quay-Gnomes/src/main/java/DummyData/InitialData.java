@@ -1,27 +1,40 @@
 package DummyData;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.ejb.Startup;
 import javax.inject.Singleton;
 
 import Entities.*;
 
+@Startup
 @Singleton
 public class InitialData {
 	
 	/**Array List of Suppliers*/
-	private ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+	private ArrayList<Supplier> suppliers;
 	
 	/**ArrayList of StaffAccounts*/
-	private ArrayList<StaffAccount> staffAccounts =	new ArrayList<StaffAccount>();
+	private ArrayList<StaffAccount> staffAccounts;
 	
 	/**ArrayList of Products*/
-	private ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> products;
+	
+	public InitialData() {}
 	
 	/**Creates the initial offline data*/
-	public InitialData()
+	@PostConstruct
+	public void setUpData()
 	{
+		suppliers = new ArrayList<Supplier>();
+		staffAccounts =	new ArrayList<StaffAccount>();
+		products = new ArrayList<Product>();
+		
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
+		
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
 		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
@@ -64,6 +77,11 @@ public class InitialData {
 	public void setStaffAccounts(ArrayList<StaffAccount> staffAccounts)
 	{
 		this.staffAccounts = staffAccounts;
+	}
+
+	public List<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

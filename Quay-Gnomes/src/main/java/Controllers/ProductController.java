@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,7 +12,7 @@ import Entities.Product;
 @Named("products")
 @SessionScoped
 
-public class ProductController {
+public class ProductController implements Serializable{
 
 	@Inject
 
@@ -18,8 +20,8 @@ public class ProductController {
 	private Product product;
 
 	public String view(int id) {
-		product= prodManager.findById(id);
-		return"product";
+		product = prodManager.findById(id);
+		return "product";
 		}
 	
 
@@ -28,7 +30,7 @@ public class ProductController {
 		}
 	
 	public void setProduct(Product product){
-		this.product= product;
+		this.product = product;
 	}
 	
 }
