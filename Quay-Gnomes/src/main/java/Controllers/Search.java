@@ -21,13 +21,13 @@ public class Search {
 	private List<Product> results;
 	private String term;
 	
-	public String search (int id){
+	public String searchById (int id){
 		product = prodManager.findById(id);
 		return "Product";
 	}
 	
 	
-	public String search() {
+	public String search(String term) {
 		results = prodManager.findByName(term);
 		return "resultsPage";
 	}
