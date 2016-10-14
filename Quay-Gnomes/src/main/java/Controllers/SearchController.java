@@ -27,8 +27,8 @@ public class SearchController implements Serializable{
 	}
 	
 	
-	public String search(String term) {
-		results = prodManager.findByName(term);
+	public String search() {
+		product = prodManager.findByName(term);
 		return "ProductDet";
 	}
 

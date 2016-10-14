@@ -54,13 +54,13 @@ public class ProductManagerOffline implements ProductManager {
 		
 	}
 
-	@Override
+	/*@Override
 	public List<Product> findByName(String term) {
 		List<Product> results = new ArrayList<>();
 
 
-		for(Product p : initialData.getProducts()){
-			if (p.getProductName().equalsIgnoreCase(term)){
+		for(Product product : initialData.getProducts()){
+			if (product.getProductName().equalsIgnoreCase(term)){
 				results.add(p);
 			}
 		}
@@ -76,5 +76,10 @@ public class ProductManagerOffline implements ProductManager {
 		
 		
 		return results;
+	}*/
+	
+	public Product findByName(String term)
+	{
+		return initialData.getProduct(term);
 	}
 }
