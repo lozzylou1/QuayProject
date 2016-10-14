@@ -9,7 +9,7 @@ import javax.inject.Named;
 import Managers.ProductManager;
 import Entities.Product;
 
-@Named("Search")
+@Named("search")
 @SessionScoped
 
 public class Search {
