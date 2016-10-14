@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,7 +12,7 @@ import Entities.Product;
 @Named("products")
 @SessionScoped
 
-public class ProductController {
+public class ProductController implements Serializable{
 
 	@Inject
 

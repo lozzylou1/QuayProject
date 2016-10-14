@@ -2,12 +2,15 @@ package Managers;
 
 import java.util.ArrayList;
 
+import javax.ejb.Stateless;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.*;
 
-
+@Stateless
+@Default
 public class StaffAccountManagerOffline implements StaffAccountManager{
 	
 	@Inject

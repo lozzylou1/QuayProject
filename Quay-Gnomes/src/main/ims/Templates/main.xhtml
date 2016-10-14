@@ -11,21 +11,18 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				<title><ui:insert name="title"/>
 				</title>
-				<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-				<link rel="stylesheet" media="screen" href="css/laura.css"/>				
+				<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>					
 			</h:head>
 			<f:view>
 				<body>	
-					<header>					
-						<h:graphicImage  value="img/logo1.png" style="max-width:100%"/>	
-
-						<h:form id="form_design">	
-							<h:inputText class="searchBar" placeholder="Search..." name="productsearch"
+					<header>
+						<img  src="img/logo1.png" style="max-width:100%"/>	
+						<form>
+							<h:input type="search" placeholder="Search..." name="productsearch"
 							value="#{search.term}"/>
-							<h:commandLink class="btn btn-warning" action="#{search.findByName()}">
-								<span class="glyphicon glyphicon-search"></span>
-							</h:commandLink>					
-						</h:form>
+								<h:commandButton class="btn btn-warning"
+								action="#{search.search()}"/>
+									<span class="glyphicon glyphicon-search"></span>						</form>			
 					<nav class="navbar navbar-inverse" style="background-color:#49274A">
 					  <div class="container-fluid">
 						<div class="navbar-header">
@@ -40,11 +37,11 @@
 						  <ul class="nav navbar-nav">
 							<li><a href="Home.xhtml">Home</a></li>
 							<li class="dropdown">
-							  <a class="dropdown-toggle" data-toggle="dropdown" href="Products.xhtml">Products <span class="caret"></span></a>
+							  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
 							  <ul class="dropdown-menu">
-								<li><a href="ProductDet.xhtml">Gnomes</a></li>
-								<li><a href="ProductDet.xhtml">Hot Tubs</a></li>
-								<li><a href="ProductDet.xhtml">Accessories</a></li>
+								<li><a href="Products.xhtml">Gnomes</a></li>
+								<li><a href="Products.xhtml">Hot Tubs</a></li>
+								<li><a href="Products.xhtml">Accessories</a></li>
 							  </ul>
 							</li>
 							<li><a href="AboutUs.xhtml">About Us</a></li>
@@ -52,7 +49,7 @@
 						  </ul>
 						  <ul class="nav navbar-nav navbar-right">
 						  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
-							<li><a href="createAccount.xhtml"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<li><a href="AccountPage.xhtml"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 							<li><a href="login.xhtml"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 						  </ul>
 						</div>
