@@ -19,7 +19,7 @@ public class ProductController {
 
 	public String view(int id) {
 		product= prodManager.findById(id);
-		return"product";
+		return "product";
 		}
 	
 
