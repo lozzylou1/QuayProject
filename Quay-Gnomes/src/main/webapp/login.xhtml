@@ -1,4 +1,5 @@
-
+<!DOCTYPE html>
+<html>
 <ui:composition
 xmlns="https://www.w3.org/1999/xhtml"
 xmlns:f="http://java.sun.com/jsf/core"
@@ -14,7 +15,7 @@ template="templates/main.xhtml">
 Login
 </ui:define>
 
-<ui:define name="body">
+<ui:define name="maincontent">
 
 
 <br/>
@@ -23,12 +24,12 @@ Login
 			<div id="login" align="center" class="col-12 col-m-12">
 
 				<p>
-					<h:outputLabel><b>Username</b></h:outputLabel> <h:input type="username"
+					<h:outputLabel><b>Username</b></h:outputLabel> <h:inputText type="username"
 						placeholder="Enter Email" name="uname" required="true"/>
 				</p>
 
 				<p>
-					<h:outputLabel><b>Password </b></h:outputLabel> <h:input type="password"
+					<h:outputLabel><b>Password </b></h:outputLabel> <h:inputText type="password"
 						placeholder="Enter Password" name="psw" required="true"/>
 				</p>
 
@@ -38,9 +39,9 @@ Login
 				</font>
 				</p>
 				
-				<p>
-					<h:commandButton type="button" action="#{Login.Login()}" class="btn btn-default">Login</h:commandButton>
-				</p>
+				<h:form>
+					<h:commandLink type="button" action="#{Login.Login()}" class="btn btn-default">Login</h:commandLink>
+				</h:form>
 			</div>
 
 			
@@ -48,4 +49,4 @@ Login
 			
 </ui:composition>
 	
-				
+</html>			
