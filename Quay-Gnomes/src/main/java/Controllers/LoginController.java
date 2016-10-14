@@ -9,7 +9,7 @@ import javax.inject.Inject;
 
 public class LoginController {
 	
-	@Inject
+	/*@Inject
 	
 	private LoginManager loginManager;
 	private Login login;
@@ -26,5 +26,5 @@ public class LoginController {
 	}
 	
 		
-	
+	*/
 }

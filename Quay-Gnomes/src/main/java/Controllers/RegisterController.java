@@ -1,7 +1,10 @@
 package Controllers;
 
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
+
 @Named("register")
-@RequestScope
+@RequestScoped
 
 	public class RegisterController {
 	
@@ -19,6 +22,7 @@ package Controllers;
 		if (firstName == null) {
 			return "createAccount";
 		}
+		return "";
 
 	}
 	
@@ -34,7 +38,7 @@ package Controllers;
 		if (surname == null) {
 			return "createAccount";
 		}
-
+		return "";
 	}
 	
 	/**
@@ -49,6 +53,7 @@ package Controllers;
 		if (email == null) {
 			return "createAccount";
 		}
+		return"";
 	}
 	
 	/**
@@ -63,6 +68,7 @@ package Controllers;
 		if (confirmEmail == null) {
 			return "createAccount";
 		}
+		return "";
 	}
 	
 	/**
@@ -77,6 +83,7 @@ package Controllers;
 		if (password == null) {
 			return "createAccount";
 		}
+		return "";
 	}
 	
 	/**
@@ -91,6 +98,7 @@ package Controllers;
 		if (confirmPassword == null) {
 			return "createAccount";
 		}
+		return "";
 	}
 	
 	
