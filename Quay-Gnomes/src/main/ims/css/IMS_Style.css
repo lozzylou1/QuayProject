@@ -26,6 +26,13 @@ nav {
   width: 30%; 
 }
 
+.productsearch{
+	width:850px;
+}
+
+.logo-background{
+	float:left;
+}
 
 
 .menu-item:hover ul {
@@ -35,6 +42,11 @@ nav {
 .menu-item:hover ul {
   height: 93px;
 }
+
+.table-key{
+	float:right;
+}
+
 
 .menu-item ul {
   background: #fff;
@@ -85,9 +97,30 @@ nav {
 	border-color:#38b6ff;
 }
 
+.low-stock{
+	width: 400px;
+	height:300px;
+	border-style: solid;
+	margin:0 auto;
+	border-color:#38b6ff;
+	
+}
+
 .table-content{
 	float:left;
 	width: 900px;
+	height:1000px;
+}
+
+.table-content-create-order{
+	float:left;
+	width: 450px;
+	height:1000px;
+}
+
+.table-content-create-order-right{
+	float:right;
+	width: 450px;
 	height:1000px;
 }
 
