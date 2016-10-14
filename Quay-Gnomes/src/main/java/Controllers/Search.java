@@ -9,7 +9,7 @@ import javax.inject.Named;
 import Managers.ProductManager;
 import Entities.Product;
 
-@Named("products")
+@Named("Search")
 @SessionScoped
 
 public class Search {
@@ -19,7 +19,7 @@ public class Search {
 	private ProductManager prodManager;
 	private Product product;
 	
-	public String view (int id){
+	public String search (int id){
 		product = prodManager.findById(id);
 		return "Products";
 	}
