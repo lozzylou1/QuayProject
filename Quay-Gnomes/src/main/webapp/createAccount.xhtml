@@ -4,7 +4,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://java.sun.com/jsf/passthrough">	
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
 	template="templates/main.xhtml">
 	<meta charset="utf-8" />
 	<ui:define name="title">Create Account</ui:define>
@@ -18,31 +18,31 @@
 		<h:form>
 		
 		<h:outputLabel value="First Name"/>
-		<h:inputText value="#{account.firstName}"/>
+		<h:inputText value="#{register.firstName}"/>
 		
 		<h:outputLabel value="Surname"/>
-		<h:inputText value="#{account.surname}"/>
+		<h:inputText value="#{register.surname}"/>
 		
 		<h:outputLabel value="Email Address"/>
-		<h:inputText value="#{account.email}" p:type="email"
+		<h:inputText value="#{register.email}" p:type="email"
 		required="true" requireMessage="Please Enter Email" 
 		/>
 		
 		<h:outputLabel value="Confirm Email Address"/>
-		<h:inputText value="#{account.confirmEmail}" p:type="email"
+		<h:inputText value="#{register.confirmEmail}" p:type="email"
 		required="true" 
 		requireMessage="Please Confirm Email" 
 		/>
 		
 		
 		<h:outputLabel value="Password"/>
-		<h:inputSecret value="#{account.password}" 
+		<h:inputSecret value="#{register.password}" 
 		required="true" 
 		requiremessage="Please enter a password"
 		/>
 		
 		<h:outputLabel value="Confirm Password"/>
-		<h:inputSecret value="#{account.confirmPassword}" 
+		<h:inputSecret value="#{register.confirmPassword}" 
 		required="true" 
 		requiremessage="Please enter a password"
 		/>
@@ -59,9 +59,5 @@
 
 </ui:define>
 </ui:composition>
-	<footer>
-	
-	Copyright © W3Schools.com
-	
-	</footer>
+
 </html>

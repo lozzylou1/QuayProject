@@ -21,6 +21,7 @@ public interface ProductManager {
 	
 	//update
 	public void updateProduct(Product p);
+	public List<Product> findByName(String term);
 	
 	
 	
