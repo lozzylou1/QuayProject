@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <ui.composition 
 	lang="en" 
 	xmlns="https://www.w3.org/1999/xhtml"
@@ -9,7 +9,6 @@
 	xmlns:p="http://java.sun.com/jsf/passthrough"
 	template= "templates/imsTemplate.xhtml">
 	<meta charset= "utf-8" />
-
 <body>
 <br/>
 	<nav>
@@ -50,21 +49,42 @@
 			</ul>
 		</div>
 	</nav>
-	<br/>	
+	<br/>
 	<br/>
 	<br/>
 	<div class="main-content">
-	<h1>Dashboard</h1>
-		<div class="ims-alerts">
-		<h4>Alerts</h4>
-		</div>
-		<br/>
-		<div class="ims-updates">
-		<h4>Updates</h4>
+	<h1>Orders</h1>
+		<input type="search" placeholder="Search..." class="productsearch">
+			<button class="btn btn-warning">
+				<span class="glyphicon glyphicon-search"></span>
+			</button>
+		</input>
+		<div class="table-content">
+			<table align="center" style="width:100%">
+				<tr>
+					<th>Order ID</th>
+					<th>Supplier</th> 
+					<th>Order Total</th>
+					<th>Date Of Order</th>
+					<th>Date Of Delivery</th>
+				</tr>
+				<tr>
+					<td>Test</td>
+					<td>Input</td> 
+					<td>Data</td>
+					<td>Input</td> 
+					<td>Data</td>
+				</tr>
+				<tr>
+					<td>Test</td>
+					<td>Input</td> 
+					<td>Data</td>
+					<td>Input</td> 
+					<td>Data</td>
+				</tr>
+			</table>
 		</div>
 	</div>
-
-
 </body>
 </ui.composition>
 </html>
