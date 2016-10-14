@@ -6,6 +6,7 @@ import javax.enterprise.context.SessionScoped;
 @SessionScoped
 
 
+
 public class Basket {
 	
 	@Inject
