@@ -11,25 +11,20 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 				<title><ui:insert name="title"/>
 				</title>
-				<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>					
+				<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+				<link rel="stylesheet" media="screen" href="css/laura.css"/>				
 			</h:head>
 			<f:view>
 				<body>	
 					<header>					
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%"/>	
-						<h:form>
-							<h:inputText type="search" placeholder="Search..." name="productsearch"
-							value="#{search.term}"/>
-
-								<h:commandButton class="btn btn-warning"
-								action="#{search.search()}"/>
-									<span class="glyphicon glyphicon-search"></span>						</form>			
-
-							<h:commandLink class="btn btn-warning" action="#{search.search()}">
+						<h:form id="form_design">
+							<h:inputText class="searchBar" placeholder="Search..." name="productsearch"
+							value="#{Search.term}"/>
+							<h:commandLink class="btn btn-warning" action="#{Search.search()}">
 								<span class="glyphicon glyphicon-search"></span>
 							</h:commandLink>					
-						</h:form>			
-
+						</h:form>
 					<nav class="navbar navbar-inverse" style="background-color:#49274A">
 					  <div class="container-fluid">
 						<div class="navbar-header">

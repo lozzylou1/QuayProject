@@ -26,7 +26,7 @@
 				color: #FFFFFF;
 			}
 			
-			form
+			#form_design
 			{
 				background-color:#DCCBDA
 				width:25%;
@@ -38,7 +38,7 @@
 				border-radius: 8px
 			}
 			
-			input[type=search]
+			.searchBar
 			{	
 				width: 90%;
 				border: 2px solid #DCCBDA;
