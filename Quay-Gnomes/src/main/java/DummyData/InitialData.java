@@ -1,4 +1,5 @@
 package DummyData;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,13 +14,13 @@ import Entities.*;
 public class InitialData {
 	
 	/**Array List of Suppliers*/
-	private ArrayList<Supplier> suppliers = new ArrayList<Supplier>();
+	private ArrayList<Supplier> suppliers;
 	
 	/**ArrayList of StaffAccounts*/
-	private ArrayList<StaffAccount> staffAccounts =	new ArrayList<StaffAccount>();
+	private ArrayList<StaffAccount> staffAccounts;
 	
 	/**ArrayList of Products*/
-	private ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> products;
 	
 	
 	
@@ -27,6 +28,9 @@ public class InitialData {
 	@PostConstruct
 	public void setUpData()
 	{
+		suppliers = new ArrayList<Supplier>();
+		staffAccounts =	new ArrayList<StaffAccount>();
+		products = new ArrayList<Product>();
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
