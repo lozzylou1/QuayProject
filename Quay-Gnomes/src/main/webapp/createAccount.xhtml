@@ -18,35 +18,41 @@
 		<h:form>
 		
 		<h:outputLabel value="First Name"/>
+		<br/>
 		<h:inputText value="#{register.firstName}"/>
-		
+		<br/>
 		<h:outputLabel value="Surname"/>
+		<br/>
 		<h:inputText value="#{register.surname}"/>
-		
+		<br/>
 		<h:outputLabel value="Email Address"/>
+		<br/>
 		<h:inputText value="#{register.email}" p:type="email"
 		required="true" requireMessage="Please Enter Email" 
 		/>
-		
+		<br/>
 		<h:outputLabel value="Confirm Email Address"/>
+		<br/>
 		<h:inputText value="#{register.confirmEmail}" p:type="email"
 		required="true" 
 		requireMessage="Please Confirm Email" 
 		/>
-		
+		<br/>
 		
 		<h:outputLabel value="Password"/>
+		<br/>
 		<h:inputSecret value="#{register.password}" 
 		required="true" 
 		requiremessage="Please enter a password"
 		/>
-		
+		<br/>
 		<h:outputLabel value="Confirm Password"/>
+		<br/>
 		<h:inputSecret value="#{register.confirmPassword}" 
 		required="true" 
 		requiremessage="Please enter a password"
 		/>
-		
+		<br/>
 		<h:commandButton type="submit" action="#{account.registerAccount()}"
 		value="Register" />
 		
