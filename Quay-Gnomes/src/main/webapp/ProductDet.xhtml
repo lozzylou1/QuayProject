@@ -55,13 +55,17 @@
 		
 
 		<div class="col-7 col-m-6">
-			<h2>Description</h2>
-			<h:outputText value="" />
+			<h2>Long Description</h2>
+			<h:outputText value="#{search.getProduct().getShortDescription()}" />
+		
+		
+			<h2>Long Description</h2>
+			<h:outputText value="#{search.getProduct().getLongDescription()}" />
 
 
 
 			<h2>Dimensions</h2>
-			<h:outputText value="" />
+			<h:outputText value="#{search.getProduct().getDimensions()}" />
 
 		</div>
 
