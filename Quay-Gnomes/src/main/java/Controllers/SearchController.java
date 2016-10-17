@@ -40,7 +40,7 @@ public class SearchController implements Serializable {
 	}
 
 	public String searchById(int id) {
-		product = searchService.findById((long) id);
+		product = searchService.findById(id);
 		return "Product";
 	}
 
