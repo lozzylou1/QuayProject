@@ -46,7 +46,10 @@ public class InitialData {
 		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "shortDesc", "longDesc", "img/swimming.jpg" ));
 		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7", "shortDesc", "longDesc", "img/starTrek.jpg" ));
 
-		customers.add(new CustomerAccount(1, "laura_adam@live.co.uk", "password", "01142251456", "614 the exchange, 8 elmira way, salford quays, m5 3nq", "12 buckingham road, conisborugh, DN3 4HS", "Laura", "Adam"));
+		customers.add(new CustomerAccount(1, "laura_adam@live.co.uk", "password", "01142251456", "614 the exchange, 8 elmira way, salford quays, M5 3NQ", "12 buckingham road, conisborugh, DN3 4HS", "Laura", "Adam"));
+		customers.add(new CustomerAccount(2, "hlloyd64@hotmail.com", "password", "01142564785", "84 grove house, 35 skirten road, old trafford, M16 0TU", "45 Wales road, Swansea, Wales W3 5SE", "Hannah", "Lloyd"));
+		customers.add(new CustomerAccount(3, "deanswain@hotmail.com", "password", "01142687745", "33 the lowery, lowery road, salford quays, M2 6HS", "22 Nottingham road, nottingham, N5 4AM", "Dean", "Swain"));		
+		
 	}
 	
 	/**Returns the dummy list of suppliers */
