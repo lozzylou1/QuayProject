@@ -18,7 +18,7 @@ public class StaffAccountManagerOffline implements StaffAccountManager{
 
 	@Override
 	public void persistStaffAccount(StaffAccount staffAccount) {
-		initialData.addStafAccount(staffAccount);
+		initialData.addStaffAccount(staffAccount);
 	}
 
 	@Override

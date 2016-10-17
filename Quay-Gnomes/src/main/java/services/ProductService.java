@@ -5,6 +5,9 @@ import Managers.ProductManager;
 import javax.inject.Inject;
 
 import Entities.Product;
+
+import java.util.List;
+
 import javax.ejb.Stateless;
 
 @Stateless
