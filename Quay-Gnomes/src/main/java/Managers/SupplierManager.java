@@ -2,7 +2,13 @@ package Managers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+
 import Entities.Supplier;
+
+
 
 public interface SupplierManager {
 	

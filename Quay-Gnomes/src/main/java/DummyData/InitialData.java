@@ -61,6 +61,11 @@ public class InitialData {
 		suppliers.add(supplier);
 	}
 	
+	public void removeSupplier(Supplier supplier)
+	{
+		suppliers.remove(supplier);
+	}
+	
 	/**Add a StaffAccount to the dummy list of StaffAccounts*/
 	public void addStaffAccount(StaffAccount staffAccount)
 	{
@@ -90,6 +95,28 @@ public class InitialData {
 		{
 			if (product.getProductName().equals(term))
 				return product;
+		}
+		return null;
+		
+	}
+
+	public Supplier getSupplier(String name)
+	{
+		for (Supplier supplier:suppliers)
+		{
+			if (supplier.getSupplierName().equals(name))
+				return supplier;
+		}
+		return null;
+		
+	}
+	
+	public Supplier getSupplierByID(int id)
+	{
+		for (Supplier supplier:suppliers)
+		{
+			if (supplier.getSupplierID()==id)
+				return supplier;
 		}
 		return null;
 		
