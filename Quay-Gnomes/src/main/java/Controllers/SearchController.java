@@ -22,7 +22,7 @@ public class SearchController implements Serializable{
 	private String term;
 	
 	public String searchById (int id){
-		product = prodManager.findById(id);
+		product = prodManager.findById((long) id);
 		return "Product";
 	}
 	

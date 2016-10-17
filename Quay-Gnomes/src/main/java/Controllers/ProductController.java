@@ -20,7 +20,7 @@ public class ProductController implements Serializable{
 	private Product product;
 
 	public String view(int id) {
-		product = prodManager.findById(id);
+		product = prodManager.findById((long) id);
 		return "product";
 		}
 	
