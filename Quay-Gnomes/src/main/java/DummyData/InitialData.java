@@ -79,9 +79,9 @@ public class InitialData {
 		this.staffAccounts = staffAccounts;
 	}
 
-	public List<Product> getProducts() {
+	public ArrayList<Product> getProducts() {
 		// TODO Auto-generated method stub
-		return null;
+		return products;
 	}
 	
 	public Product getProduct(String term)

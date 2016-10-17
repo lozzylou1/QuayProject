@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Supplier;
+import Managers.SupplierManager;
 
 @Stateless
 @Default

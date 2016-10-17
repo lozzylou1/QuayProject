@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Product;
+import Managers.ProductManager;
 
 
 @Default
@@ -43,9 +44,9 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
-	public ArrayList<Product> getProducts() {
+	public ArrayList<Product> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		return initialData.getProducts();
 	}
 
 	@Override

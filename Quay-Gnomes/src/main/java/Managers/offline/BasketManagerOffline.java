@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Product;
+import Managers.BasketManager;
 
 @Default
 @Stateless

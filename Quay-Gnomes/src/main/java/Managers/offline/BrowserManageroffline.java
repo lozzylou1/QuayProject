@@ -1,10 +1,11 @@
-package Managers;
+package Managers.offline;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
+import Managers.BrowserManager;
 
 @Default
 @Stateless

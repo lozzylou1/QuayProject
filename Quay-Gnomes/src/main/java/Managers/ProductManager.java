@@ -12,19 +12,16 @@ public interface ProductManager {
 	public Product findById(int productID);
 	
 	
-	//read
-	public ArrayList<Product> getProducts();
+	/**Returns all the products in the data store*/
+	public ArrayList<Product> findAll();
 	
 	
-	//create
+	/**Creates a product*/
 	public void createProduct(Product p);
 	
-	//update
+	/**Updates a product in the data store*/
 	public void updateProduct(Product p);
-	public Product findByName(String term);
 	
-	
-	
-	
+	public Product findByName(String term);	
 
 }
