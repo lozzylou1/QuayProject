@@ -9,7 +9,7 @@ public interface ProductManager {
 	public void persistProduct(Product p);
 	public void persistProducts(List<Product> p);
 	
-	public Product findById(int productID);
+	public Product findById(Long productID);
 	
 	
 	//read
