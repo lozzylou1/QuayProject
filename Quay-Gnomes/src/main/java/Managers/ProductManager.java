@@ -21,6 +21,7 @@ public interface ProductManager {
 	
 	/**Updates a product in the data store*/
 	public void updateProduct(Product p);
+
 	
 	public Product findByName(String term);	
 

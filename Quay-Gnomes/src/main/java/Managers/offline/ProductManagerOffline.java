@@ -45,39 +45,19 @@ public class ProductManagerOffline implements ProductManager {
 
 	@Override
 	public ArrayList<Product> findAll() {
+		return initialData.getProducts();
+		
+	}
+	public ArrayList<Product> getProducts() {
 		// TODO Auto-generated method stub
 		return initialData.getProducts();
 	}
 
 	@Override
 	public void persistProduct(Product p) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
-	/*@Override
-	public List<Product> findByName(String term) {
-		List<Product> results = new ArrayList<>();
-
-
-		for(Product product : initialData.getProducts()){
-			if (product.getProductName().equalsIgnoreCase(term)){
-				results.add(p);
-			}
-		}
-		
-		if (results.size() == 0){
-			
-			System.out.println("No items found");
-			
-		} else {
-			System.out.println(results.toString());
-		}
-		
-		
-		
-		return results;
-	}*/
 	
 	public Product findByName(String term)
 	{

@@ -60,17 +60,17 @@ public class ProductController implements Serializable
 		}
 		return pagination;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public DataModel <Product> getDataModel()
 	{
 		if (dataModel == null)
 		{
-			dataModel = getPagination().createPageDataModel();					
+			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
 	}
-	
+
 	@SuppressWarnings("unused")
 	private void updateCurrentItem()
 	{
@@ -105,7 +105,7 @@ public class ProductController implements Serializable
 		recreateModel();
 		return "Products";
 	}
-	
+
 	public String previous()
 	{
 		getPagination().previousPage();
