@@ -11,13 +11,13 @@ import javax.ejb.Stateless;
 public class ProductService {
 @Inject
 private ProductManager productManager;
-public Product findProductById(
-String id){
-return findProductById(
-Long.parseLong(id));
+
+public Product findProductById(String id){
+	System.out.println("ID: " + id);
+return findProductById(Long.parseLong(id));
 }
-public Product findProductById(
-long id){
+
+public Product findProductById(long id){
 return productManager.findById(id);
 
 }
