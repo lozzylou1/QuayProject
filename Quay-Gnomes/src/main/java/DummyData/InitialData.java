@@ -37,10 +37,10 @@ public class InitialData {
 		
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
-		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
-		products.add(new Product(2, "Zombie Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
-		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
-		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7" ));
+		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7", "Harry Potter And The Chamber Of Secrets", "Harry Potter is trying to escape the giant snake." ));
+		products.add(new Product(2, "Zombie Gnome", 19.99f, false, 10, 5f, "5x6x7", "shortDesc", "longDesc" ));
+		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "shortDesc", "longDesc" ));
+		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7", "shortDesc", "longDesc" ));
 	}
 	
 	/**Returns the dummy list of suppliers */

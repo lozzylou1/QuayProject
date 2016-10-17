@@ -36,12 +36,18 @@ public class Product {
 	
 	
 	
-	@Column (name = "product"
-			+ "Dimensions", nullable = false)
+	@Column (name = "productDimensions", nullable = false)
 	private String dimensions;
 	
 	
-	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, String p_dimensions){
+	@Column (name = "shortDescription", nullable = false)
+	private String shortDescription;
+	
+	@Column (name = "longDescription", nullable = false)
+	private String longDescription;
+	
+	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
+			String p_dimensions, String p_shortDescription, String p_longDescription){
 		
 		this.productID = p_productID;
 		this.productName = p_productName;
@@ -50,7 +56,32 @@ public class Product {
 		this.stockLevel = p_stockLevel;
 		this.weight = p_weight;
 		this.dimensions = p_dimensions;
+		this.shortDescription = p_shortDescription;
+		this.longDescription = p_longDescription;
 		
+	}
+
+
+
+
+
+	public String getShortDescription() {
+		return shortDescription;
+	}
+
+
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
+
+
+	public String getLongDescription() {
+		return longDescription;
+	}
+
+
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
 	}
 
 
