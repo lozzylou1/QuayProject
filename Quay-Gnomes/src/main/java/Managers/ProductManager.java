@@ -2,6 +2,8 @@ package Managers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.model.DataModel;
+
 import Entities.Product;
 
 public interface ProductManager {
@@ -13,17 +15,19 @@ public interface ProductManager {
 	
 	
 	//read
-	public ArrayList<Product> getProducts();
+	public List<Product> getProducts(String term);
 	
 	
 	//create
 	public void createProduct(Product p);
 	
+
+	
 	//update
 	public void updateProduct(Product p);
 	public Product findByName(String term);
 	public List<Product> findAll();
-	
+
 	
 	
 	

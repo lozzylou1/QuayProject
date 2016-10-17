@@ -79,9 +79,15 @@ public class InitialData {
 		this.staffAccounts = staffAccounts;
 	}
 
-	public List<Product> getProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProducts(String term) {
+		List<Product> listOfProducts = null;
+		
+		for (Product product:products)
+		{
+			if (product.getProductName().equals(term))
+				listOfProducts.add(product);
+		}
+		return listOfProducts;
 	}
 	
 	public Product getProduct(String term)
