@@ -26,7 +26,7 @@
 			</div>
 
 			<div class="col-3 col-m-3">
-				<img src="img/gotgnome.jpg" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
+				<img src="#{search.getProduct().getImage1()}" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
 
 
 			</div>
@@ -36,7 +36,7 @@
 			<h:outputText value="#{search.getProduct().getProductName()}" />
 			</H1>
 			<H1>
-			<h:outputText value="#{search.getProduct().getPrice()}" />
+			<h:outputText value="#{search.product.price}" />
 			</H1>
 			<H1>
 			<h:outputText value="#{search.getProduct().getProductID()}" />
@@ -55,13 +55,17 @@
 		
 
 		<div class="col-7 col-m-6">
-			<h2>Description</h2>
-			<h:outputText value="" />
+			<h2>Short Description</h2>
+			<h:outputText value="#{search.getProduct().getShortDescription()}" />
+		
+		
+			<h2>Long Description</h2>
+			<h:outputText value="#{search.getProduct().getLongDescription()}" />
 
 
 
 			<h2>Dimensions</h2>
-			<h:outputText value="" />
+			<h:outputText value="#{search.getProduct().getDimensions()}" />
 
 		</div>
 

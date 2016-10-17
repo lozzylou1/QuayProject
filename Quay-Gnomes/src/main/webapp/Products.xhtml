@@ -1,137 +1,70 @@
 <!DOCTYPE html>
 <html>
-
-
-<ui:composition
-xmlns="https://www.w3.org/1999/xhtml"
-xmlns:f="http://java.sun.com/jsf/core"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-template="templates/main.xhtml">
-<meta charset="utf-8" />
-<ui:define name="title">
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">
 Catalogue
 </ui:define>
-<ui:define name="maincontent">	
-<ul>
-		<nav>
-			<li><a href="#products">Indoor</a></li>
-			<li><a href="#aboutus">Outdoor</a></li>
-			<li><a href="#contactus">Special</a></li>
+	<ui:define name="maincontent">
+		<ul>
+			<nav>
+				<li><a href="#products">Indoor</a></li>
+				<li><a href="#aboutus">Outdoor</a></li>
+				<li><a href="#contactus">Special</a></li>
 
-		</nav>
-	</ul>
+			</nav>
+		</ul>
+		<ul>
+			<nav>
+				<li><a href="#products">Large</a></li>
+				<li><a href="#aboutus">Medium</a></li>
+				<li><a href="#contactus">Small</a></li>
+			</nav>
+		</ul>
+		<ul>
+			<nav>
+				<li><a href="#products">5</a></li>
+				<li><a href="#aboutus">4</a></li>
+				<li><a href="#contactus">3</a></li>
+				<li><a href="#aboutus">2</a></li>
+				<li><a href="#contactus">1</a></li>
 
-	<ul>
-		<nav>
-			<li><a href="#products">Large</a></li>
-			<li><a href="#aboutus">Medium</a></li>
-			<li><a href="#contactus">Small</a></li>
+			</nav>
+		</ul>
 
-		</nav>
-	</ul>
-	
-	<ul>
-		<nav>
-			<li><a href="#products">5</a></li>
-			<li><a href="#aboutus">4</a></li>
-			<li><a href="#contactus">3</a></li>
-			<li><a href="#aboutus">2</a></li>
-			<li><a href="#contactus">1</a></li>
-
-		</nav>
-	</ul>
-
-<div class="row">
-<div class="col-3 col-m-3 menu">
-
-</div>
-<div class="col-3 col-m-3">
-
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome1m.png" alt="GameOfGnomes" style="width:auto;"/>
-	<p>&#163;12.99</p>
-<p>Game of thrones gnome.</p>
-
-
-
-</div>
-<div class="col-3 col-m-3">
-
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome2m.jpg" alt="GameOGnomes" style="width:auto;"/>
-	<p>&#163;11.99</p>
-
-
-
-</div>
-
-<div class="col-3 col-m-3">
-
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome3m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;10.99</p>
-<p>Security Gnome</p>
-
-</div>
-</div>
-
-
-<div class="row">
-<div class="col-3 col-m-3">
-
-</div>
-
-<div class="col-3 col-m-3">
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome4m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;18.99</p>
-<p>Gnome Description</p>
-
-</div>
-
-<div class="col-3 col-m-3">
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome5m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;15.99.</p>
-<p>Gnome Description</p>
-
-</div>
-
-<div class="col-3 col-m-3">
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome6m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;14.99.</p>
-<p>Gnome Description</p>
-
-</div>
-</div>
-
-<div class="row">
-<div class="col-3 col-m-3">
-
-</div>
-
-<div class="col-3 col-m-3">
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome7m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;13.99.</p>
-<p>Gnome Description</p>
-
-</div>
-
-<div class="col-3 col-m-3">
- 
-	<h:graphicImage value="C:\Users\Administrator\Desktop\FinalImages\Gnome8m.png" alt="GamefGnomes" style="width:auto;"/>
-	<p>&#163;16.99.</p>
-<p>Gnome Description</p>
-
-</div>
-
-</div>
-
-<div class="footer">
-<p>Gnome Gardens @copyright</p>
-</div>
-
-</ui:define>
+			<div class="row">
+				<h:form>
+					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />
+					<h:outputText value="#{products.dataModel.rowCount}"/>
+					<br/>
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+						<h:outputText
+							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+						<h:commandLink action="#{products.previous}"
+							value="Previous #{products.pagination.pageSize}"
+							rendered="#{products.pagination.hasPreviousPage}" />
+						<h:commandLink action="#{products.next}"
+							rendered="#{products.pagination.hasNextPage}"
+							value="Next #{products.pagination.pageSize}" />
+						<div>
+							<ui:repeat var="product" value="#{products.dataModel}">
+								<div class="col-xs-6 col-lg-4">
+									<h:commandLink
+										action="#{products.view(product.productID)}"
+										value="#{product.productName}" />
+									<p>
+										<h:outputText  />
+									</p>
+								</div>
+							</ui:repeat>
+						</div>
+					</h:panelGroup>
+				</h:form>
+			</div>
+	</ui:define>
 </ui:composition>
 </html>

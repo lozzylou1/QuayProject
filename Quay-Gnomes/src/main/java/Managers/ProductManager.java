@@ -11,16 +11,22 @@ public interface ProductManager {
 	public void persistProduct(Product p);
 	public void persistProducts(List<Product> p);
 	
-	public Product findById(Long productID);
+	public Product findById(int productID);
 	
 	
+<<<<<<< HEAD
 	//read
 	public List<Product> getProducts(String term);
+=======
+	/**Returns all the products in the data store*/
+	public ArrayList<Product> findAll();
+>>>>>>> e69acd9f53630f97b8161e6d0e4727a177bd8db7
 	
 	
-	//create
+	/**Creates a product*/
 	public void createProduct(Product p);
 	
+<<<<<<< HEAD
 
 	
 	//update
@@ -30,6 +36,12 @@ public interface ProductManager {
 
 	
 	
+=======
+	/**Updates a product in the data store*/
+	public void updateProduct(Product p);
+
+>>>>>>> e69acd9f53630f97b8161e6d0e4727a177bd8db7
 	
+	public Product findByName(String term);	
 
 }

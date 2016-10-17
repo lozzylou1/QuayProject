@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 
 import java.util.ArrayList;
 
@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.*;
+import Managers.StaffAccountManager;
 
 @Stateless
 @Default

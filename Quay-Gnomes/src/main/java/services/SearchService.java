@@ -41,7 +41,7 @@ public List<Product> findByName(String name){
 }
 
 
-public Product findById(long id) {
+public Product findById(int id) {
 	// TODO Auto-generated method stub
 	return null;
 }

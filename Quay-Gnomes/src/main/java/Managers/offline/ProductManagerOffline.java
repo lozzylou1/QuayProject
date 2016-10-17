@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Product;
+import Managers.ProductManager;
 
 
 @Default
@@ -39,54 +40,33 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
+<<<<<<< HEAD:Quay-Gnomes/src/main/java/Managers/ProductManagerOffline.java
 	public List<Product> getProducts(String term) {
 		return initialData.getProducts(term);
+=======
+	public Product findById(int productID) {
+		return  null;
+	}
+
+	@Override
+	public ArrayList<Product> findAll() {
+		return initialData.getProducts();
+		
+	}
+	public ArrayList<Product> getProducts() {
+		// TODO Auto-generated method stub
+		return initialData.getProducts();
+>>>>>>> e69acd9f53630f97b8161e6d0e4727a177bd8db7:Quay-Gnomes/src/main/java/Managers/offline/ProductManagerOffline.java
 	}
 
 	@Override
 	public void persistProduct(Product p) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
-	/*@Override
-	public List<Product> findByName(String term) {
-		List<Product> results = new ArrayList<>();
-
-
-		for(Product product : initialData.getProducts()){
-			if (product.getProductName().equalsIgnoreCase(term)){
-				results.add(p);
-			}
-		}
-		
-		if (results.size() == 0){
-			
-			System.out.println("No items found");
-			
-		} else {
-			System.out.println(results.toString());
-		}
-		
-		
-		
-		return results;
-	}*/
 	
 	public Product findByName(String term)
 	{
 		return initialData.getProduct(term);
-	}
-
-	@Override
-	public Product findById(Long productID) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<Product> findAll() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

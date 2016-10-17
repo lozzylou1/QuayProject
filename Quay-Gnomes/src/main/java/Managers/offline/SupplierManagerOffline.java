@@ -1,4 +1,4 @@
-package Managers;
+package Managers.offline;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Supplier;
+import Managers.SupplierManager;
 
 @Stateless
 @Default
@@ -18,37 +19,32 @@ public class SupplierManagerOffline implements SupplierManager{
 
 	@Override
 	public void persistSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
 		initialData.addSupplier(supplier);
 	}
 
 	@Override
 	public void persistSuppliers(List<Supplier> supplier) {
-		// TODO Auto-generated method stub
 		initialData.getSuppliers();
 	}
 
 	@Override
 	public Supplier findByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.getSupplier(name);
 	}
 
 	@Override
 	public Supplier findByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return initialData.getSupplierByID(id);
 	}
 
 	@Override
 	public ArrayList<Supplier> getSuppliers() {
-		// TODO Auto-generated method stub
 		return initialData.getSuppliers();
 	}
 
 	@Override
 	public void createSupplier(Supplier supplier) {
-		// TODO Auto-generated method stub
+		initialData.addSupplier(supplier);
 		
 	}
 
