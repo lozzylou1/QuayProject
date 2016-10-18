@@ -27,8 +27,8 @@ public class StaffAccount {
 
 
 	public StaffAccount(String userName, String Password) {
-		setUserName(userName);
-		setPassword(Password);
+		this.userName = userName;
+		this.password = Password;
 	}
 
 	/**Returns the User name for a StaffAccount*/
