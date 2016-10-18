@@ -18,15 +18,15 @@ private ProductManager productManager;
 public Product findProductById(String id){
 	System.out.println("ID: " + id);
 	try {
-		long longId = Long.parseLong(id);
-		return findProductById(longId);
+		int intId = Integer.parseInt(id);
+		return findProductById(intId);
 	} catch (Exception e) {
 		return null;
 	}
 
 }
 
-public Product findProductById(long id){
+public Product findProductById(int id){
 return productManager.findById(id);
 
 }

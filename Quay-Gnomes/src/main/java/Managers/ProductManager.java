@@ -15,7 +15,7 @@ public interface ProductManager {
 	
 	
 	/**Returns all products that match the term*/
-	public List<Product> getProducts(String term);
+	public ArrayList<Product> getProducts(String term);
 	/**Returns all the products in the data store*/
 	public ArrayList<Product> findAll();
 	

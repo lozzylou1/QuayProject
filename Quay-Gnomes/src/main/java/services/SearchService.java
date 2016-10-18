@@ -1,8 +1,9 @@
 package services;
 
 import Managers.ProductManager;
-import Managers.ProductManagerOffline;
+import Managers.offline.ProductManagerOffline;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class SearchService {
 	private ProductManager productManager;
 	
 	
-public List<Product> findByName(String name){
+public ArrayList<Product> findByName(String name){
 	
 	if (name == null) {
 		/**

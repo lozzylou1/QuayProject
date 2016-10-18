@@ -56,7 +56,7 @@ public class SearchController implements Serializable {
 		if (dataModel.getRowCount() > 0) {
 			return "Products";
 		}
-		return "home";
+		return "Home";
 	}
 
 	public Product getProduct() {

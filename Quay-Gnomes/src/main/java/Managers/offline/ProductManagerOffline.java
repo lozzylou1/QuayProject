@@ -39,24 +39,23 @@ public class ProductManagerOffline implements ProductManager {
 		
 	}
 
-	@Override
-<<<<<<< HEAD:Quay-Gnomes/src/main/java/Managers/ProductManagerOffline.java
-	public List<Product> getProducts(String term) {
-		return initialData.getProducts(term);
-=======
+
+	
 	public Product findById(int productID) {
 		return  null;
 	}
 
 	@Override
 	public ArrayList<Product> findAll() {
-		return initialData.getProducts();
+		return initialData.findAll();
 		
 	}
-	public ArrayList<Product> getProducts() {
+	
+	@Override
+	public ArrayList<Product> getProducts(String term) {
 		// TODO Auto-generated method stub
-		return initialData.getProducts();
->>>>>>> e69acd9f53630f97b8161e6d0e4727a177bd8db7:Quay-Gnomes/src/main/java/Managers/offline/ProductManagerOffline.java
+		return initialData.getProducts(term);
+
 	}
 
 	@Override
