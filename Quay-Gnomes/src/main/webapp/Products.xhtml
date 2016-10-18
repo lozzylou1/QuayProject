@@ -33,11 +33,10 @@ Catalogue
 			<div class="row">
 				<h:form>
 					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />
-					<h:outputText value="#{products.dataModel.rowCount}"/>
+					
 					<br/>
 					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-						<h:outputText
-							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+						
 						<h:commandLink action="#{products.previous}"
 							value="Previous #{products.pagination.pageSize}"
 							rendered="#{products.pagination.hasPreviousPage}" />
@@ -61,8 +60,15 @@ Catalogue
 										<h:outputText  />
 									</p>
 								</div>
+								
 							</ui:repeat>
+							
 						</div>
+						<div class="page-details">
+						<h:outputText value="#{products.dataModel.rowCount}"/>
+						<h:outputText
+							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+							</div>
 					</h:panelGroup>
 				</h:form>
 			</div>

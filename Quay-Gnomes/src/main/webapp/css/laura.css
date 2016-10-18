@@ -144,6 +144,12 @@
 		overflow: hidden;  
 	}
 
+.page-details{
+	
+	position: fixed;
+    bottom: 0;
+}
+
   .Left-nav {
    float :left;
 height: 100%;
@@ -166,6 +172,8 @@ height: 100%;
 
 #image-content{
 	float:right;
+	margin: 0 auto;
+	width:auto;
 }
 
 [class*="col-"] {
