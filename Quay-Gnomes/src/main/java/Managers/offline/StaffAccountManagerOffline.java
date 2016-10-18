@@ -1,6 +1,6 @@
 package Managers.offline;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -23,7 +23,7 @@ public class StaffAccountManagerOffline implements StaffAccountManager{
 	}
 
 	@Override
-	public void persistStaffAccounts(ArrayList<StaffAccount> staffAccounts) {
+	public void persistStaffAccounts(List<StaffAccount> staffAccounts) {
 		// TODO Auto-generated method stub
 		initialData.setStaffAccounts(staffAccounts);
 	}
@@ -35,7 +35,7 @@ public class StaffAccountManagerOffline implements StaffAccountManager{
 	}
 
 	@Override
-	public ArrayList<StaffAccount> getStaffAccount() {
+	public List<StaffAccount> getStaffAccount() {
 		// TODO Auto-generated method stub
 		return initialData.getStaffAccounts();
 	}

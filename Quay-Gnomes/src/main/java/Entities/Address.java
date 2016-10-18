@@ -1,7 +1,12 @@
 package Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Address {
-	
+	//TODO PLZ ANNOTATE ME
 	private String firstLine;
 	private String secondLine;
 	private String county;

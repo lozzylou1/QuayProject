@@ -5,7 +5,6 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table (name = "CustomerAccount")
-
 public class CustomerAccount {
 		@Id
 		@Column (name = "customerID", nullable = false)

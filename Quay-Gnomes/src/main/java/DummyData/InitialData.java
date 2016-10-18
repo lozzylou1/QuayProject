@@ -2,6 +2,7 @@ package DummyData;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Startup;
@@ -14,18 +15,18 @@ import Entities.*;
 public class InitialData {
 	
 	/**Array List of Suppliers*/
-	private ArrayList<Supplier> suppliers;
+	private List<Supplier> suppliers;
 	
-	/**ArrayList of StaffAccounts*/
-	private ArrayList<StaffAccount> staffAccounts;
+	/**List of StaffAccounts*/
+	private List<StaffAccount> staffAccounts;
 	
-	/**ArrayList of Products*/
-	private ArrayList<Product> products;
+	/**List of Products*/
+	private List<Product> products;
 	
-	private ArrayList<Product> listOfProducts;
+	private List<Product> listOfProducts;
 	
-	/**ArrayList of Customer Details*/
-	private ArrayList<CustomerAccount> customers;
+	/**List of Customer Details*/
+	private List<CustomerAccount> customers;
 	
 	public InitialData() {}
 	
@@ -33,10 +34,10 @@ public class InitialData {
 	@PostConstruct
 	public void setUpData()
 	{
-		suppliers = new ArrayList<Supplier>();
-		staffAccounts =	new ArrayList<StaffAccount>();
-		products = new ArrayList<Product>();
-		customers = new ArrayList<CustomerAccount>();
+		suppliers = new ArrayList<>();
+		staffAccounts =	new ArrayList<>();
+		products = new ArrayList<>();
+		customers = new ArrayList<>();
 		
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
@@ -86,13 +87,13 @@ public class InitialData {
 	}
 	
 	/**Returns the dummy list of suppliers */
-	public ArrayList<Supplier> getSuppliers()
+	public List<Supplier> getSuppliers()
 	{
 		return suppliers;		
 	}
 	
 	/**Returns the Dummy list of StaffAccounts*/
-	public ArrayList<StaffAccount> getStaffAccounts()
+	public List<StaffAccount> getStaffAccounts()
 	{
 		return staffAccounts;
 	}
@@ -115,24 +116,24 @@ public class InitialData {
 	}
 	
 	/**Fills the dummy list of suppliers with a another list of Suppliers*/
-	public void setSuppliers(ArrayList<Supplier> suppliers)
+	public void setSuppliers(List<Supplier> suppliers)
 	{
 		this.suppliers = suppliers;
 	}
 	
 	/**Fills the dummy list of StaffAccounts with another list of StaffAccounts*/
-	public void setStaffAccounts(ArrayList<StaffAccount> staffAccounts)
+	public void setStaffAccounts(List<StaffAccount> staffAccounts)
 	{
 		this.staffAccounts = staffAccounts;
 	}
 	
-	public ArrayList<Product> findAll()
+	public List<Product> findAll()
 	{
 		return products;
 	}
 
 
-	public ArrayList<Product> getProducts(String term) {
+	public List<Product> getProducts(String term) {
 		for (Product product:products)
 		{
 			if (product.getProductName().equals(term))
@@ -176,11 +177,11 @@ public class InitialData {
 		
 	}
 
-	public ArrayList<CustomerAccount> getCustomers() {
+	public List<CustomerAccount> getCustomers() {
 		return customers;
 	}
 
-	public void setCustomers(ArrayList<CustomerAccount> customers) {
+	public void setCustomers(List<CustomerAccount> customers) {
 		this.customers = customers;
 	}
 	

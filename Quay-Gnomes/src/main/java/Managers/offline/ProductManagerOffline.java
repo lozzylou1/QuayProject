@@ -1,16 +1,14 @@
 package Managers.offline;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.Product;
 import Managers.ProductManager;
-
 
 @Default
 @Stateless
@@ -46,13 +44,13 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
-	public ArrayList<Product> findAll() {
+	public List<Product> findAll() {
 		return initialData.findAll();
 		
 	}
 	
 	@Override
-	public ArrayList<Product> getProducts(String term) {
+	public List<Product> getProducts(String term) {
 		// TODO Auto-generated method stub
 		return initialData.getProducts(term);
 
