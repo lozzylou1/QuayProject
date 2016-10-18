@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.io.Serializable;
+
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -8,7 +10,7 @@ import Managers.LoginManager;
 
 @Named("login")
 @SessionScoped
-public class LoginController {
+public class LoginController implements Serializable{
 	
 	private LoginManager loginManager;
 	private CustomerAccount customerAccount;
