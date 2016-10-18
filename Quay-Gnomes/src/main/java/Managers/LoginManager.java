@@ -1,5 +1,6 @@
 package Managers;
 
-public class LoginManager {
+public interface LoginManager {
 
+	
 }
