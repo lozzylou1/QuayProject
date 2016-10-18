@@ -145,4 +145,13 @@ public class InitialData {
 		
 	}
 
+	public ArrayList<CustomerAccount> getCustomers() {
+		return customers;
+	}
+
+	public void setCustomers(ArrayList<CustomerAccount> customers) {
+		this.customers = customers;
+	}
+	
+
 }

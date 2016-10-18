@@ -24,12 +24,14 @@ Login
 			<div id="login" align="center" class="col-12 col-m-12">
 
 				<p>
-					<h:outputLabel><b>Username</b></h:outputLabel> <h:inputText type="username"
-						placeholder="Enter Email" name="uname" required="true"/>
+					<h:outputLabel><b>Username</b></h:outputLabel> 
+					<h:inputText type="username"
+						placeholder="Enter Email" name="uname" required="true" value="#{login.email}"/>
 				</p>
 
 				<p>
-					<h:outputLabel><b>Password </b></h:outputLabel> <h:inputText type="password"
+					<h:outputLabel><b>Password </b></h:outputLabel> 
+					<h:inputText type="password"
 						placeholder="Enter Password" name="psw" required="true"/>
 				</p>
 
@@ -40,7 +42,7 @@ Login
 				</p>
 				
 				<h:form id="formdesign">
-					<h:commandLink type="button" action="#{Login.Login()}" class="btn btn-default">Login</h:commandLink>
+					<h:commandLink type="button" action="#{login.Login()}" class="btn btn-default">Login</h:commandLink>
 				</h:form>
 				
 			</div>
