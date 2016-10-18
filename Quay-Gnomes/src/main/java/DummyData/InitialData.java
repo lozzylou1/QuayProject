@@ -22,6 +22,8 @@ public class InitialData {
 	/**ArrayList of Products*/
 	private ArrayList<Product> products;
 	
+	private ArrayList<Product> listOfProducts;
+	
 	/**ArrayList of Customer Details*/
 	private ArrayList<CustomerAccount> customers;
 	
@@ -123,10 +125,22 @@ public class InitialData {
 	{
 		this.staffAccounts = staffAccounts;
 	}
-
-	public ArrayList<Product> getProducts() {
-		// TODO Auto-generated method stub
+	
+	public ArrayList<Product> findAll()
+	{
 		return products;
+	}
+
+
+	public ArrayList<Product> getProducts(String term) {
+		for (Product product:products)
+		{
+			if (product.getProductName().equals(term))
+				
+				listOfProducts.add(product);
+		}
+		return listOfProducts;
+
 	}
 	
 	public Product getProduct(String term)

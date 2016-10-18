@@ -21,8 +21,10 @@ public class Supplier {
 	/** Named Query to find the Supplier */
 	public static final String FIND_SUPPLIER_BY_NAME = "Supplier.findSupplierByName";
 	
+	/** Named Query to find the Supplier By ID */
 	public static final String FIND_SUPPLIER_BY_ID = "Supplier.findSupplierByID";
-
+	
+	/** Setting Column Details */
 	@Column (name = "supplierName", nullable = false)
 	@NotNull
 	private String supplierName;
@@ -36,7 +38,7 @@ public class Supplier {
 	@NotNull
 	private int supplierID;
 
-
+	/** Configuring Supplier Entity */
 	public Supplier(String supplierName, String contactNumber, int supplierID) 
 	{
 		this.supplierName = supplierName;
@@ -72,6 +74,12 @@ public class Supplier {
 	public int getSupplierID() 
 	{
 		return supplierID;
+	}
+	
+	/**Returns the supplier with the specified ID*/
+	public Supplier findByID(int id)
+	{
+		return null;	
 	}
 
 	/** Sets the ID for the Supplier*/

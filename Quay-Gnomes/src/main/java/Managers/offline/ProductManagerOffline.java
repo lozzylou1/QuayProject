@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
@@ -38,19 +39,23 @@ public class ProductManagerOffline implements ProductManager {
 		
 	}
 
-	@Override
+
+	
 	public Product findById(int productID) {
 		return  null;
 	}
 
 	@Override
 	public ArrayList<Product> findAll() {
-		return initialData.getProducts();
+		return initialData.findAll();
 		
 	}
-	public ArrayList<Product> getProducts() {
+	
+	@Override
+	public ArrayList<Product> getProducts(String term) {
 		// TODO Auto-generated method stub
-		return initialData.getProducts();
+		return initialData.getProducts(term);
+
 	}
 
 	@Override

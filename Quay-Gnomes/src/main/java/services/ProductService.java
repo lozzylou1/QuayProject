@@ -17,10 +17,16 @@ private ProductManager productManager;
 
 public Product findProductById(String id){
 	System.out.println("ID: " + id);
-return findProductById(Long.parseLong(id));
+	try {
+		int intId = Integer.parseInt(id);
+		return findProductById(intId);
+	} catch (Exception e) {
+		return null;
+	}
+
 }
 
-public Product findProductById(long id){
+public Product findProductById(int id){
 return productManager.findById(id);
 
 }

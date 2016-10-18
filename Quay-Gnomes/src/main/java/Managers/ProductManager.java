@@ -2,6 +2,8 @@ package Managers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.model.DataModel;
+
 import Entities.Product;
 
 public interface ProductManager {
@@ -12,6 +14,8 @@ public interface ProductManager {
 	public Product findById(int productID);
 	
 	
+	/**Returns all products that match the term*/
+	public ArrayList<Product> getProducts(String term);
 	/**Returns all the products in the data store*/
 	public ArrayList<Product> findAll();
 	
@@ -19,9 +23,9 @@ public interface ProductManager {
 	/**Creates a product*/
 	public void createProduct(Product p);
 	
+
 	/**Updates a product in the data store*/
 	public void updateProduct(Product p);
-
 	
 	public Product findByName(String term);	
 
