@@ -32,7 +32,7 @@ Login
 				<p>
 					<h:outputLabel><b>Password </b></h:outputLabel> 
 					<h:inputText type="password"
-						placeholder="Enter Password" name="psw" required="true"/>
+						placeholder="Enter Password" name="psw" required="true" value="#{login.passowrd}"/>
 				</p>
 
 				<p>
@@ -43,7 +43,7 @@ Login
 				
 				<h:form id="formdesign">
 					<h:commandLink type="button" action="#{login.Login()}" class="btn btn-default">Login</h:commandLink>
-				</h:form>
+				</h:form>				
 				
 			</div>
 </ui:define>
