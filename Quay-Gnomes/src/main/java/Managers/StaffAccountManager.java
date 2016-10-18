@@ -1,5 +1,6 @@
 package Managers;
-import java.util.ArrayList;
+
+import java.util.List;
 
 import Entities.*;
 
@@ -9,13 +10,13 @@ public interface StaffAccountManager {
 	public void persistStaffAccount(StaffAccount staffAccount);
 	
 	/**Save a list of StaffAccounts*/
-	public void persistStaffAccounts(ArrayList<StaffAccount> staffAccount);
+	public void persistStaffAccounts(List<StaffAccount> staffAccount);
 	
 	/**Find a StaffAccount using the user name*/
 	public StaffAccount findStaffAccountbyName(String name);
 	
 	/**Returns an ArrayList of StaffAccounts*/
-	public ArrayList<StaffAccount> getStaffAccount();
+	public List<StaffAccount> getStaffAccount();
 	
 	/**Create a Staff Account*/
 	public void createStaffAccount(StaffAccount staffAccount);
