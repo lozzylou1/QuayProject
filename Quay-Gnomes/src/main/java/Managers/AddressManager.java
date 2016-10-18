@@ -1,5 +1,5 @@
 package Managers;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import Entities.Address;
@@ -10,7 +10,7 @@ public interface AddressManager {
 	public void persistAddresses(List<Address> a);
 	
 	//read
-	public ArrayList<Address> getAddresses();
+	public List<Address> getAddresses();
 	
 	
 	//create

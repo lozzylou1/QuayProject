@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "Inventory")
-
 public class Inventory {
 //................................................................Declaration of Variables	
   

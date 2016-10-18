@@ -3,6 +3,7 @@ package Controllers;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import Entities.CustomerAccount;
@@ -11,7 +12,7 @@ import Managers.LoginManager;
 @Named("login")
 @SessionScoped
 public class LoginController implements Serializable{
-	
+	@Inject
 	private LoginManager loginManager;
 	private CustomerAccount customerAccount;
 	private String email;
@@ -26,8 +27,10 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-	public void login (String email)
+	public void login(String email)
 	{
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
+		
 		customerAccount = loginManager.findbyEmail(email);
 		if (customerAccount != null)
 		{

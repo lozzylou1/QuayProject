@@ -4,7 +4,6 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table (name = "Supplier")
-
 @NamedQueries ({
 	@NamedQuery(name = Supplier.FIND_SUPPLIER_BY_NAME,
 			query = "SELECT supplierName, contactNumber, supplierID "
@@ -15,7 +14,6 @@ import javax.validation.constraints.*;
 					+ "FROM Supplier "
 					+ "WHERE supplierID = :supplierID")
 })
-
 public class Supplier {
 
 	/** Named Query to find the Supplier */

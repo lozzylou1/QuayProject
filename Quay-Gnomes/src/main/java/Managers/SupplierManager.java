@@ -1,10 +1,6 @@
 package Managers;
-import java.util.ArrayList;
-import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import java.util.List;
 
 import Entities.Supplier;
 
@@ -25,7 +21,7 @@ public interface SupplierManager {
 	public Supplier findByID(int id);
 	
 	/**Returns an ArrayList of Suppliers*/
-	public ArrayList<Supplier> getSuppliers();
+	public List<Supplier> getSuppliers();
 	
 	/**Create a Suppliers*/
 	public void createSupplier(Supplier supplier);

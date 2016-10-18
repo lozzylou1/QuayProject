@@ -3,11 +3,8 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "Product")
-
-
-//Need to do foreign keys
 public class Product {
-	
+	//TODO Need to do foreign keys
 	@Id
 	@Column (name = "productID", nullable = false)
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -16,29 +13,21 @@ public class Product {
 	@Column (name = "productName", nullable = false)
 	private String productName;
 	
-	
 	@Column (name = "price", nullable = false)
 	private float price;
 	
 	
 	@Column (name = "discontinued", nullable = false)
 	private Boolean discontinued;
-	
-	
 
 	@Column (name = "stockLevel", nullable = false)
 	private int stockLevel;
-	
-	
 
 	@Column (name = "productWeight", nullable = false)
 	private float weight;
 	
-	
-	
 	@Column (name = "productDimensions", nullable = false)
 	private String dimensions;
-	
 	
 	@Column (name = "shortDescription", nullable = false)
 	private String shortDescription;
@@ -46,10 +35,8 @@ public class Product {
 	@Column (name = "longDescription", nullable = false)
 	private String longDescription;
 	
-	
 	@Column (name = "image1", nullable = false)
 	private String image1;
-	
 	
 	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
 			String p_dimensions, String p_shortDescription, String p_longDescription, String p_image1){
