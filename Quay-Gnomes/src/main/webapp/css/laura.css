@@ -146,6 +146,8 @@
 
   .Left-nav {
    float :left;
+height: 100%;
+    min-height: 100%;
   }
 
 	#searchPane
@@ -161,6 +163,10 @@
 		padding: 25px;
 		margin: 25px;
 	}
+
+#image-content{
+	float:right;
+}
 
 [class*="col-"] {
     float: left;

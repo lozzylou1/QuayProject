@@ -46,19 +46,17 @@ Catalogue
 							value="Next #{products.pagination.pageSize}" />
 						<div>
 							<ui:repeat var="product" value="#{products.dataModel}">
-								<div class="col-xs-6 col-lg-4"> 
-								   	<h:commandLink 
+								<div id="image-content" class="col-4"> 
+								    	<h:commandLink 
 									 	action="#{products.view(product.productID)}"
 										value="#{product.productName}"
 										 />
 									  <h:commandLink 
 										action="#{products.view(product.productID)}"
-										value="#{product.price}"
+										
 										 />
-										 <h:commandLink 
-										action="#{products.view(product.productID)}"
-										value="#{product.price}"
-										 />
+										 <h:outputText value="#{product.price}"/>
+										 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" alt="Product Image 1" style=" width: 100px; height: 100px;" /></a> 
 									<p>
 										<h:outputText  />
 									</p>
