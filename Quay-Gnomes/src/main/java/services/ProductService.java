@@ -28,7 +28,6 @@ public class ProductService {
 
 	public Product findProductById(int id) {
 		return productManager.findById(id);
-
 	}
 
 	public List<Product> findAll() {

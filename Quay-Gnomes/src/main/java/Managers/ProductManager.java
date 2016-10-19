@@ -11,12 +11,8 @@ public interface ProductManager {
 	
 	public Product findById(int productID);
 	
-	
-	/**Returns all products that match the term*/
-	public List<Product> getProducts(String term);
 	/**Returns all the products in the data store*/
-	public List<Product> findAll();
-	
+	public List<Product> findAll();	
 	
 	/**Creates a product*/
 	public void createProduct(Product p);

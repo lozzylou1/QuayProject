@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-
 import Entities.Address;
 import Managers.AddressManager;
 
 @Stateless
 @Default
 public class AddressManagerOffline implements AddressManager {
+
 
 	@Override
 	public void persistAddress(Address a) {

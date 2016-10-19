@@ -9,7 +9,7 @@ import Managers.BrowserManager;
 
 @Default
 @Stateless
-public class BrowserManageroffline implements BrowserManager {
+public class BrowserManagerOffline implements BrowserManager {
 
 	@Inject
 	private InitialData initialData;

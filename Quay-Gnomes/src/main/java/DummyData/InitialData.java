@@ -21,14 +21,10 @@ public class InitialData {
 	private List<StaffAccount> staffAccounts;
 	
 	/**List of Products*/
-	private List<Product> products;
-	
-	private List<Product> listOfProducts;
+	private List<Product> products;	
 	
 	/**List of Customer Details*/
 	private List<CustomerAccount> customers;
-	
-	public InitialData() {}
 	
 	/**Creates the initial offline data*/
 	@PostConstruct
@@ -132,17 +128,7 @@ public class InitialData {
 		return products;
 	}
 
-
-	public List<Product> getProducts(String term) {
-		for (Product product:products)
-		{
-			if (product.getProductName().equals(term))
-				
-				listOfProducts.add(product);
-		}
-		return listOfProducts;
-
-	}
+	
 	
 	public Product getProduct(String term)
 	{
@@ -153,7 +139,7 @@ public class InitialData {
 		}
 		return null;
 		
-	}
+	}	
 
 	public Supplier getSupplier(String name)
 	{
