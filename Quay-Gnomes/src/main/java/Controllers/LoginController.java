@@ -12,12 +12,15 @@ import Managers.LoginManager;
 @Named("login")
 @SessionScoped
 public class LoginController implements Serializable{
-	@Inject
-	private LoginManager loginManager;
-	private CustomerAccount customerAccount;
+
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
+	private String uname;
+	
+	@Inject
+	private LoginManager loginManager;
+	private CustomerAccount customerAccount;
 	
 	public String getPassword() {
 		return password;
@@ -42,13 +45,15 @@ public class LoginController implements Serializable{
 	
 	public void login()
 	{
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
+		if(email.equals(null)){
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>> sorry");
+		} else {
+			
+			System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
+		}
 		
-		/*customerAccount = loginManager.findbyEmail(email);
-		if (customerAccount != null)
-		{
-			isLoggedIn = true;
-		}*/
+		
+	
 	}
 	
 	
