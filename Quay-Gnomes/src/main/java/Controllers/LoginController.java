@@ -12,12 +12,15 @@ import Managers.LoginManager;
 @Named("login")
 @SessionScoped
 public class LoginController implements Serializable{
-	@Inject
-	private LoginManager loginManager;
-	private CustomerAccount customerAccount;
+
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
+	private String uname;
+	
+	@Inject
+	private LoginManager loginManager;
+	private CustomerAccount customerAccount;
 	
 	public String getPassword() {
 		return password;
@@ -27,7 +30,7 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-	public void login(String email)
+/*	public void login(String email)
 	{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
 		
@@ -36,7 +39,20 @@ public class LoginController implements Serializable{
 		{
 			isLoggedIn = true;
 		}
+	}*/
+	
+	
+	
+	public void login()
+	{
+		System.out.println(email);
+		System.out.println(password);
+		
+	
 	}
+	
+	
+	
 
 	public String getEmail() {
 		return email;
