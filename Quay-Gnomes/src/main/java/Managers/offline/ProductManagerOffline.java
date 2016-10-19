@@ -38,7 +38,6 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 
-	
 	public Product findById(int productID) {
 		return  null;
 	}

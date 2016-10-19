@@ -12,7 +12,7 @@ Catalogue
 	<ui:define name="maincontent">
 		<div class="Left-nav">
 		<nav class="Left-nav"> 
-		<ul style="list-style-type:none">
+		<ul style="list-style-type:none" class="col-m-12">
 			    <h2>Type</h2>
 				<li><a href="#"><input type="checkbox">Indoor </input></a></li>
 				<li><a href="#"><input type="checkbox">Outdoor </input></a></li>
@@ -32,11 +32,10 @@ Catalogue
 		</div>
 			<div class="row">
 				<h:form>
-					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />
-					
+					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />					
 					<br/>
 					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-						
+										
 						<h:commandLink action="#{products.previous}"
 							value="Previous #{products.pagination.pageSize}"
 							rendered="#{products.pagination.hasPreviousPage}" />
@@ -45,24 +44,24 @@ Catalogue
 							value="Next #{products.pagination.pageSize}" />
 						<div>
 							<ui:repeat var="product" value="#{products.dataModel}">
-								<div id="image-content" class="col-4"> 
+								<div id="image-content" > 
+								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
+								    	<br/>
+								 
 								    	<h:commandLink 
 									 	action="#{products.view(product.productID)}"
 										value="#{product.productName}"
 										 />
+										 <br/>
 									  <h:commandLink 
-										action="#{products.view(product.productID)}"
-										
-										 />
+										action="#{products.view(product.productID)}"	/>
 										 <h:outputText value="#{product.price}"/>
-										 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" alt="Product Image 1" style=" width: 100px; height: 100px;" /></a> 
+										 
 									<p>
 										<h:outputText  />
 									</p>
-								</div>
-								
-							</ui:repeat>
-							
+								</div>								
+							</ui:repeat>							
 						</div>
 						<div class="page-details">
 						<h:outputText value="#{products.dataModel.rowCount}"/>
