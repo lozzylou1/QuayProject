@@ -21,7 +21,6 @@ public interface ProductManager {
 	/**Creates a product*/
 	public void createProduct(Product p);
 	
-
 	/**Updates a product in the data store*/
 	public void updateProduct(Product p);
 	

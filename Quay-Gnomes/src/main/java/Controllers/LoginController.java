@@ -27,7 +27,7 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-	public void login(String email)
+/*	public void login(String email)
 	{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
 		
@@ -36,7 +36,23 @@ public class LoginController implements Serializable{
 		{
 			isLoggedIn = true;
 		}
+	}*/
+	
+	
+	
+	public void login()
+	{
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
+		
+		/*customerAccount = loginManager.findbyEmail(email);
+		if (customerAccount != null)
+		{
+			isLoggedIn = true;
+		}*/
 	}
+	
+	
+	
 
 	public String getEmail() {
 		return email;
