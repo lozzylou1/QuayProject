@@ -55,18 +55,18 @@ Catalogue
 										 <br/>
 									  <h:commandLink 
 										action="#{products.view(product.productID)}"	/>
-										 <h:outputText value="#{product.price}"/>
+										<h:outputText value="£"/><h:outputText value="#{product.price}"/>
 										 
-									<p>
+									
 										<h:outputText  />
-									</p>
+								
 								</div>								
 							</ui:repeat>							
 						</div>
 						<div class="page-details">
 						<h:outputText value="#{products.dataModel.rowCount}"/>
 						<h:outputText
-							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+							value="#{products.pagination.pageFirstItem } of #{products.pagination.pageLastItem + 1}" />
 							</div>
 					</h:panelGroup>
 				</h:form>
