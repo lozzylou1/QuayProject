@@ -45,13 +45,8 @@ public class LoginController implements Serializable{
 	
 	public void login()
 	{
-		if(email.equals(null)){
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>> sorry");
-		} else {
-			
-			System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
-		}
-		
+		System.out.println(email);
+		System.out.println(password);
 		
 	
 	}
