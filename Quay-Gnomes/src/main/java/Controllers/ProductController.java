@@ -22,6 +22,8 @@ public class ProductController implements Serializable {
 
 	@Inject
 	private SearchService searchService;
+	@Inject
+	private ProductManager productManager;
 	private Product product;
 	private PaginationHelper pagination;
 	private int selected;
@@ -133,10 +135,10 @@ public class ProductController implements Serializable {
 		return "Products";
 	}
 
-	/*public String view(int id) {
+	public String view(int id) {
 		product = productManager.findById(id);
 		return "Products";
-	}*/
+	}
 
 	public Product getProduct() {
 		return product;
