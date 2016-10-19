@@ -27,8 +27,6 @@ public class InitialData {
 	/**ArrayList of Customer Details*/
 	private ArrayList<CustomerAccount> customers;
 	
-	public InitialData() {}
-	
 	/**Creates the initial offline data*/
 	@PostConstruct
 	public void setUpData()
@@ -101,18 +99,9 @@ public class InitialData {
 	}
 
 
-	public ArrayList<Product> getProducts(String term) {
-		for (Product product:products)
-		{
-			if (product.getProductName().equals(term))
-				
-				listOfProducts.add(product);
-		}
-		return listOfProducts;
-
-	}
 	
-	public Product getProduct(String term)
+	
+	/*public Product getProduct(String term)
 	{
 		for (Product product:products)
 		{
@@ -121,6 +110,15 @@ public class InitialData {
 		}
 		return null;
 		
+	}*/
+
+	public List<Product> getListOfProducts() {
+		//System.out.println(products);
+		return products;
+	}
+
+	public void setListOfProducts(ArrayList<Product> listOfProducts) {
+		this.listOfProducts = listOfProducts;
 	}
 
 	public Supplier getSupplier(String name)

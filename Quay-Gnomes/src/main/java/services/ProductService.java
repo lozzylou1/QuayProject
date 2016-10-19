@@ -26,12 +26,12 @@ public Product findProductById(String id){
 
 }
 
-public Product findProductById(int id){
-return productManager.findById(id);
+	public Product findProductById(int id) {
+		return productManager.findById(id);
 
-}
-public List<Product> findAll() {
-return productManager.findAll();
-}
-}
+	}
 
+	public List<Product> findAll() {
+		return productManager.findAll();
+	}
+}

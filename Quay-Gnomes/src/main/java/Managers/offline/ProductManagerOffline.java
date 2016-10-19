@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
-import javax.faces.model.DataModel;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
@@ -46,16 +45,17 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 	@Override
-	public ArrayList<Product> findAll() {
-		return initialData.findAll();
-		
+	public List<Product> findAll() {
+		for (Product product : initialData.findAll())
+		{
+			System.out.println(">>>>>>>>>>>INITIAL PRODUCT NAME:" + product.getProductName());
+		}
+		return initialData.findAll();		
 	}
 	
 	@Override
-	public ArrayList<Product> getProducts(String term) {
-		// TODO Auto-generated method stub
-		return initialData.getProducts(term);
-
+	public List<Product> getProducts() {
+		return initialData.getListOfProducts();
 	}
 
 	@Override
@@ -66,6 +66,7 @@ public class ProductManagerOffline implements ProductManager {
 	
 	public Product findByName(String term)
 	{
-		return initialData.getProduct(term);
+		//return initialData.getProduct(term);
+		return null;
 	}
 }
