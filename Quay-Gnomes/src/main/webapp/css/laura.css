@@ -144,6 +144,16 @@
 		overflow: hidden;  
 	}
 
+.page-details{
+	
+	position: fixed;
+    bottom: 0;
+}
+
+  .Left-nav {
+   float :left;
+height:450px;
+  }
 
 	#searchPane
 	{
@@ -158,6 +168,19 @@
 		padding: 25px;
 		margin: 25px;
 	}
+
+#image-content{
+	float:right;
+	margin: 0 auto;
+	height:200px;
+	width:200px;
+}
+
+.image{
+
+	height:150px;
+	width:150px;
+}
 
 [class*="col-"] {
     float: left;

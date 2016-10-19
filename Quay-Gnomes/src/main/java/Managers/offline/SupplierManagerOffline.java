@@ -1,5 +1,5 @@
 package Managers.offline;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -38,7 +38,7 @@ public class SupplierManagerOffline implements SupplierManager{
 	}
 
 	@Override
-	public ArrayList<Supplier> getSuppliers() {
+	public List<Supplier> getSuppliers() {
 		return initialData.getSuppliers();
 	}
 

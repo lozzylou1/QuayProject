@@ -17,8 +17,8 @@ import Helpers.PaginationHelper;
 
 @Named("products")
 @RequestScoped
-public class ProductController implements Serializable 
-{
+public class ProductController implements Serializable {
+
 
 	@Inject
 	private SearchService searchService;

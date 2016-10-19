@@ -1,5 +1,5 @@
 package Managers.offline;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -9,7 +9,6 @@ import javax.inject.Inject;
 import DummyData.InitialData;
 import Entities.Product;
 import Managers.ProductManager;
-
 
 @Default
 @Stateless
@@ -39,24 +38,15 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 
-	
 	public Product findById(int productID) {
 		return  null;
 	}
 
 	@Override
 	public List<Product> findAll() {
-		for (Product product : initialData.findAll())
-		{
-			System.out.println(">>>>>>>>>>>INITIAL PRODUCT NAME:" + product.getProductName());
-		}
 		return initialData.findAll();		
-	}
-	
-	@Override
-	public List<Product> getProducts() {
-		return initialData.getListOfProducts();
-	}
+	}	
+
 
 	@Override
 	public void persistProduct(Product p) {

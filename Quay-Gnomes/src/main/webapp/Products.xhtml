@@ -10,40 +10,32 @@
 Catalogue
 </ui:define>
 	<ui:define name="maincontent">
-		<ul>
-			<nav>
-				<li><a href="#products">Indoor</a></li>
-				<li><a href="#aboutus">Outdoor</a></li>
-				<li><a href="#contactus">Special</a></li>
-
-			</nav>
+		<div class="Left-nav">
+		<nav class="Left-nav"> 
+		<ul style="list-style-type:none" class="col-m-12">
+			    <h2>Type</h2>
+				<li><a href="#"><input type="checkbox">Indoor </input></a></li>
+				<li><a href="#"><input type="checkbox">Outdoor </input></a></li>
+				<li><a href="#"><input type="checkbox">Special </input></a></li>
+			    <h2>Size</h2>
+				<li><a href="#"><input type="checkbox">Large </input></a></li>
+				<li><a href="#"><input type="checkbox">Medium </input></a></li>
+				<li><a href="#"><input type="checkbox">Small </input></a></li>
+			    <h2>Rating</h2>
+				<li><a href="#"><input type="checkbox">5 </input></a></li>
+				<li><a href="#"><input type="checkbox">4 </input></a></li>
+				<li><a href="#"><input type="checkbox">3 </input></a></li>
+				<li><a href="#"><input type="checkbox">2 </input></a></li>
+				<li><a href="#"><input type="checkbox">1 </input></a></li>
 		</ul>
-		<ul>
-			<nav>
-				<li><a href="#products">Large</a></li>
-				<li><a href="#aboutus">Medium</a></li>
-				<li><a href="#contactus">Small</a></li>
-			</nav>
-		</ul>
-		<ul>
-			<nav>
-				<li><a href="#products">5</a></li>
-				<li><a href="#aboutus">4</a></li>
-				<li><a href="#contactus">3</a></li>
-				<li><a href="#aboutus">2</a></li>
-				<li><a href="#contactus">1</a></li>
-
-			</nav>
-		</ul>
-
+		</nav>
+		</div>
 			<div class="row">
 				<h:form>
-					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />
-					<h:outputText value="#{products.dataModel.rowCount}"/>
+					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />					
 					<br/>
 					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-						<h:outputText
-							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+										
 						<h:commandLink action="#{products.previous}"
 							value="Previous #{products.pagination.pageSize}"
 							rendered="#{products.pagination.hasPreviousPage}" />
@@ -52,16 +44,30 @@ Catalogue
 							value="Next #{products.pagination.pageSize}" />
 						<div>
 							<ui:repeat var="product" value="#{products.dataModel}">
-								<div class="col-xs-6 col-lg-4">
-									<h:commandLink
-										action="#{products.view(product.productID)}"
-										value="#{product.productName}" />
+								<div id="image-content" > 
+								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
+								    	<br/>
+								 
+								    	<h:commandLink 
+									 	action="#{products.view(product.productID)}"
+										value="#{product.productName}"
+										 />
+										 <br/>
+									  <h:commandLink 
+										action="#{products.view(product.productID)}"	/>
+										 <h:outputText value="#{product.price}"/>
+										 
 									<p>
 										<h:outputText  />
 									</p>
-								</div>
-							</ui:repeat>
+								</div>								
+							</ui:repeat>							
 						</div>
+						<div class="page-details">
+						<h:outputText value="#{products.dataModel.rowCount}"/>
+						<h:outputText
+							value="#{products.pagination.pageFirstItem + 1} of #{products.pagination.pageLastItem + 1}/#{products.pagination.itemsCount}" />
+							</div>
 					</h:panelGroup>
 				</h:form>
 			</div>

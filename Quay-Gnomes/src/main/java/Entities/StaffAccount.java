@@ -4,14 +4,12 @@ import javax.validation.constraints.*;
 
 @Entity
 @Table (name = "StaffAccount")
-
 @NamedQueries ({
 	@NamedQuery(name = StaffAccount.FIND_STAFF_ACCOUNT,
 			query = "SELECT username, password "
 					+ "FROM StaffAccount "
 					+ "WHERE username = :username")
 })
-
 public class StaffAccount {
 
 	/**Named Query to find the Staff Account */
@@ -27,8 +25,8 @@ public class StaffAccount {
 
 
 	public StaffAccount(String userName, String Password) {
-		setUserName(userName);
-		setPassword(Password);
+		this.userName = userName;
+		this.password = Password;
 	}
 
 	/**Returns the User name for a StaffAccount*/
