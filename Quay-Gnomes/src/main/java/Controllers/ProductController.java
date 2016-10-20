@@ -16,7 +16,7 @@ import Entities.Product;
 import Helpers.PaginationHelper;
 
 @Named("products")
-@RequestScoped
+@SessionScoped
 public class ProductController implements Serializable {
 
 
@@ -45,12 +45,23 @@ public class ProductController implements Serializable {
 
 	public String search()
 	{
+		if (itemsList != null)
+		{			
+			itemsList = searchService.displayList(term);
+			pagination = null;
+			recreateModel();
+		}		
+		else if (itemsList == null)
+		{
+			itemsList = searchService.displayList(term);
+			pagination = null;
+			recreateModel();
+		}
 		return "Products";
 	}
 
 	public PaginationHelper getPagination () 
 	{
-		itemsList = searchService.displayList(term);
 
 		if (pagination == null)
 		{
