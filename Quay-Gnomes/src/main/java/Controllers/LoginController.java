@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import Entities.CustomerAccount;
-import Managers.LoginManager;
+import services.LoginService;
 
 @Named("login")
 @SessionScoped
@@ -16,11 +16,11 @@ public class LoginController implements Serializable{
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
-	private String userName;
+	private String userName;	
+	private CustomerAccount customerAccount;
 	
 	@Inject
-	private LoginManager loginManager;
-	private CustomerAccount customerAccount;
+	private LoginService loginService;
 	
 	public String getPassword() {
 		return password;
@@ -30,27 +30,15 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
+	
 	public void login()
-	{		
-		customerAccount = loginManager.findbyEmail(email);
-		if (customerAccount != null && password.equals(customerAccount.getPassword()))
-		{
-			isLoggedIn = true;
-		}
-	}
-	
-	
-	
-	/*public void login()
-	{
-		System.out.println(email);
-		System.out.println(password);
-		
-	
-	}*/
-	
-	
-	
+	{	
+		isLoggedIn = loginService.loginService(email, password);
+		System.out.println(">>>>>>>>>>> " + isLoggedIn);
+		System.out.println(">>>>>>>>>>> " + password);
+		password = "";
+		System.out.println(">>>>>>>>>>> " + password);
+	}	
 
 	public String getEmail() {
 		return email;
