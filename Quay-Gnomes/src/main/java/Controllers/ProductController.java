@@ -29,48 +29,55 @@ public class ProductController implements Serializable {
 	private int selected;
 	private DataModel <Product> dataModel = null;	
 	private String term;
+	private String type;
 	private List<Product> itemsList;
 
-	public String getTerm() {
-		return term;
-	}
-
-	public void setTerm(String term) {
-		this.term = term;
-	}
-
-	private void recreateModel () {
-		dataModel = null;
-	}
-
-	public String search()
+	public String searchByTerm()
 	{
 		if (itemsList != null)
 		{			
-			itemsList = searchService.displayList(term);
+			itemsList = searchService.displayListTerm(term);
 			pagination = null;
 			recreateModel();
 		}		
 		else if (itemsList == null)
 		{
-			itemsList = searchService.displayList(term);
+			itemsList = searchService.displayListTerm(term);
 			pagination = null;
 			recreateModel();
 		}
 		return "Products";
 	}
 	
-	public String searchAllGnomes()
+	public String searchByType()
 	{
 		if (itemsList != null)
 		{			
-			itemsList = searchService.displayList("Gnomes");
+			itemsList = searchService.displayListType(type);
 			pagination = null;
 			recreateModel();
 		}		
 		else if (itemsList == null)
 		{
-			itemsList = searchService.displayList("Gnomes");
+			itemsList = searchService.displayListType(type);
+			pagination = null;
+			recreateModel();
+		}
+		return "Products";
+	}
+	
+	
+	public String searchAllGnomes()
+	{
+		if (itemsList != null)
+		{			
+			itemsList = searchService.displayListTerm("Gnomes");
+			pagination = null;
+			recreateModel();
+		}		
+		else if (itemsList == null)
+		{
+			itemsList = searchService.displayListTerm("Gnomes");
 			pagination = null;
 			recreateModel();
 		}
@@ -175,4 +182,28 @@ public class ProductController implements Serializable {
 	public void setProduct(Product product){
 		this.product = product;
 	}
+	
+	public String getTerm() {
+		return term;
+	}
+
+	public void setTerm(String term) {
+		this.term = term;
+	}
+
+	private void recreateModel () {
+		dataModel = null;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
 }
+
+
+

@@ -22,7 +22,7 @@ public class SearchService {
 	List<Product> resultsList;
 		
 	
-	public List<Product> displayList(String term)
+	public List<Product> displayListTerm(String term)
 	{	
 		productList = productManager.findAll();
 		resultsList = new ArrayList<Product>();		
@@ -37,6 +37,23 @@ public class SearchService {
 		}		
 		return resultsList;
 	}	
+	
+	public List<Product> displayListType(String type)
+	{	
+		productList = productManager.findAll();
+		resultsList = new ArrayList<Product>();		
+		resultsList.clear();
+		
+		for(Product product : productList)
+		{
+			if (product.getProductType().contains(type))
+			{
+				resultsList.add(product);
+			}
+		}		
+		return resultsList;
+	}	
+	
 
 	public Product findById(int id) {
 		// TODO Auto-generated method stub

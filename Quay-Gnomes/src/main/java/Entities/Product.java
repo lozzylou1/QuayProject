@@ -16,7 +16,6 @@ public class Product {
 	@Column (name = "price", nullable = false)
 	private float price;
 	
-	
 	@Column (name = "discontinued", nullable = false)
 	private Boolean discontinued;
 
@@ -35,11 +34,14 @@ public class Product {
 	@Column (name = "longDescription", nullable = false)
 	private String longDescription;
 	
+	@Column (name = "type", nullable = false)
+	private String type;
+	
 	@Column (name = "image1", nullable = false)
 	private String image1;
-	
+
 	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
-			String p_dimensions, String p_shortDescription, String p_longDescription, String p_image1){
+			String p_dimensions, String p_shortDescription, String p_longDescription, String p_type, String p_image1){
 		
 		this.productID = p_productID;
 		this.productName = p_productName;
@@ -50,29 +52,19 @@ public class Product {
 		this.dimensions = p_dimensions;
 		this.shortDescription = p_shortDescription;
 		this.longDescription = p_longDescription;
+		this.type = p_type;
 		this.image1 = p_image1;
 		
 	}
-
-
-	
-
 
 	public String getImage1() {
 		return image1;
 	}
 
 
-
-
-
 	public void setImage1(String image1) {
 		this.image1 = image1;
 	}
-
-
-
-
 
 	public String getShortDescription() {
 		return shortDescription;
@@ -161,6 +153,14 @@ public class Product {
 
 	public void setDimensions(String dimensions) {
 		this.dimensions = dimensions;
+	}
+
+	public String getProductType() {
+		return type;
+	}
+
+	public void setProductType(String type) {
+		this.type = type;
 	}	
 	
 
