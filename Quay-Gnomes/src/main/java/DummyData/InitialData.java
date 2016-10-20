@@ -52,7 +52,7 @@ public class InitialData {
 				+ "Collect them all!!", "Accessories", "img/gotgnome.jpg"));
 		products.add(new Product(6, "Mankini Gnome", 12.99f, false, 33, 694f, "18.1 x 15.9 x 24.8", "Mankini Gnome", "Surfer dude standing gnome wearing a mankini, and holding a life ring whilst 'posing' the peace moto! "
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Accessories", "img/mankinignome.jpg"));
+				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Hot Tub", "img/mankinignome.jpg"));
 		products.add(new Product(7, "Glasses Gnome", 69.69f, false, 7, 694f, "18.1 x 15.9 x 24.8", "A gnome wearing Glasses", "A gnome wearing some funky glasses!"
 				+ "Very funny! Sure to raise a smile in anybody!! "
 				+ "You really can't miss this amazing gnome!", "Gnome", "img/glassesGnome.PNG"));
