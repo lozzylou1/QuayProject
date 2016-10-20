@@ -35,6 +35,7 @@ public class LoginController implements Serializable{
 	{	
 		isLoggedIn = loginService.loginService(email, password);		
 		password = "";
+		System.out.println(">>>>>>>>>>>> " + isLoggedIn);
 	}	
 
 	public String getEmail() {

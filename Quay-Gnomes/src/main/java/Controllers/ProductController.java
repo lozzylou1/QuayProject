@@ -59,6 +59,23 @@ public class ProductController implements Serializable {
 		}
 		return "Products";
 	}
+	
+	public String searchAllGnomes()
+	{
+		if (itemsList != null)
+		{			
+			itemsList = searchService.displayList("Gnomes");
+			pagination = null;
+			recreateModel();
+		}		
+		else if (itemsList == null)
+		{
+			itemsList = searchService.displayList("Gnomes");
+			pagination = null;
+			recreateModel();
+		}
+		return "Products";
+	}
 
 	public PaginationHelper getPagination () 
 	{
