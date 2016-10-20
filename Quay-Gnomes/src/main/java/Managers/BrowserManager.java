@@ -3,15 +3,30 @@ package Managers;
 public interface BrowserManager {
 	
 	
-	public void searchByRating();
+	/**
+	 * Browse by rating 
+	 */
+	public void browseByRating();
 	
-	public void searchByCategory();
+	/**
+	 * Browse by Category
+	 */
+	public void browseByCategory();
 	
-	public void searchByPrice();
+	/**
+	 * Browse by price
+	 */
+	public void browseByPrice();
 	
-	public void searchByColour();
+	/**
+	 * Browse by colour
+	 */
+	public void browseByColour();
 	
-	public void searchByReviews();
+	/**
+	 * Browse by reviews 
+	 */
+	public void browseByReviews();
 	
 	
 }

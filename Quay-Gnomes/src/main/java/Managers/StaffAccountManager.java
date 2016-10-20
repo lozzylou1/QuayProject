@@ -6,25 +6,52 @@ import Entities.*;
 
 public interface StaffAccountManager {
 	
-	/**Save a single StaffAccount*/
+	/**
+	 * Persist a staff account to the db
+	 * 
+	 * @param StaffAccount staffAccount 
+	 */
 	public void persistStaffAccount(StaffAccount staffAccount);
 	
-	/**Save a list of StaffAccounts*/
+	/**
+	 * Persist a list of staff accounts to the db
+	 * 
+	 * @param List<StaffAccount> staffAccount
+s	 */
 	public void persistStaffAccounts(List<StaffAccount> staffAccount);
 	
-	/**Find a StaffAccount using the user name*/
+	/**
+	 * Find staff account by name
+	 * 
+	 * @param name
+	 */
 	public StaffAccount findStaffAccountbyName(String name);
 	
-	/**Returns an ArrayList of StaffAccounts*/
+	/**
+	 * Return a list of staff accounts
+	 * 
+	 */
 	public List<StaffAccount> getStaffAccount();
 	
-	/**Create a Staff Account*/
+	/**
+	 * Create a staff account
+	 * 
+	 * @param StaffAccount staffAccount
+	 */
 	public void createStaffAccount(StaffAccount staffAccount);
 	
-	/**Updates the StaffAccount*/
+	/**
+	 * Update a staff account
+	 * 
+	 * @param StaffAccount staffAccount
+	 */
 	public void updateStaffAccount(StaffAccount staffAccount);
 	
-	/**Marks the StaffAccount as inactive*/
+	/**
+	 * Marks a staff account as inactive in Db
+	 * 
+	 * @param StaffAccount staffAccount
+	 */
 	public void removeStaffAccount(StaffAccount staffAccount);
 
 	

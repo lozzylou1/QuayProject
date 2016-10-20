@@ -30,7 +30,9 @@ public class SearchController implements Serializable {
 	@Inject
 	private SearchService searchService;
 	private DataModel<Product> dataModel = null;
-
+	
+	
+	
 	public ArrayList<Product> getListOfProducts() {
 		return listOfProducts;
 	}
@@ -38,11 +40,21 @@ public class SearchController implements Serializable {
 	public void setListOfProducts(ArrayList<Product> listOfProducts) {
 		this.listOfProducts = listOfProducts;
 	}
-
+	
+	/**
+	 * NOT SURE IF USED
+	 * 
+	 * Allows the user to search by a specific ID. 
+	 * 
+	 * 
+	 * @param id
+	 * @return String "product" to redirect the user to the projects page
+	 */
 	public String searchById(int id) {
 		product = searchService.findById(id);
 		return "Product";
 	}
+	
 
 	public String search() {
 		// DataModel<Product> dataModelList;

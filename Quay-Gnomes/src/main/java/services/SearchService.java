@@ -12,7 +12,12 @@ import Entities.Product;
 public class SearchService {
 	@Inject
 	private ProductManager productManager;
-
+	
+	/**
+	 * 
+	 * @param String name
+	 * @return null || List of products
+	 */
 	public List<Product> findByName(String name) {
 
 		if (name == null) {

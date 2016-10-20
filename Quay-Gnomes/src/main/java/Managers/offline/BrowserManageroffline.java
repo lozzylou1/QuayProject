@@ -15,31 +15,31 @@ public class BrowserManageroffline implements BrowserManager {
 	private InitialData initialData;
 
 	@Override
-	public void searchByRating() {
+	public void browseByRating() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void searchByCategory() {
+	public void browseByCategory() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void searchByPrice() {
+	public void browseByPrice() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void searchByColour() {
+	public void browseByColour() {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void searchByReviews() {
+	public void browseByReviews() {
 		// TODO Auto-generated method stub
 
 	}

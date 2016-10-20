@@ -38,65 +38,101 @@ public class Inventory {
 	@Column (name = "allocatedStock", nullable = false)
 	private int allocatedStock;
 
-//.................................................................Constructor
-	
-	
 
-//................................................................ Getters and Setters 	
-	/** Returns the Stock Level */
+	/**
+	 * Gets the stock level
+	 * 
+	 * @return
+	 */
 	public int getstockLevel()
 	{		
 		return stockLevel;
 	}
 	
-	/** Sets Stock Level */
+	/**
+	 * Sets the stocklevel
+	 * 
+	 * @param stockLevel
+	 */
 	public void setstockLevel(int stockLevel) 
 	{
 		this.stockLevel = stockLevel;
 	}
 	
-	/** Gets the Threshold */
+	/**
+	 * Returns the threshold
+	 * 
+	 * @return threshold
+	 */
 	public int getThreshold()
 	{
 		return threshold;
 	}
 	
-	/** Set the Threshold */
+	/**
+	 * Sets the threshold
+	 * 
+	 * @param threshold
+	 */
 	public void setThreshold(int threshold)
 	{
 		this.threshold = threshold;
 	}
 	
-	/** Gets allocated stock */
+	/**
+	 * Returns the allocatedStock
+	 * 
+	 * @return allocatedStock
+	 */
 	public int getallocatedStock() 
 	{
 		return allocatedStock;
 	}
 	
-	/** Sets allocated stock */
+	/**
+	 * Sets allocated stock
+	 * 
+	 * @param allocatedStock
+	 */
 	public void setallocatedStock(int allocatedStock)
 	{
 		this.allocatedStock = allocatedStock;
 	}
 	
-	/** Get Product name */
+	/**
+	 * Returns the productName
+	 * 
+	 * @return productName
+	 */
 	public String getproductName() 
 	{
 		return productName;
 	}
-	/** Sets Product name */
+	/**
+	 * Sets the product name
+	 *  
+	 * @param productName
+	 */
 	public void setproductName(String productName)
 	{
 		this.productName = productName;
 	}
 	
-	/** Get Product ID */
+	/**
+	 * returns productID
+	 * 
+	 * @return productID
+	 */
 	public int getproductId() 
 	{
 		return productID;
 	}
 	
-	/** Set Product ID */
+	/**
+	 * Sets the productID
+	 * 
+	 * @param productId
+	 */
 	public void setproductId(int productId) 
 	{
 		this.productID = productId;
