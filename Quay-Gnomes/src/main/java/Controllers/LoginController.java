@@ -16,7 +16,7 @@ public class LoginController implements Serializable{
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
-	private String uname;
+	private String userName;
 	
 	@Inject
 	private LoginManager loginManager;
@@ -31,16 +31,12 @@ public class LoginController implements Serializable{
 	}
 
 	public void login()
-	{
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
-		
+	{		
 		customerAccount = loginManager.findbyEmail(email);
-		if (customerAccount != null)
+		if (customerAccount != null && password.equals(customerAccount.getPassword()))
 		{
 			isLoggedIn = true;
 		}
-		
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + isLoggedIn);
 	}
 	
 	
