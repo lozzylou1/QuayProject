@@ -30,7 +30,7 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-/*	public void login(String email)
+	public void login()
 	{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + email);
 		
@@ -39,17 +39,19 @@ public class LoginController implements Serializable{
 		{
 			isLoggedIn = true;
 		}
-	}*/
+		
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>" + isLoggedIn);
+	}
 	
 	
 	
-	public void login()
+	/*public void login()
 	{
 		System.out.println(email);
 		System.out.println(password);
 		
 	
-	}
+	}*/
 	
 	
 	

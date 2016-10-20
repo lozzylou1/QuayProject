@@ -18,17 +18,10 @@ public class LoginManagerOffline implements LoginManager {
 	@Override
 	public CustomerAccount findbyEmail(String email) 
 	{
+		
 		CustomerAccount customerAccount = null;
-		
-		System.out.println(">>>>>>>>>" + initialData.getCustomers());
-		
-		return customerAccount;
-		
-		
-	}
-		/*CustomerAccount customerAccount = null;
 
-		for (CustomerAccount custAccount: initialData.getCustomers())
+		for (CustomerAccount custAccount : initialData.getCustomers())
 		{
 			System.out.print(custAccount);
 			if (custAccount.getEmail().equals(email))
@@ -37,7 +30,5 @@ public class LoginManagerOffline implements LoginManager {
 			}
 		} 
 		return customerAccount;
-		
-
-	}*/
+	}
 }
