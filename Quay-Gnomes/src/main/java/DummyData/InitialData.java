@@ -2,7 +2,6 @@ package DummyData;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Startup;

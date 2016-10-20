@@ -13,6 +13,7 @@ public abstract class PaginationHelper {
 	
 	public abstract int getItemsCount();
 	
+	@SuppressWarnings("rawtypes")
 	public abstract DataModel
 	createPageDataModel();
 	

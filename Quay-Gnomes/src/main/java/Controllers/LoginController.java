@@ -16,7 +16,7 @@ public class LoginController implements Serializable{
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
-	private String userName;	
+	private String userName;
 	private CustomerAccount customerAccount;
 	
 	@Inject
@@ -33,11 +33,8 @@ public class LoginController implements Serializable{
 	
 	public void login()
 	{	
-		isLoggedIn = loginService.loginService(email, password);
-		System.out.println(">>>>>>>>>>> " + isLoggedIn);
-		System.out.println(">>>>>>>>>>> " + password);
+		isLoggedIn = loginService.loginService(email, password);		
 		password = "";
-		System.out.println(">>>>>>>>>>> " + password);
 	}	
 
 	public String getEmail() {
@@ -63,5 +60,4 @@ public class LoginController implements Serializable{
 	public void setLoggedIn(boolean isLoggedIn) {
 		this.isLoggedIn = isLoggedIn;
 	}
-
 }

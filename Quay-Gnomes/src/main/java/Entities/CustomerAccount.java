@@ -1,7 +1,6 @@
 package Entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 
 @Entity
 @Table (name = "CustomerAccount")

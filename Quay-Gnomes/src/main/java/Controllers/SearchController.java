@@ -31,7 +31,6 @@ public class SearchController implements Serializable {
 	private String term;
 	@Inject
 	private SearchService searchService;
-	private ListDataModel<Product> dataModel;
 
 	public ArrayList<Product> getListOfProducts() {
 		return listOfProducts;
@@ -46,29 +45,8 @@ public class SearchController implements Serializable {
 		return "Product";
 	}
 
-	public String search() {
-		
-		/*
-		// dataModel = new ListDataModel<Product>(searchService.findByName(term).subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
-		 
-		 ProductController prodCon = new ProductController();
-		 
-		 
-		 
-		System.out.println(">>>>>>>>>>>>>>>>>  ...Searching");
-		
-		
-		
-		if (dataModel.getRowCount() > 0) {
-			System.out.println("term1" + term);
-			return "Products";
-			
-		}
-		
-		System.out.println("data model" + dataModel.toString());
-		
-		
-		System.out.println("term2" + term);*/
+	public String search() 
+	{	
 		return "Products";
 	}
 
