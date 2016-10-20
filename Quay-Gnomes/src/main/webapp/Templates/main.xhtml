@@ -48,10 +48,10 @@
 							<li class="dropdown">
 							  <a class="dropdown-toggle" data-toggle="dropdown" href="Products.xhtml">Products <span class="caret"></span></a>
 							  <ul class="dropdown-menu">
-							  <li><a href="Products.xhtml">All Products</a></li>
-								<li><a action="#{products.searchAllGnomes()}">Gnomes</a></li>
-								<li><a href="ProductDet.xhtml">Hot Tubs</a></li>
-								<li><a href="ProductDet.xhtml">Accessories</a></li>
+							  <li><a href="Products.xhtml" action="#{products.searchAllGnomes()}">All Products</a></li>
+								<li><a href="Products.xhtml" action="#{products.searchByType()}" value="#{products.type}">Gnomes</a></li>
+								<li><a href="Products.xhtml" action="#{products.searchByType()}" value="#{products.type}">>Hot Tubs</a></li>
+								<li><a href="Products.xhtml" action="#{products.searchByType()}" value="#{products.type}">>Accessories</a></li>
 							  </ul>
 							</li>
 							<li><a href="AboutUs.xhtml">About Us</a></li>
@@ -60,7 +60,9 @@
 						  <ul class="nav navbar-nav navbar-right">
 						  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
 							<li><a href="CreateAccount.xhtml"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<li><a href="AccountPage.xhtml"><span class="glyphicon glyphicon-user"></span> Account Details</a></li>
 							<li><a href="Login.xhtml"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							<li><a href="Home.xhtml"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 						  </ul>
 						</div>
 					  </div>
@@ -73,7 +75,27 @@
 					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>							
 					<script src="slider/js-image-slider.js" type="text/javascript"></script>	
-			
+					<script>
+					
+					$( document ).ready(function() {
+						if (#{!login.isLoggedIn()})
+							{
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(5)').hide();						
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(4)').show();
+								
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').show();
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').hide();
+							}else{						
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(4)').hide();						
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(5)').show();
+								
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').show();
+								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').hide();
+							}
+						});
+							
+					
+					</script>
 			<br/>
 				<div>
 				<footer id="footer">			
