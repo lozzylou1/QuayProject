@@ -9,16 +9,32 @@ public interface AddressManager {
 	public void persistAddress(Address a);
 	public void persistAddresses(List<Address> a);
 	
-	//read
+	/**
+	 * 
+	 * Gets the addresses
+	 */
 	public List<Address> getAddresses();
 	
 	
-	//create
+	/**
+	 * Create Address Entity
+	 * 
+	 * @param Address a
+	 */
 	public void createAddress(Address a);
 	
-	//update
+	/**
+	 * Update the address entity
+	 * 
+	 * @param Address a
+	 */
 	public void updateAddress(Address a);
-
+	
+	/**
+	 * 
+	 * List all the addresses
+	 * 
+	 */
 	public List<Address> findAll();
 	
 	

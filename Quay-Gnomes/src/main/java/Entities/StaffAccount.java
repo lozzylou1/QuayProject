@@ -23,31 +23,52 @@ public class StaffAccount {
 	@NotNull
 	private String password;
 
-
+	/**
+	 * StaffAccount constructor
+	 * 
+	 * @param userName
+	 * @param Password
+	 */
 	public StaffAccount(String userName, String Password) {
 		this.userName = userName;
 		this.password = Password;
 	}
 
-	/**Returns the User name for a StaffAccount*/
+	/**
+	 * Return staffAccount userName
+	 * 
+	 * @return userName
+	 */
 	public String getUsername() 
 	{
 		return userName;
 	}
 
-	/**Sets the User name for the StaffAccount*/
+	/**
+	 * Set the user name
+	 * 
+	 * @param userName
+	 */
 	public void setUserName(String userName) 
 	{
 		this.userName = userName;
 	}
 
-	/**Returns the Password for a StaffAccount*/
+	/**
+	 * Set the password on the staff account
+	 * 
+	 * @return password
+	 */
 	public String getPassword() 
 	{
 		return password;
 	}
 
-	/**Sets the Password for the StaffAccount*/
+	/**
+	 * Set the password
+	 * 
+	 * @param password
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}

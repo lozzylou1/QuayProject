@@ -47,7 +47,14 @@ public class ProductController implements Serializable {
 		recreateModel();
 		return "Products";		
 	}
-
+	
+	/**
+	 * If pagination is null, implements pagination
+	 * By finding a list of all products, then 
+	 * building pagination based on page size in getPageSize()
+	 * 
+	 * @return PagioationHelper
+	 */
 	public PaginationHelper getPagination () 
 	{
 
@@ -82,7 +89,13 @@ public class ProductController implements Serializable {
 		return pagination;
 	}
 
+	
 	@SuppressWarnings("unchecked")
+	/**
+	 * Gets the data model. Called 
+	 * 
+	 * @return dataModel
+	 */
 	public DataModel <Product> getDataModel()
 	{
 		if (dataModel == null)
@@ -91,8 +104,12 @@ public class ProductController implements Serializable {
 		}
 		return dataModel;
 	}
-
+	
+	
 	@SuppressWarnings("unused")
+	/**
+	 * 
+	 */
 	private void updateCurrentItem()
 	{
 		int count = itemsList.size();

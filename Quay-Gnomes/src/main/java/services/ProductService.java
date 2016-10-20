@@ -14,7 +14,7 @@ import javax.ejb.Stateless;
 public class ProductService {
 	@Inject
 	private ProductManager productManager;
-
+	
 	public Product findProductById(String id) {
 		System.out.println("ID: " + id);
 		try {

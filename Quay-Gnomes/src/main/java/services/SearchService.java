@@ -17,7 +17,8 @@ public class SearchService {
 	
 	@Inject
 	private ProductManager productManager;
-	
+
+
 	List<Product> productList;
 	List<Product> resultsList;
 		

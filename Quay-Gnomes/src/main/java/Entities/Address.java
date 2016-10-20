@@ -13,7 +13,15 @@ public class Address {
 	private String postCode;
 	private int customerID;
 	
-	
+	/**
+	 * Constructor for address
+	 * 
+	 * @param a_customerID
+	 * @param a_postCode
+	 * @param a_county
+	 * @param a_secondLine
+	 * @param a_firstLine
+	 */
 	public Address(int a_customerID, String a_postCode, String a_county, String a_secondLine, String a_firstLine){
 		
 		this.firstLine = a_firstLine;
@@ -26,7 +34,7 @@ public class Address {
 
 	/**
 	 * Getter for the first line of the address
-	 * Returns the first line of the address
+	 * @return firstLine the first line of the address
 	 * */
 	public String getFirstLine() {
 		return firstLine;
@@ -41,7 +49,7 @@ public class Address {
 
 	/**
 	 * Getter for the second line of the address
-	 * Returns the second line of the address
+	 * @return secondLine Second line of the address
 	 * */
 	public String getSecondLine() {
 		return secondLine;
@@ -56,7 +64,7 @@ public class Address {
 
 	/**
 	 * Getter for the county of the address
-	 * Returns the county
+	 * @return county
 	 * */
 	public String getCounty() {
 		return county;
@@ -71,7 +79,7 @@ public class Address {
 
 	/**
 	 * Getter for the postal code of the address
-	 * Returns the postcode
+	 * @return postCode
 	 * */
 	public String getPostCode() {
 		return postCode;
@@ -86,7 +94,7 @@ public class Address {
 
 	/**
 	 * Getter for the customerID linked to the address
-	 * Returns the CustomerID
+	 * @return customerID
 	 * */
 	public int getCustomerID() {
 		return customerID;

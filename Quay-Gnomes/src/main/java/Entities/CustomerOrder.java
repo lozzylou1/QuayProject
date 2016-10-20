@@ -157,6 +157,7 @@ public class CustomerOrder {
 	}
 	
 	/**
+	 * Sets whether the item is porous
 	 * 
 	 * @param isPorous
 	 */
