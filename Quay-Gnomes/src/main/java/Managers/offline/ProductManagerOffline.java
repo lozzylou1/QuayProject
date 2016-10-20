@@ -38,23 +38,15 @@ public class ProductManagerOffline implements ProductManager {
 	}
 
 
-	
 	public Product findById(int productID) {
 		return  null;
 	}
 
 	@Override
 	public List<Product> findAll() {
-		return initialData.findAll();
-		
-	}
-	
-	@Override
-	public List<Product> getProducts(String term) {
-		// TODO Auto-generated method stub
-		return initialData.getProducts(term);
+		return initialData.findAll();		
+	}	
 
-	}
 
 	@Override
 	public void persistProduct(Product p) {
@@ -64,6 +56,7 @@ public class ProductManagerOffline implements ProductManager {
 	
 	public Product findByName(String term)
 	{
-		return initialData.getProduct(term);
+		//return initialData.getProduct(term);
+		return null;
 	}
 }

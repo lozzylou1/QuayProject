@@ -1,7 +1,9 @@
 package Controllers;
 
+import java.util.List;
 import java.io.Serializable;
 
+import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -9,23 +11,41 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import Managers.ProductManager;
+import services.SearchService;
 import Entities.Product;
 import Helpers.PaginationHelper;
 
 @Named("products")
 @SessionScoped
-public class ProductController implements Serializable
-{
+public class ProductController implements Serializable {
 
+
+	@Inject
+	private SearchService searchService;
 	@Inject
 	private ProductManager productManager;
 	private Product product;
 	private PaginationHelper pagination;
 	private int selected;
-	private DataModel <Product> dataModel = null;
+	private DataModel <Product> dataModel = null;	
+	private String term;
+	private String type;
+	private List<Product> itemsList;
 
-	private void recreateModel () {
-		dataModel = null;
+	public String searchByTerm()
+	{
+		itemsList = searchService.displayListTerm(term);
+		pagination = null;
+		recreateModel();		
+		return "Products";
+	}
+
+	public String searchByType()
+	{
+		itemsList = searchService.displayListType(type);
+		pagination = null;
+		recreateModel();
+		return "Products";		
 	}
 	
 	/**
@@ -37,6 +57,7 @@ public class ProductController implements Serializable
 	 */
 	public PaginationHelper getPagination () 
 	{
+
 		if (pagination == null)
 		{
 			pagination = new PaginationHelper(10) 
@@ -45,7 +66,7 @@ public class ProductController implements Serializable
 				public int getItemsCount()
 				{
 
-					return productManager.findAll().size();
+					return itemsList.size();
 				}
 				@Override
 				public DataModel <Product> createPageDataModel ()
@@ -53,13 +74,13 @@ public class ProductController implements Serializable
 					try
 					{
 						return new 							
-								ListDataModel <Product> (productManager.findAll().subList(getPageFirstItem(),
+								ListDataModel <Product> (itemsList.subList(getPageFirstItem(),
 										getPageFirstItem() + getPageSize()));
 					}
 					catch (Exception e)
 					{
 						return new 
-								ListDataModel <Product> (productManager.findAll().subList(getPageFirstItem(),
+								ListDataModel <Product> (itemsList.subList(getPageFirstItem(),
 										getItemsCount()));
 					}
 				}
@@ -91,7 +112,7 @@ public class ProductController implements Serializable
 	 */
 	private void updateCurrentItem()
 	{
-		int count = productManager.findAll().size();
+		int count = itemsList.size();
 
 		if (selected >= count)
 		{
@@ -107,11 +128,11 @@ public class ProductController implements Serializable
 		{
 			try
 			{
-				setProduct(productManager.findAll().subList(selected, selected + 1).get(0));
+				setProduct(itemsList.subList(selected, selected + 1).get(0));
 			}
 			catch (Exception e)
 			{
-				setProduct(productManager.findAll().subList(selected, count).get(0));
+				setProduct(itemsList.subList(selected, count).get(0));
 			}
 		}
 	}
@@ -142,4 +163,28 @@ public class ProductController implements Serializable
 	public void setProduct(Product product){
 		this.product = product;
 	}
+
+	public String getTerm() {
+		return term;
+	}
+
+	public void setTerm(String term) {
+		this.term = term;
+	}
+
+	private void recreateModel () {
+		dataModel = null;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 }
+
+
+

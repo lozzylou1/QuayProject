@@ -1,46 +1,63 @@
 package services;
 
 import Managers.ProductManager;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.faces.model.DataModel;
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import Entities.Product;
 
 @Stateless
 public class SearchService {
+	
 	@Inject
 	private ProductManager productManager;
+
+
+	List<Product> productList;
+	List<Product> resultsList;
+		
 	
-	/**
-	 * 
-	 * @param String name
-	 * @return null || List of products
-	 */
-	public List<Product> findByName(String name) {
-
-		if (name == null) {
-			/**
-			 * returning null for now, as unsure what we wish to display at this
-			 * point
-			 */
-			return null;
-		}
-
-		/**
-		 * Checks to see if the string contains any special characters
-		 */
-		if (name.contains("^[^<>%$]*$")) {
-			return null;
-		}
-
-		return productManager.getProducts(name.toLowerCase());
-	}
+	public List<Product> displayListTerm(String term)
+	{	
+		productList = productManager.findAll();
+		resultsList = new ArrayList<Product>();		
+		resultsList.clear();
+		
+		for(Product product : productList)
+		{
+			if (product.getProductName().contains(term))
+			{
+				resultsList.add(product);
+			}
+		}		
+		return resultsList;
+	}	
+	
+	public List<Product> displayListType(String type)
+	{	
+		productList = productManager.findAll();
+		resultsList = new ArrayList<Product>();		
+		resultsList.clear();
+		
+		for(Product product : productList)
+		{
+			if (product.getProductType().contains(type))
+			{
+				resultsList.add(product);
+			}
+		}		
+		return resultsList;
+	}	
+	
 
 	public Product findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

@@ -1,6 +1,8 @@
 package Controllers;
 
 import java.io.Serializable;
+
+import Helpers.PaginationHelper;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +31,12 @@ public class SearchController implements Serializable {
 	private String term;
 	@Inject
 	private SearchService searchService;
+
 	private DataModel<Product> dataModel = null;
 	
 	
-	
+
+
 	public ArrayList<Product> getListOfProducts() {
 		return listOfProducts;
 	}
@@ -56,21 +60,13 @@ public class SearchController implements Serializable {
 	}
 	
 
-	public String search() {
-		// DataModel<Product> dataModelList;
-		// dataModelList(searchService.findByName(term));
-		// new DataModelList<Product>(searchService.findByName(term));
-
-		// dataModelList = setListOfProducts(searchService.findByName(term));
-
-		dataModel = new ListDataModel<Product>(searchService.findByName(term));
-
-		if (dataModel.getRowCount() > 0) {
-			return "Products";
-		}
-		return "Home";
+	public String search() 
+	{	
+		return "Products";
 	}
 
+	
+	
 	public Product getProduct() {
 		return product;
 	}

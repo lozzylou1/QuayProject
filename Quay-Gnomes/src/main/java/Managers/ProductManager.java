@@ -30,19 +30,12 @@ public interface ProductManager {
 	
 	
 	/**
-	 * Returns a list of products 
-	 * based on the search term
-	 * 
-	 * @param term
-	 * @return
-	 */
-	public List<Product> getProducts(String term);
-	
-	/**
-	 * find all products
+	 * find all products in the db
 	 */
 	public List<Product> findAll();
 	
+
+
 	
 	/**
 	 * Create a product

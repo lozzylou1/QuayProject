@@ -7,6 +7,7 @@ import Managers.CustomerAccountManager;
 
 @Stateless
 @Default
-public class CustomerAccountManagerOffline implements CustomerAccountManager{
+public class CustomerAccountManagerOffline implements CustomerAccountManager {
+
 
 }
