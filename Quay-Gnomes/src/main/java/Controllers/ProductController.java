@@ -34,54 +34,18 @@ public class ProductController implements Serializable {
 
 	public String searchByTerm()
 	{
-		if (itemsList != null)
-		{			
-			itemsList = searchService.displayListTerm(term);
-			pagination = null;
-			recreateModel();
-		}		
-		else if (itemsList == null)
-		{
-			itemsList = searchService.displayListTerm(term);
-			pagination = null;
-			recreateModel();
-		}
+		itemsList = searchService.displayListTerm(term);
+		pagination = null;
+		recreateModel();		
 		return "Products";
 	}
-	
+
 	public String searchByType()
 	{
-		if (itemsList != null)
-		{			
-			itemsList = searchService.displayListType(type);
-			pagination = null;
-			recreateModel();
-		}		
-		else if (itemsList == null)
-		{
-			itemsList = searchService.displayListType(type);
-			pagination = null;
-			recreateModel();
-		}
-		return "Products";
-	}
-	
-	
-	public String searchAllGnomes()
-	{
-		if (itemsList != null)
-		{			
-			itemsList = searchService.displayListTerm("Gnomes");
-			pagination = null;
-			recreateModel();
-		}		
-		else if (itemsList == null)
-		{
-			itemsList = searchService.displayListTerm("Gnomes");
-			pagination = null;
-			recreateModel();
-		}
-		return "Products";
+		itemsList = searchService.displayListType(type);
+		pagination = null;
+		recreateModel();
+		return "Products";		
 	}
 
 	public PaginationHelper getPagination () 
@@ -182,7 +146,7 @@ public class ProductController implements Serializable {
 	public void setProduct(Product product){
 		this.product = product;
 	}
-	
+
 	public String getTerm() {
 		return term;
 	}
@@ -202,7 +166,7 @@ public class ProductController implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 }
 
 
