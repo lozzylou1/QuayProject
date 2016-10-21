@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html>
-	<ui:composition xmlns="https://www.w3.org/1999/xhtml"
-		xmlns:f="http://java.sun.com/jsf/core"
-		xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:ui="http://java.sun.com/jsf/facelets"
-		xmlns:p="http://java.sun.com/jsf/passthrough"	
-		template="templates/main.xhtml">
-		<meta charset="utf-8" />
-		<ui:define name="title">Create Account</ui:define>
-		<ui:define name="maincontent">
-			<article>
-					<div align="center" id="form">
-						<h1>Create Account</h1>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Create Account</ui:define>
+	<ui:define name="maincontent">
+		<article>
+				<div align="center" id="form">
+					<h1>Create Account</h1>
+				<br/>
+					<h:form>		
+						<h:outputLabel value="First Name"/>
 					<br/>
-						<h:form>		
-							<h:outputLabel value="First Name"/>
+						<h:inputText value="#{register.firstName}"/>
+					<br/>
+						<h:outputLabel value="Surname"/>
+					<br/>
+						<h:inputText value="#{register.surname}"/>
+					<br/>
+						<h:outputLabel value="Email Address"/>
+					<br/>
+						<h:inputText value="#{register.email}" p:type="email"
+						required="true" requireMessage="Please Enter Email" />
+					<br/>
+					<h:outputLabel value="Confirm Email Address"/>
 						<br/>
-							<h:inputText value="#{register.firstName}"/>
+						<h:inputText value="#{register.confirmEmail}" p:type="email"
+						required="true" 
+						requireMessage="Please Confirm Email" />
+					<br/>		
+					<h:outputLabel value="Password"/>
 						<br/>
-							<h:outputLabel value="Surname"/>
-						<br/>
-							<h:inputText value="#{register.surname}"/>
-						<br/>
-							<h:outputLabel value="Email Address"/>
-						<br/>
-							<h:inputText value="#{register.email}" p:type="email"
-							required="true" requireMessage="Please Enter Email" />
-						<br/>
-						<h:outputLabel value="Confirm Email Address"/>
-							<br/>
-							<h:inputText value="#{register.confirmEmail}" p:type="email"
-							required="true" 
-							requireMessage="Please Confirm Email" />
-						<br/>		
-						<h:outputLabel value="Password"/>
-							<br/>
-							<h:inputSecret value="#{register.password}" 
-							required="true" 
-							requiremessage="Please enter a password"	/>
-						<br/>
-						<h:outputLabel value="Confirm Password"/>
-						<br/>
-							<h:inputSecret value="#{register.confirmPassword}" 
-							required="true" 
-							requiremessage="Please enter a password"	/>
-						<br/>
-						<h:commandButton type="submit" action="#{account.registerAccount()}"
-						value="Register" />
-						</h:form>
-				</div>	
-			</article>
-		</ui:define>
-	</ui:composition>
+						<h:inputSecret value="#{register.password}" 
+						required="true" 
+						requiremessage="Please enter a password"	/>
+					<br/>
+					<h:outputLabel value="Confirm Password"/>
+					<br/>
+						<h:inputSecret value="#{register.confirmPassword}" 
+						required="true" 
+						requiremessage="Please enter a password"	/>
+					<br/>
+					<h:commandButton type="submit" action="#{account.registerAccount()}"
+					value="Register" />
+					</h:form>
+			</div>	
+		</article>
+	</ui:define>
+</ui:composition>
 </html>

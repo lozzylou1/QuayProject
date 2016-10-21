@@ -42,8 +42,7 @@ public class LoginController implements Serializable{
 
 	
 	/**
-	 * Checks to see if an email is present
-	 * TODO - Implement more functionality 
+	 * Logs in the user with the specified email
 	 */
 	public void login()
 	{	
@@ -51,6 +50,17 @@ public class LoginController implements Serializable{
 		password = "";
 		System.out.println(">>>>>>>>>>>> " + isLoggedIn);
 	}	
+	
+	
+	/**
+	 * Logs the currently logged in user out
+	 */
+	public void logOut()
+	{
+		isLoggedIn = false;
+		password = "";
+		System.out.println(">>>>>>>>>>>> " + isLoggedIn);
+	}
 
 
 	/**
