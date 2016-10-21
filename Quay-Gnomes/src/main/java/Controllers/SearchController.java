@@ -34,9 +34,6 @@ public class SearchController implements Serializable {
 
 	private DataModel<Product> dataModel = null;
 	
-	
-
-
 	public ArrayList<Product> getListOfProducts() {
 		return listOfProducts;
 	}

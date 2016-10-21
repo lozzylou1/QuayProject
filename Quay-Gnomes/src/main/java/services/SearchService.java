@@ -18,10 +18,15 @@ public class SearchService {
 	@Inject
 	private ProductManager productManager;
 
-
 	List<Product> productList;
 	List<Product> resultsList;
 		
+	/**
+	 * Display list of terms
+	 * 
+	 * @param String term
+	 * @return String of product term
+	 */
 	
 	public List<Product> displayListTerm(String term)
 	{	
@@ -39,6 +44,13 @@ public class SearchService {
 		return resultsList;
 	}	
 	
+	/**
+	 * Display list of type
+	 * 
+	 * @param String type
+	 * @return String of product type
+	 */
+	
 	public List<Product> displayListType(String type)
 	{	
 		productList = productManager.findAll();
@@ -55,7 +67,29 @@ public class SearchService {
 		return resultsList;
 	}	
 	
-
+	/**
+	 * Display list of sizes
+	 * 
+	 * @param String size
+	 * @return String of product size
+	 */
+	
+	public List<Product> displayListSize(String size)
+	{	
+		productList = productManager.findAll();
+		resultsList = new ArrayList<Product>();		
+		resultsList.clear();
+		
+		for(Product product : productList)
+		{
+			if (product.getProductSize().contains(size))
+			{
+				resultsList.add(product);
+			}
+		}		
+		return resultsList;
+	}	
+	
 	public Product findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
