@@ -13,8 +13,8 @@
 				</title>
 				<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 				<link rel="stylesheet" media="screen" href="css/laura.css"/>
-				<link href="slider/js-image-slider.css" rel="stylesheet" type="text/css" />				
-			</h:head>
+				<link href="slider/js-image-slider.css" rel="stylesheet" type="text/css" />			
+				</h:head>				
 			<f:view>
 			<body id="body">
 			<div class="wrapper">
@@ -43,13 +43,12 @@
 						  <a class="navbar-brand" href="Home.xhtml">NBGardens</a>
 						</div>
 						<div class="collapse navbar-collapse" id="myNavbar">
-						  <ul class="nav navbar-nav">
-							<li><a href="Home.xhtml">Home</a></li>
+						  <ul class="nav navbar-nav">							
 							<li class="dropdown">
 							  <a class="dropdown-toggle" data-toggle="dropdown" >Products <span class="caret"></span></a>
 							  <ul class="dropdown-menu">
 							  <li><a href="Products.xhtml" >All Products</a></li>
-								<li><a href="Products.xhtml" >Gnomes</a></li>
+								<li><a href="Products.xhtml">Gnomes</a></li>
 								<li><a href="Products.xhtml">Hot Tubs</a></li>
 								<li><a href="Products.xhtml">Accessories</a></li>
 							  </ul>
@@ -61,8 +60,8 @@
 						  <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</a></li>
 							<li><a href="CreateAccount.xhtml"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 							<li><a href="AccountPage.xhtml"><span class="glyphicon glyphicon-user"></span> Account Details</a></li>
-							<li><a href="Login.xhtml"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-							<li><a href="Home.xhtml"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+							<li><h:form class="logout"><h:commandLink href="Login.xhtml"><span class="glyphicon glyphicon-log-in"></span> Login</h:commandLink></h:form></li>
+						  	<li><h:form class="logout"><h:commandLink action="#{login.logOut()}" ><span class="glyphicon glyphicon-log-in"></span> Logout</h:commandLink></h:form></li>
 						  </ul>
 						</div>
 					  </div>
@@ -72,11 +71,10 @@
 				<DIV class="container" id="body">
 					<ui:insert name="maincontent"/>
 				</DIV>	
-					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>							
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>										
 					<script src="slider/js-image-slider.js" type="text/javascript"></script>	
-					<script>
-					
+					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
+					<script>					
 					$( document ).ready(function() {
 						if (#{!login.isLoggedIn()})
 							{
@@ -91,11 +89,9 @@
 								
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').show();
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').hide();
-							}
+							}						
 						});
-							
-					
-					</script>
+					</script>			
 			<br/>
 				<div>
 				<footer id="footer">			
