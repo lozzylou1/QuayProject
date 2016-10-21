@@ -43,14 +43,10 @@ public class CustomerAccount {
 		 * @param ca_firstName
 		 * @param ca_surname
 		 */
-		public CustomerAccount(int ca_customerID, String ca_email, String ca_password, String ca_contactNumber, String ca_deliveryAddress, String ca_billingAddress, String ca_firstName, String ca_surname){
+		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname){
 			
-			this.customerID = ca_customerID;
 			this.email = ca_email;
 			this.password = ca_password;
-			this.contactNumber = ca_contactNumber;
-			this.deliveryAddress = ca_deliveryAddress;
-			this.billingAddress = ca_billingAddress;
 			this.firstName = ca_firstName;
 			this.surname = ca_surname;			
 						

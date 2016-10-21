@@ -24,28 +24,28 @@
 					<br/>
 						<h:outputLabel value="Email Address"/>
 					<br/>
-						<h:inputText value="#{register.email}" p:type="email"
+						<h:inputText value="#{register.initialEmail}" p:type="email"
 						required="true" requireMessage="Please Enter Email" />
 					<br/>
 					<h:outputLabel value="Confirm Email Address"/>
 						<br/>
-						<h:inputText value="#{register.confirmEmail}" p:type="email"
+						<h:inputText value="#{register.confirmationEmail}" p:type="email"
 						required="true" 
 						requireMessage="Please Confirm Email" />
 					<br/>		
 					<h:outputLabel value="Password"/>
 						<br/>
-						<h:inputSecret value="#{register.password}" 
+						<h:inputSecret value="#{register.initialPassword}" 
 						required="true" 
 						requiremessage="Please enter a password"	/>
 					<br/>
 					<h:outputLabel value="Confirm Password"/>
 					<br/>
-						<h:inputSecret value="#{register.confirmPassword}" 
+						<h:inputSecret value="#{register.confirmationPassword}" 
 						required="true" 
 						requiremessage="Please enter a password"	/>
 					<br/>
-					<h:commandButton type="submit" action="#{account.registerAccount()}"
+					<h:commandButton type="submit" action="#{register.createAccount()}"
 					value="Register" />
 					</h:form>
 			</div>	

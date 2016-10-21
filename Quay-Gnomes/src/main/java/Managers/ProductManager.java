@@ -34,8 +34,6 @@ public interface ProductManager {
 	 */
 	public List<Product> findAll();
 	
-
-
 	
 	/**
 	 * Create a product
