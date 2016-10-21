@@ -10,6 +10,7 @@ import Entities.CustomerAccount;
 import services.AccountService;
 
 
+@SuppressWarnings("serial")
 @Named("register")
 @SessionScoped
 public class AccountController implements Serializable {
@@ -29,6 +30,8 @@ public class AccountController implements Serializable {
 
 	private String surname;
 	
+	private String userName = "";
+	
 	/**
 	 * Creates the customer account 
 	 * 
@@ -41,7 +44,8 @@ public class AccountController implements Serializable {
 			customerAccount = new CustomerAccount(	initialEmail, 
 					initialPassword, 
 					firstName, 
-					surname);
+					surname,
+					userName);
 			
 			accountService.setCustomerAccount(customerAccount);
 			accountService.addCustomerAccount();

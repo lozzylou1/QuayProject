@@ -16,7 +16,7 @@ public class LoginManagerOffline implements LoginManager {
 	private InitialData initialData;
 
 	@Override
-	public CustomerAccount findbyEmail(String email) 
+	public CustomerAccount findbyEmailOrUserName(String email) 
 	{
 		
 		CustomerAccount customerAccount = null;
@@ -24,7 +24,7 @@ public class LoginManagerOffline implements LoginManager {
 		for (CustomerAccount custAccount : initialData.getCustomers())
 		{
 			System.out.print(custAccount);
-			if (custAccount.getEmail().equals(email))
+			if (custAccount.getEmail().equals(email) || custAccount.getUserName().equals(email))
 			{
 				customerAccount = custAccount;
 			}

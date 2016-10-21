@@ -9,6 +9,7 @@ import javax.inject.Named;
 import Entities.CustomerAccount;
 import services.LoginService;
 
+@SuppressWarnings("serial")
 @Named("login")
 @SessionScoped
 public class LoginController implements Serializable{
@@ -16,7 +17,6 @@ public class LoginController implements Serializable{
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
-	private String userName;
 	private CustomerAccount customerAccount;
 	
 	@Inject
@@ -48,7 +48,6 @@ public class LoginController implements Serializable{
 	{	
 		isLoggedIn = loginService.loginService(email, password);		
 		password = "";
-		System.out.println(">>>>>>>>>>>> " + isLoggedIn);
 	}	
 	
 	
@@ -59,7 +58,6 @@ public class LoginController implements Serializable{
 	{
 		isLoggedIn = false;
 		password = "";
-		System.out.println(">>>>>>>>>>>> " + isLoggedIn);
 	}
 
 
@@ -102,7 +100,7 @@ public class LoginController implements Serializable{
 	/**
 	 * returns a boolean value of loggedIn
 	 * 
-	 * @return bool isLoggedIn
+	 * @return boolean isLoggedIn
 	 */
 	public boolean isLoggedIn() {
 		return isLoggedIn;

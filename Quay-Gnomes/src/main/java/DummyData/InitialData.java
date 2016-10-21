@@ -13,19 +13,14 @@ import Entities.*;
 @Singleton
 public class InitialData {
 	
-	/**Array List of Suppliers*/
-	private List<Supplier> suppliers;
-	
-	/**List of StaffAccounts*/
-	private List<StaffAccount> staffAccounts;
-	
-	/**List of Products*/
-	private List<Product> products;	
-	
-	/**List of Customer Details*/
+	private List<Supplier> suppliers;	
+	private List<StaffAccount> staffAccounts;	
+	private List<Product> products;		
 	private List<CustomerAccount> customers;
 	
-	/**Creates the initial offline data*/
+	/**
+	 * Creates the initial offline data
+	 */
 	@PostConstruct
 	public void setUpData()
 	{
@@ -49,10 +44,10 @@ public class InitialData {
 				+ "Why, that would be the Star Trek Garden Gnomes, of course! Boldly Going Where No Gnome Has Gone Before !", "Gnome", "img/starTrek.jpg" ));
 		products.add(new Product(5, "Game Of Gnomes", 15.17f, false, 20, 794f, "18.1 x 15.9 x 24.8", "Game of Gnomes Garden Gnome", "A must for any Game of Thrones fan, "
 				+ "this statue of gnomed nature doth lay claim to the territory henceforth known as thy garden"
-				+ "Collect them all!!", "Accessories", "img/gotgnome.jpg"));
+				+ "Collect them all!!", "Gnome", "img/gotgnome.jpg"));
 		products.add(new Product(6, "Mankini Gnome", 12.99f, false, 33, 694f, "18.1 x 15.9 x 24.8", "Mankini Gnome", "Surfer dude standing gnome wearing a mankini, and holding a life ring whilst 'posing' the peace moto! "
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Hot Tub", "img/mankinignome.jpg"));
+				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome", "img/mankinignome.jpg"));
 		products.add(new Product(7, "Glasses Gnome", 69.69f, false, 7, 694f, "18.1 x 15.9 x 24.8", "A gnome wearing Glasses", "A gnome wearing some funky glasses!"
 				+ "Very funny! Sure to raise a smile in anybody!! "
 				+ "You really can't miss this amazing gnome!", "Gnome", "img/glassesGnome.PNG"));
@@ -71,26 +66,41 @@ public class InitialData {
 		products.add(new Product(12, "Gun Gnome", 12.12f, false, 12, 1212f, "1212 x 12 x 12", "Gnome holding a gun", "Get this great gnome holding a gun to scare off neighbors!"
 				+ "Perfect for keeping those pesky kids off your lawn"
 				+ "You really can't miss these amazing gnomes!", "Gnome", "img/gunGnome.jpg"));
+		products.add(new Product(13, "Large Hot Tub", 12.99f, false, 33, 694f, "18.1 x 15.9 x 24.8", "Large Hot Tub", "Surfer dude standing gnome wearing a mankini, and holding a life ring whilst 'posing' the peace moto! "
+				+ "Very funny! Sure to raise a smile in anybody!! "
+				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Hot Tub", "img/mankinignome.jpg"));
+		products.add(new Product(14, "Game Of Gnomes", 15.17f, false, 20, 794f, "18.1 x 15.9 x 24.8", "Game of Gnomes Garden Gnome", "A must for any Game of Thrones fan, "
+				+ "this statue of gnomed nature doth lay claim to the territory henceforth known as thy garden"
+				+ "Collect them all!!", "Accessories", "img/gotgnome.jpg"));
 
-		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam"));
-		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd"));
-		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain"));		
+		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam", "LAdam"));
+		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd", "HLloyd"));
+		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain", "DSwain"));		
 		
 	}
 	
-	/**Returns the dummy list of suppliers */
+	/**
+	 * Returns the dummy list of suppliers 
+	 * @return Suppliers List
+	 **/
 	public List<Supplier> getSuppliers()
 	{
 		return suppliers;		
 	}
 	
-	/**Returns the Dummy list of StaffAccounts*/
+	/**
+	 * Returns the Dummy list of StaffAccounts
+	 *@return Staff Accounts list
+	 **/
 	public List<StaffAccount> getStaffAccounts()
 	{
 		return staffAccounts;
 	}
 	
-	/**Add a supplier to the dummy list of suppliers*/
+	/**
+	 * Add a supplier to the dummy list of suppliers
+	 *@param
+	 **/
 	public void addSupplier(Supplier supplier)
 	{
 		suppliers.add(supplier);
@@ -101,19 +111,28 @@ public class InitialData {
 		suppliers.remove(supplier);
 	}
 	
-	/**Add a StaffAccount to the dummy list of StaffAccounts*/
+	/**
+	 * Add a StaffAccount to the dummy list of StaffAccounts
+	 * @param
+	 **/
 	public void addStaffAccount(StaffAccount staffAccount)
 	{
 		staffAccounts.add(staffAccount);
 	}
 	
-	/**Fills the dummy list of suppliers with a another list of Suppliers*/
+	/**
+	 * Fills the dummy list of suppliers with a another list of Suppliers
+	 *@param
+	 **/
 	public void setSuppliers(List<Supplier> suppliers)
 	{
 		this.suppliers = suppliers;
 	}
 	
-	/**Fills the dummy list of StaffAccounts with another list of StaffAccounts*/
+	/**
+	 * Fills the dummy list of StaffAccounts with another list of StaffAccounts
+	 * @param
+	  */
 	public void setStaffAccounts(List<StaffAccount> staffAccounts)
 	{
 		this.staffAccounts = staffAccounts;
@@ -125,7 +144,12 @@ public class InitialData {
 	}
 
 	
-	
+	/**
+	 * Gets the product with the specified term in the name
+	 * @param term
+	 * @return Product 
+	 * Null
+	 */
 	public Product getProduct(String term)
 	{
 		for (Product product:products)
@@ -137,6 +161,12 @@ public class InitialData {
 		
 	}	
 
+	/**
+	 * Gets the supplier with the specified name
+	 * @param name
+	 * @return Supplier
+	 * Null
+	 */
 	public Supplier getSupplier(String name)
 	{
 		for (Supplier supplier:suppliers)
@@ -148,6 +178,12 @@ public class InitialData {
 		
 	}
 	
+	/**
+	 * Gets the supplier with the specified ID
+	 * @param id
+	 * @return Supplier
+	 * Null
+	 */
 	public Supplier getSupplierByID(int id)
 	{
 		for (Supplier supplier:suppliers)
@@ -159,10 +195,18 @@ public class InitialData {
 		
 	}
 
+	/**
+	 * Gets the list of Customers
+	 * @return Customers List
+	 */
 	public List<CustomerAccount> getCustomers() {
 		return customers;
 	}
 
+	/**
+	 * Sets the list of customers
+	 * @param customers
+	 */
 	public void setCustomers(List<CustomerAccount> customers) {
 		this.customers = customers;
 	}

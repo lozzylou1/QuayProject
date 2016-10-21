@@ -15,7 +15,7 @@ public class LoginService {
 	
 	public boolean loginService(String email, String password)
 	{
-		customerAccount = loginManager.findbyEmail(email);
+		customerAccount = loginManager.findbyEmailOrUserName(email);
 		if (customerAccount != null && password.equals(customerAccount.getPassword()))
 		{
 			return true;

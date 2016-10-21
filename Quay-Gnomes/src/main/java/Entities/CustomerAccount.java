@@ -30,6 +30,9 @@ public class CustomerAccount {
 	
 		@Column (name = "surname", nullable = false)
 		private String surname;
+		
+		@Column (name = "userName", nullable = false)
+		private String userName;
 
 		/**
 		 * CustomerAccount constructor
@@ -42,13 +45,15 @@ public class CustomerAccount {
 		 * @param ca_billingAddress
 		 * @param ca_firstName
 		 * @param ca_surname
+		 * @param ca_userName
 		 */
-		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname){
+		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname, String ca_userName){
 			
 			this.email = ca_email;
 			this.password = ca_password;
 			this.firstName = ca_firstName;
-			this.surname = ca_surname;			
+			this.surname = ca_surname;		
+			this.userName = ca_userName;
 						
 		}	
 		
@@ -192,6 +197,22 @@ public class CustomerAccount {
 		 */
 		public void setSurname(String surname) {
 			this.surname = surname;
+		}
+
+		/**
+		 * Gets the account UserName
+		 * @return userName
+		 */
+		public String getUserName() {
+			return userName;
+		}
+
+		/**
+		 * Sets the account UserName
+		 * @param userName
+		 */
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 	
 		
