@@ -30,11 +30,11 @@ Catalogue
 		</ul>
 		</nav>
 		</div>
-			<div class="row">
+			<div class="row" >
 				<h:form>
 					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />					
 					<br/>
-					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}" >
 										
 						<h:commandLink action="#{products.previous}"
 							value="Previous #{products.pagination.pageSize}"
@@ -44,7 +44,7 @@ Catalogue
 							value="Next #{products.pagination.pageSize}" />
 						<div>
 							<ui:repeat var="product" value="#{products.dataModel}">
-								<div id="image-content" > 
+								<div id="image-content" style="float:left" > 
 								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
 								    	<br/>
 								 

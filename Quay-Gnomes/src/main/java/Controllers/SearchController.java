@@ -2,20 +2,18 @@ package Controllers;
 
 import java.io.Serializable;
 
-import Helpers.PaginationHelper;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
-import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import Managers.ProductManager;
 import services.SearchService;
 import Entities.Product;
 
+@SuppressWarnings("serial")
 @Named("search")
 @SessionScoped
 public class SearchController implements Serializable {
@@ -32,6 +30,7 @@ public class SearchController implements Serializable {
 	@Inject
 	private SearchService searchService;
 
+	@SuppressWarnings("unused")
 	private DataModel<Product> dataModel = null;
 	
 	

@@ -3,7 +3,6 @@ package Controllers;
 import java.util.List;
 import java.io.Serializable;
 
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -15,6 +14,7 @@ import services.SearchService;
 import Entities.Product;
 import Helpers.PaginationHelper;
 
+@SuppressWarnings("serial")
 @Named("products")
 @SessionScoped
 public class ProductController implements Serializable {
@@ -29,7 +29,6 @@ public class ProductController implements Serializable {
 	private int selected;
 	private DataModel <Product> dataModel = null;	
 	private String term;
-	private String type;
 	private List<Product> itemsList;
 
 	public String searchByTerm()
@@ -40,7 +39,7 @@ public class ProductController implements Serializable {
 		return "Products";
 	}
 
-	public String searchByType()
+	public String searchByType(String type)
 	{
 		itemsList = searchService.displayListType(type);
 		pagination = null;
@@ -60,7 +59,7 @@ public class ProductController implements Serializable {
 
 		if (pagination == null)
 		{
-			pagination = new PaginationHelper(10) 
+			pagination = new PaginationHelper(6) 
 			{
 				@Override
 				public int getItemsCount()
@@ -176,13 +175,6 @@ public class ProductController implements Serializable {
 		dataModel = null;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 }
 

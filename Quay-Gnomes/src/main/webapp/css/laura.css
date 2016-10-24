@@ -23,9 +23,6 @@
 	color: white;
 }
 
-a {
-	color: white;
-}
 
 .form {
 	width: 500;
@@ -44,10 +41,10 @@ a {
 }
 
 #footer {
-	position: abolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 60px; /* Height of the footer */
+	height:60px; /* Height of the footer */
 	background: #DCCBDA;
 	text-align: center;
 	font-size: 12px;
