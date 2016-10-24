@@ -52,7 +52,7 @@ public class ProductController implements Serializable {
 	 * @return String Products
 	 */
 	public String searchByType()
-	{
+	{		
 		itemsList = searchService.displayListType(type);
 		pagination = null;
 		recreateModel();
