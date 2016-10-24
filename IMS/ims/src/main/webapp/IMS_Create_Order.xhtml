@@ -1,59 +1,15 @@
 <!DOCTYPE html>
 <html>
-<ui.composition 
-	lang="en" 
-	xmlns="https://www.w3.org/1999/xhtml"
+	<ui:composition xmlns="https://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:p="http://java.sun.com/jsf/passthrough"
-	template= "templates/imsTemplate.xhtml">
-	<meta charset= "utf-8" />
-<body>
-<br/>
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
+	template="templates/IMS_Template.xhtml">
+	<meta charset="utf-8" />
+<ui:define name="title">Create Order</ui:define>
+<ui:define name="maincontent">
 
-	<nav>
-
-		<div class="menu-item alpha">
-			<h4><a href="#">IMS Dashboard</a></h4>
-		</div>
-	
-		<div class="menu-item">
-			<h4><a href="#">Orders</a></h4>
-			<ul>
-				<li><a href="#">View Orders</a></li>
-				<li><a href="#">Create Order</a></li>
-			</ul>
-		</div>
-		
-		<div class="menu-item">
-			<h4><a href="#">Inventory</a></h4>
-			<ul>
-				<li><a href="#">Gnomes</a></li>
-				<li><a href="#">Hot Tubs</a></li>
-				<li><a href="#">Gnome Accessories</a></li>
-			</ul>
-		</div>
-		
-		<div class="menu-item">
-			<h4><a href="#">Suppliers</a></h4>
-			<ul>
-				<li><a href="#">View Suppliers</a></li>
-				<li><a href="#">Add Supplier</a></li>
-			</ul>
-		</div>
-		
-		<div class="menu-item">
-			<h4><a href="#">Warehouse Map</a></h4>
-			<ul>
-				<li><a href="#">TEST</a></li>
-			</ul>
-		</div>
-	</nav>
-	<br/>
-	<br/>
-	<br/>
-	<div class="main-content">
 	<h1>Create Order</h1>
 	<select>
 		<option value="#">Supplier</option>
@@ -61,11 +17,11 @@
 		<option value="supplierTwo">Supplier Two</option>
 		<option value="supplierThree">Supplier Three</option>
 	</select>
-		<input type="search" placeholder="Search..." class="productsearch">
+		<input type="search" placeholder="Search..." class="productsearch"/>
 			<button class="btn btn-warning">
 				<span class="glyphicon glyphicon-search"></span>
 			</button>
-		</input>
+		
 		<div class="table-content-create-order">
 			<table align="center" style="width:50%">
 				<tr>
@@ -147,16 +103,6 @@
 			</table>
 			
 		</div>
-		
-		
-	</div>
-	
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-</body>
-</ui.composition>
+</ui:define>
+</ui:composition>
 </html>

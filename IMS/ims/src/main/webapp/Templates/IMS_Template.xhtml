@@ -8,16 +8,17 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
 	<title><ui:insert name="title" /></title>
-	<link rel="stylesheet" media="screen"
-		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" media="screen" href="css/IMS_Style.css" />
+	
+		<link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+				<link rel="stylesheet" media="screen" href="css/IMS_Style.css"/>
+	
 </h:head>
 <f:view>
-	<body>
-
+	<body id="body">
+	<div class="wrapper">
 		<nav>
-
 			<div class="menu-item alpha">
 				<h4>
 					<a href="IMS_Dashboard.xhtml">IMS Dashboard</a>
@@ -64,6 +65,15 @@
 				</ul>
 			</div>
 		</nav>
+		<DIV class="container" id="body">
+			<ui:insert name="maincontent"/>
+		</DIV>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>										
+		<script src="slider/js-image-slider.js" type="text/javascript"></script>	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+		
+		</div>
 	</body>
 </f:view>
 </html>
