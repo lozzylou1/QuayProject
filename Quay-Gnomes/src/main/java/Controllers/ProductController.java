@@ -29,22 +29,47 @@ public class ProductController implements Serializable {
 	private int selected;
 	private DataModel <Product> dataModel = null;	
 	private String term;
+	private String type;
+	private String size;
 	private List<Product> itemsList;
-
+	
+	/**
+	 * Search Products by Term
+	 * 
+	 * @return String Products
+	 */
 	public String searchByTerm()
 	{
 		itemsList = searchService.displayListTerm(term);
 		pagination = null;
 		recreateModel();		
 		return "Products";
-	}
-
-	public String searchByType(String type)
+	}	
+	/**
+	 * Search Products by Type
+	 * 
+	 * @return String Products
+	 */
+	public String searchByType()
 	{
 		itemsList = searchService.displayListType(type);
 		pagination = null;
 		recreateModel();
 		return "Products";		
+	}
+	
+	/**
+	 * Returns the user to the products page
+	 * so that the page displays the appropriate products
+	 * 
+	 * @return String "Products"
+	 */
+	public String searchBySize()
+	{
+		itemsList = searchService.displayListTerm(size);
+		pagination = null;
+		recreateModel();		
+		return "Products";
 	}
 	
 	/**
@@ -175,6 +200,31 @@ public class ProductController implements Serializable {
 		dataModel = null;
 	}
 
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	/**
+	 * Get the size from appropriate checkbox
+	 * 
+	 * @return String size
+	 */
+	public String getSize() {
+		return size;
+	}
+	
+	/**
+	 * Set the size
+	 * 
+	 * @param Sttring size
+	 */
+	public void setSize(String size) {
+		this.size = size;
+	}
 
 }
 

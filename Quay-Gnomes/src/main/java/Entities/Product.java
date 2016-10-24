@@ -41,9 +41,11 @@ public class Product {
 	@Column (name = "type", nullable = false)
 	private String type;
 	
+	@Column (name = "size", nullable = false)
+	private String size;
+	
 	@Column (name = "image1", nullable = false)
 	private String image1;
-
 	
 	/**
 	 * Product Constructor
@@ -61,7 +63,7 @@ public class Product {
 	 */
 
 	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
-			String p_dimensions, String p_shortDescription, String p_longDescription, String p_type, String p_image1){
+			String p_dimensions, String p_shortDescription, String p_longDescription, String p_type, String p_size, String p_image1){
 		
 		this.productID = p_productID;
 		this.productName = p_productName;
@@ -73,13 +75,9 @@ public class Product {
 		this.shortDescription = p_shortDescription;
 		this.longDescription = p_longDescription;
 		this.type = p_type;
+		this.size = p_size;
 		this.image1 = p_image1;
-		
 	}
-
-
-
-	
 
 	/**
 	 * Returns the first image
@@ -183,7 +181,7 @@ public class Product {
 	/**
 	 * Get the price of the product
 	 * 
-	 * @return pricen
+	 * @return price
 	 */
 	public float getPrice() {
 		return price;
@@ -285,8 +283,26 @@ public class Product {
 	 * @param String type 
 	 */
 	public void setProductType(String type) {
-		this.type = type;
+		this.type = type;	
 	}	
 	
-
+	/**
+	 * Gets the product size
+	 * 
+	 * @return Product size
+	 */
+	public String getProductSize() {
+		return size;
+	}
+	
+	/**
+	 * Sets the product size 
+	 * 
+	 * @param String size 
+	 */
+	public void setProductSize(String size) {
+		this.size = size;
+		
+	}	
+	
 }

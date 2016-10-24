@@ -14,19 +14,23 @@ Catalogue
 		<nav class="Left-nav"> 
 		<ul style="list-style-type:none" class="col-m-12">
 			    <h2>Type</h2>
-				<li><a href="#"><input type="checkbox">Indoor </input></a></li>
-				<li><a href="#"><input type="checkbox">Outdoor </input></a></li>
-				<li><a href="#"><input type="checkbox">Special </input></a></li>
+				<h:selectManyCheckbox value="#{product.type}">
+			   	<f:selectItem itemValue="Indoor" itemLabel="Indoor" />
+			   	<f:selectItem itemValue="Outdoor" itemLabel="Outdoor" />
+			   	<f:selectItem itemValue="Special" itemLabel="Special" />
+				</h:selectManyCheckbox>
 			    <h2>Size</h2>
-				<li><a href="#"><input type="checkbox">Large </input></a></li>
-				<li><a href="#"><input type="checkbox">Medium </input></a></li>
-				<li><a href="#"><input type="checkbox">Small </input></a></li>
+   				<h:selectManyCheckbox value="#{product.size}">
+			   	<f:selectItem itemValue="Small" itemLabel="Small" />
+			   	<f:selectItem itemValue="Medium" itemLabel="Medium" />
+			   	<f:selectItem itemValue="Large" itemLabel="Large" />
+				</h:selectManyCheckbox>
 			    <h2>Rating</h2>
-				<li><a href="#"><input type="checkbox">5 </input></a></li>
-				<li><a href="#"><input type="checkbox">4 </input></a></li>
-				<li><a href="#"><input type="checkbox">3 </input></a></li>
-				<li><a href="#"><input type="checkbox">2 </input></a></li>
-				<li><a href="#"><input type="checkbox">1 </input></a></li>
+				<li><a><label><input type="checkbox">1</input></label></a></li>
+				<li><a><label><input type="checkbox">2</input></label></a></li>
+				<li><a><label><input type="checkbox">3</input></label></a></li>
+				<li><a><label><input type="checkbox">4</input></label></a></li>
+				<li><a><label><input type="checkbox">5</input></label></a></li>
 		</ul>
 		</nav>
 		</div>
@@ -46,8 +50,7 @@ Catalogue
 							<ui:repeat var="product" value="#{products.dataModel}">
 								<div id="image-content" style="float:left" > 
 								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
-								    	<br/>
-								 
+								    	<br/>				 
 								    	<h:commandLink 
 									 	action="#{products.view(product.productID)}"
 										value="#{product.productName}"
@@ -56,8 +59,6 @@ Catalogue
 									  <h:commandLink 
 										action="#{products.view(product.productID)}"	/>
 										<h:outputText value="£"/><h:outputText value="#{product.price}"/>
-										 
-									
 										<h:outputText  />
 								
 								</div>								

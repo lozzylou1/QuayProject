@@ -33,9 +33,6 @@ public class SearchController implements Serializable {
 	@SuppressWarnings("unused")
 	private DataModel<Product> dataModel = null;
 	
-	
-
-
 	public ArrayList<Product> getListOfProducts() {
 		return listOfProducts;
 	}

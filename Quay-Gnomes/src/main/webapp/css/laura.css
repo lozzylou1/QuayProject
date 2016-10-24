@@ -149,10 +149,17 @@ table, th, td {
 	bottom: 0;
 }
 
+<<<<<<< HEAD
+  .Left-nav {
+   float :left;
+   height:650;
+  }
+=======
 .Left-nav {
 	float: left;
 	height: 450px;
 }
+>>>>>>> 0bda7f4089705d8976464e0bd81404bae6bb884a
 
 #searchPane {
 	width: auto;
