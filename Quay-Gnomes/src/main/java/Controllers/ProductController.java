@@ -66,7 +66,7 @@ public class ProductController implements Serializable {
 	 */
 	public String searchBySize()
 	{
-		itemsList = searchService.displayListTerm(size);
+		itemsList = searchService.displayListSize(size);
 		pagination = null;
 		recreateModel();		
 		return "Products";

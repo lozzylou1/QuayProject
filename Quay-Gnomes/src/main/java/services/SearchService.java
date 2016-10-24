@@ -39,9 +39,11 @@ public class SearchService {
 			{
 				resultsList.add(product);
 			}
-		}		
+		}
+		
 		return resultsList;
-	}	
+	}
+	
 	/**
 	 * Display list of type
 	 * 

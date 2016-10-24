@@ -14,13 +14,13 @@ Catalogue
 		<nav class="Left-nav"> 
 		<ul style="list-style-type:none" class="col-m-12">
 			    <h2>Type</h2>
-				<h:selectManyCheckbox value="#{product.type}">
+				<h:selectManyCheckbox value="#{products.type}" action="#{products.searchByType()}">
 			   	<f:selectItem itemValue="Indoor" itemLabel="Indoor" />
 			   	<f:selectItem itemValue="Outdoor" itemLabel="Outdoor" />
 			   	<f:selectItem itemValue="Special" itemLabel="Special" />
 				</h:selectManyCheckbox>
 			    <h2>Size</h2>
-   				<h:selectManyCheckbox value="#{product.size}">
+   				<h:selectManyCheckbox value="#{products.size}" action="#{products.searchBySize()}">
 			   	<f:selectItem itemValue="Small" itemLabel="Small" />
 			   	<f:selectItem itemValue="Medium" itemLabel="Medium" />
 			   	<f:selectItem itemValue="Large" itemLabel="Large" />
