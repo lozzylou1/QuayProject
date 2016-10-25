@@ -13,7 +13,7 @@ import com.quayproject.ims.entities.Supplier;
 import com.quayproject.ims.services.ImsService;
 
 @SuppressWarnings("serial")
-@Named("supplier")
+@Named("supplierControl")
 @RequestScoped
 public class SupplierController implements Serializable {
 
@@ -83,9 +83,5 @@ public class SupplierController implements Serializable {
 	 */
 	public void setTerm(String term) {
 		this.term = term;
-	}
-	
-	
-	
-	
+	}	
 }
