@@ -1,12 +1,15 @@
 package com.quayproject.ims.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
 public class PurchaseOrder {
 	
+	@Id
+	@GeneratedValue
 	private int PurchaseOrderID;
 	private int SupplierID;
 	private String StaffID;
@@ -14,17 +17,6 @@ public class PurchaseOrder {
 	private double TotalPrice;
 	private String SupplierName;
 	
-	public PurchaseOrder(int purchaseOrderID, int supplierID, String staffID, String products, double totalPrice,
-			String supplierName) 
-	{
-		super();
-		PurchaseOrderID = purchaseOrderID;
-		SupplierID = supplierID;
-		StaffID = staffID;
-		Products = products;
-		TotalPrice = totalPrice;
-		SupplierName = supplierName;
-	}
 	
 	public int getPurchaseOrderID()
 	{

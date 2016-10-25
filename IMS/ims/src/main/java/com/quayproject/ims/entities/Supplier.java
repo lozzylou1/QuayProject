@@ -3,28 +3,32 @@ package com.quayproject.ims.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+<<<<<<< HEAD
 import javax.persistence.GenerationType;
+=======
+>>>>>>> 5efd65fdfd8a2ea2874095ef26af9fd5cbf666d6
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+
 @Table ( name= "Supplier")
 public class Supplier {
-	
+
 	@Id
 	@Column (name = "supplierID", nullable = false)
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int supplierID;
-	
+
 	@Column (name = "supplierName", nullable = false)
 	private String supplierName;
-	
+
 	@Column (name = "contactNumber", nullable = false)
 	private String contactNumber;
-	
+
 	@Column (name = "dateOfLastOrder", nullable = false)
 	private String dateOfLastOrder;
-	
+
 	/**
 	 * Supplier Constructor
 	 * 
@@ -40,7 +44,7 @@ public class Supplier {
 		this.contactNumber = contactNumber;
 		this.dateOfLastOrder = dateOfLastOrder;
 	}
-	
+
 	/**
 	 * Get supplierID
 	 * @return
@@ -49,7 +53,7 @@ public class Supplier {
 	{
 		return supplierID;
 	}
-	
+
 	/**
 	 * Set supplierID
 	 * @param supplierID
@@ -58,7 +62,7 @@ public class Supplier {
 	{
 		this.supplierID = supplierID;
 	}
-	
+
 	/**
 	 * Get Supplier name
 	 * @return
@@ -67,7 +71,7 @@ public class Supplier {
 	{
 		return supplierName;
 	}
-	
+
 	/**
 	 * set Supplier name
 	 * @return
@@ -76,7 +80,7 @@ public class Supplier {
 	{
 		this.supplierName = supplierName;
 	}
-	
+
 	/**
 	 * Get contact number
 	 * @return
@@ -85,7 +89,7 @@ public class Supplier {
 	{
 		return contactNumber;
 	}
-	
+
 	/**
 	 * set contact number
 	 * @return
@@ -102,10 +106,10 @@ public class Supplier {
 	public String getDateOfLastOrder() {
 		return dateOfLastOrder;
 	}
-/**
- * set DateOfLastOrder
- * @param dateOfLastOrder
- */
+	/**
+	 * set DateOfLastOrder
+	 * @param dateOfLastOrder
+	 */
 	public void setDateOfLastOrder(String dateOfLastOrder) {
 		this.dateOfLastOrder = dateOfLastOrder;
 	}
