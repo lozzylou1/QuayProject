@@ -123,13 +123,13 @@ public class HibernateApplication {
 
 		//PURCHASE ORDERS
 		
-		////////////////////////////////////////////////
-		PurchaseOrder purch1 = new PurchaseOrder();		//
-		purch1.setSupplierName("Gnomes 'R' Us");			//
-		purch1.setProducts("Harry Potter Gnome", "Game Of Gnomes");					//	PURCHASE ORDER 1	
-		purch1.setSupplierName(supplierName);			//
-		purch1.setTotalPrice(totalPrice); 				//	
-		////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////
+		PurchaseOrder purch1 = new PurchaseOrder();		            //
+		purch1.setSupplierName("Gnomes 'R' Us");			        //
+		purch1.setProducts("Harry Potter Gnome", "Game Of Gnomes");	//	PURCHASE ORDER 1	
+		purch1.setSupplierName(supplierName);			            //
+		purch1.setTotalPrice(totalPrice); 				            //	
+		////////////////////////////////////////////////////////////
 		
 		/**
 		 * Submit objects to Hibernate
