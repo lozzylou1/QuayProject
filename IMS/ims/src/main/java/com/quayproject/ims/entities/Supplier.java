@@ -1,52 +1,42 @@
 package com.quayproject.ims.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
 public class Supplier {
-	
+	@Id
+	@GeneratedValue
 	private int SupplierID;
 	private String SupplierName;
-	private int ContactNumber;
+	private String ContactNumber;
 	
-	public Supplier(int supplierID, String supplierName, int contactNumber)
-	{
-		super();
-		SupplierID = supplierID;
-		SupplierName = supplierName;
-		ContactNumber = contactNumber;
-	}
 	
-	public int getSupplierID() 
-	{
+	
+	/**
+	 * GETTERS AND SETTERS
+	 */
+	
+	public int getSupplierID() {
 		return SupplierID;
 	}
-	
-	public void setSupplierID(int supplierID)
-	{
+	public void setSupplierID(int supplierID) {
 		SupplierID = supplierID;
 	}
-	
-	public String getSupplierName()
-	{
+	public String getSupplierName() {
 		return SupplierName;
 	}
-	
-	public void setSupplierName(String supplierName) 
-	{
+	public void setSupplierName(String supplierName) {
 		SupplierName = supplierName;
 	}
-	
-	public int getContactNumber()
-	{
+	public String getContactNumber() {
 		return ContactNumber;
 	}
-	
-	public void setContactNumber(int contactNumber)
-	{
+	public void setContactNumber(String contactNumber) {
 		ContactNumber = contactNumber;
 	}
-
+	
+	
 }
