@@ -1,4 +1,4 @@
-package Entity;
+package com.quayproject.ims.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

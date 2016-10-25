@@ -14,11 +14,12 @@ import com.quayproject.ims.services.ImsService;
 @Named("inventory")
 @SessionScoped
 
-public class InventoryController implements Serializable{
+public class InventoryController implements Serializable {
 
 	@Inject
 	private ImsService imsService;
 	private String term;
+	
 	
 	public List<Product> searchByName() {
 		
