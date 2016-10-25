@@ -1,4 +1,4 @@
-package Entity;
+package com.quayproject.ims.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -21,34 +21,54 @@ public class Inventory {
 		AllocateStock = allocateStock;
 		ProductName = productName;
 	}
-	public int getProductID() {
+	
+	public int getProductID()
+	{
 		return ProductID;
 	}
-	public void setProductID(int productID) {
+	
+	public void setProductID(int productID) 
+	{
 		ProductID = productID;
 	}
-	public int getStockLevel() {
+	
+	public int getStockLevel()
+	{
 		return StockLevel;
 	}
-	public void setStockLevel(int stockLevel) {
+	
+	public void setStockLevel(int stockLevel)
+	{
 		StockLevel = stockLevel;
 	}
-	public int getThreshold() {
+	
+	public int getThreshold()
+	{
 		return Threshold;
 	}
-	public void setThreshold(int threshold) {
+	
+	public void setThreshold(int threshold) 
+	{
 		Threshold = threshold;
 	}
-	public boolean isAllocateStock() {
+	
+	public boolean isAllocateStock()
+	{
 		return AllocateStock;
 	}
-	public void setAllocateStock(boolean allocateStock) {
+	
+	public void setAllocateStock(boolean allocateStock)
+	{
 		AllocateStock = allocateStock;
 	}
-	public String getProductName() {
+	
+	public String getProductName()
+	{
 		return ProductName;
 	}
-	public void setProductName(String productName) {
+	
+	public void setProductName(String productName) 
+	{
 		ProductName = productName;
 	}
 }
