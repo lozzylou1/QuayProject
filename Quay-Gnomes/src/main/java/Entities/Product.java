@@ -112,7 +112,7 @@ public class Product {
 		return shortDescription;
 	}
 
-	
+
 	/**
 	 * Set the short description
 	 * 
@@ -305,4 +305,39 @@ public class Product {
 		
 	}	
 	
+	/**
+	 * Get the type
+	 * 
+	 * @return String type
+	 */
+	public String getType() {
+		return type;
+	}
+	
+	/**
+	 * Set the type
+	 * 
+	 * @param String type
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	/**
+	 * Get the size
+	 * 
+	 * @return String size
+	 */
+	public String getSize() {
+		return size;
+	}
+	
+	/**
+	 * Set the size
+	 * 
+	 * @param Stringsize
+	 */
+	public void setSize(String size) {
+		this.size = size;
+	}
 }

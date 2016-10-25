@@ -42,6 +42,7 @@ public class ProductController implements Serializable {
 	{
 		itemsList = searchService.displayListTerm(term);
 		pagination = null;
+		
 		recreateModel();		
 		return "Products";
 	}	
