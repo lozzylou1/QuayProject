@@ -65,6 +65,11 @@ public class HibernateApplication {
 		 * Creating objects from classes
 		 */
 		
+		/**
+		 * Creating the Supplier object
+		 * Populating a list with the Supplier objects
+		 */
+		
 		//SUPPLIERS
 		
 		////////////////////////////////////////////////
@@ -99,6 +104,11 @@ public class HibernateApplication {
 		supplierList.add(supp3);							   //
 		///////////////////////////////////////////////////////
 		
+		/**
+		 * Creating the Staff Account object
+		 * Populating a list with the Staff Account objects
+		 */
+		
 		//STAFF ACCOUNT
 		
 		////////////////////////////////////////////////
@@ -121,6 +131,11 @@ public class HibernateApplication {
 		staffAccountList.add(stf2);							    	//						  
 		////////////////////////////////////////////////////////////
 
+		/**
+		 * Creating the PurchaseOrder object
+		 * Populating a list with the PurchaseOrder objects
+		 */
+		
 		//PURCHASE ORDERS
 		
 		////////////////////////////////////////////////////////////
@@ -146,15 +161,21 @@ public class HibernateApplication {
 		 * For loop to add all of the objects to the database at once
 		 */
 		
+		//SUPPLIER FOR LOOP
+		
 		for(Supplier s : supplierList)
 		{
 			session.save(s);
 		}
 		
+		//STAFF ACCOUNT FOR LOOP
+		
 		for(StaffAccount a : staffAccountList)
 		{
 			session.save(a);
 		}
+		
+		//PURCHASE ORDER FOR LOOP
 		
 		for(PurchaseOrder p : purchaseOrderList)
 		{
