@@ -3,10 +3,7 @@ package com.quayproject.ims.entities;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-<<<<<<< HEAD
 import javax.persistence.GenerationType;
-=======
->>>>>>> 5efd65fdfd8a2ea2874095ef26af9fd5cbf666d6
 import javax.persistence.Id;
 import javax.persistence.Table;
 
