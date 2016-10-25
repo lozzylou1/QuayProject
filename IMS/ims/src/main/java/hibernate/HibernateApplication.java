@@ -126,10 +126,16 @@ public class HibernateApplication {
 		////////////////////////////////////////////////////////////
 		PurchaseOrder purch1 = new PurchaseOrder();		            //
 		purch1.setSupplierName("Gnomes 'R' Us");			        //
-		purch1.setProducts("Harry Potter Gnome", "Game Of Gnomes");	//	PURCHASE ORDER 1	
-		purch1.setSupplierName(supplierName);			            //
-		purch1.setTotalPrice(totalPrice); 				            //	
+		purch1.setProducts("Harry Potter Gnome");					//	PURCHASE ORDER 1	
+		purch1.setTotalPrice(549.99); 				            	//	
 		////////////////////////////////////////////////////////////
+		
+		/////////////////////////////////////////////////////////////
+		Query purchQuery = session.createQuery("from PurchaseOrder");//
+		List<PurchaseOrder> purchaseOrderList = purchQuery.list();	 //
+				        											 //	PURCHASE ORDER LIST
+		purchaseOrderList.add(purch1);							     //						  
+		/////////////////////////////////////////////////////////////
 		
 		/**
 		 * Submit objects to Hibernate
@@ -148,6 +154,11 @@ public class HibernateApplication {
 		for(StaffAccount a : staffAccountList)
 		{
 			session.save(a);
+		}
+		
+		for(PurchaseOrder p : purchaseOrderList)
+		{
+			session.save(p);
 		}
 		
 		session.close();
