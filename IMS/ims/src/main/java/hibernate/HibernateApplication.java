@@ -10,6 +10,8 @@ import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+
+import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.StaffAccount;
 import com.quayproject.ims.entities.Supplier;
 
@@ -35,7 +37,8 @@ public class HibernateApplication {
 		Configuration cfg = new Configuration()
 				.addProperties(props)
 				.addAnnotatedClass(Supplier.class)
-				.addAnnotatedClass(StaffAccount.class);
+				.addAnnotatedClass(StaffAccount.class)
+				.addAnnotatedClass(PurchaseOrder.class);
 		
 		/**
 		 * Create Service Registry Objects
@@ -118,6 +121,16 @@ public class HibernateApplication {
 		staffAccountList.add(stf2);							    	//						  
 		////////////////////////////////////////////////////////////
 
+		//PURCHASE ORDERS
+		
+		////////////////////////////////////////////////
+		PurchaseOrder purch1 = new PurchaseOrder();		//
+		purch1.setSupplierName("Gnomes 'R' Us");			//
+		purch1.setProducts("Harry Potter Gnome", "Game Of Gnomes");					//	PURCHASE ORDER 1	
+		purch1.setSupplierName(supplierName);			//
+		purch1.setTotalPrice(totalPrice); 				//	
+		////////////////////////////////////////////////
+		
 		/**
 		 * Submit objects to Hibernate
 		 * Close session and session factory
