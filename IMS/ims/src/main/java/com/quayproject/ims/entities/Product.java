@@ -94,7 +94,6 @@ public class Product {
 	 * 
 	 * @return image1
 	 */
-
 	public String getImage1() {
 		return image1;
 	}
@@ -105,7 +104,6 @@ public class Product {
 	 * 
 	 * @param image1
 	 */
-
 	public void setImage1(String image1) {
 		this.image1 = image1;
 	}
@@ -116,8 +114,6 @@ public class Product {
 	 * 
 	 * @return shortDescription
 	 */
-
-
 	public String getShortDescription() {
 		return shortDescription;
 	}

@@ -24,20 +24,15 @@
 					<th>Supplier Name</th>
 					<th>Other Information</th>
 				</tr>
+				<ui:repeat var="product" value="#{inventory.dataModel}">
 				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
+					<td ><h:outputText value="#{inventory.productID}" /></td>
+					<td> <h:outputText value="#{inventory.productID}" /></td> 
+					<td value="#{inventory.stockLevel}">Data</td>
 					<td>Input</td> 
 					<td>Data</td>
 				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-					<td>Data</td>
-				</tr>
+				</ui:repeat>
 			</table>
 		</div>
 </ui:define>

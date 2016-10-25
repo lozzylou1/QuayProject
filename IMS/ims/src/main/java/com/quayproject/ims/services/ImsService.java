@@ -10,7 +10,6 @@ import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.managers.InventoryManager;
 
 @Stateless
-
 public class ImsService {
 
 	@Inject

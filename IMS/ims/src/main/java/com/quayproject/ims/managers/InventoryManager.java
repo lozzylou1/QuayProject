@@ -1,6 +1,8 @@
 package com.quayproject.ims.managers;
 
 import java.util.List;
+
+
 import com.quayproject.ims.entities.Product;
 
 public interface  InventoryManager {

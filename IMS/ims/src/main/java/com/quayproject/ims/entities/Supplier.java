@@ -11,28 +11,41 @@ public class Supplier {
 	private String SupplierName;
 	private int ContactNumber;
 	
-	public Supplier(int supplierID, String supplierName, int contactNumber) {
+	public Supplier(int supplierID, String supplierName, int contactNumber)
+	{
 		super();
 		SupplierID = supplierID;
 		SupplierName = supplierName;
 		ContactNumber = contactNumber;
 	}
-	public int getSupplierID() {
+	
+	public int getSupplierID() 
+	{
 		return SupplierID;
 	}
-	public void setSupplierID(int supplierID) {
+	
+	public void setSupplierID(int supplierID)
+	{
 		SupplierID = supplierID;
 	}
-	public String getSupplierName() {
+	
+	public String getSupplierName()
+	{
 		return SupplierName;
 	}
-	public void setSupplierName(String supplierName) {
+	
+	public void setSupplierName(String supplierName) 
+	{
 		SupplierName = supplierName;
 	}
-	public int getContactNumber() {
+	
+	public int getContactNumber()
+	{
 		return ContactNumber;
 	}
-	public void setContactNumber(int contactNumber) {
+	
+	public void setContactNumber(int contactNumber)
+	{
 		ContactNumber = contactNumber;
 	}
 
