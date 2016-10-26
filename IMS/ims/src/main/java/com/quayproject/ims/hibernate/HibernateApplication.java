@@ -79,23 +79,13 @@ public class HibernateApplication {
 		
 		//SUPPLIERS
 		
-		////////////////////////////////////////////////
-		Supplier supp1 = new Supplier();				//
-		supp1.setSupplierName("Gnomes 'R' Us");			//	SUPPLIER 1
-		supp1.setContactNumber("07787998558");			//
-		////////////////////////////////////////////////
-		
-		////////////////////////////////////////////////
-		Supplier supp2 = new Supplier();				//
-		supp2.setSupplierName("Wholesale Garden Goods");//	SUPPLIER 2
-		supp2.setContactNumber("07745986332");			//
-		////////////////////////////////////////////////
-		
-		////////////////////////////////////////////////
-		Supplier supp3 = new Supplier();				//
-		supp3.setSupplierName("Tubs For You");			//	SUPPLIER 3
-		supp3.setContactNumber("14454698552");			//
-		////////////////////////////////////////////////
+		//////////////////////////////////////////////////////////////////////////////////////
+		Supplier supp1 = new Supplier(001, "Gnomes 'R' Us", "07745487884", "11/10/16");		  //	
+																							  //
+		Supplier supp2 = new Supplier(002, "Tubs 4 U", "07745487884", "14/02/16");			  //	INITIALISING SUPPLIERS
+																							  //
+		Supplier supp3 = new Supplier(003, "Wholesale Garden Goods", "07745487884", "01/05/16");//			
+		//////////////////////////////////////////////////////////////////////////////////////
 
 		/**
 		 * Creating a list to hold all of the supplier objects
@@ -161,8 +151,11 @@ public class HibernateApplication {
 		
 		//PRODUCTS
 		
-		Product prod1 = new Product();
+		Product prod1 = new Product(0, null, 0, null, 0, 0, null, null, null, null, null);
 		
+		Query prodQuery = session.createQuery("from Product");
+		List<Product> productList = prodQuery.list();
+		productList.add(prod1);
 		
 		/**
 		 * Submit objects to Hibernate
@@ -194,8 +187,15 @@ public class HibernateApplication {
 			session.save(p);
 		}
 		
+		//PRODUCT FOR LOOP
+		
+		for(Product pr : productList)
+		{
+			session.save(pr);
+		}
+		
 		session.close();
-		sessionFactory.close();		`
+		sessionFactory.close();		
 	}
 
 }

@@ -1,12 +1,15 @@
 package com.quayproject.ims.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table
 public class Inventory {
-
+	@Id
+	@GeneratedValue
 	private int ProductID;
 	private int StockLevel;
 	private int Threshold;
