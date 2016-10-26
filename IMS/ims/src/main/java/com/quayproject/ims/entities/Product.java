@@ -6,21 +6,45 @@ import javax.persistence.*;
  *
  */
 @Entity
+@Table (name = "Product")
 public class Product {
 	//TODO Need to do foreign keys
 	@Id
+	@Column (name = "productID", nullable = false)
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	private int productID;
+	
+	@Column (name = "productName", nullable = false)
 	private String productName;
+	
+	@Column (name = "price", nullable = false)
 	private float price;
+	
+	@Column (name = "discontinued", nullable = false)
 	private Boolean discontinued;
+
+	@Column (name = "stockLevel", nullable = false)
 	private int stockLevel;
+
+	@Column (name = "productWeight", nullable = false)
 	private float weight;
+	
+	@Column (name = "productDimensions", nullable = false)
 	private String dimensions;
+	
+	@Column (name = "shortDescription", nullable = false)
 	private String shortDescription;
+	
+	@Column (name = "longDescription", nullable = false)
 	private String longDescription;
+	
+	@Column (name = "type", nullable = false)
 	private String type;
+	
+	@Column (name = "image1", nullable = false)
 	private String image1;
+
+	@Column (name = "threshold", nullable = false)
 	private int threshold;
 	
 	/**
@@ -38,7 +62,6 @@ public class Product {
 	 * @param p_image1
 	 */
 
-	/*
 	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
 			String p_dimensions, String p_shortDescription, String p_longDescription, String p_type, String p_image1){
 		
@@ -63,7 +86,7 @@ public class Product {
 		this.stockLevel = stockLevel;
 		this.threshold =threshold;
 		this.productName = productName;
-	}*/
+	}
 	
 
 	/**

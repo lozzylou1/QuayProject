@@ -1,4 +1,4 @@
-package hibernate;
+package com.quayproject.ims.hibernate;
 
 //JAVA IMPORTS
 import java.util.List;

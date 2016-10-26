@@ -11,26 +11,28 @@
 <ui:define name="maincontent">
 
 	<h1>Inventory</h1>
-		<input type="search" placeholder="Search..." class="productsearch"/>
-			<button class="btn btn-warning">
-				<span class="glyphicon glyphicon-search"></span>
-			</button>
+			<h:form>	
+							<h:inputText type="search" placeholder="Search..." class="productsearch"
+							value="#{inventory.term}" action="#{inventory.searchByName()}"/>
+							<h:commandLink class="btn btn-warning" action="#{inventory.searchByName()}">
+								<span class="glyphicon glyphicon-search"></span>
+							</h:commandLink>					
+						</h:form>
 		<div class="table-content">
+		<h:outputText escape="false" value="No Products Found"	rendered="#{inventory.dataModel.rowCount == 0}" />
 			<table align="center" style="width:100%">
 				<tr>
 					<th>Product ID</th>
 					<th>Product Name</th> 
 					<th>Number In Stock</th>
 					<th>Supplier Name</th>
-					<th>Other Information</th>
 				</tr>
 				<ui:repeat var="product" value="#{inventory.dataModel}">
 				<tr>
-					<td ><h:outputText value="#{inventory.productID}" /></td>
-					<td> <h:outputText value="#{inventory.productID}" /></td> 
-					<td value="#{inventory.stockLevel}">Data</td>
-					<td>Input</td> 
-					<td>Data</td>
+					<td ><h:outputText value="#{product.productID}" /></td>
+					<td> <h:outputText value="#{product.productName}" /></td> 
+					<td> <h:outputText value="#{product.stockLevel}" /></td>
+					<td><h:outputText value="#{product.supplierName}" /></td> 
 				</tr>
 				</ui:repeat>
 			</table>

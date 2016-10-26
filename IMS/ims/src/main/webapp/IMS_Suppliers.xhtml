@@ -11,28 +11,31 @@
 <ui:define name="maincontent">
 
 	<h1>Suppliers</h1>
-		<input type="search" placeholder="Search..." class="productsearch"/>
-			<button class="btn btn-warning">
-				<span class="glyphicon glyphicon-search"></span>
-			</button>
+	<h:form>	
+							<h:inputText type="search" placeholder="Search..." class="productsearch"
+							value="#{supplierControl.term}" action="#{supplierControl.searchByName()}"/>
+							<h:commandLink class="btn btn-warning" action="#{supplierControl.searchByName()}">
+								<span class="glyphicon glyphicon-search"></span>
+							</h:commandLink>					
+						</h:form>
 		
 		<div class="table-content">
+		<h:outputText escape="false" value="No Suppliers Found"	rendered="#{supplier.dataModel.rowCount == 0}" />
 			<table align="center" style="width:100%">
 				<tr>
+				 	<th>Supplier ID</th>
 					<th>Supplier Name</th>
 					<th>Supplier Contact Number</th> 
 					<th>Date Last Ordered From</th>
 				</tr>
+					<ui:repeat var="supplier" value="#{supplierControl.dataModel}">
 				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
+					<td ><h:outputText value="#{supplier.supplierID}" /></td>
+					<td> <h:outputText value="#{supplier.supplierName}" /></td> 
+					<td> <h:outputText value="#{supplier.contactNumber}" /></td>
+					<td><h:outputText value="#{supplier.dateOfLastOrder}" /></td> 
 				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-				</tr>
+				</ui:repeat>
 			</table>
 		</div>
 		</ui:define>

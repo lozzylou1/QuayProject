@@ -1,42 +1,113 @@
 package com.quayproject.ims.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Table ( name= "Supplier")
 public class Supplier {
+
 	@Id
-	@GeneratedValue
-	private int SupplierID;
-	private String SupplierName;
-	private String ContactNumber;
-	
-	
-	
+	@Column (name = "supplierID", nullable = false)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int supplierID;
+
+	@Column (name = "supplierName", nullable = false)
+	private String supplierName;
+
+	@Column (name = "contactNumber", nullable = false)
+	private String contactNumber;
+
+	@Column (name = "dateOfLastOrder", nullable = false)
+	private String dateOfLastOrder;
+
 	/**
-	 * GETTERS AND SETTERS
+	 * Supplier Constructor
+	 * 
+	 * @param supplierID
+	 * @param supplierName
+	 * @param contactNumber
+	 * @param dateOfLastOrder
 	 */
-	
-	public int getSupplierID() {
-		return SupplierID;
+	public Supplier(int supplierID, String supplierName, String contactNumber, String dateOfLastOrder)
+	{
+		this.supplierID = supplierID;
+		this.supplierName = supplierName;
+		this.contactNumber = contactNumber;
+		this.dateOfLastOrder = dateOfLastOrder;
 	}
-	public void setSupplierID(int supplierID) {
-		SupplierID = supplierID;
+
+	/**
+	 * Get supplierID
+	 * @return
+	 */
+	public int getSupplierID() 
+	{
+		return supplierID;
 	}
-	public String getSupplierName() {
-		return SupplierName;
+
+	/**
+	 * Set supplierID
+	 * @param supplierID
+	 */
+	public void setSupplierID(int supplierID)
+	{
+		this.supplierID = supplierID;
 	}
-	public void setSupplierName(String supplierName) {
-		SupplierName = supplierName;
+
+	/**
+	 * Get Supplier name
+	 * @return
+	 */
+	public String getSupplierName()
+	{
+		return supplierName;
 	}
-	public String getContactNumber() {
-		return ContactNumber;
+
+	/**
+	 * set Supplier name
+	 * @return
+	 */
+	public void setSupplierName(String supplierName) 
+	{
+		this.supplierName = supplierName;
 	}
-	public void setContactNumber(String contactNumber) {
-		ContactNumber = contactNumber;
+
+	/**
+	 * Get contact number
+	 * @return
+	 */
+	public String getContactNumber()
+	{
+		return contactNumber;
 	}
-	
-	
+
+	/**
+	 * set contact number
+	 * @return
+	 */
+	public void setContactNumber(int contactNumber)
+	{
+		this.contactNumber = Integer.toString(contactNumber);
+	}
+
+	/**
+	 * Get DateOfLastOrder
+	 * @return
+	 */
+	public String getDateOfLastOrder() {
+		return dateOfLastOrder;
+	}
+	/**
+	 * set DateOfLastOrder
+	 * @param dateOfLastOrder
+	 */
+	public void setDateOfLastOrder(String dateOfLastOrder) {
+		this.dateOfLastOrder = dateOfLastOrder;
+	}
+
 }

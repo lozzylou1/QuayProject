@@ -37,7 +37,7 @@
 
 			<div class="menu-item">
 				<h4>
-					<a href="IMS_Inventory.xhtml">Inventory</a>
+					<h:outputLink  value="IMS_Inventory.xhtml" action="#{inventory.searchByName()}">Inventory</h:outputLink >
 				</h4>
 				<ul>
 					<li><a href="#">Gnomes</a></li>
@@ -48,7 +48,7 @@
 
 			<div class="menu-item">
 				<h4>
-					<a href="IMS_Suppliers.xhtml">Suppliers</a>
+				<h:outputLink  value="IMS_Suppliers.xhtml" action="#{supplier.searchByName()}">Suppliers</h:outputLink >
 				</h4>
 				<ul>
 					<li><a href="#">View Suppliers</a></li>
