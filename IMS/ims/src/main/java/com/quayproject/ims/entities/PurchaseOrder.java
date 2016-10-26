@@ -50,9 +50,10 @@ public class PurchaseOrder {
 	 * @param dateOfOrder
 	 * @param dateOfDelivery
 	 */
-	public PurchaseOrder( int supplierID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery) {
+	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery) {
 		
-		this.supplierID = supplierID;
+		
+		this.purchaseOrderID = purchaseOrderID;;
 		this.supplierName = supplierName;
 		this.orderTotal = orderTotal;
 		this.dateOfOrder = dateOfOrder;
