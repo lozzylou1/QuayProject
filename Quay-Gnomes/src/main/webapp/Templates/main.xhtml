@@ -19,7 +19,7 @@
 			<body id="body">
 			<div class="wrapper">
 			<div>
-			<header >	
+			<header >
 						<h:form>
 						<h:link outcome="Home">
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%" ></h:graphicImage>
@@ -48,9 +48,9 @@
 							  <a class="dropdown-toggle" data-toggle="dropdown" >Products <span class="caret"></span></a>
 							  <ul class="dropdown-menu">
 							  <li><h:link outcome="Products" action="products.searchByType('')" >All Products</h:link></li>
-								<li><h:link outcome="Products" action="products.searchByType('Gnome')" >Gnomes</h:link></li>
+								<li><h:link value="Gnomes" outcome="Products" action="#{products.searchByType('Gnome')}" /></li>
 								<li><h:link outcome="Products" action="products.searchByType('Hot Tub')" >Hot Tubs</h:link></li>
-								<li><h:link outcome="Products" action="products.searchByType('Acces')" >Accessories</h:link></li>
+								<li><h:link outcome="Products" action="products.searchByType('Accessories')" >Accessories</h:link></li>
 							  </ul>
 							</li>
 							<li><h:link outcome="AboutUs.xhtml">About Us</h:link></li>
