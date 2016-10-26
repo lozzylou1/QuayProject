@@ -108,6 +108,18 @@ public class SearchService {
 	
 	
 	
+	public List<Product> displayList()
+	{	
+		productList = productManager.findAll();
+		
+		return productList;
+	}	
+	
+	
+	
+	
+	
+	
 	public Product findById(int id) {
 		// TODO Auto-generated method stub
 		return null;

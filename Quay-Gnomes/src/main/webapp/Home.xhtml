@@ -10,6 +10,9 @@
 	<meta charset="utf-8" />
 	<ui:define name="title">Home</ui:define>
 	<ui:define name="maincontent">
+	
+	
+	
 		<div>
 			<br/>
         <div  id="slider">
@@ -23,14 +26,13 @@
 			<br/>
 			<br/>
 			<br/>
+		<h:form>	
 <div id="Product_Nav" align="center" >
-	<h:graphicImage
-		class="Product" value="img/prod1.png"/>
-	<h:graphicImage
-		class="Product" value="img/prod2.png"/>
-	<h:graphicImage
-		class="Product" value="img/prod3.png"/>
+<h:commandLink action="#{products.searchByType('Gnome')}"><h:graphicImage class="Product" value="img/prod1.png"/></h:commandLink>
+	<h:commandLink action="#{products.searchByType('Hot Tub')}"><h:graphicImage	class="Product" value="img/prod2.png"/></h:commandLink>
+	<h:commandLink action="#{products.searchByType('Accessories')}"><h:graphicImage class="Product" value="img/prod3.png"/></h:commandLink>
 </div>
+</h:form>
 <div id="Footer">
 </div>
 </ui:define>

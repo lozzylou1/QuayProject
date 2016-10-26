@@ -19,7 +19,7 @@
 			<body id="body">
 			<div class="wrapper">
 			<div>
-			<header >	
+			<header >
 						<h:form>
 						<h:link outcome="Home">
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%" ></h:graphicImage>
@@ -44,15 +44,7 @@
 						</div>
 						<div class="collapse navbar-collapse" id="myNavbar">
 						  <ul class="nav navbar-nav">							
-							<li class="dropdown">
-							  <a class="dropdown-toggle" data-toggle="dropdown" >Products <span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-							  <li><h:link outcome="Products" action="products.searchByType('')" >All Products</h:link></li>
-								<li><h:link outcome="Products" action="products.searchByType('Gnome')" >Gnomes</h:link></li>
-								<li><h:link outcome="Products" action="products.searchByType('Hot Tub')" >Hot Tubs</h:link></li>
-								<li><h:link outcome="Products" action="products.searchByType('Acces')" >Accessories</h:link></li>
-							  </ul>
-							</li>
+														
 							<li><h:link outcome="AboutUs.xhtml">About Us</h:link></li>
 							<li><h:link outcome="ContactUs.xhtml">Contact Us</h:link></li>
 						  </ul>
@@ -65,7 +57,14 @@
 						  </ul>
 						</div>
 					  </div>
-					</nav>								
+					</nav>	
+					
+					<h:form>	
+						<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
+					</h:form>
+					
+					
+												
 				</header>
 				</div>
 				<DIV class="container" id="body">
@@ -73,6 +72,9 @@
 				</DIV>	
 				<div class="push"></div>
         </div>
+           
+        
+        
 					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>										
 					<script src="slider/js-image-slider.js" type="text/javascript"></script>	
 					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
