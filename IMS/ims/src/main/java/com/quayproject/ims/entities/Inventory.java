@@ -17,13 +17,6 @@ import javax.persistence.Table;
 @Table (name = "Inventory")
 public class Inventory {
 
-	@Id
-	@GeneratedValue
-	private int ProductID;
-	private int StockLevel;
-	private int Threshold;
-	private boolean AllocateStock;
-	private String ProductName;
 
 
 	@Id
