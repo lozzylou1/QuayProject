@@ -79,13 +79,13 @@ public class HibernateApplication {
 		
 		//SUPPLIERS
 		
-		//////////////////////////////////////////////////////////////////////////////////////
-		Supplier supp1 = new Supplier(001, "Gnomes 'R' Us", "07745487884", "11/10/16");		  //	
-																							  //
-		Supplier supp2 = new Supplier(002, "Tubs 4 U", "07745487884", "14/02/16");			  //	INITIALISING SUPPLIERS
-																							  //
+		////////////////////////////////////////////////////////////////////////////////////////
+		Supplier supp1 = new Supplier(001, "Gnomes 'R' Us", "07745487884", "11/10/16");		    //	
+																							    //
+		Supplier supp2 = new Supplier(002, "Tubs 4 U", "07745487884", "14/02/16");			    //	INITIALISING SUPPLIERS
+																							    //
 		Supplier supp3 = new Supplier(003, "Wholesale Garden Goods", "07745487884", "01/05/16");//			
-		//////////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////////
 
 		/**
 		 * Creating a list to hold all of the supplier objects

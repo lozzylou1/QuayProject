@@ -1,76 +1,140 @@
 package com.quayproject.ims.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Table(name = "PurchaseOrder")
 public class PurchaseOrder {
 	
 	@Id
-	@GeneratedValue
-	private int PurchaseOrderID;
-	private int SupplierID;
-	private String StaffID;
-	private String Products;
-	private double TotalPrice;
-	private String SupplierName;
+	@Column (name = "purchaseOrderID", nullable = false)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int purchaseOrderID;
 	
+	//Foreign key
+	@Column (name = "supplierID", nullable = false)
+	private int supplierID;
+	
+	@Column (name = "supplierName", nullable = false)
+	private String supplierName;
+	
+	@Column (name = "staffID", nullable = false)
+	private int staffID;
+	
+	@Column (name = "products", nullable = false)
+	private String products;
+	
+	@Column (name = "orderTotal", nullable = false)
+	private double orderTotal;
+	
+	@Column (name = "productID", nullable = false)
+	private int productID;
+	
+	@Column (name = "dateOfOrder",nullable = false)
+	private String dateOfOrder;
+	
+	@Column (name = "dateOfDelivery",nullable = false)
+	private String dateOfDelivery;
+	
+	/**
+	 * PurchaseOrder Constructor
+	 * 
+	 * @param supplierID
+	 * @param supplierName
+	 * @param orderTotal
+	 * @param dateOfOrder
+	 * @param dateOfDelivery
+	 */
+	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery) {
+		
+		
+		this.purchaseOrderID = purchaseOrderID;;
+		this.supplierName = supplierName;
+		this.orderTotal = orderTotal;
+		this.dateOfOrder = dateOfOrder;
+		this.dateOfDelivery = dateOfDelivery;
+			
+		
+	}
 	
 	public int getPurchaseOrderID()
 	{
-		return PurchaseOrderID;
+		return purchaseOrderID;
 	}
 	
 	public void setPurchaseOrderID(int purchaseOrderID) 
 	{
-		PurchaseOrderID = purchaseOrderID;
+		this.purchaseOrderID = purchaseOrderID;
 	}
 	
 	public int getSupplierID()
 	{
-		return SupplierID;
+		return supplierID;
 	}
 	
 	public void setSupplierID(int supplierID)
 	{
-		SupplierID = supplierID;
+		this.supplierID = supplierID;
 	}
 	
-	public String getStaffID() 
+	public int getStaffID() 
 	{
-		return StaffID;
+		return staffID;
 	}
 	
-	public void setStaffID(String staffID) {
-		StaffID = staffID;
+	public void setStaffID(int staffID) {
+		this.staffID = staffID;
 	}
 	public String getProducts() {
-		return Products;
+		return products;
 	}
 	public void setProducts(String products) 
 	{
-		Products = products;
+		this.products = products;
 	}
 	
-	public double getTotalPrice() 
+	public double getOrderTotal() 
 	{
-		return TotalPrice;
+		return orderTotal;
 	}
 	
-	public void setTotalPrice(double totalPrice)
+	public void setOrderTotale(double totalPrice)
 	{
-		TotalPrice = totalPrice;
+		this.orderTotal = totalPrice;
 	}
 	
 	public String getSupplierName() 
 	{
-		return SupplierName;
+		return supplierName;
 	}
 	
 	public void setSupplierName(String supplierName)
 	{
-		SupplierName = supplierName;
+		this.supplierName = supplierName;
 	}
+	public int getProductID() {
+		return productID;
+	}
+	public void setProductID(int productID) {
+		this.productID = productID;
+	}
+	public String getDateOfOrder() {
+		return dateOfOrder;
+	}
+	public void setDateOfOrder(String dateOfOrder) {
+		this.dateOfOrder = dateOfOrder;
+	}
+	public String getDateOdDelivery() {
+		return dateOfDelivery;
+	}
+	public void setDateOdDelivery(String dateOdDelivery) {
+		this.dateOfDelivery = dateOdDelivery;
+	}
+	
+	
 }
