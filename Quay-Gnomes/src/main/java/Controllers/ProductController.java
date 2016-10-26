@@ -51,9 +51,11 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return String Products
 	 */
-	public String searchByType()
+	public String searchByType(String type)
 	{		
+		System.out.println(">>>>>>>>>>>>>" + type);
 		itemsList = searchService.displayListType(type);
+		//System.out.println(">>>>>>>>>>>>>" + itemsList.size());
 		pagination = null;
 		recreateModel();
 		return "Products";		
@@ -65,13 +67,30 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return String "Products"
 	 */
-	public String searchBySize()
+	public String searchBySize(String size)
 	{
+		System.out.println(">>>>>>>>>>>>>" + size);
 		itemsList = searchService.displayListSize(size);
 		pagination = null;
 		recreateModel();		
 		return "Products";
 	}
+	
+	
+	
+	public String searchByPrice(int price){
+		
+		System.out.println(">>>>>>>>>>>>>" + price);
+		itemsList = searchService.displayListPrice(price);
+		pagination = null;
+		recreateModel();		
+		return "Products";
+				
+	}
+	
+	
+	
+	
 	
 	/**
 	 * If pagination is null, implements pagination

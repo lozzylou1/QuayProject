@@ -63,7 +63,7 @@ public class SearchService {
 				resultsList.add(product);
 			}
 		}		
-		return productList;
+		return resultsList;
 	}	
 	
 	/**
@@ -88,6 +88,26 @@ public class SearchService {
 		}		
 		return resultsList;
 	}	
+	
+	public List<Product> displayListPrice(int price)
+	{	
+		productList = productManager.findAll();
+		resultsList = new ArrayList<Product>();		
+		resultsList.clear();
+		
+		for(Product product : productList)
+		{
+			if (product.getPrice() < price)
+			{
+				resultsList.add(product);
+			}
+		}		
+		return resultsList;
+	}	
+	
+	
+	
+	
 	public Product findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
