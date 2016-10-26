@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
 
@@ -40,10 +41,12 @@ public class ProductController implements Serializable {
 	 */
 	public String searchByTerm()
 	{
-		itemsList = searchService.displayListTerm(term);
-		pagination = null;
 		
-		recreateModel();		
+		itemsList = searchService.displayListTerm(term);
+		System.out.println(">>>>>>>>>>>>> searchbyterm");
+		pagination = null;
+		recreateModel();
+		//getDataModel();
 		return "Products";
 	}	
 	/**
@@ -52,14 +55,19 @@ public class ProductController implements Serializable {
 	 * @return String Products
 	 */
 	public String searchByType(String type)
-	{		
-		System.out.println(">>>>>>>>>>>>>" + type);
+	{	
+		pagination = null;
+		recreateModel();
+		System.out.println(">>>>>>>>>>>>> searchbytype" + type);
 		itemsList = searchService.displayListType(type);
 		//System.out.println(">>>>>>>>>>>>>" + itemsList.size());
 		pagination = null;
 		recreateModel();
+		//getDataModel();
 		return "Products";		
 	}
+	
+	
 	
 	/**
 	 * Returns the user to the products page
@@ -69,26 +77,45 @@ public class ProductController implements Serializable {
 	 */
 	public String searchBySize(String size)
 	{
-		System.out.println(">>>>>>>>>>>>>" + size);
-		itemsList = searchService.displayListSize(size);
 		pagination = null;
-		recreateModel();		
+		recreateModel();	
+		System.out.println(">>>>>>>>>>>>> searchbysize" + size);
+		itemsList = searchService.displayListSize(size);
+		//pagination = null;
+		//recreateModel();
+		getDataModel();
 		return "Products";
 	}
 	
 	
 	
 	public String searchByPrice(int price){
-		
-		System.out.println(">>>>>>>>>>>>>" + price);
-		itemsList = searchService.displayListPrice(price);
 		pagination = null;
-		recreateModel();		
+		recreateModel();
+		System.out.println(">>>>>>>>>>>>> searchbyprice" + price);
+		itemsList = searchService.displayListPrice(price);
+		//pagination = null;
+		//recreateModel();
+		//getDataModel();
 		return "Products";
 				
 	}
 	
 	
+	
+	public String getAllProducts(){
+		
+		pagination = null;
+		recreateModel();	
+		
+		System.out.println(">>>>>>>>>>>>> getAllProducts");
+		itemsList = searchService.displayList();
+		//pagination = null;
+		//recreateModel();
+		//getDataModel();
+		return "Products";
+				
+	}
 	
 	
 	
@@ -99,7 +126,7 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return PagioationHelper
 	 */
-	public PaginationHelper getPagination () 
+	public PaginationHelper getPagination() 
 	{
 
 		if (pagination == null)
@@ -147,6 +174,10 @@ public class ProductController implements Serializable {
 			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
+	}
+	
+	public void setDataModel(ArrayList<Product> model){
+		dataModel.setWrappedData(model);
 	}
 	
 	
