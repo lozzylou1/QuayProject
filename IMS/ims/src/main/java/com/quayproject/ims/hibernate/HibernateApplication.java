@@ -109,13 +109,13 @@ public class HibernateApplication {
 		//STAFF ACCOUNT
 		
 		////////////////////////////////////////////////
-		StaffAccount stf1 = new StaffAccount();			//
-		stf1.setUserName("Admin");						//	STAFF ACCOUNT 1
+		StaffAccount stf1 = new StaffAccount();		//
+		stf1.setUserName("Admin");					//	STAFF ACCOUNT 1
 		stf1.setPassword("password");					//
 		////////////////////////////////////////////////
 
 		////////////////////////////////////////////////
-		StaffAccount stf2 = new StaffAccount();			//
+		StaffAccount stf2 = new StaffAccount();		//
 		stf2.setUserName("standardUser");				//	STAFF ACCOUNT 2
 		stf2.setPassword("standardPassword");			//
 		////////////////////////////////////////////////
@@ -124,8 +124,8 @@ public class HibernateApplication {
 		Query staffQuery = session.createQuery("from StaffAccount");//
 		List<StaffAccount> staffAccountList = staffQuery.list();	//
 				   											        //	STAFF LIST
-		staffAccountList.add(stf1);							    	//
-		staffAccountList.add(stf2);							    	//						  
+		staffAccountList.add(stf1);							    //
+		staffAccountList.add(stf2);							    //						  
 		////////////////////////////////////////////////////////////
 
 		/**
@@ -136,10 +136,8 @@ public class HibernateApplication {
 		//PURCHASE ORDERS
 		
 		////////////////////////////////////////////////////////////
-		PurchaseOrder purch1 = new PurchaseOrder();		            //
-		purch1.setSupplierName("Gnomes 'R' Us");			        //
-		purch1.setProducts("Harry Potter Gnome");					//	PURCHASE ORDER 1	
-		purch1.setTotalPrice(549.99); 				            	//	
+		PurchaseOrder purch1 = new PurchaseOrder(001, "Gnomes 'R' Us", 1745, "11/01/16", "25/02/16");
+						            	
 		////////////////////////////////////////////////////////////
 		
 		/////////////////////////////////////////////////////////////
@@ -151,7 +149,18 @@ public class HibernateApplication {
 		
 		//PRODUCTS
 		
-		Product prod1 = new Product(0, null, 0, null, 0, 0, null, null, null, null, null);
+		Product prod1 = new Product();
+		prod1.setProductName("Harry Potter Gnome");
+		prod1.setDimensions("10x10");
+		prod1.setDiscontinued(false);
+		prod1.setImage1("img/IMG_SRC.png");
+		prod1.setLongDescription("Long Description");
+		prod1.setPrice((float)19.99);
+		prod1.setProductType("Gnome");
+		prod1.setShortDescription("Short Description");
+		prod1.setStockLevel(150);
+		prod1.setWeight((float)1.2);
+		
 		
 		Query prodQuery = session.createQuery("from Product");
 		List<Product> productList = prodQuery.list();

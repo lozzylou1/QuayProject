@@ -39,6 +39,10 @@ public class StaffAccount {
 		this.userName = userName;
 		this.password = password;
 	}
+	
+	public StaffAccount(){
+		
+	}
 	/**
 	 * Returns staff ID
 	 * 

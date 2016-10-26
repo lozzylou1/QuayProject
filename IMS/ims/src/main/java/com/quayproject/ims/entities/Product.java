@@ -64,7 +64,7 @@ public class Product {
 	 * @param p_longDescription
 	 * @param p_image1
 	 */
-
+	
 	public Product(int p_productID, String p_productName, float p_price, Boolean p_discontinued, int p_stockLevel, float p_weight, 
 			String p_dimensions, String p_shortDescription, String p_longDescription, String p_type, String p_image1){
 		
@@ -81,9 +81,13 @@ public class Product {
 		this.image1 = p_image1;
 		
 	}
+	
+	public Product(){
+		
+	}
 
 	/**
-	 * Product Constructor
+	 * Product Constructor for inventory
 	 * 
 	 * @param productId
 	 * @param stockLevel
