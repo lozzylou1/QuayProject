@@ -1,74 +1,154 @@
 package com.quayproject.ims.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * 
+ * @author Administrator
+ *
+ */
+
 @Entity
-@Table
+@Table (name = "Inventory")
 public class Inventory {
 
+	@Id
+	@GeneratedValue
 	private int ProductID;
 	private int StockLevel;
 	private int Threshold;
 	private boolean AllocateStock;
 	private String ProductName;
+
+
+	@Id
+	@Column (name = "productID", nullable = false)
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	private int productID;
 	
+	@Column (name = "stockLevel", nullable = false)
+	private int stockLevel;
+	
+	@Column (name = "threshold", nullable = false)
+	private int threshold;
+	
+	@Column (name = "allocateStock", nullable = false)
+	private boolean allocateStock;
+
+	@Column (name = "productName", nullable = false)
+	private String productName;
+
+	
+	/**
+	 * Product Constructor
+	 * 
+	 * @param productID
+	 * @param stockLevel
+	 * @param threshold
+	 * @param allocateStock
+	 * @param productName
+	 */
 	public Inventory(int productID, int stockLevel, int threshold, boolean allocateStock, String productName) {
 		super();
-		ProductID = productID;
-		StockLevel = stockLevel;
-		Threshold = threshold;
-		AllocateStock = allocateStock;
-		ProductName = productName;
+		this.productID = productID;
+		this.stockLevel = stockLevel;
+		this.threshold = threshold;
+		this.allocateStock = allocateStock;
+		this.productName = productName;
 	}
-	
-	public int getProductID()
-	{
-		return ProductID;
+
+	/**
+	 * Returns the product ID
+	 * 
+	 * @return productID
+	 */
+	public int getProductID() {
+		return productID;
 	}
-	
-	public void setProductID(int productID) 
-	{
-		ProductID = productID;
+
+	/**
+	 * set product ID
+	 * 
+	 * @param productID
+	 */
+	public void setProductID(int productID) {
+		this.productID = productID;
 	}
-	
-	public int getStockLevel()
-	{
-		return StockLevel;
+
+	/**
+	 * Returns stock level
+	 * 
+	 * @return stockLevel
+	 */
+	public int getStockLevel() {
+		return stockLevel;
 	}
-	
-	public void setStockLevel(int stockLevel)
-	{
-		StockLevel = stockLevel;
+
+	/**
+	 * Set stock level
+	 * 
+	 * @param stockLevel
+	 */
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
 	}
-	
-	public int getThreshold()
-	{
-		return Threshold;
+
+	/**
+	 * Return threshold
+	 * 
+	 * @return threshold
+	 */
+	public int getThreshold() {
+		return threshold;
 	}
-	
-	public void setThreshold(int threshold) 
-	{
-		Threshold = threshold;
+
+	/**
+	 * Sets threshold
+	 * 
+	 * @param threshold
+	 */
+	public void setThreshold(int threshold) {
+		this.threshold = threshold;
 	}
-	
-	public boolean isAllocateStock()
-	{
-		return AllocateStock;
+
+	/**
+	 * Returns allocate stock
+	 * 
+	 * @return allocateStock
+	 */
+	public boolean isAllocateStock() {
+		return allocateStock;
 	}
-	
-	public void setAllocateStock(boolean allocateStock)
-	{
-		AllocateStock = allocateStock;
+
+	/**
+	 * Sets allocate stock
+	 * 
+	 * @param allocateStock
+	 */
+	public void setAllocateStock(boolean allocateStock) {
+		this.allocateStock = allocateStock;
 	}
-	
-	public String getProductName()
-	{
-		return ProductName;
+
+	/**
+	 * Returns product name
+	 * 
+	 * @return productName
+	 */
+	public String getProductName() {
+		return productName;
 	}
-	
-	public void setProductName(String productName) 
-	{
-		ProductName = productName;
+	/**
+	 * Sets product name
+	 * 
+	 * @param productName
+	 */
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
+
 }
