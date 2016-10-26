@@ -47,6 +47,9 @@ public class Product {
 	@Column (name = "threshold", nullable = false)
 	private int threshold;
 	
+	@Column (name = "suppplierName", nullable = false)
+	private String supplierName;
+	
 	/**
 	 * Product Constructor
 	 * 
@@ -79,13 +82,23 @@ public class Product {
 		
 	}
 
+	/**
+	 * Product Constructor
+	 * 
+	 * @param productId
+	 * @param stockLevel
+	 * @param threshold
+	 * @param productName
+	 * @param supplierName
+	 */
 
-	public Product(int productId, int stockLevel, int threshold, String productName)
+	public Product(int productId, int stockLevel, int threshold, String productName, String supplierName)
 	{
 		this.productID = productId;
 		this.stockLevel = stockLevel;
 		this.threshold =threshold;
 		this.productName = productName;
+		this.supplierName = supplierName;
 	}
 	
 
@@ -328,6 +341,24 @@ public class Product {
 	 */
 	public void setProductType(String type) {
 		this.type = type;
+	}
+
+	/**
+	 * Gets the supplier name
+	 * 
+	 * @return
+	 */
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	/**
+	 * Sets the supplier name
+	 * 
+	 * @param supplierName
+	 */
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
 	}	
 	
 
