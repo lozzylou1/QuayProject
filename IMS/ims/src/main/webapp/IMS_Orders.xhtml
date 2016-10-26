@@ -11,11 +11,17 @@
 <ui:define name="maincontent">
 
 	<h1>Orders</h1>
-		<input type="search" placeholder="Search..." class="productsearch"/>
-			<button class="btn btn-warning">
+		<h:form>
+			<h:inputText type="search" placeholder="Search..."
+				class="productsearch" value="#{purchaseOrderController.term}"
+				action="#{purchaseOrderController.searchByID()}" />
+			<h:commandLink class="btn btn-warning"
+				action="#{purchaseOrderController.searchByID()}">
 				<span class="glyphicon glyphicon-search"></span>
-			</button>
+			</h:commandLink>
+		</h:form>		
 		<div class="table-content">
+		<h:outputText escape="false" value="No Orders Found"	rendered="#{purchaseOrderController.dataModel.rowCount == 0}" />
 			<table align="center" style="width:100%">
 				<tr>
 					<th>Order ID</th>
@@ -25,13 +31,14 @@
 					<th>Date Of Delivery</th>
 					<th>Status</th>
 				</tr>
-				<ui:repeat var="order" value="#">
+				<ui:repeat var="order" value="#{purchaseOrderController.dataModel}">
 				<tr>
-					<td ><h:outputText value=" test" /></td>
-					<td> <h:outputText value="" /></td> 
-					<td> <h:outputText value="" /></td>
-					<td><h:outputText value="" /></td> 
-					<td><h:outputText value=""/></td>
+					<td ><h:outputText value="#{order.purchaseOrderID}" /></td>
+					<td> <h:outputText value="#{order.supplierName}" /></td> 
+					<td> <h:outputText value="#{order.orderTotal}" /></td>
+					<td><h:outputText value="#{order.dateOfOrder}" /></td> 
+					<td><h:outputText value="#{order.dateOfDelivery}" /></td>
+					<td><h:outputText value="#{order.status}" /></td>
 				</tr>
 				</ui:repeat>		
 			</table>

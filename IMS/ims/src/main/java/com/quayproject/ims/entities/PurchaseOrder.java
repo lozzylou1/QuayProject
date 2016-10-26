@@ -41,6 +41,9 @@ public class PurchaseOrder {
 	@Column (name = "dateOfDelivery",nullable = false)
 	private String dateOfDelivery;
 	
+	@Column (name = "status", nullable = false)
+	private String status;
+	
 	/**
 	 * PurchaseOrder Constructor
 	 * 
@@ -50,7 +53,7 @@ public class PurchaseOrder {
 	 * @param dateOfOrder
 	 * @param dateOfDelivery
 	 */
-	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery) {
+	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery, String status) {
 		
 		
 		this.purchaseOrderID = purchaseOrderID;;
@@ -58,6 +61,7 @@ public class PurchaseOrder {
 		this.orderTotal = orderTotal;
 		this.dateOfOrder = dateOfOrder;
 		this.dateOfDelivery = dateOfDelivery;
+		this.status = status;
 			
 		
 	}
@@ -129,11 +133,23 @@ public class PurchaseOrder {
 	public void setDateOfOrder(String dateOfOrder) {
 		this.dateOfOrder = dateOfOrder;
 	}
-	public String getDateOdDelivery() {
+	public String getDateOfDelivery() {
 		return dateOfDelivery;
 	}
-	public void setDateOdDelivery(String dateOdDelivery) {
+	public void setDateOfDelivery(String dateOdDelivery) {
 		this.dateOfDelivery = dateOdDelivery;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void setOrderTotal(double orderTotal) {
+		this.orderTotal = orderTotal;
 	}
 	
 	
