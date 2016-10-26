@@ -1,8 +1,10 @@
 package hibernate;
 
+//JAVA IMPORTS
 import java.util.List;
 import java.util.Properties;
 
+//HIBERNATE IMPORTS
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,6 +13,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
+//ENTITY IMPORTS
+import com.quayproject.ims.entities.Inventory;
+import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.StaffAccount;
 import com.quayproject.ims.entities.Supplier;
@@ -38,7 +43,9 @@ public class HibernateApplication {
 				.addProperties(props)
 				.addAnnotatedClass(Supplier.class)
 				.addAnnotatedClass(StaffAccount.class)
-				.addAnnotatedClass(PurchaseOrder.class);
+				.addAnnotatedClass(PurchaseOrder.class)
+				.addAnnotatedClass(Product.class)
+				.addAnnotatedClass(Inventory.class);
 		
 		/**
 		 * Create Service Registry Objects
@@ -148,9 +155,14 @@ public class HibernateApplication {
 		/////////////////////////////////////////////////////////////
 		Query purchQuery = session.createQuery("from PurchaseOrder");//
 		List<PurchaseOrder> purchaseOrderList = purchQuery.list();	 //
-				        											 //	PURCHASE ORDER LIST
+				        											 //	 PURCHASE ORDER LIST
 		purchaseOrderList.add(purch1);							     //						  
 		/////////////////////////////////////////////////////////////
+		
+		//PRODUCTS
+		
+		Product prod1 = new Product();
+		
 		
 		/**
 		 * Submit objects to Hibernate
@@ -183,7 +195,7 @@ public class HibernateApplication {
 		}
 		
 		session.close();
-		sessionFactory.close();
+		sessionFactory.close();		`
 	}
 
 }
