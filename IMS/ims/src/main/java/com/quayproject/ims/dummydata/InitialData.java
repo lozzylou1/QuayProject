@@ -8,6 +8,7 @@ import javax.ejb.Startup;
 import javax.inject.Singleton;
 
 import com.quayproject.ims.entities.Product;
+import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.Supplier;
 
 
@@ -17,6 +18,7 @@ public class InitialData {
 
 	private List<Product> products;
 	private List<Supplier>suppliers;
+	private List<PurchaseOrder>purchaseOrders;
 
 	/**
 	 * Creates the initial offline data
@@ -26,6 +28,7 @@ public class InitialData {
 	{
 		suppliers = new ArrayList<>();
 		products = new ArrayList<>();
+		purchaseOrders = new ArrayList<>();
 
 		products.add(new Product(1,   10, 2,"Harry Potter Gnome", "Super Gnome Supplies"));
 		products.add(new Product(2,  10, 2, "Zombie Gnome", "Super Gnome Supplies"));
@@ -37,7 +40,7 @@ public class InitialData {
 		suppliers.add(new Supplier(1,"Super Gnome Supplies", "+447654893756", "10/09/2016"));
 		suppliers.add(new Supplier(2, "Gnomes 'R' Us", "+44769435851", "16/08/2016" ));
 
-
+		purchaseOrders.
 	}
 
 	/**
