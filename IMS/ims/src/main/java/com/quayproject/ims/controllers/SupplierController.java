@@ -10,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.quayproject.ims.entities.Supplier;
+import com.quayproject.ims.services.ImsCreateService;
 import com.quayproject.ims.services.ImsService;
 
 @SuppressWarnings("serial")
@@ -19,8 +20,13 @@ public class SupplierController implements Serializable {
 
 	@Inject
 	private ImsService imsService;
-	private String term;
+	@Inject
+	private ImsCreateService imsCreateService;
 	
+	private String term;
+	private String supplierName;
+	private String supplierContactNumber;
+			
  private DataModel <Supplier> dataModel =null;
  
  /**
@@ -67,6 +73,49 @@ public class SupplierController implements Serializable {
 			return new 
 					ListDataModel <Supplier> (searchByName());
 		}
+	}
+
+	/**
+	 * submits information of new suppler
+	 */
+	public void submitSupplier() 
+	{
+		
+		imsCreateService.validateNewSupplierDetails(supplierName, supplierContactNumber);
+		
+	}
+		
+	
+	/**
+	 * get supplier name
+	 * @return supplierName
+	 */
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	/**
+	 * set supplierName
+	 * @param supplierName
+	 */
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+
+	/**
+	 * get supplierContactNumber
+	 * @return supplierContactNumber
+	 */
+	public String getSupplierContactNumber() {
+		return supplierContactNumber;
+	}
+
+	/**
+	 * get supplierContactNumber
+	 * @param supplierContactNumber
+	 */
+	public void setSupplierContactNumber(String supplierContactNumber) {
+		this.supplierContactNumber = supplierContactNumber;
 	}
 
 	/**

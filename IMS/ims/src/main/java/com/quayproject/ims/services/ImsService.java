@@ -99,7 +99,6 @@ public class ImsService {
 		
 		for (PurchaseOrder purchaseOrder : purchaseOrderManager.allPurchaseOrders())
 		{ 
-			System.out.println(purchaseOrder.getDateOfOrder());
 				if ( purchaseOrder.getSupplierName().toLowerCase().contains(term.toLowerCase())	|| Integer.toString(purchaseOrder.getPurchaseOrderID()).contains(term))
 				{
 					purchaseOrderList.add(purchaseOrder);

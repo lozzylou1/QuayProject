@@ -45,14 +45,13 @@
 					<li><a href="#">Gnome Accessories</a></li>
 				</ul>
 			</div>
-
 			<div class="menu-item">
 				<h4>
 				<h:outputLink  value="IMS_Suppliers.xhtml" action="#{supplier.searchByName()}">Suppliers</h:outputLink >
 				</h4>
 				<ul>
-					<li><a href="#">View Suppliers</a></li>
-					<li><a href="#">Add Supplier</a></li>
+					<li><h:link value="View Suppliers" outcome="IMS_Suppliers.xhtml"/></li>
+					<li><h:link value="Create Suppliers" outcome="IMS_Create_Supplier.xhtml"/></li>
 				</ul>
 			</div>
 
