@@ -32,7 +32,8 @@ public class ProductController implements Serializable {
 	private String type;
 	private String size;
 	private List<Product> itemsList;
-	
+	private List<Product> basketList;	
+
 	/**
 	 * Search Products by Term
 	 * 
@@ -87,10 +88,6 @@ public class ProductController implements Serializable {
 		return "Products";
 				
 	}
-	
-	
-	
-	
 	
 	/**
 	 * If pagination is null, implements pagination
@@ -196,8 +193,11 @@ public class ProductController implements Serializable {
 	}
 
 	public String view(int id) {
+		product = null;
+		
 		product = productManager.findById(id);
-		return "Products";
+		
+		return "ProductDet";
 	}
 
 	public Product getProduct() {

@@ -185,7 +185,24 @@ public class InitialData {
 		return null;
 		
 	}
-
+	
+	
+	/**
+	 * Get the product details using product ID
+	 * @param id
+	 * @return products
+	 * Null
+	 */
+	public Product getProductById(int id)
+	{
+		for (Product product:products)
+		{
+			if(product.getProductID()==id)
+				return product;
+		}
+		return null;
+	}
+	
 	/**
 	 * Gets the list of Customers
 	 * @return Customers List

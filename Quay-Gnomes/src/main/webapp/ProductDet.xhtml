@@ -26,20 +26,20 @@
 			</div>
 
 			<div class="col-3 col-m-3">
-				<img src="#{search.getProduct().getImage1()}" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
+				<img src="#{products.product.image1}" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
 
 
 			</div>
 
 			<div class="col-7 col-m-6">
 			<H1>
-			<h:outputText value="#{search.getProduct().getProductName()}" />
+			<h:outputText value="#{products.product.productName}" />
 			</H1>
 			<H1>
-			<h:outputText value="£#{search.product.price}" />
+			<h:outputText value="£#{products.product.price}" />
 			</H1>
 			<H1>
-			<h:outputText value="#{search.getProduct().getProductID()}" />
+			<h:outputText value="#{products.product.productID}" />
 			</H1>
 		
 				
@@ -56,16 +56,16 @@
 
 		<div class="col-7 col-m-6">
 			<h2>Short Description</h2>
-			<h:outputText value="#{search.getProduct().getShortDescription()}" />
-			<h:outputText value="#{search.getProduct().getWeight()}g" />
+			<h:outputText value="#{products.product.shortDescription}" />
+			<h:outputText value="#{products.product.weight}" />
 		
 			<h2>Long Description</h2>
-			<h:outputText value="#{search.getProduct().getLongDescription()}" />
+			<h:outputText value="#{products.product.longDescription}" />
 
 
 
 			<h2>Dimensions</h2>
-			<h:outputText value="#{search.getProduct().getDimensions()}" />
+			<h:outputText value="#{products.product.dimensions}" />
 
 		</div>
 

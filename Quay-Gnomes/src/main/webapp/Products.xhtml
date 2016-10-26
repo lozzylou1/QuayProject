@@ -48,9 +48,10 @@ Catalogue
 							value="Next #{products.pagination.pageSize}" />
 						<div>
 							<ui:repeat var="product" value="#{products.dataModel}">
-								<div id="image-content" style="float:left" > 
-								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
-								    	<br/>				 
+								<div id="image-content" style="float:left" >
+								<h:form> 
+								 <h:commandLink action="#{products.view(product.productID)}"><h:graphicImage value="#{product.image1}" class="image"  alt="Product Image 1" /></h:commandLink>
+								 <br/>				 
 								    	<h:commandLink 
 									 	action="#{products.view(product.productID)}"
 										value="#{product.productName}"
@@ -60,7 +61,7 @@ Catalogue
 										action="#{products.view(product.productID)}"	/>
 										<h:outputText value="£"/><h:outputText value="#{product.price}"/>
 										<h:outputText  />
-								
+								</h:form>
 								</div>								
 							</ui:repeat>							
 						</div>
