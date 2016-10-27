@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
@@ -13,6 +12,7 @@ import javax.inject.Named;
 
 import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.entities.PurchaseOrder;
+import com.quayproject.ims.services.ImsCreateService;
 import com.quayproject.ims.services.ImsService;
 
 @SuppressWarnings("serial")
@@ -22,10 +22,13 @@ public class PurchaseOrderController implements Serializable {
 
 	@Inject
 	private ImsService imsService;
+	@Inject
+	private ImsCreateService imsCreateService;
 
-	private List<Product> order = new ArrayList<Product>();
+	
 	private String term;		
 	private int productID;
+	private double totalPrice;
 
 	private DataModel <PurchaseOrder> dataModel = null;	
 	private DataModel <Product> dataModelProduct = null;
@@ -91,12 +94,12 @@ public class PurchaseOrderController implements Serializable {
 		try
 		{
 			return new 							
-					ListDataModel <Product> (order);
+					ListDataModel <Product> (imsCreateService.getOrderList());
 		}
 		catch (Exception e)
 		{
 			return new 
-					ListDataModel <Product> (order);
+					ListDataModel <Product> (imsCreateService.getOrderList());
 		}
 	}	
 
@@ -105,14 +108,20 @@ public class PurchaseOrderController implements Serializable {
 		Product product = imsService.findProductByID(productID);
 		if (product != null)
 		{
-			order.add(product);
+			imsCreateService.getOrderList().add(product);
+			totalPrice += product.getPrice();
+			System.out.println(totalPrice);
 		}
+	}
+	
+	public void removeFromOrder()
+	{
+		//TODO
 	}
 
 	public void submitOrder()
 	{
-		//TODO
-
+		imsCreateService.submitOrder(totalPrice);
 	}
 	
 	public int getProductID() {
@@ -121,15 +130,6 @@ public class PurchaseOrderController implements Serializable {
 
 	public void setProductID(int productID) {
 		this.productID = productID;
-	}
-	
-
-	public List<Product> getOrder() {
-		return order;
-	}
-
-	public void setOrder(List<Product> order) {
-		this.order = order;
 	}
 
 	/**
@@ -146,5 +146,13 @@ public class PurchaseOrderController implements Serializable {
 	 */
 	public void setTerm(String term) {
 		this.term = term;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 }

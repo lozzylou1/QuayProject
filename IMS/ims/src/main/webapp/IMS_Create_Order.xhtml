@@ -110,7 +110,10 @@
 				</tr>		
 				</ui:repeat>			
 			</table>
-			
+			<h:form>
+			<h:commandLink class="btn btn-warning" action="#(purchaseOrderController.submitOrder()}">Submit</h:commandLink>
+			<h:outputText value="#{purchaseOrderController.totalPrice}"/>
+			</h:form>
 		</div>
 </ui:define>
 </ui:composition>

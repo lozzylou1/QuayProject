@@ -1,5 +1,6 @@
 package com.quayproject.ims.managers.offline;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -22,4 +23,11 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 	public List<PurchaseOrder> allPurchaseOrders() {
 		return initialData.getPurchaseOrders();
 	}
+
+	@Override
+	public void createPurchaseOrder(List<Product> orderList, double totalPrice, String orderDate) {
+		// TODO Auto-generated method stub
+		initialData.getPurchaseOrders().add(new PurchaseOrder());
+	}
+
 }
