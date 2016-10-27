@@ -1,4 +1,6 @@
 package com.quayproject.ims.entities;
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -7,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table (name = "Product")
-public class Product {
+public class Product implements Serializable {
 	//TODO Need to do foreign keys
 	@Id
 	@Column (name = "productID", nullable = false)
@@ -51,6 +53,42 @@ public class Product {
 	private String supplierName;
 	
 	/**
+	 * Constructor for Hibernate
+	 * 
+	 * @param productID
+	 * @param productName
+	 * @param price
+	 * @param discontinued
+	 * @param stockLevel
+	 * @param weight
+	 * @param dimensions
+	 * @param shortDescription
+	 * @param longDescription
+	 * @param type
+	 * @param image1
+	 * @param threshold
+	 * @param supplierName
+	 */
+	public Product(int productID, String productName, float price, Boolean discontinued, int stockLevel, float weight,
+			String dimensions, String shortDescription, String longDescription, String type, String image1,
+			int threshold, String supplierName) {
+		super();
+		this.productID = productID;
+		this.productName = productName;
+		this.price = price;
+		this.discontinued = discontinued;
+		this.stockLevel = stockLevel;
+		this.weight = weight;
+		this.dimensions = dimensions;
+		this.shortDescription = shortDescription;
+		this.longDescription = longDescription;
+		this.type = type;
+		this.image1 = image1;
+		this.threshold = threshold;
+		this.supplierName = supplierName;
+	}
+
+	/**
 	 * Product Constructor
 	 * 
 	 * @param p_productID
@@ -82,9 +120,11 @@ public class Product {
 		
 	}
 	
+	
 	public Product(){
 		
 	}
+	
 
 	/**
 	 * Product Constructor for inventory

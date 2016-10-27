@@ -66,6 +66,10 @@ public class PurchaseOrder {
 		
 	}
 	
+	public PurchaseOrder(){
+		
+	}
+	
 	public int getPurchaseOrderID()
 	{
 		return purchaseOrderID;
