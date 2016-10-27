@@ -20,6 +20,8 @@ import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.StaffAccount;
 import com.quayproject.ims.entities.Supplier;
+
+//ENTITY METHODS
 import com.quayproject.ims.hibernate.HibernateProduct;
 import com.quayproject.ims.hibernate.HibernateStaffAccount;
 import com.quayproject.ims.hibernate.HibernateSupplier;
