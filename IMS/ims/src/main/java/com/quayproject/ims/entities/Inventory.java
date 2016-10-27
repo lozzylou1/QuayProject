@@ -38,7 +38,7 @@ public class Inventory {
 
 	
 	/**
-	 * Product Constructor
+	 * Product Constructor for inventory
 	 * 
 	 * @param productID
 	 * @param stockLevel
@@ -47,14 +47,14 @@ public class Inventory {
 	 * @param productName
 	 */
 	public Inventory(int productID, int stockLevel, int threshold, boolean allocateStock, String productName) {
-		super();
+	
 		this.productID = productID;
 		this.stockLevel = stockLevel;
 		this.threshold = threshold;
 		this.allocateStock = allocateStock;
 		this.productName = productName;
 	}
-
+	
 	/**
 	 * Returns the product ID
 	 * 

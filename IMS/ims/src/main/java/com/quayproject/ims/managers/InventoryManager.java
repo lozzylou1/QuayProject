@@ -13,5 +13,8 @@ public interface  InventoryManager {
 	 * @return
 	 */
 	public List<Product> allInventory();
+
+	void createNewInventoryItem(String productName, int stockLevel, int threshold);
+	
 	
 }

@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.quayproject.ims.entities.Product;
+import com.quayproject.ims.services.ImsCreateService;
 import com.quayproject.ims.services.ImsService;
 
 @SuppressWarnings("serial")
@@ -20,7 +21,13 @@ public class InventoryController implements Serializable {
 
 	@Inject
 	private ImsService imsService;
-	private String term;		
+	@Inject
+	private ImsCreateService imsCreateService;
+	
+	private String term;
+	private String productName;
+	private int stockLevel;
+	private int threshold;
 
 	private DataModel <Product> dataModel = null;	
 
@@ -60,6 +67,64 @@ public class InventoryController implements Serializable {
 	}
 	
 	/**
+	 * submits information of new inventory item
+	 */
+	public void submitInventoryItem() 
+	{
+			imsCreateService.addNewInventoryItem(productName, stockLevel, threshold);			
+	}
+		
+	/**
+	 * 
+	 * @return
+	 */
+	public String getProductName() {
+		return productName;
+	}
+
+	/**
+	 * 
+	 * @param productName
+	 */
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public int getStockLevel() {
+		return stockLevel;
+	}
+
+	/**
+	 * 
+	 * @param stockLevel
+	 */
+	public void setStockLevel(int stockLevel) {
+		this.stockLevel = stockLevel;
+	}
+
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public int getThreshold() {
+		return threshold;
+	}
+
+	/**
+	 * 
+	 * 
+	 * @param threshold
+	 */
+	public void setThreshold(int threshold) {
+		this.threshold = threshold;
+	}
+
+	/**
 	 * Gets the term to search with
 	 * @return
 	 */
@@ -74,4 +139,6 @@ public class InventoryController implements Serializable {
 	public void setTerm(String term) {
 		this.term = term;
 	}
+	
+	
 }

@@ -40,7 +40,20 @@ public class Supplier {
 		this.contactNumber = contactNumber;
 		this.dateOfLastOrder = dateOfLastOrder;
 	}
-
+	
+	/**
+	 * Supplier Constructor for add supplier 
+	 * 
+	 * @param supplierName
+	 * @param contactNumber
+	 */
+	public Supplier(String supplierName, String contactNumber )
+	{
+		this.supplierName = supplierName;
+		this.contactNumber = contactNumber;
+		}
+	
+	
 	/**
 	 * Get supplierID
 	 * @return

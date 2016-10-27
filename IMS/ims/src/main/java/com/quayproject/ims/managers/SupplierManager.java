@@ -14,4 +14,14 @@ public interface SupplierManager {
 	public List<Supplier> allSuppliers();
 	
 	
+	/**
+	 * create new supplier
+	 * 
+	 * @param supplierName
+	 * @param supplierContactNumber
+	 */
+	public void createNewSupplier(String supplierName, String supplierContactNumber);
+	
+
+	
 }

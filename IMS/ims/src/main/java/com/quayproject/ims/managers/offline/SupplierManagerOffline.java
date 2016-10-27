@@ -24,4 +24,22 @@ public class SupplierManagerOffline implements SupplierManager {
 		return initialData.getSuppliers();
 }
 
+
+	@Override
+	public void createNewSupplier(String supplierName, String supplierContactNumber) {
+		
+		Supplier supplier = new Supplier(supplierName, supplierContactNumber);
+		
+		int listLength = initialData.getSuppliers().size();
+		Supplier lastSupplier = initialData.getSuppliers().get(listLength - 1);
+		
+		int newSupplierID = lastSupplier.getSupplierID() + 1;
+		supplier.setSupplierID(newSupplierID);
+		
+		initialData.getSuppliers().add(supplier);
+				
+	}
+	
+	
+
 }
