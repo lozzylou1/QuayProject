@@ -3,6 +3,7 @@ package com.quayproject.ims.services;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import com.quayproject.ims.managers.InventoryManager;
 import com.quayproject.ims.managers.SupplierManager;
 
 @Stateless
@@ -10,6 +11,8 @@ public class ImsCreateService {
 	
 	@Inject
 	private SupplierManager supplierManager;
+	@Inject
+	private InventoryManager inventoryManager;
 	
 	
 	/**
@@ -31,11 +34,16 @@ public class ImsCreateService {
 			{
 				return false;
 			}
-		
 	
-	
-		
 	}
+
+		public void addNewInventoryItem (String productName, int stockLevel, int threshold)
+		{
+			
+			System.out.println(productName + stockLevel + threshold);
+			inventoryManager.createNewInventoryItem(productName, stockLevel, threshold);
+			
+		}
 	
-	
+
 }

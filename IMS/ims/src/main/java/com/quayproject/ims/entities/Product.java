@@ -105,7 +105,18 @@ public class Product {
 		this.supplierName = supplierName;
 	}
 	
-
+	/**
+	 * product constructor for add inventory
+	 * @param stockLevel
+	 * @param threshold
+	 * @param productName
+	 */
+	public Product (String productName, int stockLevel, int threshold){
+		this.productName = productName;
+		this.stockLevel = stockLevel;
+		this.threshold = threshold;
+		
+	}
 	/**
 	 * Returns the first image
 	 * 

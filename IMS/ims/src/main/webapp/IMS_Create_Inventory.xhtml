@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"
+	template="templates/IMS_Template.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">CreateInventory</ui:define>
+	<ui:define name="maincontent">
+		<h1>Create Inventory</h1>
+		<h:form>
+			<h:outputLabel value="Product Name" />
+			<br />
+			<h:inputText value="#{inventory.productName}"  required="true" />
+			<br />
+			<h:outputLabel value="Stock Level" />
+			<br />
+			<h:inputText value="#{inventory.stockLevel}" required="true" />
+			<br />
+			<h:outputLabel value="Threshhold" />
+			<br />
+			<h:inputText value="#{inventory.threshold}" required="true" />
+			<br />
+			<h:commandButton type="submit" value="Submit" action = "#{inventory.submitInventoryItem()}" />
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
