@@ -46,6 +46,10 @@ public class Inventory {
 	 * @param allocateStock
 	 * @param productName
 	 */
+	
+	public Inventory(){
+		
+	}
 	public Inventory(int productID, int stockLevel, int threshold, boolean allocateStock, String productName) {
 	
 		this.productID = productID;

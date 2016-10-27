@@ -24,6 +24,10 @@ public class Supplier {
 
 	@Column (name = "dateOfLastOrder", nullable = false)
 	private String dateOfLastOrder;
+	
+	public Supplier(){
+		
+	}
 
 	/**
 	 * Supplier Constructor
@@ -103,9 +107,9 @@ public class Supplier {
 	 * set contact number
 	 * @return
 	 */
-	public void setContactNumber(int contactNumber)
+	public void setContactNumber(String contactNumber)
 	{
-		this.contactNumber = Integer.toString(contactNumber);
+		this.contactNumber = contactNumber;
 	}
 
 	/**

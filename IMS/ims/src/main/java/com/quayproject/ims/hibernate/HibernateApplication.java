@@ -1,6 +1,7 @@
 package com.quayproject.ims.hibernate;
 
 //JAVA IMPORTS
+import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 
@@ -20,15 +21,103 @@ import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.StaffAccount;
 import com.quayproject.ims.entities.Supplier;
 
+//ENTITY METHODS
+import com.quayproject.ims.hibernate.HibernateProduct;
+import com.quayproject.ims.hibernate.HibernateStaffAccount;
+import com.quayproject.ims.hibernate.HibernateSupplier;
+import com.quayproject.ims.hibernate.HibernatePurchaseOrder;
+
 public class HibernateApplication {
 	
+	/**
+	 * Declaring Static Variables
+	 */
+	
+	static Properties props;
+	static Configuration cfg;
+	static ServiceRegistry serviceRegistry;
+	static SessionFactory sessionFactory;
+	static Session session;
+	static Transaction tx;
+	
+	
+	
+	
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
+		HibernateProduct prod = new HibernateProduct();
+		HibernateStaffAccount staff = new HibernateStaffAccount();
+		HibernatePurchaseOrder purch = new HibernatePurchaseOrder();
+		HibernateSupplier supp = new HibernateSupplier();
+		HibernateInventory inv = new HibernateInventory();
+		
+		//Starting the Hibernate Config and Session
+		
+		start();
+		
+		/**
+		 * For Loops saving all of the objects from the list of entities
+		 */
+	
+		//SUPPLIER FOR LOOP
+		
+		supp.AddAllSuppliers();
+		
+		for(Supplier s : supp.getSuppliers())
+		{
+			session.save(s);
+		}
+		
+		//STAFF ACCOUNT FOR LOOP
+		
+		staff.AddAllStaff();
+		
+		for(StaffAccount a : staff.getStaff())
+		{
+			session.save(a);
+		}
+		
+		//PURCHASE ORDER FOR LOOP
+		
+		purch.AddAllPurchaseOrders();
+		for(PurchaseOrder p : purch.getPurchaseOrders())
+		{
+			session.save(p);
+		}
+		
+		//PRODUCT FOR LOOP
+		
+		prod.AddAllProducts();
+		for(Product pr : prod.getProds())
+		{
+			session.save(pr);
+		}
+		
+		//INVENTORY FOR LOOP
+		
+		inv.AddAllInventory();
+		for(Inventory i : inv.getInventory())
+		{
+			session.save(i);
+		}
+		
+		//Closing the Session and the Factory
+		
+		session.close();
+		sessionFactory.close();		
+	}
+
+	
+	
+	
+	public static void start(){
 		
 		/**
 		 * Create a Properties Class Objects and Set Hibernate Properties
 		 */
-		Properties props = new Properties();
+		
+		props = new Properties();
 		props.setProperty("hibernate.connection.driver_class","com.mysql.jdbc.Driver"); 			//Specify mysql driver class from pom.mysql.jdbc.driver
 		props.setProperty("hibernate.connection.url","jdbc:mysql://localhost:3306/imsdatabase"); 	//Default url for the localhost linked to the database
 		props.setProperty("hibernate.connection.username","root"); 									//Default user
@@ -39,7 +128,8 @@ public class HibernateApplication {
 		/**
 		 * Create Configuration Class Objects
 		 */
-		Configuration cfg = new Configuration()
+		
+		cfg = new Configuration()
 				.addProperties(props)
 				.addAnnotatedClass(Supplier.class)
 				.addAnnotatedClass(StaffAccount.class)
@@ -50,161 +140,90 @@ public class HibernateApplication {
 		/**
 		 * Create Service Registry Objects
 		 */
-		ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
+		
+		serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(cfg.getProperties()).build();
 		
 		/**
 		 * Create a session Factory object
 		 */
-		SessionFactory sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+		
+		sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 		
 		/**
 		 * Create/open Session
 		 */
-		Session session = sessionFactory.openSession();
+		
+		session = sessionFactory.openSession();
 		
 		/**
 		 * Begin a transaction
 		 */
-		Transaction tx = session.beginTransaction();
 		
-		/**
-		 * Creating objects from classes
-		 */
-		
-		/**
-		 * Creating the Supplier object
-		 * Populating a list with the Supplier objects
-		 */
-		
-		//SUPPLIERS
-		
-		////////////////////////////////////////////////////////////////////////////////////////
-		Supplier supp1 = new Supplier(001, "Gnomes 'R' Us", "07745487884", "11/10/16");		    //	
-																							    //
-		Supplier supp2 = new Supplier(002, "Tubs 4 U", "07745487884", "14/02/16");			    //	INITIALISING SUPPLIERS
-																							    //
-		Supplier supp3 = new Supplier(003, "Wholesale Garden Goods", "07745487884", "01/05/16");//			
-		////////////////////////////////////////////////////////////////////////////////////////
-
-		/**
-		 * Creating a list to hold all of the supplier objects
-		 * Adding the supplier objects to the list
-		 */
-		
-		///////////////////////////////////////////////////////
-		Query suppQuery = session.createQuery("from Supplier");//
-		List<Supplier> supplierList = suppQuery.list();		   //
-															   //	SUPPLIER LIST
-		supplierList.add(supp1);							   //
-		supplierList.add(supp2);							   //
-		supplierList.add(supp3);							   //
-		///////////////////////////////////////////////////////
-		
-		/**
-		 * Creating the Staff Account object
-		 * Populating a list with the Staff Account objects
-		 */
-		
-		//STAFF ACCOUNT
-		
-		////////////////////////////////////////////////
-		StaffAccount stf1 = new StaffAccount();		//
-		stf1.setUserName("Admin");					//	STAFF ACCOUNT 1
-		stf1.setPassword("password");					//
-		////////////////////////////////////////////////
-
-		////////////////////////////////////////////////
-		StaffAccount stf2 = new StaffAccount();		//
-		stf2.setUserName("standardUser");				//	STAFF ACCOUNT 2
-		stf2.setPassword("standardPassword");			//
-		////////////////////////////////////////////////
-		
-		////////////////////////////////////////////////////////////
-		Query staffQuery = session.createQuery("from StaffAccount");//
-		List<StaffAccount> staffAccountList = staffQuery.list();	//
-				   											        //	STAFF LIST
-		staffAccountList.add(stf1);							    //
-		staffAccountList.add(stf2);							    //						  
-		////////////////////////////////////////////////////////////
-
-		/**
-		 * Creating the PurchaseOrder object
-		 * Populating a list with the PurchaseOrder objects
-		 */
-		
-		//PURCHASE ORDERS
-		
-		////////////////////////////////////////////////////////////
-		PurchaseOrder purch1 = new PurchaseOrder(001, "Gnomes 'R' Us", 1745, "11/01/16", "25/02/16");
-						            	
-		////////////////////////////////////////////////////////////
-		
-		/////////////////////////////////////////////////////////////
-		Query purchQuery = session.createQuery("from PurchaseOrder");//
-		List<PurchaseOrder> purchaseOrderList = purchQuery.list();	 //
-				        											 //	 PURCHASE ORDER LIST
-		purchaseOrderList.add(purch1);							     //						  
-		/////////////////////////////////////////////////////////////
-		
-		//PRODUCTS
-		
-		Product prod1 = new Product();
-		prod1.setProductName("Harry Potter Gnome");
-		prod1.setDimensions("10x10");
-		prod1.setDiscontinued(false);
-		prod1.setImage1("img/IMG_SRC.png");
-		prod1.setLongDescription("Long Description");
-		prod1.setPrice((float)19.99);
-		prod1.setProductType("Gnome");
-		prod1.setShortDescription("Short Description");
-		prod1.setStockLevel(150);
-		prod1.setWeight((float)1.2);
+		tx = session.beginTransaction();
 		
 		
-		Query prodQuery = session.createQuery("from Product");
-		List<Product> productList = prodQuery.list();
-		productList.add(prod1);
-		
-		/**
-		 * Submit objects to Hibernate
-		 * Close session and session factory
-		 */
-			
-		/**
-		 * For loop to add all of the objects to the database at once
-		 */
-		
-		//SUPPLIER FOR LOOP
-		
-		for(Supplier s : supplierList)
-		{
-			session.save(s);
-		}
-		
-		//STAFF ACCOUNT FOR LOOP
-		
-		for(StaffAccount a : staffAccountList)
-		{
-			session.save(a);
-		}
-		
-		//PURCHASE ORDER FOR LOOP
-		
-		for(PurchaseOrder p : purchaseOrderList)
-		{
-			session.save(p);
-		}
-		
-		//PRODUCT FOR LOOP
-		
-		for(Product pr : productList)
-		{
-			session.save(pr);
-		}
-		
-		session.close();
-		sessionFactory.close();		
 	}
+	
+	/**
+	 * Getters and Setters for Hibernate
+	 * @return
+	 */
+
+	public Properties getProps() {
+		return props;
+	}
+
+	public void setProps(Properties props) {
+		this.props = props;
+	}
+
+	public Configuration getCfg() {
+		return cfg;
+	}
+
+	public void setCfg(Configuration cfg) {
+		this.cfg = cfg;
+	}
+
+	public ServiceRegistry getServiceRegistry() {
+		return serviceRegistry;
+	}
+
+	public void setServiceRegistry(ServiceRegistry serviceRegistry) {
+		this.serviceRegistry = serviceRegistry;
+	}
+
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	public static Session getSession() {
+		return session;
+	}
+
+	public void setSession(Session session) {
+		this.session = session;
+	}
+
+	public Transaction getTx() {
+		return tx;
+	}
+
+	public void setTx(Transaction tx) {
+		this.tx = tx;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
