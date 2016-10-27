@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
+	template="templates/IMS_Template.xhtml">
+	<meta charset="utf-8" />
+<ui:define name="title">Suppliers</ui:define>
+<ui:define name="maincontent">
+
+	<h1>Suppliers</h1>
+		<h:form>
+			<h:inputText type="search" placeholder="Search..."
+				class="productsearch" value="#{supplierControl.term}"
+				action="#{supplierControl.searchByName()}" />
+			<h:commandLink class="btn btn-warning"
+				action="#{supplierControl.searchByName()}">
+				<span class="glyphicon glyphicon-search"></span>
+			</h:commandLink>
+		</h:form>
+		<div class="table-content">
+		<h:outputText escape="false" value="No Suppliers Found"	rendered="#{supplier.dataModel.rowCount == 0}" />
+			<table align="center" style="width:100%">
+				<tr>
+				 	<th>Supplier ID</th>
+					<th>Supplier Name</th>
+					<th>Supplier Contact Number</th> 
+					<th>Date Last Ordered From</th>
+				</tr>
+					<ui:repeat var="supplier" value="#{supplierControl.dataModel}">
+				<tr>
+					<td ><h:outputText value="#{supplier.supplierID}" /></td>
+					<td> <h:outputText value="#{supplier.supplierName}" /></td> 
+					<td> <h:outputText value="#{supplier.contactNumber}" /></td>
+					<td><h:outputText value="#{supplier.dateOfLastOrder}" /></td> 
+				</tr>
+				</ui:repeat>
+			</table>
+		</div>
+		</ui:define>
+		</ui:composition>
+</html>
