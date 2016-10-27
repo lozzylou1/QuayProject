@@ -34,20 +34,20 @@ public class InitialData {
 		
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
-		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7", "Harry Potter And The Chamber Of Secrets", "Harry Potter is trying to escape the giant snake.", "Gnome", "Large","img/harrypotter.jpg" ));
+		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7", "Harry Potter And The Chamber Of Secrets", "Harry Potter is trying to escape the giant snake.", "Gnome", "Large","img/Gnome1m.png" ));
 		products.add(new Product(2, "Zombie Gnome", 19.99f, false, 10, 5f, "5x6x7", "Zombie Is Hungry For Gnome Flesh", "This infected ornament will have your friendly garden gnomes running for cover" +
 				"Made from handcrafted terracotta and weather-resistant paint, the Zombie Gnome will brave the elements to protect your back garden from intruders." +
-				"Don't get too close!", "Gnome", "Large", "img/zombie.jpg" ));
-		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "Can't get enough of the pond!", "longDesc", "Gnome", "Large", "img/swimming.jpg" ));
+				"Don't get too close!", "Gnome", "Large", "img/Gnome2m.png" ));
+		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "Can't get enough of the pond!", "longDesc", "Gnome", "Large", "img/Gnome3m.png" ));
 		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7", "Star Trek", "Did you realize there's a whole subculture of Star Trek horticulturists? "
 				+ "There are daylilies named after Trek, a handful of hostas, and even a Star Trek begonia. The perfect statuary to go with your newly-acquired Star Trek plants? "
-				+ "Why, that would be the Star Trek Garden Gnomes, of course! Boldly Going Where No Gnome Has Gone Before !", "Gnome", "Large", "img/starTrek.jpg" ));
+				+ "Why, that would be the Star Trek Garden Gnomes, of course! Boldly Going Where No Gnome Has Gone Before !", "Gnome", "Large", "img/Gnome4m.png" ));
 		products.add(new Product(5, "Game Of Gnomes", 15.17f, false, 20, 794f, "18.1 x 15.9 x 24.8", "Game of Gnomes Garden Gnome", "A must for any Game of Thrones fan, "
 				+ "this statue of gnomed nature doth lay claim to the territory henceforth known as thy garden"
-				+ "Collect them all!!", "Gnome", "Large", "img/gotgnome.jpg"));
+				+ "Collect them all!!", "Gnome", "Large", "img/Gnome5m.png"));
 		products.add(new Product(6, "Mankini Gnome", 12.99f, false, 33, 694f, "18.1 x 15.9 x 24.8", "Mankini Gnome", "Surfer dude standing gnome wearing a mankini, and holding a life ring whilst 'posing' the peace moto! "
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome",  "Large", "img/mankinignome.jpg"));
+				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome",  "Large", "img/Gnome6m.png"));
 		products.add(new Product(7, "Glasses Gnome", 69.69f, false, 7, 694f, "18.1 x 15.9 x 24.8", "A gnome wearing Glasses", "A gnome wearing some funky glasses!"
 				+ "Very funny! Sure to raise a smile in anybody!! "
 				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/glassesGnome.PNG"));

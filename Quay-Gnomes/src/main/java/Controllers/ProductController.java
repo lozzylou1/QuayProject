@@ -2,9 +2,12 @@ package Controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.faces.event.ActionEvent;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
@@ -33,7 +36,8 @@ public class ProductController implements Serializable {
 	private String type;
 	private String size;
 	private List<Product> itemsList;
-	private List<Product> basketList;	
+	private List<Product> basketList;
+	private String action;
 
 	/**
 	 * Search Products by Term
@@ -129,7 +133,7 @@ public class ProductController implements Serializable {
 
 		if (pagination == null)
 		{
-			pagination = new PaginationHelper(6) 
+			pagination = new PaginationHelper(12) 
 			{
 				@Override
 				public int getItemsCount()
@@ -223,19 +227,29 @@ public class ProductController implements Serializable {
 		recreateModel();
 		return "Products";
 	}
+	
+	
 
-	public String view(int id) {
+	public String view() {
+		System.out.println("VIEW RUNS!!!!!");
 		product = null;
 		
-		product = productManager.findById(id);
 		
-		return "ProductDet";
+		product = productManager.findById(new Integer(action));
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>" + product.getProductName() + " " + product.getProductID());
+		return "ProductDet.xhtml";
 	}
 
 	public Product getProduct() {
 		return product;
 	}
 
+	public String getAction() {
+		return action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
 	public void setProduct(Product product){
 		this.product = product;
 	}
