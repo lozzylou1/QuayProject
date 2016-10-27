@@ -50,10 +50,10 @@ public class InitialData {
 				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome",  "Large", "img/Gnome6m.png"));
 		products.add(new Product(7, "Glasses Gnome", 69.69f, false, 7, 694f, "18.1 x 15.9 x 24.8", "A gnome wearing Glasses", "A gnome wearing some funky glasses!"
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/glassesGnome.PNG"));
+				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/Gnome7m.png"));
 		products.add(new Product(8, "Biker Gnome", 88.88f, false, 8, 888f, "10 x 10 x 10", "A gnome riding a bike", "A gnome Riding a bike!"
 				+ "He can ride a bike so well!"
-				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium","img/bikerGnome.PNG"));
+				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium","img/Gnome8m.png"));
 		products.add(new Product(9, "bent over gnome", 99.99f, false, 8, 999f, "99 x 99 x 99", "A gnome bent over", "A gnome bent over!"
 				+ "A cheeky gnome for any occasion"
 				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/bentOverGnome.PNG"));

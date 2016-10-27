@@ -22,17 +22,20 @@ Catalogue
 			.test1 {
 				float:left;
 				height:319px;
+				margin-Right:20px;
 			}
 			.product_holder{
 				 margin-top: 65px;
 			}
 			.container{
 				width:100%;
-				margin-left:20px;
+				margin-left:10px;
+				
 			}
 			#product_container{
 				display:inline-block;				
     			width: 80%;
+    			margin-left: 50px;
 			}
 			
 		</style>
@@ -55,20 +58,29 @@ Catalogue
 
 				<div class="product_holder">
 					<div class="test1">
-						<h:form>
+						<h:form> 		
+					
+							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
+					
 							<h2>Filter By Type</h2>
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
+								<br/>
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
+								<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
 			
 							<h2>Filter By Size</h2>
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
+							<br/>
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
+								<br/>
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
 			
 							<h2>Filter By Price</h2>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
+								<br/>
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
+								<br/>
 						</h:form>
 					</div>
 					<div id="product_container">
