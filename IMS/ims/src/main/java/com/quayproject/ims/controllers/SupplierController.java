@@ -22,18 +22,19 @@ public class SupplierController implements Serializable {
 	private ImsService imsService;
 	@Inject
 	private ImsCreateService imsCreateService;
-	
+
 	private String term;
+	private String error;
 	private String supplierName;
 	private String supplierContactNumber;
-			
- private DataModel <Supplier> dataModel =null;
- 
- /**
-  * provides list of suppliers containing term
-  * @return List<Suppler>
-  */
- 	public List<Supplier> searchByName() {
+
+	private DataModel <Supplier> dataModel =null;
+
+	/**
+	 * provides list of suppliers containing term
+	 * @return List<Suppler>
+	 */
+	public List<Supplier> searchByName() {
 
 		if (term == null || term == "")
 		{
@@ -44,17 +45,17 @@ public class SupplierController implements Serializable {
 			return imsService.supplier(term);
 		}
 	}
-	
- 	/**
- 	 * gets the data in the dataModel
- 	 * @return dataModel
- 	 */
+
+	/**
+	 * gets the data in the dataModel
+	 * @return dataModel
+	 */
 	public DataModel <Supplier> getDataModel()
 	{
 		dataModel = createPageDataModel();
 		return dataModel;
 	}
-	
+
 	/**
 	 * creates dataModel
 	 *  
@@ -80,12 +81,35 @@ public class SupplierController implements Serializable {
 	 */
 	public void submitSupplier() 
 	{
-		
-		imsCreateService.validateNewSupplierDetails(supplierName, supplierContactNumber);
-		
+		if ((supplierName != null || supplierName != "")
+				&&
+				(supplierContactNumber != null || supplierContactNumber != ""))
+		{
+			imsCreateService.validateNewSupplierDetails(supplierName, supplierContactNumber);
+		}
+		else if (supplierName == null || supplierName == "")
+		{
+			error ="Please Enter a Supplier Name";
+		}
+		else if (supplierContactNumber == null || supplierContactNumber == "")
+		{
+			error = "Please Enter the Suppliers Contact Number!";
+		}
 	}
-		
 	
+	
+	/**
+	 * Sets the error message
+	 * 
+	 * @param error
+	 * @return
+	 */
+	public String errorMessage()
+	{
+		String errorMessage = error;
+		return errorMessage;
+	}
+
 	/**
 	 * get supplier name
 	 * @return supplierName

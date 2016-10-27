@@ -16,12 +16,12 @@
 	
 </h:head>
 <f:view>
-	<body id="body">
+	<body id="body" >
 	<div class="wrapper">
 		<nav>
-			<div class="menu-item alpha">
+			<div class="menu-item alpha" style="height:100%">
 				<h4>
-					<a href="IMS_Dashboard.xhtml">IMS Dashboard</a>
+					<h:link value="Dashboard" outcome="IMS_Dashboard.xhtml"/>
 				</h4>
 			</div>
 
@@ -40,8 +40,7 @@
 					<h:outputLink  value="IMS_Inventory.xhtml" action="#{inventory.searchByName()}">Inventory</h:outputLink >
 				</h4>
 				<ul>
-					<li><a href="#">Gnomes</a></li>
-					<li><a href="#">Hot Tubs</a></li>
+					<li><h:link value="View Inventory" outcome="IMS_Inventory.xhtml"/></li>
 					<li><h:link value="Create Inventory" outcome="IMS_Create_Inventory.xhtml"/></li>
 				</ul>
 			</div>

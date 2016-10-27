@@ -7,6 +7,7 @@ import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import com.quayproject.ims.dummydata.InitialData;
+import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.managers.PurchaseOrderManager;
 
@@ -21,5 +22,4 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 	public List<PurchaseOrder> allPurchaseOrders() {
 		return initialData.getPurchaseOrders();
 	}
-
 }

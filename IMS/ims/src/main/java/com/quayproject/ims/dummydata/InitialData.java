@@ -20,6 +20,8 @@ public class InitialData {
 	private List<Supplier>suppliers;
 	private List<PurchaseOrder>purchaseOrders;
 
+
+
 	/**
 	 * Creates the initial offline data
 	 */
@@ -73,6 +75,8 @@ public class InitialData {
 		return suppliers;
 	}
 
+
+
 	/**
 	 * Set list of suppliers
 	 * @param List<Suppliers>
@@ -99,6 +103,6 @@ public class InitialData {
 		this.purchaseOrders = purchaseOrders;
 	}
 
-	
-	
+
+
 }

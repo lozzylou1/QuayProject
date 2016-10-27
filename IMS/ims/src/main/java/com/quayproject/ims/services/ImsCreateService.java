@@ -8,13 +8,13 @@ import com.quayproject.ims.managers.SupplierManager;
 
 @Stateless
 public class ImsCreateService {
-	
+
 	@Inject
 	private SupplierManager supplierManager;
 	@Inject
 	private InventoryManager inventoryManager;
-	
-	
+
+
 	/**
 	 * validate new supplier details
 	 * 
@@ -30,20 +30,28 @@ public class ImsCreateService {
 			supplierManager.createNewSupplier(supplierName, supplierContactNumber);
 			return true;
 		} 
-			catch (NumberFormatException e)
-			{
-				return false;
-			}
-	
+		catch (NumberFormatException e)
+		{
+			return false;
+		}
 	}
 
-		public void addNewInventoryItem (String productName, int stockLevel, int threshold)
-		{
-			
-			System.out.println(productName + stockLevel + threshold);
-			inventoryManager.createNewInventoryItem(productName, stockLevel, threshold);
-			
-		}
-	
+
+	/**
+	 * 
+	 * Add new inventory item
+	 * Call inventory manager
+	 * 
+	 * @param productName
+	 * @param stockLevel
+	 * @param threshold
+	 */
+	public void addNewInventoryItem (String productName, int stockLevel, int threshold)
+	{
+
+		inventoryManager.createNewInventoryItem(productName, stockLevel, threshold);
+
+	}
+
 
 }

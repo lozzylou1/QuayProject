@@ -1,5 +1,8 @@
 package com.quayproject.ims.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +13,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PurchaseOrder")
 public class PurchaseOrder {
+	
+	List<Product> order = new ArrayList<Product>();
 	
 	@Id
 	@Column (name = "purchaseOrderID", nullable = false)
@@ -63,9 +68,23 @@ public class PurchaseOrder {
 		this.dateOfDelivery = dateOfDelivery;
 		this.status = status;
 			
-		
-	}
+		}
 	
+	
+	
+	
+	
+	
+
+
+	public List<Product> getOrder() {
+		return order;
+	}
+
+	public void setOrder(List<Product> order) {
+		this.order = order;
+	}
+
 	public int getPurchaseOrderID()
 	{
 		return purchaseOrderID;
