@@ -52,6 +52,10 @@ public class Product implements Serializable {
 	@Column (name = "suppplierName", nullable = false)
 	private String supplierName;
 	
+	
+	public Product(){
+		
+	}
 	/**
 	 * Constructor for Hibernate
 	 * 
@@ -120,11 +124,7 @@ public class Product implements Serializable {
 		
 	}
 	
-	
-	public Product(){
-		
-	}
-	
+
 
 	/**
 	 * Product Constructor for inventory

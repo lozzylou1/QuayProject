@@ -9,9 +9,13 @@ import com.quayproject.ims.entities.Product;
 
 
 public class HibernateProduct {
+	
+	/**
+	 * Initialising Variables
+	 */
+	
 	public List<Product> prods;
-	//public List<Products> prods;
-	//prods = new ArrayList<Products>();
+	
 	Product prod1;
 	Product prod2;
 	Product prod3;
@@ -19,8 +23,11 @@ public class HibernateProduct {
 	Product prod5;
 	Product prod6;
 	
-	
-	
+	/**
+	 * Getters and Setters
+	 * @return
+	 */
+
 	public List<Product> getProds() {
 		return prods;
 	}
@@ -28,7 +35,10 @@ public class HibernateProduct {
 		this.prods = prods;
 	}
 	
-	
+	/**
+	 * Initialising Product entities and setting relevant information
+	 * @return
+	 */
 	
 	public List<Product> AddAllProducts(){
 		

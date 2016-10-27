@@ -44,6 +44,11 @@ public class PurchaseOrder {
 	@Column (name = "status", nullable = false)
 	private String status;
 	
+	
+public PurchaseOrder(){
+		
+	}
+
 	/**
 	 * PurchaseOrder Constructor
 	 * 
@@ -66,9 +71,7 @@ public class PurchaseOrder {
 		
 	}
 	
-	public PurchaseOrder(){
-		
-	}
+	
 	
 	public int getPurchaseOrderID()
 	{

@@ -26,6 +26,11 @@ public class StaffAccount {
 	@Column (name = "password", nullable = false)
 	private String password;
 	
+	
+public StaffAccount(){
+		
+	}
+
 	/**
 	 * Staff account constructor
 	 * 
@@ -40,9 +45,7 @@ public class StaffAccount {
 		this.password = password;
 	}
 	
-	public StaffAccount(){
-		
-	}
+	
 	/**
 	 * Returns staff ID
 	 * 
