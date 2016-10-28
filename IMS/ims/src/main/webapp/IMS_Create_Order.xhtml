@@ -17,91 +17,103 @@
 		<option value="supplierTwo">Supplier Two</option>
 		<option value="supplierThree">Supplier Three</option>
 	</select>
-		<input type="search" placeholder="Search..." class="productsearch"/>
-			<button class="btn btn-warning">
-				<span class="glyphicon glyphicon-search"></span>
-			</button>
+		<h:form>	
+							<h:inputText type="search" placeholder="Search..." class="productsearch"
+							value="#{inventory.term}" action="#{inventory.searchByName()}"/>
+							<h:commandLink class="btn btn-warning" action="#{inventory.searchByName()}">
+								<span class="glyphicon glyphicon-search"></span>
+							</h:commandLink>					
+						</h:form>
 		
-		<div class="table-content-create-order">
-			<table align="center" style="width:50%">
-				<tr>
-					<th>Item ID</th>
-					<th>Item Name</th> 
-					<th>Quantity</th>
-					<th>Price</th>
-					
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-					
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
-				</tr>
-				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
-				</tr>
-			</table>
-			
-		</div>
-		
-		<div class="table-content-create-order-right">
+		<div>
+		<h4>Choose Item</h4>
 			<table align="center" style="width:50%">
 				<tr>
 					<th>Item ID</th>
 					<th>Item Name</th> 
 					<th>Stock Level</th>
+					<th>Supplier Name</th>
 					<th>Threshold</th>
-					
+					<th>Price</th>	
 				</tr>
+				<ui:repeat var="product" value="#{inventory.dataModel}">				
 				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
 					
-				</tr>
+					<h:form>
+						<td >
+							<h:commandLink value="#{product.productID}" action ="#{purchaseOrderController.addToOrder() }" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}" />
+							</h:commandLink>
+						</td>
+					</h:form>
+					<h:form>
+						<td> 
+							<h:commandLink value="#{product.productName}" action ="#{purchaseOrderController.addToOrder() }" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
+							</h:commandLink>
+						</td> 
+					</h:form>
+					<h:form>
+						<td> 
+							<h:commandLink value="#{product.stockLevel}" action ="#{purchaseOrderController.addToOrder() }" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
+							</h:commandLink>
+						</td>
+					</h:form>
+					<h:form>
+						<td>
+							<h:commandLink value="#{product.supplierName}" action ="#{purchaseOrderController.addToOrder() }">
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
+							</h:commandLink>
+						</td> 
+					</h:form>
+					<h:form>
+						<td>
+							<h:commandLink value="#{product.threshold}" action ="#{purchaseOrderController.addToOrder() }" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
+							</h:commandLink>
+						</td>
+					 </h:form>
+					<h:form>
+						<td>
+							<h:commandLink value="#{product.price}" action ="#{purchaseOrderController.addToOrder() }" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID} "/>
+							</h:commandLink>
+						</td> 
+					</h:form>
+					
+				</tr>				
+				</ui:repeat>
+			</table>			
+		</div>
+		<br/>
+		<br/>
+		<div>
+		<h4>New Order</h4>
+			<table align="centre" style="width:50%">
 				<tr>
-					<td>Test</td>
-					<td>Input</td> 
-					<td>Data</td>
-					<td>Input</td> 
-				
+					<th>Item ID</th>
+					<th>Item Name</th> 
+					<th>Stock Level</th>
+					<th>Supplier Name</th>
+					<th>Threshold</th>
+					<th>Price</th>
 				</tr>
+				<ui:repeat var="product" value="#{purchaseOrderController.dataModelProduct}">
+				<tr>
+					<td ><h:outputText value="#{product.productID}" /></td>
+					<td> <h:outputText value="#{product.productName}" /></td> 
+					<td> <h:outputText value="#{product.stockLevel}" /></td>
+					<td><h:outputText value="#{product.supplierName}" /></td> 
+					<td><h:outputText value="#{product.threshold}" /></td> 
+					<td><h:outputText value="#{product.price}" /></td> 
+				</tr>		
+				</ui:repeat>			
 			</table>
-			
+			<h:form>
+			<h:commandLink class="btn btn-warning" action="#(purchaseOrderController.submitOrder()}">Submit</h:commandLink>
+			<h:outputText value="#{purchaseOrderController.totalPrice}"/>
+			</h:form>
 		</div>
 </ui:define>
 </ui:composition>

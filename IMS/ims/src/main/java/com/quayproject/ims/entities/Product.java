@@ -136,13 +136,14 @@ public class Product implements Serializable {
 	 * @param supplierName
 	 */
 
-	public Product(int productId, int stockLevel, int threshold, String productName, String supplierName)
+	public Product(int productId, int stockLevel, int threshold, String productName, String supplierName, float price)
 	{
 		this.productID = productId;
 		this.stockLevel = stockLevel;
 		this.threshold =threshold;
 		this.productName = productName;
 		this.supplierName = supplierName;
+		this.price = price;
 	}
 	
 	/**
