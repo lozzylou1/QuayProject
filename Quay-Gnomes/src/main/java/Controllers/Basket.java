@@ -9,32 +9,41 @@ import javax.ejb.Stateful;
 
 import Entities.Product;
 
+/**
+ * 
+ * 
+ * @author Ryan
+ *
+ */
+
 @SuppressWarnings("serial")
 @Stateful
 public final class Basket implements Serializable {
 
-	private static List<Product> basketList = new ArrayList<Product>();
+	private static List<Object> basketList = new ArrayList<Object>();
 
 
 	private double totalPriceOfBasket;
 
 	/**
-	 * Gets a copy of the basket list and returns it
+	 * Gets the basket.
 	 * 
 	 * @return List<Product>
 	 */
-	public List<Product> getBasketList()
+	public List<Object> getBasketList()
 	{		
-		List<Product> copyList = new ArrayList<Product>(basketList);
+		List<Object> copyList = new ArrayList<Object>(basketList);
 		return copyList;		
 	}
 
 	/**
-	 * Adds an Item to the basket
+	 * Adds the specified amount of
+	 * the specified product to the 
+	 * basket.
 	 * 
-	 * @param product
+	 * @param Product
 	 */
-	public void add(Product product, int numberOfItems)
+	public void add(Object product, int numberOfItems)
 	{	
 		for (int i = 0; i < numberOfItems; i++ )
 		{
@@ -43,9 +52,10 @@ public final class Basket implements Serializable {
 	}
 
 	/**
-	 * Gets the total price of the basket
+	 * Gets the total price of all the
+	 * combined objects in the basket.
 	 * 
-	 * @return the totalPrice
+	 * @return double
 	 */
 	public double getTotalPrice() 
 	{
@@ -55,26 +65,36 @@ public final class Basket implements Serializable {
 		{
 			for (int i = 0; i < basketList.size(); i++)
 			{
-				Product product = basketList.get(i);
-				price[i] = product.getPrice();
+				Object product = basketList.get(i);
+				price[i] = ((Product) product).getPrice();
 			}
 			totalPriceOfBasket = DoubleStream.of(price).sum();
 			total = totalPriceOfBasket;
 		}
-		return   total;
+		return total;
 	}
 
-	public void remove(Product product)
+	/**
+	 * Removes all products specified
+	 * from the basket.
+	 * 
+	 * @param Product
+	 */
+	public void remove(Object product)
 	{
-		for (Product item : basketList)
+		for (Object item : basketList)
 		{
-			if (product.getProductName().equals(item.getProductName()))
+			if (((Product) product).getProductName().equals(((Product) item).getProductName()))
 			{
 				basketList.remove(item);
 			}
 		}
 	}
 	
+	/**
+	 * Empties the basket.
+	 * 
+	 */
 	public void clear()
 	{
 		basketList.clear();
