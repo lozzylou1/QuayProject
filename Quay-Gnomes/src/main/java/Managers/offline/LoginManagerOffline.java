@@ -1,11 +1,14 @@
 package Managers.offline;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 
 import DummyData.InitialData;
 import Entities.CustomerAccount;
+import Entities.Product;
 import Managers.LoginManager;
 
 @Stateless
@@ -31,4 +34,9 @@ public class LoginManagerOffline implements LoginManager {
 		} 
 		return customerAccount;
 	}
+	
+	@Override
+	public List<CustomerAccount> getCustomer() {
+		return initialData.allCustomers();		
+	}	
 }

@@ -1,6 +1,7 @@
 package Controllers;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -14,10 +15,13 @@ import services.LoginService;
 @SessionScoped
 public class LoginController implements Serializable{
 
+	
+
 	private String email;
 	private String password;
 	private boolean isLoggedIn = false;
 	private CustomerAccount customerAccount;
+	private CustomerAccount customer;
 	
 	@Inject
 	private LoginService loginService;
@@ -46,7 +50,9 @@ public class LoginController implements Serializable{
 	 */
 	public void login()
 	{	
-		isLoggedIn = loginService.loginService(email, password);		
+		isLoggedIn = loginService.loginService(email, password);	
+		customer = loginService.getCustomer(email);
+		
 		password = "";
 	}	
 	
@@ -60,6 +66,15 @@ public class LoginController implements Serializable{
 		password = "";
 	}
 
+
+
+	public CustomerAccount getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(CustomerAccount customer) {
+		this.customer = customer;
+	}
 
 	/**
 	 * Gets the email

@@ -68,7 +68,6 @@ public class InitialData {
 		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam", "LAdam"));
 		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd", "HLloyd"));
 		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain", "DSwain"));		
-		
 	}
 	
 	/**
@@ -132,6 +131,11 @@ public class InitialData {
 	public List<Product> findAll()
 	{
 		return products;
+	}
+	
+	public List<CustomerAccount> allCustomers()
+	{
+		return customers;
 	}
 
 	
