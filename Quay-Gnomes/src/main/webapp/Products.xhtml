@@ -20,9 +20,20 @@ Catalogue
 				display:inline-block;
 			}
 			.test1 {
+			
 				float:left;
 				height:319px;
 				margin-Right:20px;
+			}
+			.test2 {
+			background-color: #DCCBDA;
+				float:left;
+				height:365px;
+				margin-Right:20px;
+				margin-bottom:20px;
+				color: #000000;
+				font-size: 16px;
+				
 			}
 			.product_holder{
 				 margin-top: 65px;
@@ -38,9 +49,7 @@ Catalogue
     			margin-left: 50px;
 			}
 			
-		</style>
-		
-		
+		</style>		
 		<div class="row">
 		
 			<h:outputText escape="false" value="No Products Found"
@@ -57,26 +66,26 @@ Catalogue
 				</h:form>
 
 				<div class="product_holder">
-					<div class="test1">
+					<div class="test2">
 						<h:form> 		
 					
 							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
 					
-							<h2>Filter By Type</h2>
+							<h3>Filter By Type</h3>
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
 			
-							<h2>Filter By Size</h2>
+							<h3>Filter By Size</h3>
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
 							<br/>
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
 			
-							<h2>Filter By Price</h2>
+							<h3>Filter By Price</h3>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
