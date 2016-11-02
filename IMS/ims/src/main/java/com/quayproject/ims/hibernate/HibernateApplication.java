@@ -123,7 +123,7 @@ public class HibernateApplication {
 		props.setProperty("hibernate.connection.username","root"); 									//Default user
 		props.setProperty("hibernate.connection.password",""); 										//Default password
 		props.setProperty("hibernate.show_sql","true"); 
-		props.setProperty("hibernate.hbm2ddl.auto","create"); 										//Hibernate mapping to data definition language
+		props.setProperty("hibernate.hbm2ddl.auto","update"); 										//Hibernate mapping to data definition language
 		
 		/**
 		 * Create Configuration Class Objects

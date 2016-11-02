@@ -15,8 +15,6 @@ import javax.persistence.Table;
 @Table(name = "PurchaseOrder")
 public class PurchaseOrder {
 	
-	List<Product> order = new ArrayList<Product>();
-	
 	@Id
 	@Column (name = "purchaseOrderID", nullable = false)
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -97,18 +95,6 @@ public PurchaseOrder(){
 	 * 
 	 * @param orderList
 	 */
-	public PurchaseOrder(List<Product> orderList)
-	{
-		this.order = orderList;
-	}
-	
-	public List<Product> getOrder() {
-		return order;
-	}
-
-	public void setOrder(List<Product> order) {
-		this.order = order;
-	}
 
 	public int getPurchaseOrderID()
 	{

@@ -37,9 +37,10 @@ public class HibernateSupplier {
 	
 	public List<Supplier> AddAllSuppliers(){
 		
-		Supplier supp1 = new Supplier();
-		Supplier supp2 = new Supplier();
-		Supplier supp3 = new Supplier();
+		supp1 = new Supplier();
+		supp2 = new Supplier();
+		supp3 = new Supplier();
+		supp4 = new Supplier();
 		
 		//SUPPLIER 1
 		
