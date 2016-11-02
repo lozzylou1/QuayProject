@@ -57,12 +57,58 @@ Catalogue
 			<br />
 			<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
 				<h:form>
+
 					<h:commandLink action="#{products.previous}"
 						value="Previous #{products.pagination.pageSize}"
 						rendered="#{products.pagination.hasPreviousPage}" />
 					<h:commandLink action="#{products.next}"
 						rendered="#{products.pagination.hasNextPage}"
 						value="Next #{products.pagination.pageSize}" />
+
+					<h:outputText escape="false" value="No Products Found"	rendered="#{products.dataModel.rowCount == 0}" />					
+					<br/>
+					<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+										
+						<h:commandLink action="#{products.previous}"
+							value="Previous #{products.pagination.pageSize}"
+							rendered="#{products.pagination.hasPreviousPage}" />
+						<h:commandLink action="#{products.next}"
+							rendered="#{products.pagination.hasNextPage}"
+							value="Next #{products.pagination.pageSize}" />
+						<div>
+						
+						
+						
+						
+						
+						
+							<ui:repeat var="product" value="#{products.dataModel}">
+								<div id="image-content" > 
+								 <a href="#{products.view(product.productID)}"><img src="#{product.image1}" class="image"  alt="Product Image 1"  /></a>
+								    	<br/>
+								 
+								    	<h:commandLink 
+									 	action="#{products.view(product.productID)}"
+										value="#{product.productName}"
+										 />
+										 <br/>
+									  <h:commandLink 
+										action="#{products.view(product.productID)}"	/>
+										<h:outputText value="£"/><h:outputText value="#{product.price}"/>
+										 
+									
+										<h:outputText  />
+								
+								</div>								
+							</ui:repeat>							
+						</div>
+						<div class="page-details">
+						<h:outputText value="#{products.dataModel.rowCount}"/>
+						<h:outputText
+							value="#{products.pagination.pageFirstItem } of #{products.pagination.pageLastItem + 1}" />
+							</div>
+					</h:panelGroup>
+
 				</h:form>
 
 				<div class="product_holder">

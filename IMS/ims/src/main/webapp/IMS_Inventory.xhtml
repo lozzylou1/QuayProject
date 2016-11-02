@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
+	template="templates/IMS_Template.xhtml">
+	<meta charset="utf-8" />
+<ui:define name="title">Inventory</ui:define>
+<ui:define name="maincontent">
+
+	<h1>Inventory</h1>
+			<h:form>	
+							<h:inputText type="search" placeholder="Search..." class="productsearch"
+							value="#{inventory.term}" action="#{inventory.searchByName()}"/>
+							<h:commandLink class="btn btn-warning" action="#{inventory.searchByName()}">
+								<span class="glyphicon glyphicon-search"></span>
+							</h:commandLink>					
+						</h:form>
+		<div class="table-content">
+		<h:outputText escape="false" value="No Products Found"	rendered="#{inventory.dataModel.rowCount == 0}" />
+			<table align="center" style="width:100%">
+				<tr>
+					<th>Product ID</th>
+					<th>Product Name</th> 
+					<th>Number In Stock</th>
+					<th>Supplier Name</th>
+				</tr>
+				<ui:repeat var="product" value="#{inventory.dataModel}">
+				<tr>
+					<td ><h:outputText value="#{product.productID}" /></td>
+					<td> <h:outputText value="#{product.productName}" /></td> 
+					<td> <h:outputText value="#{product.stockLevel}" /></td>
+					<td><h:outputText value="#{product.supplierName}" /></td> 
+				</tr>
+				</ui:repeat>
+			</table>
+		</div>
+</ui:define>
+</ui:composition>
+</html>

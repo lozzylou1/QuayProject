@@ -2,7 +2,11 @@ package Entities;
 
 import javax.persistence.*;
 
-
+/**
+ * 
+ * @author Administrator
+ *
+ */
 @Entity
 @Table (name = "purchaseOrder")
 public class PurchaseOrder {
