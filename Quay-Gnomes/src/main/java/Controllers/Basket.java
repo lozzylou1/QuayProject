@@ -64,6 +64,11 @@ public final class Basket implements Serializable {
 		return   total;
 	}
 
+	/**
+	 * Remove an item from the basket
+	 * 
+	 * @param product
+	 */
 	public void remove(Product product)
 	{
 		for (Product item : basketList)
@@ -75,6 +80,9 @@ public final class Basket implements Serializable {
 		}
 	}
 	
+	/**
+	 * Clears the basket entirely
+	 */
 	public void clear()
 	{
 		basketList.clear();

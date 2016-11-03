@@ -235,12 +235,8 @@ public class ProductController implements Serializable {
 	
 
 	public String view() {
-//		System.out.println("VIEW RUNS!!!!!");
 		product = null;
-		
-		
 		product = productManager.findById(new Integer(action));
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>" + product.getProductName() + " " + product.getProductID());
 		return "ProductDet.xhtml";
 	}
 
@@ -307,8 +303,10 @@ public class ProductController implements Serializable {
 		return "Basket";
 	}
 	
-	public void removeItemFromBasket() {
-		basket.remove(product);
+	public String removeItemFromBasket() {
+		Product productToRemove = searchService.findById(new Integer(action));
+		basket.remove(productToRemove);
+		return "Basket";
 	}
 	
 	public DataModel <Product> createBasketPageDataModel ()
