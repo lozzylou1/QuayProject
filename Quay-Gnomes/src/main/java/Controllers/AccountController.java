@@ -32,6 +32,10 @@ public class AccountController implements Serializable {
 	
 	private String userName = "";
 	
+	private String deliveryAddress1;
+	
+	private String postCode;
+	
 	/**
 	 * Creates the customer account 
 	 * 
@@ -45,7 +49,9 @@ public class AccountController implements Serializable {
 					initialPassword, 
 					firstName, 
 					surname,
-					userName);
+					userName,
+					deliveryAddress1,
+					postCode);
 			
 			accountService.setCustomerAccount(customerAccount);
 			accountService.addCustomerAccount();
@@ -148,4 +154,22 @@ public class AccountController implements Serializable {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+
+	public String getDeliveryAddress1() {
+		return deliveryAddress1;
+	}
+
+	public void setDeliveryAddress1(String deliveryAddress1) {
+		this.deliveryAddress1 = deliveryAddress1;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+	
+	
 }

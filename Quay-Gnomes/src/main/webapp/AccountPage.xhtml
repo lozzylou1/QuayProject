@@ -4,8 +4,10 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
+	
 	template="templates/main.xhtml">
 	<meta charset="utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<ui:define name="title">Catalogue</ui:define>
 	<ui:define name="maincontent">
 	<style>
@@ -17,25 +19,37 @@
 	}
 	.account-details{
 	border-color:black;
-	border-right:dashed;
+	
 	float:left;
 	width: 50%;
+	
 	}
 	
 	.address-details{
 
 	float:right;
 	width: 50%;
+	text-align: Left;
 	
 	}
 	.account-details h2{
 		text-align: left;
 	}
 	.address-details h2{
-	text-align: right;
+	text-align: Left;
 	}
 	.account-container{
-	min-height: 200px;
+	
+	min-height: 400px;
+	}
+	.edit-address{
+	display: none;
+	}
+	.delivery-address{
+	float:Left;
+	}
+	.billing-address{
+	float:right;
 	}
 	
 	</style>
@@ -74,25 +88,58 @@
 				
 					<h2>User details</h2>
 					
-					<a> User name:  </a>
+					<h4> User name:  </h4>
 					<h:outputText value="#{login.customer.userName}"/>
-					<br/>
-					<a> Email address:</a>
+					
+					<h4> Email address:</h4>
 					<h:outputText value="#{login.customer.email}"/>
-					<br/>
-					<a> First name: </a>
+					
+					<h4> First name: </h4>
 					<h:outputText value="#{login.customer.firstName}"/>
-					<br/>
-					<a> Last name: </a>
+					
+					<h4> Last name: </h4>
 					<h:outputText value="#{login.customer.surname}"/>
+						
+			
 				
 				</div >
 				<div class = "address-details">
-				
-					<h2>Address details</h2>
+				<div class = "delivery-address">
+						<h2>Address details</h2>
+						<h4> Address line 1: </h4>
+					<h:outputText value="#{login.customer.deliveryAddress1}"/>
+						<br/>
+					<h4> Post Code: </h4>
+					<h:outputText value="#{login.customer.postCode}"/>
+					<br/>
+					<button type = "button" onClick="editAddress()">  Edit </button>
+					<div class = "edit-address">
+					
+					<h:inputText value = "Address line 1" id="insertFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
+					<br/>
+					<h:inputText value = "Post Code" id="insertPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
+					<br/>
+					<button type = "button">  Update </button>
 				
 				</div>
+				
+			
+					</div>
+					
+					<div class = "billing-address">
+					<h:inputText value = "Address line 1" id="insFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
+					</div>
+				</div>
 			</div>
+			
+			<script>
+			function editAddress(){
+				console.log("tetet")
+				$(".edit-address").toggle(500);
+			}
+		
+
+			</script>
 		</article>
 	</ui:define>
 </ui:composition>

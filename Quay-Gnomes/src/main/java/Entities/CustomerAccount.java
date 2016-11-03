@@ -19,11 +19,11 @@ public class CustomerAccount {
 		@Column (name = "contactNumber", nullable = false)
 		private String contactNumber;
 	
-		@Column (name = "deliveryAddress", nullable = false)
-		private String deliveryAddress;
-	
-		@Column (name = "billingAddress", nullable = false)
-		private String billingAddress;
+//		@Column (name = "deliveryAddress", nullable = false)
+//		private String deliveryAddress;
+//	
+//		@Column (name = "billingAddress", nullable = false)
+//		private String billingAddress; 
 	
 		@Column (name = "firstName", nullable = false)
 		private String firstName;
@@ -33,6 +33,12 @@ public class CustomerAccount {
 		
 		@Column (name = "userName", nullable = false)
 		private String userName;
+		
+		@Column (name = "deliveryAddress1", nullable = false)
+		private String deliveryAddress1;
+		
+		@Column (name = "postCode", nullable = false)
+		private String postCode;
 
 		/**
 		 * CustomerAccount constructor
@@ -41,19 +47,21 @@ public class CustomerAccount {
 		 * @param ca_email
 		 * @param ca_password
 		 * @param ca_contactNumber
-		 * @param ca_deliveryAddress
-		 * @param ca_billingAddress
 		 * @param ca_firstName
 		 * @param ca_surname
 		 * @param ca_userName
+		 * @param ca_deliveryAddress1
+		 * @param ca_postCode
 		 */
-		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname, String ca_userName){
+		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname, String ca_userName, String ca_deliveryAddress1, String ca_postCode){
 			
 			this.email = ca_email;
 			this.password = ca_password;
 			this.firstName = ca_firstName;
 			this.surname = ca_surname;		
 			this.userName = ca_userName;
+			this.deliveryAddress1 = ca_deliveryAddress1;
+			this.postCode = ca_postCode;
 						
 		}	
 		
@@ -127,41 +135,41 @@ public class CustomerAccount {
 			this.contactNumber = contactNumber;
 		}
 		
-		/**
-		 * Returns the customerAccount delivery address
-		 * 
-		 * @return deliveryAddress
-		 */
-		public String getDeliveryAddress() {
-			return deliveryAddress;
-		}
-		
-		/**
-		 * Sets the delivery address
-		 * 
-		 * @param deliveryAddress
-		 */
-		public void setDeliveryAddress(String deliveryAddress) {
-			this.deliveryAddress = deliveryAddress;
-		}
-
-		/**
-		 * Returns the billing address
-		 * 
-		 * @return billingAddress returns billing address
-		 */
-		public String getBillingAddress() {
-			return billingAddress;
-		}
-		
-		/**
-		 * Sets the billing address
-		 * 
-		 * @param billingAddress
-		 */
-		public void setBillingAddress(String billingAddress) {
-			this.billingAddress = billingAddress;
-		}
+//		/**
+//		 * Returns the customerAccount delivery address
+//		 * 
+//		 * @return deliveryAddress
+//		 */
+//		public String getDeliveryAddress() {
+//			return deliveryAddress;
+//		}
+//		
+//		/**
+//		 * Sets the delivery address
+//		 * 
+//		 * @param deliveryAddress
+//		 */
+//		public void setDeliveryAddress(String deliveryAddress) {
+//			this.deliveryAddress = deliveryAddress;
+//		}
+//
+//		/**
+//		 * Returns the billing address
+//		 * 
+//		 * @return billingAddress returns billing address
+//		 */
+//		public String getBillingAddress() {
+//			return billingAddress;
+//		}
+//		
+//		/**
+//		 * Sets the billing address
+//		 * 
+//		 * @param billingAddress
+//		 */
+//		public void setBillingAddress(String billingAddress) {
+//			this.billingAddress = billingAddress;
+//		}
 		
 		/**
 		 * Gets the first name
@@ -214,6 +222,24 @@ public class CustomerAccount {
 		public void setUserName(String userName) {
 			this.userName = userName;
 		}
+
+		public String getDeliveryAddress1() {
+			return deliveryAddress1;
+		}
+
+		public void setDeliveryAddress1(String deliveryAddress1) {
+			this.deliveryAddress1 = deliveryAddress1;
+		}
+
+		public String getPostCode() {
+			return postCode;
+		}
+
+		public void setPostCode(String postCode) {
+			this.postCode = postCode;
+		}
+		
+		
 	
 		
 }
