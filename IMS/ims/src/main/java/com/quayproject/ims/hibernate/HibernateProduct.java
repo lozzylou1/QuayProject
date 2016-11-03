@@ -53,7 +53,7 @@ public class HibernateProduct {
 		prod1.setProductName("Harry Potter Gnome");
 		prod1.setDimensions("10x10");
 		prod1.setDiscontinued(false);
-		prod1.setImage1("img/IMG_SRC.png");
+		prod1.setImage1("img/harrypotter.jpg");
 		prod1.setLongDescription("Long Description");
 		prod1.setPrice((float)19.99);
 		prod1.setProductType("Gnome");
@@ -70,7 +70,7 @@ public class HibernateProduct {
 		prod2.setProductName("Zombie Gnome");
 		prod2.setDimensions("10x10");
 		prod2.setDiscontinued(false);
-		prod2.setImage1("img/IMG_SRC.png");
+		prod2.setImage1("img/Gnome8m.png");
 		prod2.setLongDescription("Long Description");
 		prod2.setPrice((float)19.99);
 		prod2.setProductType("Gnome");
@@ -87,7 +87,7 @@ public class HibernateProduct {
 		prod3.setProductName("Swimming Gnome");
 		prod3.setDimensions("10x10");
 		prod3.setDiscontinued(false);
-		prod3.setImage1("img/IMG_SRC.png");
+		prod3.setImage1("img/Gnome4m.png");
 		prod3.setLongDescription("Long Description");
 		prod3.setPrice((float)19.99);
 		prod3.setProductType("Gnome");
@@ -104,7 +104,7 @@ public class HibernateProduct {
 		prod4.setProductName("Bent Over Gnome");
 		prod4.setDimensions("10x10");
 		prod4.setDiscontinued(false);
-		prod4.setImage1("img/IMG_SRC.png");
+		prod4.setImage1("img/bentOverGnome.png");
 		prod4.setLongDescription("Long Description");
 		prod4.setPrice((float)19.99);
 		prod4.setProductType("Gnome");
@@ -121,7 +121,7 @@ public class HibernateProduct {
 		prod5.setProductName("Game of Thrones Gnome");
 		prod5.setDimensions("10x10");
 		prod5.setDiscontinued(false);
-		prod5.setImage1("img/IMG_SRC.png");
+		prod5.setImage1("img/Gnome1m.png");
 		prod5.setLongDescription("Long Description");
 		prod5.setPrice((float)19.99);
 		prod5.setProductType("Gnome");
@@ -138,7 +138,7 @@ public class HibernateProduct {
 		prod6.setProductName("Star Trek Gnome");
 		prod6.setDimensions("10x10");
 		prod6.setDiscontinued(false);
-		prod6.setImage1("img/IMG_SRC.png");
+		prod6.setImage1("img/Gnome6m.png");
 		prod6.setLongDescription("Long Description");
 		prod6.setPrice((float)19.99);
 		prod6.setProductType("Gnome");
