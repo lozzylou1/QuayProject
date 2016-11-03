@@ -10,8 +10,8 @@
 <ui:define name="title">Inventory</ui:define>
 <ui:define name="maincontent">
 
-	<h1>Inventory</h1>
-			<h:form>	
+	<h1 id="header">Inventory</h1>
+			<h:form id= "form_design">	
 							<h:inputText type="search" placeholder="Search..." class="productsearch"
 							value="#{inventory.term}" action="#{inventory.searchByName()}"/>
 							<h:commandLink class="btn btn-warning" action="#{inventory.searchByName()}">

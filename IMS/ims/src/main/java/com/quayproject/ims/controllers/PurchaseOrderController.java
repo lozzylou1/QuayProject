@@ -1,7 +1,6 @@
 package com.quayproject.ims.controllers;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
@@ -24,11 +23,13 @@ public class PurchaseOrderController implements Serializable {
 	private ImsService imsService;
 	@Inject
 	private ImsCreateService imsCreateService;
+	@Inject
+	private Basket basket;
 
-	
-	private String term;		
+
+	private String term;	
 	private int productID;
-	private double totalPrice;
+	private int numberOfItems;
 
 	private DataModel <PurchaseOrder> dataModel = null;	
 	private DataModel <Product> dataModelProduct = null;
@@ -46,7 +47,8 @@ public class PurchaseOrderController implements Serializable {
 	}
 
 	/**
-	 * gets the data in the dataModel
+	 * Gets the data in the dataModel for viewing orders placed
+	 * 
 	 * @return dataModel
 	 */
 	public DataModel <PurchaseOrder> getDataModel()
@@ -54,13 +56,18 @@ public class PurchaseOrderController implements Serializable {
 		dataModel = createPageDataModelPreviousOrders();		
 		return dataModel;
 	}
-	
+
+	/**
+	 * Gets the data in the dataModel for viewing the order being created
+	 * 
+	 * @return dataModel
+	 */
 	public DataModel <Product> getDataModelProduct()
 	{ 
 		dataModelProduct = createPageDataModelCurrentOrder();	
 		return dataModelProduct;
 	}
-	
+
 
 	/**
 	 * creates dataModel for viewing orders
@@ -80,79 +87,118 @@ public class PurchaseOrderController implements Serializable {
 			return new 
 					ListDataModel <PurchaseOrder> (searchByID());
 		}
-
 	}	
-	
+
 	/**
-	 * creates dataModel for viewing the order being created
+	 * Creates dataModel for viewing the order being created
 	 * 
 	 * @return
 	 */
 	private DataModel<Product> createPageDataModelCurrentOrder()
 	{
-		dataModel = null;
+		dataModelProduct = null;
 		try
 		{
-			return new 							
-					ListDataModel <Product> (imsCreateService.getOrderList());
+			return new							
+					ListDataModel <Product> (basket.getBasketList());
 		}
 		catch (Exception e)
 		{
 			return new 
-					ListDataModel <Product> (imsCreateService.getOrderList());
+					ListDataModel <Product> (basket.getBasketList());
 		}
 	}	
 
+	/**
+	 * Adds a product to the basket
+	 * 
+	 */
 	public void addToOrder() 
 	{
 		Product product = imsService.findProductByID(productID);
 		if (product != null)
 		{
-			imsCreateService.getOrderList().add(product);
-			totalPrice += product.getPrice();
-			System.out.println(totalPrice);
+			basket.add(product, numberOfItems);
 		}
 	}
-	
-	public void removeFromOrder()
+
+	/**
+	 * removes a item from the basket
+	 * 
+	 */
+	public void removeFromBasket()
 	{
-		//TODO
+		Product product = imsService.findProductByID(productID);
+		if (product != null)
+		{
+			basket.remove(product);
+		}
 	}
 
+	/**
+	 * Submits the order to the data store
+	 * 
+	 */
 	public void submitOrder()
 	{
-		imsCreateService.submitOrder(totalPrice);
+		//TODO
+		//imsCreateService.submitOrder(basket.getOrderList(), getTotalPrice());
 	}
-	
+
 	public int getProductID() {
 		return productID;
 	}
 
-	public void setProductID(int productID) {
+	public void setProductID(int productID)
+	{
 		this.productID = productID;
 	}
 
 	/**
 	 * Gets the term to search with
+	 * 
 	 * @return
 	 */
-	public String getTerm() {
+	public String getTerm() 
+	{
 		return term;
 	}
 
 	/**
 	 * sets the term to search with
+	 * 
 	 * @param term
 	 */
-	public void setTerm(String term) {
+	public void setTerm(String term) 
+	{
 		this.term = term;
 	}
 
-	public double getTotalPrice() {
-		return totalPrice;
+	/**
+	 * Gets the total price of the basket from the basket controller
+	 * 
+	 * @return
+	 */
+	public double getTotalPrice()
+	{
+		return basket.getTotalPrice();
 	}
 
-	public void setTotalPrice(double totalPrice) {
-		this.totalPrice = totalPrice;
+	/**
+	 * Gets the number of items the  user wants
+	 * 
+	 * @return the numberOfItems
+	 */
+	public int getNumberOfItems() {
+		return numberOfItems;
+	}
+
+	/**
+	 * Sets the number of items
+	 * 
+	 * @param numberOfItems the numberOfItems to set
+	 */
+	public void setNumberOfItems(int numberOfItems) {
+		this.numberOfItems = numberOfItems;
 	}
 }

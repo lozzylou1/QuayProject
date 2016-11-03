@@ -25,13 +25,14 @@
 						<h:graphicImage  value="img/logo1.png" style="max-width:100%" ></h:graphicImage>
 						</h:commandLink>
 						</h:form>
-						<h:form id="form_design">	
+						<h:form>	
 							<h:inputText class="searchBar" placeholder="Search..." name="productsearch"
 							value="#{products.term}" action="#{products.searchByTerm()}"/>
 							<h:commandLink class="btn btn-warning" action="#{products.searchByTerm()}">
 								<span class="glyphicon glyphicon-search"></span>
-							</h:commandLink>					
-						</h:form>
+							</h:commandLink>	
+							</h:form>
+						<br/>
 					<nav class="navbar navbar-inverse" style="background-color:#49274A">
 					  <div class="container-fluid">
 						<div class="navbar-header">
@@ -83,7 +84,9 @@
 								
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').show();
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').hide();
-							}else{						
+							}
+						else
+							{						
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(4)').hide();						
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(5)').show();
 								

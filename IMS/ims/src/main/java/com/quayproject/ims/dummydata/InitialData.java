@@ -32,10 +32,10 @@ public class InitialData {
 		products = new ArrayList<>();
 		purchaseOrders = new ArrayList<>();
 
-		products.add(new Product(1,   10, 2,"Harry Potter Gnome", "Super Gnome Supplies", 5.99f));
-		products.add(new Product(2,  10, 2, "Zombie Gnome", "Super Gnome Supplies", 10.99f));
-		products.add(new Product(3,   10, 2,"Swimming Gnome", "Gnome 'R' us", 15.99f));
-		products.add(new Product(4,  10, 2, "Bent Over Gnome", "Super Gnome Supplies", 2.99f));
+		products.add(new Product(1,   0, 2,"Harry Potter Gnome", "Super Gnome Supplies", 5.99f));
+		products.add(new Product(2,  2, 2, "Zombie Gnome", "Super Gnome Supplies", 10.99f));
+		products.add(new Product(3,   1, 2,"Swimming Gnome", "Gnome 'R' us", 15.99f));
+		products.add(new Product(4,  0, 2, "Bent Over Gnome", "Super Gnome Supplies", 2.99f));
 		products.add(new Product(5,   10, 2,"Game of Thrones Gnome", "Gnomes 'R' us", 22.85f));
 		products.add(new Product(6,  10, 2, "Star Trek Gnome", "Super Gnome Supplies",  11.00f));
 

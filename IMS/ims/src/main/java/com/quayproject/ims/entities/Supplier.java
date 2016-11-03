@@ -24,9 +24,9 @@ public class Supplier {
 
 	@Column (name = "dateOfLastOrder", nullable = false)
 	private String dateOfLastOrder;
-	
+
 	public Supplier(){
-		
+
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class Supplier {
 		this.contactNumber = contactNumber;
 		this.dateOfLastOrder = dateOfLastOrder;
 	}
-	
+
 	/**
 	 * Supplier Constructor for add supplier 
 	 * 
@@ -55,9 +55,9 @@ public class Supplier {
 	{
 		this.supplierName = supplierName;
 		this.contactNumber = contactNumber;
-		}
-	
-	
+	}
+
+
 	/**
 	 * Get supplierID
 	 * @return

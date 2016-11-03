@@ -10,8 +10,8 @@
 <ui:define name="title">Orders</ui:define>
 <ui:define name="maincontent">
 
-	<h1>Orders</h1>
-		<h:form>
+	<h1 id="header">Orders</h1>
+		<h:form id= "form_design">
 			<h:inputText type="search" placeholder="Search..."
 				class="productsearch" value="#{purchaseOrderController.term}"
 				action="#{purchaseOrderController.searchByID()}" />

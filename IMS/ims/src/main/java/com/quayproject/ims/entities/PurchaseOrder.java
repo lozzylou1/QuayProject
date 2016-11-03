@@ -93,7 +93,7 @@ public PurchaseOrder(){
 		}
 	
 	/**
-	 * COnstructor to create a PurchaseOrder
+	 * Constructor to create a PurchaseOrder
 	 * 
 	 * @param orderList
 	 */

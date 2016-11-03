@@ -2,13 +2,17 @@ package com.quayproject.ims.services;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import com.quayproject.ims.entities.Alert;
 import com.quayproject.ims.entities.Product;
+import com.quayproject.ims.entities.PurchaseOrder;
+import com.quayproject.ims.entities.Update;
 import com.quayproject.ims.managers.InventoryManager;
 import com.quayproject.ims.managers.PurchaseOrderManager;
 import com.quayproject.ims.managers.SupplierManager;
@@ -22,7 +26,7 @@ public class ImsCreateService {
 	private InventoryManager inventoryManager;
 	@Inject 
 	private PurchaseOrderManager purchaseOrderManager;
-
+	
 	private List<Product> orderList;
 
 	/**
@@ -62,11 +66,11 @@ public class ImsCreateService {
 
 	}
 
-	public  void submitOrder(double totalPrice)
+	public  void submitOrder(List<Product> orderList, double totalPrice)
 	{
 		/*DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();*/
-		String s = "27/10/2016";
+		String s = "28/10/2016";
 		purchaseOrderManager.createPurchaseOrder(orderList, totalPrice, s);
 	}
 
@@ -87,4 +91,38 @@ public class ImsCreateService {
 	public void setOrderList(List<Product> orderList) {
 		this.orderList = orderList;
 	}
+
+	public List<Alert> alertList() {
+		
+		List<Alert> alerts = new ArrayList<Alert>();
+		
+		for (Product product : inventoryManager.allInventory())
+		{
+			if (product.getStockLevel() <= product.getThreshold())
+			{
+				Alert alert = new Alert(product);
+				alerts.add(alert);
+			} 				
+		}
+		return alerts;
+	}
+
+	public List<Update> updateList() {
+
+		List<Update> updates= new ArrayList<Update>();
+		
+		for (PurchaseOrder purchaseOrder : purchaseOrderManager.allPurchaseOrders())
+		{
+			if ((purchaseOrder.getStatus() == "Delivered" ) ||  (purchaseOrder.getStatus() == "Approved"))
+			{
+				Update update = new Update(purchaseOrder);
+						updates.add(update);
+			}
+		}
+		
+	
+		return null;
+	}
+	
+	
 }

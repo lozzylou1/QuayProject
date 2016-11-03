@@ -27,7 +27,7 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 	@Override
 	public void createPurchaseOrder(List<Product> orderList, double totalPrice, String orderDate) {
 		// TODO Auto-generated method stub
-		initialData.getPurchaseOrders().add(new PurchaseOrder());
+		initialData.getPurchaseOrders().add(new PurchaseOrder(orderList));
 	}
 
 }

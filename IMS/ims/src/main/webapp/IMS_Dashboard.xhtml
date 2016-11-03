@@ -10,9 +10,14 @@
 <ui:define name="title">Dashboard</ui:define>
 <ui:define name="maincontent">
 
-	<h1>Dashboard</h1>
+	<h1 id="header">Dashboard</h1>
 		<div class="ims-alerts">
 		<h4>Alerts</h4>
+		<ui:repeat var="alert" value = "#{alerts.dataModel}">
+		<div>
+		<h:outputText value= "#{alert.getMessage()}" class="#{alert.color}"/>
+		</div>
+		</ui:repeat>
 		</div>
 		<br/>
 		<div class="ims-updates">
