@@ -10,21 +10,32 @@
 		Basket
 	</ui:define>
 	<ui:define name="maincontent">
-	<ui:repeat var="product" value="#{products.basketDataModel}">
-		<div class="basket_row">
-			<div class="basket_image">
-				<h:graphicImage value="#{product.image1}" />
-			</div>
-			<div class="basket_content">
-				<h:outputText class="basket_quantity" value="Quantity" />
-				<h:outputText class="basket_price" value="£#{product.price}" />
-			</div>
-			<div class="basket_remove">
-				<h:commandButton class="basket_remove_button" value="Remove"
-					type="submit" action="#{products.removeItemFromBasket()}" />
-			</div>
+		<ui:repeat var="product" value="#{products.basketDataModel}">
+			<div class="basket_row">
+				<div class="basket_image">
+					<h:graphicImage value="#{product.image1}" />
 
-		</div>
+				</div>
+				<h:outputText value="#{product.productID}" />
+				<div class="basket_content">
+					<h:outputText class="basket_quantity" value="Quantity" />
+					<h:outputText class="basket_price" value="£#{product.price}" />
+				</div>
+				<div class="basket_remove">
+				<h:form>
+					<h:commandButton class="basket_remove_button" value="Remove"
+						type="submit" action="#{products.removeItemFromBasket()}">
+						<f:setPropertyActionListener target="#{products.action}"
+							value="#{product.productID}" />
+					</h:commandButton>
+					</h:form>
+				</div>
+				<br />
+				<f:verbatim>
+					<hr size="10" />
+				</f:verbatim>
+				<br />
+			</div>
 		</ui:repeat>
 	</ui:define>
 </ui:composition>
