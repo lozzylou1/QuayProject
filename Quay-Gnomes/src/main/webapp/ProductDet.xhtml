@@ -9,117 +9,122 @@
 	<ui:define name="title">Catalogue</ui:define>
 	<ui:define name="maincontent">
 
-	<article>
-		<div id="standOut" class="row">
+		<article>
+			<div id="standOut" class="row">
 
 
-			<div class="col-1 col-m-1">
-			
-				<h:graphicImage value="img/got side.png"/> 
-				<br/>
-				<br/>
-				<h:graphicImage value="img/got back.png"/>
-				<br/>
-				<br/>
-				<h:graphicImage value="img/gotinuse2.png"/>
-				<br/>
+				<div class="col-1 col-m-1">
+
+					<h:graphicImage value="img/got side.png" />
+					<br /> <br />
+					<h:graphicImage value="img/got back.png" />
+					<br /> <br />
+					<h:graphicImage value="img/gotinuse2.png" />
+					<br />
+				</div>
+
+				<div class="col-3 col-m-3">
+					<img src="#{products.product.image1}" alt="Product Image 1"
+						style="width: 500px; height: 500px;" /> <br /> <br /> <br />
+
+
+				</div>
+
+				<div class="col-7 col-m-6">
+
+					<H1>
+						<h:outputText value="#{products.product.productName}" />
+					</H1>
+					<H1>
+						<h:outputText value="£#{products.product.price}" />
+					</H1>
+					<H1>
+						<h:outputText value="#{products.product.productID}" />
+					</H1>
+
+
+					<h:form>
+						<h:commandLink value = "Add to Basket"
+							action="#{products.addItemToBasket()}" />
+					</h:form>
+
+				</div>
+
+				<div class="col-3"></div>
+
 			</div>
 
-			<div class="col-3 col-m-3">
-				<img src="#{products.product.image1}" alt="Product Image 1" style=" width: 500px; height: 500px;" /> <br/> <br/> <br/>
 
-
-			</div>
 
 			<div class="col-7 col-m-6">
-			<H1>
-			<h:outputText value="#{products.product.productName}" />
-			</H1>
-			<H1>
-			<h:outputText value="£#{products.product.price}" />
-			</H1>
-			<H1>
-			<h:outputText value="#{products.product.productID}" />
-			</H1>
-		
-				
-			<h:commandButton value="Add To Basket" type="submit" action="#{basket.add()}"/>
+				<h2>Short Description</h2>
+				<h:outputText value="#{products.product.shortDescription}" />
+				<h:outputText value="#{products.product.weight}" />
 
+				<h2>Long Description</h2>
+				<h:outputText value="#{products.product.longDescription}" />
+
+
+
+				<h2>Dimensions</h2>
+				<h:outputText value="#{products.product.dimensions}" />
 
 			</div>
 
-			<div class="col-3"></div>
+
+		</article>
+
+		<hr />
+
+
+
+
+
+
+
+		<div class="col-12 col-m-12">
+			<h2>Similar Items..</h2>
+
+
+			<div class="col-2 col-m-2"></div>
+
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3"
+					style="width: 120px; height: 150px;" />
+			</div>
+
+
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3"
+					style="width: 120px; height: 150px;" />
+			</div>
+
+
+			<div class="col-3 col-m-3">
+				<img src="img/gotinuse2.png" alt="Product Image 3"
+					style="width: 120px; height: 150px;" />
+			</div>
+
 
 		</div>
 
-		
 
-		<div class="col-7 col-m-6">
-			<h2>Short Description</h2>
-			<h:outputText value="#{products.product.shortDescription}" />
-			<h:outputText value="#{products.product.weight}" />
-		
-			<h2>Long Description</h2>
-			<h:outputText value="#{products.product.longDescription}" />
+		<div class="col-2"></div>
+		<div class="col-3 col-m-12">
+
+			<h2>Product Reviews</h2>
+			<br />
+			<h:outputText value="" />
+
+			<br />
+
+			<h:outputText value="" />
 
 
 
-			<h2>Dimensions</h2>
-			<h:outputText value="#{products.product.dimensions}" />
 
 		</div>
 
-
-	</article>
-	
-		<hr/>
-
-
-
-	
-
-
-
-	<div class="col-12 col-m-12">
-	<h2>Similar Items..</h2>
-
-		
-				<div class="col-2 col-m-2"></div>
-		
-			<div class="col-3 col-m-3">
-				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
-			</div>
-			
-			
-			<div class="col-3 col-m-3">
-				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
-			</div>
-		
-		
-			<div class="col-3 col-m-3">
-				<img src="img/gotinuse2.png" alt="Product Image 3" style="width: 120px; height: 150px;" />
-			</div>
-		
-		
-	</div>	
-
-
-	<div class="col-2"></div>
-	<div class="col-3 col-m-12">
-	
-	<h2>Product Reviews</h2>
-	<br/>
-	<h:outputText value="" />
-	
-	<br/>
-
-	<h:outputText value="" />
-	
-	
-
-
-</div>
-
-</ui:define>
+	</ui:define>
 </ui:composition>
 </html>

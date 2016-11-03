@@ -154,7 +154,49 @@ table, th, td {
 	height: 450px;
 }
 
+.basket_row {
+	float: left;
+	width:100%;
+}
 
+.basket_image{
+	float:left;
+	width:30%;
+	height:100%;
+	
+}
+
+.basket_content{
+	width:70%;
+	text-align:center;
+	padding-top:5%;
+	float:left;
+}
+
+.basket_content_image{
+	height:100%;
+}
+
+
+
+.basket_quantity{
+	float:left;
+}
+
+.basket_price{
+	
+}
+
+.basket_remove{
+	float:right;
+	width:20%;
+	
+}
+
+.basket_remove_button{
+	float:right;
+	padding-left:5%;
+}
 #searchPane {
 	width: auto;
 	float: left;
