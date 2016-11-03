@@ -8,6 +8,37 @@
 	<meta charset="utf-8" />
 	<ui:define name="title">Catalogue</ui:define>
 	<ui:define name="maincontent">
+	<style>
+	.account-header{
+	text-align: center;
+	border-color: black;
+	border-bottom: dashed;
+	
+	}
+	.account-details{
+	border-color:black;
+	border-right:dashed;
+	float:left;
+	width: 50%;
+	}
+	
+	.address-details{
+
+	float:right;
+	width: 50%;
+	
+	}
+	.account-details h2{
+		text-align: left;
+	}
+	.address-details h2{
+	text-align: right;
+	}
+	.account-container{
+	min-height: 200px;
+	}
+	
+	</style>
 	<article>
 			<div>
 				<table class="table table-responsive"
@@ -35,27 +66,32 @@
 		<hr/>
 		<br/>
 		<article>
-			<div>
-				<table class="table table-responsive"
-					style="background-color: #DCCBDA">
-					<tr>
-						<th><h2>Account</h2></th>
-						<th><h:commandButton class="btn btn-warning">Change Details</h:commandButton></th>
-						<th><h:commandButton class="btn btn-warning">Addresses</h:commandButton></th>
-					</tr>
-					<tr>
-						<td>
-							<img src="AccountIcon.png" alt="Orders">
-							</img>							
-						</td>
-						<td>
-							<p>some text</p>
-						</td>
-						<td>
-							<p>some text</p>
-						</td>
-					</tr>
-				</table>
+			<div class = "account-container">
+				<div class = "account-header">
+					<h1>Account</h1>
+				</div>
+				<div class = "account-details">
+				
+					<h2>User details</h2>
+					
+					<a> User name:  </a>
+					<h:outputText value="#{login.customer.userName}"/>
+					<br/>
+					<a> Email address:</a>
+					<h:outputText value="#{login.customer.email}"/>
+					<br/>
+					<a> First name: </a>
+					<h:outputText value="#{login.customer.firstName}"/>
+					<br/>
+					<a> Last name: </a>
+					<h:outputText value="#{login.customer.surname}"/>
+				
+				</div >
+				<div class = "address-details">
+				
+					<h2>Address details</h2>
+				
+				</div>
 			</div>
 		</article>
 	</ui:define>
