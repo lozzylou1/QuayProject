@@ -51,6 +51,8 @@
 	.billing-address{
 	float:right;
 	}
+	.edit-bAddress{
+	display:none;}
 	
 	</style>
 	<article>
@@ -134,23 +136,20 @@
 					
 					
 					<div class = "edit-bAddress">					
-					<h:inputText value = "Address line 1" id="insertbFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
+					<h:inputText value = "#{login.customer.billingAddress1 }"  id="insertbFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
 					<br/>
-					<h:inputText value = "Post Code" id="insertbPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
+					<h:inputText value = "#{login.customer.billingPostCode }"  id="insertbPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
 					<br/>
-					<h:commandButton   value="Update" >
-					<f:ajax   event = "click"  Listener ="#{login.update}"  render ="billing-form"/>
-					</h:commandButton>
+					<h:form>
+					<h:commandButton value="Update" type = "submit" action="#{register.update()}" />
+					</h:form>
 					</div>
 					
 				</form>
 				</div>
 					</div>
 				</div>
-				
-			
-			
-			<script>
+				<script>
 			function editAddress(){
 				console.log("tetet")
 				$(".edit-address").toggle(500);
