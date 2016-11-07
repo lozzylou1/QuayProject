@@ -104,7 +104,7 @@ nav {
 	border-color:#49274A;
 	background: #DCCBDA;
 	}
-
+	
 .ims-updates{
 	margin-right: auto; margin-left: auto; width: 70%;
 	border-style: solid;
@@ -114,6 +114,17 @@ nav {
    	border-color:#49274A;
    	background: #DCCBDA;
    	}
+
+.contacts{
+	margin-right: auto; margin-left: auto; width: 70%;
+	border-style: solid;
+	margin:12px;
+	padding-left: 10px;
+	 padding-right: 10px;
+   	border-color:#49274A;
+   	background: #DCCBDA;
+	
+}
 
 .low-stock{
 	width: 400px;
@@ -163,13 +174,22 @@ th {
 }
 
 .ims-updates h4{
-	color: white;
+color: white;
   font-size: 30px;
   font-weight: 500;
   padding:  7px 12px;
    padding-left: 10px;
   background: #49274A;
 }
+
+.contacts h4{
+	color: white;
+  font-size: 30px;
+  font-weight: 500;
+  padding:7px 12px;
+   background: #49274A;
+}
+
 
 .ims-alerts h4{
 	color: white;
@@ -203,6 +223,7 @@ th {
 	background: #DCCBDA;	
 	width: 55%;
 }
+
 
 /*li Styles*/
 .menu-item li {
