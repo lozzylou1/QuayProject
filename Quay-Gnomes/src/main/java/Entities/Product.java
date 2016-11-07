@@ -47,6 +47,15 @@ public class Product {
 	@Column (name = "image1", nullable = false)
 	private String image1;
 	
+	
+	/**
+	 * No Args constructor 
+	 */
+	public Product() 
+	{
+		
+	}
+	
 	/**
 	 * Product Constructor
 	 * 
