@@ -36,7 +36,7 @@ public class HibernatePurchaseOrder {
 	
 	public List<PurchaseOrder> AddAllPurchaseOrders(){
 		
-		purch1 = new PurchaseOrder();
+		purch1 = new PurchaseOrder(null);
 		purch1.setSupplierName("Gnomes 'R' Us");
 		purch1.setOrderTotal(150);
 		purch1.setDateOfOrder("11/01/16");
