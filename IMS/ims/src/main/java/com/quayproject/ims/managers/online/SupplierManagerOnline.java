@@ -3,6 +3,7 @@ package com.quayproject.ims.managers.online;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.enterprise.inject.Alternative;
 import javax.enterprise.inject.Default;
 
 import com.quayproject.ims.entities.Supplier;
@@ -12,7 +13,7 @@ import com.quayproject.ims.managers.SupplierManager;
 
 
 @Stateless
-@Default
+@Alternative
 public class SupplierManagerOnline implements SupplierManager {
 	
 	static org.hibernate.Session session = HibernateApplication.getSession();

@@ -1,4 +1,4 @@
-package com.quayproject.ims.managers.offline;
+/*package com.quayproject.ims.managers.offline;
 
 import java.util.List;
 
@@ -12,19 +12,19 @@ import com.quayproject.ims.managers.InventoryManager;
 
 @Stateless
 @Default
-public class InventoryManagerOffline implements InventoryManager {
+public class InventoryManagerOffline implements InventoryManager {*/
 
-	@Inject
-	public InitialData initialData;
+/*	@Inject
+	public InitialData initialData;*/
 
 	/**
 	 * Implementation of interface method
 	 */
-	@Override
+/*	@Override
 	public List<Product> allInventory() {
 		return initialData.getProducts();
 	}
-
+*/
 
 	/**
 	 * Implementation of create inventory from interface method
@@ -34,7 +34,7 @@ public class InventoryManagerOffline implements InventoryManager {
 	 * @param threshold
 	 */
 
-	@Override
+/*	@Override
 	public void createNewInventoryItem(String productName, int stockLevel, int threshold) {
 
 		Product inventoryItem = new Product (productName, stockLevel, threshold);
@@ -49,4 +49,4 @@ public class InventoryManagerOffline implements InventoryManager {
 
 	}
 
-}
+}*/

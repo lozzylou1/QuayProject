@@ -44,17 +44,17 @@ public class HibernateApplication {
 	
 	
 	@SuppressWarnings("unchecked")
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		HibernateProduct prod = new HibernateProduct();
 		HibernateStaffAccount staff = new HibernateStaffAccount();
 		HibernatePurchaseOrder purch = new HibernatePurchaseOrder();
 		HibernateSupplier supp = new HibernateSupplier();
-		HibernateInventory inv = new HibernateInventory();
+		HibernateInventory inv = new HibernateInventory();*/
 		
 		//Starting the Hibernate Config and Session
 		
-		start();
+	//	start();
 		
 		/**
 		 * For Loops saving all of the objects from the list of entities
@@ -62,51 +62,59 @@ public class HibernateApplication {
 	
 		//SUPPLIER FOR LOOP
 		
-		supp.AddAllSuppliers();
+		/*supp.AddAllSuppliers();
 		
 		for(Supplier s : supp.getSuppliers())
 		{
 			session.save(s);
-		}
+		}*/
 		
 		//STAFF ACCOUNT FOR LOOP
 		
-		staff.AddAllStaff();
+		/*staff.AddAllStaff();
 		
 		for(StaffAccount a : staff.getStaff())
 		{
 			session.save(a);
-		}
+		}*/
 		
 		//PURCHASE ORDER FOR LOOP
 		
-		purch.AddAllPurchaseOrders();
+		/*purch.AddAllPurchaseOrders();
 		for(PurchaseOrder p : purch.getPurchaseOrders())
 		{
 			session.save(p);
-		}
+		}*/
 		
 		//PRODUCT FOR LOOP
 		
-		prod.AddAllProducts();
+		/*prod.AddAllProducts();
 		for(Product pr : prod.getProds())
 		{
 			session.save(pr);
-		}
+		}*/
 		
 		//INVENTORY FOR LOOP
 		
-		inv.AddAllInventory();
+		/*inv.AddAllInventory();
 		for(Inventory i : inv.getInventory())
 		{
 			session.save(i);
-		}
+		}*/
 		
 		//Closing the Session and the Factory
 		
+		
+	/*	
+		String hql = "SELECT * FROM supplier S";
+		Query query = session.createQuery(hql);
+		List<Supplier> results = query.list();
+		System.out.println(results.toString());
+		
+		
 		session.close();
 		sessionFactory.close();		
-	}
+	}*/
 
 	
 	
