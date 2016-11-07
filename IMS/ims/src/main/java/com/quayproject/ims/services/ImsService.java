@@ -127,4 +127,22 @@ public class ImsService {
 
 		return purchaseOrderList;
 	}
+
+public Product findProductByID (int productID) throws NullPointerException
+{
+	Product resultProduct = null;
+	
+	for(Product product : inventoryManager.allInventory())
+	{
+		if (product.getProductID() == productID)
+		{
+			resultProduct = product;
+		}
+	}
+	return resultProduct;
+	
+}
+
+
+
 }

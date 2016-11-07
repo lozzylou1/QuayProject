@@ -10,8 +10,8 @@
 <ui:define name="title">Suppliers</ui:define>
 <ui:define name="maincontent">
 
-	<h1>Suppliers</h1>
-		<h:form>
+	<h1 id="header">Suppliers</h1>
+		<h:form id= "form_design">
 			<h:inputText type="search" placeholder="Search..."
 				class="productsearch" value="#{supplierControl.term}"
 				action="#{supplierControl.searchByName()}" />

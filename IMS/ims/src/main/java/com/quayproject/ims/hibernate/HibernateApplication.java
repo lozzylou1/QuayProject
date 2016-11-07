@@ -1,7 +1,7 @@
 package com.quayproject.ims.hibernate;
 
-import java.util.Collection;
 //JAVA IMPORTS
+import java.util.Collection;
 import java.util.List;
 import java.util.Properties;
 
@@ -20,10 +20,18 @@ import com.quayproject.ims.entities.Product;
 import com.quayproject.ims.entities.PurchaseOrder;
 import com.quayproject.ims.entities.StaffAccount;
 import com.quayproject.ims.entities.Supplier;
+
+//ENTITY METHODS
 import com.quayproject.ims.hibernate.HibernateProduct;
 import com.quayproject.ims.hibernate.HibernateStaffAccount;
+import com.quayproject.ims.hibernate.HibernateSupplier;
+import com.quayproject.ims.hibernate.HibernatePurchaseOrder;
 
 public class HibernateApplication {
+	
+	/**
+	 * Declaring Static Variables
+	 */
 	
 	static Properties props;
 	static Configuration cfg;
@@ -42,8 +50,15 @@ public class HibernateApplication {
 		HibernateStaffAccount staff = new HibernateStaffAccount();
 		HibernatePurchaseOrder purch = new HibernatePurchaseOrder();
 		HibernateSupplier supp = new HibernateSupplier();
+		HibernateInventory inv = new HibernateInventory();
+		
+		//Starting the Hibernate Config and Session
 		
 		start();
+		
+		/**
+		 * For Loops saving all of the objects from the list of entities
+		 */
 	
 		//SUPPLIER FOR LOOP
 		
@@ -66,7 +81,6 @@ public class HibernateApplication {
 		//PURCHASE ORDER FOR LOOP
 		
 		purch.AddAllPurchaseOrders();
-		
 		for(PurchaseOrder p : purch.getPurchaseOrders())
 		{
 			session.save(p);
@@ -74,13 +88,21 @@ public class HibernateApplication {
 		
 		//PRODUCT FOR LOOP
 		
-		
 		prod.AddAllProducts();
-		
 		for(Product pr : prod.getProds())
 		{
 			session.save(pr);
 		}
+		
+		//INVENTORY FOR LOOP
+		
+		inv.AddAllInventory();
+		for(Inventory i : inv.getInventory())
+		{
+			session.save(i);
+		}
+		
+		//Closing the Session and the Factory
 		
 		session.close();
 		sessionFactory.close();		
@@ -90,9 +112,11 @@ public class HibernateApplication {
 	
 	
 	public static void start(){
+		
 		/**
 		 * Create a Properties Class Objects and Set Hibernate Properties
 		 */
+		
 		props = new Properties();
 		props.setProperty("hibernate.connection.driver_class","com.mysql.jdbc.Driver"); 			//Specify mysql driver class from pom.mysql.jdbc.driver
 		props.setProperty("hibernate.connection.url","jdbc:mysql://localhost:3306/imsdatabase"); 	//Default url for the localhost linked to the database
@@ -104,6 +128,7 @@ public class HibernateApplication {
 		/**
 		 * Create Configuration Class Objects
 		 */
+		
 		cfg = new Configuration()
 				.addProperties(props)
 				.addAnnotatedClass(Supplier.class)
@@ -115,26 +140,35 @@ public class HibernateApplication {
 		/**
 		 * Create Service Registry Objects
 		 */
+		
 		serviceRegistry = new StandardServiceRegistryBuilder()
 				.applySettings(cfg.getProperties()).build();
 		
 		/**
 		 * Create a session Factory object
 		 */
+		
 		sessionFactory = cfg.buildSessionFactory(serviceRegistry);
 		
 		/**
 		 * Create/open Session
 		 */
+		
 		session = sessionFactory.openSession();
 		
 		/**
 		 * Begin a transaction
 		 */
+		
 		tx = session.beginTransaction();
 		
 		
 	}
+	
+	/**
+	 * Getters and Setters for Hibernate
+	 * @return
+	 */
 
 	public Properties getProps() {
 		return props;

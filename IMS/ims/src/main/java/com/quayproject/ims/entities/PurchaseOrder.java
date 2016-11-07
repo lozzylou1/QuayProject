@@ -1,5 +1,9 @@
 package com.quayproject.ims.entities;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +14,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PurchaseOrder")
 public class PurchaseOrder {
+	
+	List<Product> order = new ArrayList<Product>();
 	
 	@Id
 	@Column (name = "purchaseOrderID", nullable = false)
@@ -44,6 +50,19 @@ public class PurchaseOrder {
 	@Column (name = "status", nullable = false)
 	private String status;
 	
+	
+/**
+ * update constructor
+ * 
+ * @param purcahseOrderID
+ * @param status
+ */
+	public PurchaseOrder(int purchaseOrderID, String status){
+		
+	this.purchaseOrderID = purchaseOrderID;
+	this.status = status;
+	}
+
 	/**
 	 * PurchaseOrder Constructor
 	 * 
@@ -54,22 +73,51 @@ public class PurchaseOrder {
 	 * @param dateOfDelivery
 	 */
 	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder, String dateOfDelivery, String status) {
-		
-		
-		this.purchaseOrderID = purchaseOrderID;;
+				
+		this.purchaseOrderID = purchaseOrderID;
 		this.supplierName = supplierName;
 		this.orderTotal = orderTotal;
 		this.dateOfOrder = dateOfOrder;
 		this.dateOfDelivery = dateOfDelivery;
-		this.status = status;
-			
+		this.status = status;			
+		}
+	
+	/**
+	 * Constructor for Creating a Purchase order
+	 * 
+	 * @param purchaseOrderID
+	 * @param supplierName
+	 * @param orderTotal
+	 * @param dateOfOrder
+	 * @param dateOfDelivery
+	 */
+	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder) {
 		
+		this.purchaseOrderID = purchaseOrderID;
+		this.supplierName = supplierName;
+		this.orderTotal = orderTotal;
+		this.dateOfOrder = dateOfOrder;
+		this.status = "Pending Approval";
+		}
+	
+	/**
+	 * Constructor to create a PurchaseOrder
+	 * 
+	 * @param orderList
+	 */
+	public PurchaseOrder(List<Product> orderList)
+	{
+		this.order = orderList;
 	}
 	
-	public PurchaseOrder(){
-		
+	public List<Product> getOrder() {
+		return order;
 	}
-	
+
+	public void setOrder(List<Product> order) {
+		this.order = order;
+	}
+
 	public int getPurchaseOrderID()
 	{
 		return purchaseOrderID;
@@ -140,8 +188,8 @@ public class PurchaseOrder {
 	public String getDateOfDelivery() {
 		return dateOfDelivery;
 	}
-	public void setDateOfDelivery(String dateOdDelivery) {
-		this.dateOfDelivery = dateOdDelivery;
+	public void setDateOfDelivery(String dateOfDelivery) {
+		this.dateOfDelivery = dateOfDelivery;
 	}
 
 	public String getStatus() {
