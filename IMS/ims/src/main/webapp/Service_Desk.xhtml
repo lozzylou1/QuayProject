@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"
+	template="templates/IMS_Template.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Service Desk Information</ui:define>
+	<ui:define name="maincontent">
+
+		<h1 id="header">Service Desk Information</h1>
+		<div class="service_desk">
+		<h4>Working hours</h4>
+		<li><h:outputText value="Office hours: Monday-Friday 08:00am-17:30pm"/></li>
+		<li><h:outputText value="On-call hours: 17:30pm-08:00am"/></li>
+		</div>
+		
+		<div class="service_desk">
+		<h4>How do I log an Incident?</h4>
+		<li><h:outputText value="Log an incident by calling the Service Desk during opening hours-Contact Number: 01415698745"/></li>
+		<li><h:outputText value="If an emercengy incident occurs out of hours please contact the on call team- Contact Number: 0798456985"/></li>
+		</div>
+		
+		<div class="service_desk">
+		<h4>How do I log a Service Request?</h4>
+		<li><h:outputText value="Log a Service Request by asking your Manager to fill in the Service Request From and emailing it to ServiceDesk@NBGardens."/></li>
+		<li><h:outputText value="Please Allow 5 working days for a Service Request to be responded to."/></li>
+		</div>
+		
+	</ui:define>
+</ui:composition>
+</html>
