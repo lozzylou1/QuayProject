@@ -300,13 +300,35 @@ public class ProductController implements Serializable {
 	public String addItemToBasket() {
 		basket.add(product, 1);
 		System.out.println(product.getProductName());
-		return "Basket";
+		return "ProductDet";
 	}
 	
 	public String removeItemFromBasket() {
+		System.out.println(action);
 		Product productToRemove = searchService.findById(new Integer(action));
-		basket.remove(productToRemove);
+		System.out.println(productToRemove);
+		basket.removeItemFromBasket(productToRemove);
 		return "Basket";
+	}
+	
+	/**
+	 * Gets the total price of all the items
+	 * in the basket
+	 * @return double totalPrice
+	 */
+	public double getBasketTotalPrice()
+	{
+		return basket.getTotalPrice();
+		
+		
+	}
+	
+	/**
+	 * Clears the basket of all added itemsS
+	 */
+	public void clearBasket()
+	{
+		basket.clear();
 	}
 	
 	public DataModel <Product> createBasketPageDataModel ()
@@ -323,6 +345,7 @@ public class ProductController implements Serializable {
 					ListDataModel <Product> (basket.getBasketList());
 		}
 	}
+	
 	
 	
 	
