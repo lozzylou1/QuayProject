@@ -88,9 +88,6 @@
 				
 					<h2>User details</h2>
 					
-					<h4> User name:  </h4>
-					<h:outputText value="#{login.customer.userName}"/>
-					
 					<h4> Email address:</h4>
 					<h:outputText value="#{login.customer.email}"/>
 					
@@ -99,12 +96,12 @@
 					
 					<h4> Last name: </h4>
 					<h:outputText value="#{login.customer.surname}"/>
-						
 			
-				
 				</div >
+				
 				<div class = "address-details">
 				<div class = "delivery-address">
+				<form id="delivery-form">
 						<h2>Address details</h2>
 						<h4> Address line 1: </h4>
 					<h:outputText value="#{login.customer.deliveryAddress1}"/>
@@ -113,32 +110,55 @@
 					<h:outputText value="#{login.customer.postCode}"/>
 					<br/>
 					<button type = "button" onClick="editAddress()">  Edit </button>
-					<div class = "edit-address">
 					
+					
+					<div class = "edit-address">				
 					<h:inputText value = "Address line 1" id="insertFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
 					<br/>
 					<h:inputText value = "Post Code" id="insertPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
 					<br/>
 					<button type = "button">  Update </button>
-				
+					</div>
+				</form>
+				</div>
+					
+					<div class = "billing-address">
+					<form id = "billing-form">
+					<h2> Billing Address </h2>
+					<h4> Address line 1: </h4>
+					<h:outputText value="#{login.customer.billingAddress1}"/>
+					<h4> Post Code: </h4>
+					<h:outputText value="#{login.customer.billingPostCode}"/>
+					<br/>
+					<button type = "button" onClick="editbAddress()">  Edit </button>
+					
+					
+					<div class = "edit-bAddress">					
+					<h:inputText value = "Address line 1" id="insertbFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
+					<br/>
+					<h:inputText value = "Post Code" id="insertbPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
+					<br/>
+					<h:commandButton   value="Update" >
+					<f:ajax   event = "click"  Listener ="#{login.update}"  render ="billing-form"/>
+					</h:commandButton>
+					</div>
+					
+				</form>
+				</div>
+					</div>
 				</div>
 				
 			
-					</div>
-					
-					<div class = "billing-address">
-					<h:inputText value = "Address line 1" id="insFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
-					</div>
-				</div>
-			</div>
 			
 			<script>
 			function editAddress(){
 				console.log("tetet")
 				$(".edit-address").toggle(500);
 			}
-		
-
+			function editbAddress(){
+				console.log("tetet")
+				$(".edit-bAddress").toggle(500);
+			}
 			</script>
 		</article>
 	</ui:define>

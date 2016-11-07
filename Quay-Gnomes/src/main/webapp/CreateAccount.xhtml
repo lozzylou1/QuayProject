@@ -76,7 +76,9 @@
 						requiremessage="Please enter a password"	/>
 					<br/>
 					<h:commandButton type="submit" action="#{register.createAccount()}"
-					value="Register" />
+					value="Register">
+					<f:actionListener binding="#{register.addBillingAddress()}"/>
+					</h:commandButton>
 					</div>
 					<div class = "address-details">
 					<h:outputLabel value="address line 1"/>

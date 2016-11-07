@@ -44,7 +44,6 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-	
 	/**
 	 * Logs in the user with the specified email
 	 */
@@ -65,8 +64,6 @@ public class LoginController implements Serializable{
 		isLoggedIn = false;
 		password = "";
 	}
-
-
 
 	public CustomerAccount getCustomer() {
 		return customer;
