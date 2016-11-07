@@ -9,10 +9,10 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.quayproject.ims.entities.Alert;
 import com.quayproject.ims.entities.Update;
 import com.quayproject.ims.services.ImsCreateService;
 
+@SuppressWarnings("serial")
 @Named("updates")
 @RequestScoped 
 public class UpdateController implements Serializable {

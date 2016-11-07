@@ -17,6 +17,7 @@ public class InitialData {
 	private List<StaffAccount> staffAccounts;	
 	private List<Product> products;		
 	private List<CustomerAccount> customers;
+	private List<PurchaseOrder> purchaseOrders;
 	
 	/**
 	 * Creates the initial offline data
@@ -28,6 +29,7 @@ public class InitialData {
 		staffAccounts =	new ArrayList<>();
 		products = new ArrayList<>();
 		customers = new ArrayList<>();
+		purchaseOrders = new ArrayList<>();
 		
 		suppliers.add(new Supplier("Super Gnome Supplies", "+447654893756", 1));
 		suppliers.add(new Supplier("Jaccuzzi 'R' Us", "+44769435851", 2));
@@ -77,6 +79,9 @@ public class InitialData {
 		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd", "HLloyd"));
 		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain", "DSwain"));		
 		
+		purchaseOrders.add(new PurchaseOrder(1, "approved"));
+		purchaseOrders.add(new PurchaseOrder(2, "delivered"));
+		purchaseOrders.add(new PurchaseOrder(3,"approved"));
 	}
 	
 	/**
@@ -209,6 +214,23 @@ public class InitialData {
 	 */
 	public void setCustomers(List<CustomerAccount> customers) {
 		this.customers = customers;
+	}
+
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public List<PurchaseOrder> getPurchaseOrders() {
+		return purchaseOrders;
+	}
+
+	/**
+	 * 
+	 * @param purchaseOrders
+	 */
+	public void setPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
+		this.purchaseOrders = purchaseOrders;
 	}
 	
 

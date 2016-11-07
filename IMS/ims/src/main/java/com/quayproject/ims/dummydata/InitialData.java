@@ -42,9 +42,9 @@ public class InitialData {
 		suppliers.add(new Supplier(1,"Super Gnome Supplies", "+447654893756", "10/09/2016"));
 		suppliers.add(new Supplier(2, "Gnomes 'R' Us", "+44769435851", "16/08/2016" ));
 
-		purchaseOrders.add(new PurchaseOrder(1, "Super Gnome Supplies", 59.81, "25/10/16", "28/10/16", "Approved"));
-		purchaseOrders.add(new PurchaseOrder(2, "Super Gnome Supplies", 99.99, "10/10/16", "15/10/16", "Complete"));
-		purchaseOrders.add(new PurchaseOrder(3, "Gnomes R Us", 150.30, "18/09/16", "25/09/16", "Pending"));
+		purchaseOrders.add(new PurchaseOrder(1, "Super Gnome Supplies", 59.81, "25/10/16", "28/10/16", "approved"));
+		purchaseOrders.add(new PurchaseOrder(2, "Super Gnome Supplies", 99.99, "10/10/16", "15/10/16", "delivered"));
+		purchaseOrders.add(new PurchaseOrder(3, "Gnomes R Us", 150.30, "18/09/16", "25/09/16", "approved"));
 	}
 
 	/**

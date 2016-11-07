@@ -11,6 +11,7 @@
 <ui:define name="maincontent">
 
 	<h1 id="header">Dashboard</h1>
+		
 		<div class="ims-alerts">
 		<h4>Alerts</h4>
 		<ui:repeat var="alert" value = "#{alerts.dataModel}">
@@ -19,11 +20,16 @@
 		</div>
 		</ui:repeat>
 		</div>
-		<br/>
+		
 		<div class="ims-updates">
 		<h4>Updates</h4>
+		<ui:repeat  var="update" value = "#{updates.dataModel}">
+		<div>
+		<h:outputText value="#{update.getMessage()}" class = "#{update.color}"/>
 		</div>
-
+		</ui:repeat>
+		</div>
+			
 </ui:define>
 </ui:composition>
 </html>

@@ -1,5 +1,7 @@
 package Entities;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -30,7 +32,42 @@ public class PurchaseOrder {
 	
 	@Column (name = "staffID", nullable = false)
 	private int staffID;
+	
+	@Column (name = "status", nullable = false)
+	private String status;
+	
+	@Column (name = "quantity", nullable = false)
+	private int quantity;
+	
+	
+	
+	
+	public List<PurchaseOrder>purchaseOrders;
+	
+	
+	/**
+	 * constructor for update dashboard
+	 * @param status
+	 * @param purchaseOrderID
+	 */
+	public PurchaseOrder(int purchaseOrderID, String status) {
+		
+		this.purchaseOrderID = purchaseOrderID;
+		this.status = status;
+	}
 
+		public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public List<PurchaseOrder> getPurchaseOrders() {
+		return purchaseOrders;
+	}
+	public void setPurchaseOrders(List<PurchaseOrder> purchaseOrders) {
+		this.purchaseOrders = purchaseOrders;
+	}
 	/**Gets purchase order id
 	 * 
 	 *  @return purchase order ID 
@@ -126,4 +163,14 @@ public class PurchaseOrder {
 	public void setStaffID(int staffID) {
 		this.staffID = staffID;
 	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	
+	
 }

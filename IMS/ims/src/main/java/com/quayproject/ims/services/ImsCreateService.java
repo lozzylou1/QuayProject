@@ -113,7 +113,7 @@ public class ImsCreateService {
 		
 		for (PurchaseOrder purchaseOrder : purchaseOrderManager.allPurchaseOrders())
 		{
-			if ((purchaseOrder.getStatus() == "Delivered" ) ||  (purchaseOrder.getStatus() == "Approved"))
+			if ((purchaseOrder.getStatus() == "delivered" ) ||  (purchaseOrder.getStatus() == "approved"))
 			{
 				Update update = new Update(purchaseOrder);
 						updates.add(update);
@@ -121,7 +121,7 @@ public class ImsCreateService {
 		}
 		
 	
-		return null;
+		return updates;
 	}
 	
 	

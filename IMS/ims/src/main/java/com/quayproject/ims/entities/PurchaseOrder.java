@@ -51,8 +51,16 @@ public class PurchaseOrder {
 	private String status;
 	
 	
-public PurchaseOrder(){
+/**
+ * update constructor
+ * 
+ * @param purcahseOrderID
+ * @param status
+ */
+	public PurchaseOrder(int purchaseOrderID, String status){
 		
+	this.purchaseOrderID = purchaseOrderID;
+	this.status = status;
 	}
 
 	/**

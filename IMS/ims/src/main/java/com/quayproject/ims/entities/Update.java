@@ -21,11 +21,11 @@ public class Update {
 
 	private void setUpdateType()
 	{
-		if (purchaseOrder.getStatus() == "Approved")
+		if (purchaseOrder.getStatus() == "approved" && purchaseOrder.getStatus() !=" ")
 		{
 			update = UpdateType.ORDER_APPROVED;
 		}
-		else if (purchaseOrder.getStatus() == "Delivered")
+		else if (purchaseOrder.getStatus() == "delivered" && purchaseOrder.getStatus() !=" ")
 		{
 			update = UpdateType.DELIVERED;
 		}
@@ -38,11 +38,11 @@ public class Update {
 		switch(update)
 		{
 		case ORDER_APPROVED:
-			message = (purchaseOrder.getSupplierName() + "purchase order has been approved");
+			message = (purchaseOrder.getSupplierName() + " purchase order has been approved");
 			color = "green";
 			break;
 		case DELIVERED:
-			message = (purchaseOrder.getSupplierName() + "purchase order has been delivered");
+			message = (purchaseOrder.getSupplierName() + " purchase order has been delivered");
 			color = "blue";
 			break;
 		}
