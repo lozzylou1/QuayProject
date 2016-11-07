@@ -9,11 +9,41 @@
 	<meta charset="utf-8" />
 	<ui:define name="title">Create Account</ui:define>
 	<ui:define name="maincontent">
+	
+	<style>
+	.account-header{
+	text-align: center;
+	border-color: black;
+	border-bottom: dashed;
+	
+	}
+	.account-details{
+	
+	float:left;
+	width: 50%;
+	}
+	
+	.address-details{
+
+	float:right;
+	width: 50%;
+	
+	}
+	.account-container{
+	min-height: 480px;
+	}
+	
+	</style>
+	
 		<article>
-				<div align="center" id="form">
-					<h1>Create Account</h1>
-				<br/>
-					<h:form>		
+				<div class = "account-container">
+				<div class = "account-header">
+				<h1>Create Account</h1>
+				</div>
+					
+			
+					<h:form>	
+					<div class = "account-details">	
 						<h:outputLabel value="First Name"/>
 					<br/>
 						<h:inputText value="#{register.firstName}"/>
@@ -47,7 +77,20 @@
 					<br/>
 					<h:commandButton type="submit" action="#{register.createAccount()}"
 					value="Register" />
+					</div>
+					<div class = "address-details">
+					<h:outputLabel value="address line 1"/>
+					<br/>
+						<h:inputText value="#{register.deliveryAddress1}"/>
+					<br/>
+						<h:outputLabel value="Post Code"/>
+					<br/>
+						<h:inputText value="#{register.postCode}"/>
+					<br/>
+					
+					</div>
 					</h:form>
+					
 			</div>	
 		</article>
 	</ui:define>
