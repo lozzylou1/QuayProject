@@ -8,7 +8,24 @@
 	<meta charset="utf-8" />
 	<ui:define name="title">Catalogue</ui:define>
 	<ui:define name="maincontent">
+	
+	<style>
+	.bread_crumb{
+	width:100%;
+	min-height: 20px;
+	}
+	
+	</style>
+<div class = "bread_crumb">
+	<h:form>
+			<h:commandLink action="Home">Home </h:commandLink>
+			>
+			<h:commandLink action="Products"> Products </h:commandLink>
+			>
+			<h:commandLink action=" ProductsDet"> Products Details </h:commandLink>
+			</h:form>
 
+</div>
 		<article>
 			<div id="standOut" class="row">
 

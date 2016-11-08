@@ -14,52 +14,70 @@ Catalogue
 		<div class="Left-nav">
 			<nav class="Left-nav"></nav>
 		</div>
-		
+
 		<style>
-			.test1 > *{
-				display:inline-block;
-			}
-			.test1 {				
-				float:left;
-				height:310px;
-				margin:10px;
-				border: 5px solid #49274A;
-				background-color: #DCCBDA;
-			}
-			.test2 {
-				background-color: #DCCBDA;
-				float:left;
-				border: 5px solid #49274A;
-				margin:20px;
-				color: #000000;
-				font-size: 16px;
-				
-			}
-			.productsPrice{
-				float: right;
-				font-size: 30px;				
-			}
-			.productsTitle{
-				color: black;
-				float: left;
-			}
-			.product_holder{
-				 margin-top: 65px;
-			}
-			.container{
-				width:100%;
-				margin-left:10px;
-				
-			}
-			#product_container{
-				display:inline-block;				
-    			width: 80%;
-    			margin-left: 50px;
-			}
-			
-		</style>		
+
+.test1>* {
+	display: inline-block;
+}
+
+.test1 {
+	float: left;
+	height: 319px;
+	margin:10px;
+	border: 5px solid #49274A;
+	background-color: #DCCBDA;
+}
+
+.test2 {
+	background-color: #DCCBDA;
+	float: left;
+	height: 375px;
+	border: 5px solid #49274A;
+	margin:20px;
+	color: #000000;
+	font-size: 16px;
+}
+
+.productsPrice{
+	float: right;
+	font-size: 30px;				
+}
+.productsTitle{
+	color: black;
+	float: left;
+}
+
+.product_holder {
+	margin-top: 10px;
+}
+
+.container {
+	width: 100%;
+	margin-left: 10px;
+}
+
+#product_container {
+	display: inline-block;
+	width: 80%;
+	margin-left: 50px;
+}
+
+.bread_crumb {
+width: 100%;
+min-height: 30px;
+}
+</style>
+
 		<div class="row">
-		
+			<div class = "bread_crumb">
+			<h:form>
+			<h:commandLink action="Home">Home </h:commandLink>
+			>
+			<h:commandLink action="Products"> Products</h:commandLink>
+			</h:form>
+			
+			</div>
 			<h:outputText escape="false" value="No Products Found"
 				rendered="#{products.dataModel.rowCount == 0}" />
 			<br />
@@ -75,33 +93,52 @@ Catalogue
 
 				<div class="product_holder">
 					<div class="test2">
+
 						<h:form> 		
 							<h2>Filter By</h2>
 							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
 					
 							<h3>Type</h3>
+
+						<h:form>
+							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>
+
+							<h3>Filter By Type</h3>
+
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
+
 								<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
 			
 							<h3>Size</h3>
+
+							<br />
+							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>
+
+							<h3>Filter By Size</h3>
+
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
-							<br/>
+							<br />
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
+
 			
 							<h3>Price</h3>
+
+
+							<h3>Filter By Price</h3>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
-								<br/>
+							<br />
 						</h:form>
 					</div>
 					<div id="product_container">
 						<ui:repeat var="product" value="#{products.dataModel}">
+
 						<div class="test1">
 							<h:form>								
 								<div style="text-align: center; background-color: white; border-bottom: 5px solid #49274A;">
@@ -125,6 +162,7 @@ Catalogue
 								</div>
 							</h:form>
 						</div>						
+
 						</ui:repeat>
 						<br/>
 					</div>
