@@ -14,44 +14,70 @@ Catalogue
 		<div class="Left-nav">
 			<nav class="Left-nav"></nav>
 		</div>
-		
+
 		<style>
-			.test1 > *{
-				display:inline-block;
-			}
-			.test1 {
-			
-				float:left;
-				height:319px;
-				margin-Right:20px;
-			}
-			.test2 {
-			background-color: #DCCBDA;
-				float:left;
-				height:365px;
-				margin-Right:20px;
-				margin-bottom:20px;
-				color: #000000;
-				font-size: 16px;
-				
-			}
-			.product_holder{
-				 margin-top: 65px;
-			}
-			.container{
-				width:100%;
-				margin-left:10px;
-				
-			}
-			#product_container{
-				display:inline-block;				
-    			width: 80%;
-    			margin-left: 50px;
-			}
-			
-		</style>		
+
+.test1>* {
+	display: inline-block;
+}
+
+.test1 {
+	float: left;
+	height: 319px;
+	margin:10px;
+	border: 5px solid #49274A;
+	background-color: #DCCBDA;
+}
+
+.test2 {
+	background-color: #DCCBDA;
+	float: left;
+	border: 5px solid #49274A;
+	margin:20px;
+	color: #000000;
+	font-size: 16px;
+	padding: 25px;
+}
+
+.productsPrice{
+	float: right;
+	font-size: 30px;				
+}
+.productsTitle{
+	color: black;
+	float: left;
+}
+
+.product_holder {
+	margin-top: 10px;
+}
+
+.container {
+	width: 100%;
+	margin-left: 10px;
+}
+
+#product_container {
+	display: inline-block;
+	width: 80%;
+	margin-left: 50px;
+}
+
+.bread_crumb {
+width: 100%;
+min-height: 30px;
+}
+</style>
+
 		<div class="row">
-		
+			<div  class = "bread_crumb">
+			<h:form >
+			<h:commandLink action="Home">Home </h:commandLink>
+			
+			<h:commandLink action="Products"> Products</h:commandLink>
+			</h:form>
+			
+			</div>
 			<h:outputText escape="false" value="No Products Found"
 				rendered="#{products.dataModel.rowCount == 0}" />
 			<br />
@@ -67,61 +93,68 @@ Catalogue
 
 				<div class="product_holder">
 					<div class="test2">
-						<h:form> 		
+
+						<h:form>
+							<h2>Filter By</h2>
+							
+							<hr/>
 					
-							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
-					
-							<h3>Filter By Type</h3>
+							<h3>Type</h3>			
+						
+							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>
+
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
+
 								<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
+							<hr/>
 			
-							<h3>Filter By Size</h3>
+							<h3>Size</h3>
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
-							<br/>
+							<br />
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
+							<hr/>
 			
-							<h3>Filter By Price</h3>
+							<h3>Price</h3>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
-								<br/>
+							<br />
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
-								<br/>
+							<br />
 						</h:form>
 					</div>
 					<div id="product_container">
 						<ui:repeat var="product" value="#{products.dataModel}">
+
 						<div class="test1">
-							<h:form>
-								<div id="image-content" style="float: left">
-	
+							<h:form>								
+								<div style="text-align: center; background-color: white; border-bottom: 5px solid #49274A;">
 									<h:commandLink action="#{products.view()}">
 										<h:graphicImage value="#{product.image1}" />
 										<f:setPropertyActionListener target="#{products.action}"
 											value="#{product.productID}" />
-									</h:commandLink>
-	
-									<br />
-	
-									<h:commandLink action="#{products.view()}"
+									</h:commandLink>	
+								</div>
+								<div style="width:77px; padding: 3px;">
+									<h:commandLink class="productsTitle" action="#{products.view()}"
 										value="#{product.productName}">
 										<f:setPropertyActionListener target="#{products.action}"
 											value="#{product.productID}" />
 									</h:commandLink>
-									<br />
-	
-									<h:commandLink action="#{products.view()}" />
-									<h:outputText value="£" />
-									<h:outputText value="#{product.price}" />
+								</div>
+								<div style="padding: 3px;">
+									<h:commandLink action="#{products.view()}" />									
+									<h:outputText class="productsPrice" value="£#{product.price}" />
 									<h:outputText />
-	
 								</div>
 							</h:form>
-						</div>
+						</div>						
+
 						</ui:repeat>
+						<br/>
 					</div>
 				</div>
 

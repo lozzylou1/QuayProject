@@ -89,7 +89,7 @@ public class SearchService {
 		resultsList.clear();
 
 		for (Product product : productList) {
-			if (product.getPrice() < price) {
+			if (new Double(product.getPrice()) < price) {
 				resultsList.add(product);
 			}
 		}

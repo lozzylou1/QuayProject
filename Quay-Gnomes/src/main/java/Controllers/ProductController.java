@@ -311,11 +311,13 @@ public class ProductController implements Serializable {
 	 * @return double totalPrice
 	 */
 	public String getBasketTotalPrice() {
+
 		
-		DecimalFormat df = new DecimalFormat("#.####");
+		DecimalFormat df = new DecimalFormat("#.##");
 		
 		
 		return df.format(basket.getTotalPrice());
+
 
 	}
 
