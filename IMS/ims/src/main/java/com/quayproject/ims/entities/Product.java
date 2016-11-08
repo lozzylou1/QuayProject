@@ -8,7 +8,7 @@ import javax.persistence.*;
  *
  */
 @Entity
-@Table (name = "Product")
+@Table (name = "product")
 public class Product implements Serializable {
 	//TODO Need to do foreign keys
 	@Id

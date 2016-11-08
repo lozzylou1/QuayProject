@@ -33,18 +33,47 @@ public class HibernateApplication {
 	 * Declaring Static Variables
 	 */
 	
-	static Properties props;
-	static Configuration cfg;
-	static ServiceRegistry serviceRegistry;
-	static SessionFactory sessionFactory;
-	static Session session;
-	static Transaction tx;
+	 Properties props;
+	 Configuration cfg;
+	 ServiceRegistry serviceRegistry;
+	 SessionFactory sessionFactory;
+	 Session session;
+	 Transaction tx;
+	
+	public HibernateApplication(){
+		
+		/**
+		 * Create a Properties Class Objects and Set Hibernate Properties
+		 */
+		
+		props = new Properties();
+		props.setProperty("hibernate.connection.driver_class","com.mysql.jdbc.Driver"); 			//Specify mysql driver class from pom.mysql.jdbc.driver
+		props.setProperty("hibernate.connection.url","jdbc:mysql://localhost:3306/imsdatabase"); 	//Default url for the localhost linked to the database
+		props.setProperty("hibernate.connection.username","root"); 									//Default user
+		props.setProperty("hibernate.connection.password",""); 										//Default password
+		props.setProperty("hibernate.show_sql","true"); 
+		props.setProperty("hibernate.hbm2ddl.auto","update"); 										//Hibernate mapping to data definition language
+		
+		/**
+		 * Create Configuration Class Objects
+		 */
+		
+		cfg = new Configuration()
+				.addProperties(props)
+				.addAnnotatedClass(Supplier.class)
+				.addAnnotatedClass(StaffAccount.class)
+				.addAnnotatedClass(PurchaseOrder.class)
+				.addAnnotatedClass(Product.class)
+				.addAnnotatedClass(Inventory.class);
+		
+		
+	}
 	
 	
 	
 	
 	@SuppressWarnings("unchecked")
-/*	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		HibernateProduct prod = new HibernateProduct();
 		HibernateStaffAccount staff = new HibernateStaffAccount();
@@ -54,7 +83,7 @@ public class HibernateApplication {
 		
 		//Starting the Hibernate Config and Session
 		
-		//start();
+	//	start();
 		
 		/**
 		 * For Loops saving all of the objects from the list of entities
@@ -67,8 +96,8 @@ public class HibernateApplication {
 		for(Supplier s : supp.getSuppliers())
 		{
 			session.save(s);
-		}
-		*/
+		}*/
+		
 		//STAFF ACCOUNT FOR LOOP
 		
 		/*staff.AddAllStaff();
@@ -100,9 +129,17 @@ public class HibernateApplication {
 		for(Inventory i : inv.getInventory())
 		{
 			session.save(i);
-		}
+		}*/
 		
 		//Closing the Session and the Factory
+		
+		
+	/*	
+		String hql = "SELECT * FROM supplier S";
+		Query query = session.createQuery(hql);
+		List<Supplier> results = query.list();
+		System.out.println(results.toString());
+		
 		
 		session.close();
 		sessionFactory.close();		
@@ -111,7 +148,7 @@ public class HibernateApplication {
 	
 	
 	
-	public static void start(){
+	public void connect(){
 		
 		/**
 		 * Create a Properties Class Objects and Set Hibernate Properties
@@ -123,7 +160,7 @@ public class HibernateApplication {
 		props.setProperty("hibernate.connection.username","root"); 									//Default user
 		props.setProperty("hibernate.connection.password",""); 										//Default password
 		props.setProperty("hibernate.show_sql","true"); 
-		props.setProperty("hibernate.hbm2ddl.auto","create"); 										//Hibernate mapping to data definition language
+		props.setProperty("hibernate.hbm2ddl.auto","update"); 										//Hibernate mapping to data definition language
 		
 		/**
 		 * Create Configuration Class Objects
@@ -137,6 +174,13 @@ public class HibernateApplication {
 				.addAnnotatedClass(Product.class)
 				.addAnnotatedClass(Inventory.class);
 		
+		
+		
+		
+	}
+	
+	
+	public void open(){
 		/**
 		 * Create Service Registry Objects
 		 */
@@ -162,8 +206,10 @@ public class HibernateApplication {
 		
 		tx = session.beginTransaction();
 		
-		
 	}
+	
+	
+	
 	
 	/**
 	 * Getters and Setters for Hibernate
@@ -202,7 +248,7 @@ public class HibernateApplication {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public static Session getSession() {
+	public Session getSession() {
 		return session;
 	}
 
@@ -218,12 +264,6 @@ public class HibernateApplication {
 		this.tx = tx;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
+
 
 }

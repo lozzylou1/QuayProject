@@ -14,10 +14,8 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table (name = "Inventory")
+@Table (name = "inventory")
 public class Inventory {
-
-
 
 	@Id
 	@Column (name = "productID", nullable = false)
