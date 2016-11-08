@@ -1,12 +1,17 @@
 package Controllers;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.DoubleStream;
 
 import javax.ejb.Stateful;
 
+import Entities.ItemInBasket;
 import Entities.Product;
 
 @SuppressWarnings("serial")
@@ -14,10 +19,21 @@ import Entities.Product;
 public final class Basket implements Serializable {
 
 	private static List<Product> basketList = new ArrayList<Product>();
+	private static HashMap<Product, Integer> list = new HashMap<Product, Integer>();
+
 
 
 	private double totalPriceOfBasket;
+	ItemInBasket item;
+
 	
+	public static HashMap<Product, Integer> getList() {
+		return list;
+	}
+
+	public static void setList(HashMap<Product, Integer> list) {
+		Basket.list = list;
+	}
 
 	/**
 	 * Gets a copy of the basket list and returns it
@@ -34,15 +50,28 @@ public final class Basket implements Serializable {
 	 * Adds an Item to the basket
 	 * 
 	 * @param product
+	 * @return 
 	 */
-	public void add(Product product, int numberOfItems)
+/*	public void add(Product product, int numberOfItems)
 	{	
+		
+		
 		for (int i = 0; i < numberOfItems; i++ )
 		{
 			basketList.add(product);
 		}
-	}
+	}*/
 
+	
+	public HashMap<Product, Integer> addFrontEnd(Product product, Integer numOfItems){
+		list.put(product, numOfItems);
+		System.out.println("HASHMAP" + list.toString());
+		return list;
+	}
+	
+	
+	
+	
 	/**
 	 * Gets the total price of the basket
 	 * 
@@ -62,7 +91,23 @@ public final class Basket implements Serializable {
 			totalPriceOfBasket = DoubleStream.of(price).sum();
 			total = totalPriceOfBasket;
 		}
-		return   total;
+		
+		
+		float totalPrice = 0;
+		for(Map.Entry<Product, Integer> entry : list.entrySet()){
+			
+			float price1 = entry.getKey().getPrice();
+			int quantity = entry.getValue();
+			
+			float midprice = price1*quantity;
+			
+			totalPrice += midprice;
+			
+		}
+		
+		
+		
+		return totalPrice;
 	}
 
 	/**
