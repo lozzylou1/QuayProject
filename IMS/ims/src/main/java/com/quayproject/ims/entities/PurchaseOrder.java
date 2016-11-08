@@ -50,7 +50,7 @@ public class PurchaseOrder {
 	@Column (name = "status", nullable = false)
 	private String status;
 	
-	
+		
 /**
  * update constructor
  * 
@@ -204,6 +204,7 @@ public class PurchaseOrder {
 	public void setOrderTotal(double orderTotal) {
 		this.orderTotal = orderTotal;
 	}
+	
 	
 	
 }

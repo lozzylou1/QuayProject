@@ -72,7 +72,7 @@
 					</h:form>
 					<h:form>
 						<td>
-						
+						<h:inputText value="#{purchaseOrderController.numberOfItems}" />
 						</td> 	
 						<td>
 							<h:commandButton type="Submit" value="Add Item" action ="#{purchaseOrderController.addToOrder()}" >
@@ -96,6 +96,7 @@
 					<th>Supplier Name</th>
 					<th>Threshold</th>
 					<th>Price</th>
+					<th>Quantity</th>
 					</tr>
 				<ui:repeat var="product" value="#{purchaseOrderController.dataModelProduct}">
 				<tr>
@@ -105,6 +106,7 @@
 					<td><h:outputText value="#{product.supplierName}" /></td> 
 					<td><h:outputText value="#{product.threshold}" /></td> 
 					<td><h:outputText value="#{product.price}" /></td>
+					<td><h:outputText value="#{purchaseOrderController.numberOfItems}" /></td>
 						<h:form>
 						<td>
 							<h:commandButton type="Submit" value="Remove Item" action ="#{purchaseOrderController.removeFromBasket()}" >
