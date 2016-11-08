@@ -17,6 +17,7 @@ public final class Basket implements Serializable {
 
 
 	private double totalPriceOfBasket;
+	
 
 	/**
 	 * Gets a copy of the basket list and returns it
@@ -25,7 +26,7 @@ public final class Basket implements Serializable {
 	 */
 	public List<Product> getBasketList()
 	{		
-		List<Product> copyList = new ArrayList<Product>(basketList);
+		List<Product> copyList = new ArrayList<Product>(basketList);		
 		return copyList;		
 	}
 
