@@ -204,7 +204,10 @@ public class AccountController implements Serializable {
 		this.billingPostCode = billingPostCode;
 	}
 	
-	
-	
+
+	public String update(){
+		return "AccountPage";
+		
+	}
 	
 }

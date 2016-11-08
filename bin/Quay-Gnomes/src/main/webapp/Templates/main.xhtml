@@ -53,11 +53,15 @@
 							<li><h:link outcome="CreateAccount"><span class="glyphicon glyphicon-user"></span> Sign Up</h:link></li>
 							<li><h:link outcome="AccountPage"><span class="glyphicon glyphicon-user"></span> Account Details</h:link></li>
 							<li><h:link outcome="Login"><span class="glyphicon glyphicon-log-in"></span> Login</h:link></li>
-						  	<li><h:form class="logout"><h:commandLink  action="#{login.logOut()}"><span class="glyphicon glyphicon-log-out"></span> Logout</h:commandLink></h:form></li>
+						  	<li><h:form class="logout"><h:commandLink action="#{login.logOut()}"><span class="glyphicon glyphicon-log-out"></span> Logout</h:commandLink></h:form></li>
 						  </ul>
 						</div>
 					  </div>
-					</nav>									
+					</nav>	
+			
+					
+					
+												
 				</header>
 				</div>
 				<DIV class="container" id="body">
@@ -66,6 +70,8 @@
 				<div class="push"></div>
         </div>
            
+        
+        
 					<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>										
 					<script src="slider/js-image-slider.js" type="text/javascript"></script>	
 					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
@@ -78,8 +84,6 @@
 								
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').show();
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').hide();
-								
-								
 							}
 						else
 							{						
@@ -88,7 +92,6 @@
 								
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(3)').show();
 								$('#myNavbar > ul.nav.navbar-nav.navbar-right > li:nth-child(2)').hide();
-								
 							}						
 						});
 					</script>			
