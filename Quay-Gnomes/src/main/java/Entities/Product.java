@@ -194,9 +194,9 @@ public class Product {
 	 * 
 	 * @return price
 	 */
-	public String getPrice() {
-		DecimalFormat numberFormat = new DecimalFormat("#.00");		
-		return numberFormat.format(price);
+	public float getPrice() {
+	
+		return price;
 	}
 
 	/**

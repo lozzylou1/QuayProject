@@ -30,7 +30,7 @@ public final class Basket implements Serializable {
 
 
 
-	private double totalPriceOfBasket;
+	private float totalPriceOfBasket;
 	ItemInBasket item;
 
 	
