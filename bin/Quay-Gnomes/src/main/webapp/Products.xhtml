@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">
+Catalogue
+</ui:define>
+
+	<ui:define name="maincontent">
+		<div class="Left-nav">
+			<nav class="Left-nav"></nav>
+		</div>
+		
+		<style>
+			.test1 > *{
+				display:inline-block;
+			}
+			.test1 {
+			
+				float:left;
+				height:319px;
+				margin-Right:20px;
+			}
+			.test2 {
+			background-color: #DCCBDA;
+				float:left;
+				height:365px;
+				margin-Right:20px;
+				margin-bottom:20px;
+				color: #000000;
+				font-size: 16px;
+				
+			}
+			.product_holder{
+				 margin-top: 65px;
+			}
+			.container{
+				width:100%;
+				margin-left:10px;
+				
+			}
+			#product_container{
+				display:inline-block;				
+    			width: 80%;
+    			margin-left: 50px;
+			}
+			
+		</style>		
+		<div class="row">
+		
+			<h:outputText escape="false" value="No Products Found"
+				rendered="#{products.dataModel.rowCount == 0}" />
+			<br />
+			<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+				<h:form>
+					<h:commandLink action="#{products.previous}"
+						value="Previous #{products.pagination.pageSize}"
+						rendered="#{products.pagination.hasPreviousPage}" />
+					<h:commandLink action="#{products.next}"
+						rendered="#{products.pagination.hasNextPage}"
+						value="Next #{products.pagination.pageSize}" />
+				</h:form>
+
+				<div class="product_holder">
+					<div class="test2">
+						<h:form> 		
+					
+							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
+					
+							<h3>Filter By Type</h3>
+							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
+								<br/>
+							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
+								<br/>
+							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
+			
+							<h3>Filter By Size</h3>
+							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
+							<br/>
+							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
+								<br/>
+							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
+			
+							<h3>Filter By Price</h3>
+							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
+								<br/>
+							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
+								<br/>
+						</h:form>
+					</div>
+					<div id="product_container">
+						<ui:repeat var="product" value="#{products.dataModel}">
+						<div class="test1">
+							<h:form>
+								<div id="image-content" style="float: left">
+	
+									<h:commandLink action="#{products.view()}">
+										<h:graphicImage value="#{product.image1}" />
+										<f:setPropertyActionListener target="#{products.action}"
+											value="#{product.productID}" />
+									</h:commandLink>
+	
+									<br />
+	
+									<h:commandLink action="#{products.view()}"
+										value="#{product.productName}">
+										<f:setPropertyActionListener target="#{products.action}"
+											value="#{product.productID}" />
+									</h:commandLink>
+									<br />
+	
+									<h:commandLink action="#{products.view()}" />
+									<h:outputText value="£" />
+									<h:outputText value="#{product.price}" />
+									<h:outputText />
+	
+								</div>
+							</h:form>
+						</div>
+						</ui:repeat>
+					</div>
+				</div>
+
+				<div class="page-details">
+					<h:outputText value="#{products.dataModel.rowCount}" />
+					<h:outputText
+						value="#{products.pagination.pageFirstItem } of #{products.pagination.pageLastItem + 1}" />
+				</div>
+			</h:panelGroup>
+
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
