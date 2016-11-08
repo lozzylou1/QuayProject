@@ -4,58 +4,60 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	
 	template="templates/main.xhtml">
 	<meta charset="utf-8" />
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	<ui:define name="title">Catalogue</ui:define>
 	<ui:define name="maincontent">
-	<style>
-	.account-header{
+		<style>
+.account-header {
 	text-align: center;
 	border-color: black;
 	border-bottom: dashed;
-	
-	}
-	.account-details{
-	border-color:black;
-	
-	float:left;
-	width: 50%;
-	
-	}
-	
-	.address-details{
+}
 
-	float:right;
+.account-details {
+	border-color: black;
+	float: left;
+	width: 50%;
+}
+
+.address-details {
+	float: right;
 	width: 50%;
 	text-align: Left;
-	
-	}
-	.account-details h2{
-		text-align: left;
-	}
-	.address-details h2{
+}
+
+.account-details h2 {
+	text-align: left;
+}
+
+.address-details h2 {
 	text-align: Left;
-	}
-	.account-container{
-	
+}
+
+.account-container {
 	min-height: 400px;
-	}
-	.edit-address{
+}
+
+.edit-address {
 	display: none;
-	}
-	.delivery-address{
-	float:Left;
-	}
-	.billing-address{
-	float:right;
-	}
-	.edit-bAddress{
-	display:none;}
-	
-	</style>
-	<article>
+}
+
+.delivery-address {
+	float: Left;
+}
+
+.billing-address {
+	float: right;
+}
+
+.edit-bAddress {
+	display: none;
+}
+</style>
+		<article>
 			<div>
 				<table class="table table-responsive"
 					style="background-color: #DCCBDA">
@@ -64,10 +66,7 @@
 						<th><h:commandButton class="btn btn-warning">Track Orders</h:commandButton></th>
 					</tr>
 					<tr>
-						<td>
-							<img src="Orders.png" alt="Orders">
-							</img>
-						</td>
+						<td><img src="Orders.png" alt="Orders"> </img></td>
 						<td>
 							<p>some text</p>
 						</td>
@@ -78,86 +77,94 @@
 				</table>
 			</div>
 		</article>
-		<br/>
-		<hr/>
-		<br/>
+		<br />
+		<hr />
+		<br />
 		<article>
-			<div class = "account-container">
-				<div class = "account-header">
+			<div class="account-container">
+				<div class="account-header">
 					<h1>Account</h1>
 				</div>
-				<div class = "account-details">
-				
+				<div class="account-details">
+
 					<h2>User details</h2>
-					
-					<h4> Email address:</h4>
-					<h:outputText value="#{login.customer.email}"/>
-					
-					<h4> First name: </h4>
-					<h:outputText value="#{login.customer.firstName}"/>
-					
-					<h4> Last name: </h4>
-					<h:outputText value="#{login.customer.surname}"/>
-			
-				</div >
-				
-				<div class = "address-details">
-				<div class = "delivery-address">
-				<form id="delivery-form">
-						<h2>Address details</h2>
-						<h4> Address line 1: </h4>
-					<h:outputText value="#{login.customer.deliveryAddress1}"/>
-						<br/>
-					<h4> Post Code: </h4>
-					<h:outputText value="#{login.customer.postCode}"/>
-					<br/>
-					<button type = "button" onClick="editAddress()">  Edit </button>
-					
-					
-					<div class = "edit-address">				
-					<h:inputText value = "Address line 1" id="insertFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
-					<br/>
-					<h:inputText value = "Post Code" id="insertPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
-					<br/>
-					<button type = "button">  Update </button>
-					</div>
-				</form>
+
+					<h4>Email address:</h4>
+					<h:outputText value="#{login.customer.email}" />
+
+					<h4>First name:</h4>
+					<h:outputText value="#{login.customer.firstName}" />
+
+					<h4>Last name:</h4>
+					<h:outputText value="#{login.customer.surname}" />
 				</div>
-					
-					<div class = "billing-address">
-					<form id = "billing-form">
-					<h2> Billing Address </h2>
-					<h4> Address line 1: </h4>
-					<h:outputText value="#{login.customer.billingAddress1}"/>
-					<h4> Post Code: </h4>
-					<h:outputText value="#{login.customer.billingPostCode}"/>
-					<br/>
-					<button type = "button" onClick="editbAddress()">  Edit </button>
-					
-					
-					<div class = "edit-bAddress">					
-					<h:inputText value = "#{login.customer.billingAddress1 }"  id="insertbFirstline" onfocus = "if(this.value != ' '){this.value = ' ';}"/>
-					<br/>
-					<h:inputText value = "#{login.customer.billingPostCode }"  id="insertbPostCode" onfocus = "if(this.value != ' '){this.value = ' ';}"/> 
-					<br/>
-					<h:form>
-					<h:commandButton value="Update" type = "submit" action="#{register.update()}" />
-					</h:form>
+
+				<div class="address-details">
+					<div class="delivery-address">
+						<form id="delivery-form">
+							<h2>Delivery Address</h2>
+							<h4>Address line 1:</h4>
+							<h:outputText value="#{login.customer.deliveryAddress1}" />
+							<br />
+							<h4>Post Code:</h4>
+							<h:outputText value="#{login.customer.deliveryPostCode}" />
+							<br />
+							<button type="button" onClick="editAddress()">Edit</button>
+
+
+							<div class="edit-address">
+								<h:inputText value="#{login.customer.deliveryAddress1}"
+									id="insertdFirstline"
+									onfocus="if(this.value != ' '){this.value = ' ';}" />
+								<br />
+								<h:inputText value="#{login.customer.deliveryPostCode}"
+									id="insertdPostCode"
+									onfocus="if(this.value != ' '){this.value = ' ';}" />
+								<br />
+							
+									<h:commandButton value="Update" type="submit"
+										action="#{register.update()}" />
+							
+							</div>
+
+						</form>
 					</div>
-					
-				</form>
-				</div>
+					<div class="billing-address">
+						<form id="billing-form">
+							<h2>Billing Address</h2>
+							<h4>Address line 1:</h4>
+							<h:outputText value="#{login.customer.billingAddress1}" />
+							<h4>Post Code:</h4>
+							<h:outputText value="#{login.customer.billingPostCode}" />
+							<br />
+							<button type="button" onClick="editbAddress()">Edit</button>
+
+
+							<div class="edit-bAddress">
+								<h:inputText value="#{login.customer.billingAddress1 }"
+									id="insertbFirstline"
+									onfocus="if(this.value != ' '){this.value = ' ';}" />
+								<br />
+								<h:inputText value="#{login.customer.billingPostCode }"
+									id="insertbPostCode"
+									onfocus="if(this.value != ' '){this.value = ' ';}" />
+								<br />
+								<h:form id="BillingAddressButton">
+									<h:commandButton value="Update" type="submit"
+										action="#{register.update()}" />
+								</h:form>
+							</div>
+						</form>
 					</div>
 				</div>
-				<script>
-			function editAddress(){
-				console.log("tetet")
-				$(".edit-address").toggle(500);
-			}
-			function editbAddress(){
-				console.log("tetet")
-				$(".edit-bAddress").toggle(500);
-			}
+			</div>
+			<script>
+				function editAddress() {
+					$(".edit-address").toggle(500);
+				}
+				function editbAddress() {
+					$(".edit-bAddress").toggle(500);
+				}
 			</script>
 		</article>
 	</ui:define>

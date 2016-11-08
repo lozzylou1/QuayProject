@@ -206,12 +206,8 @@ public class AccountController implements Serializable {
 	
 
 	public String update(){
-		System.out.println(billingAddress1);
-		System.out.println(billingPostCode);
-		
 		return "AccountPage";
 		
 	}
-	
 	
 }
