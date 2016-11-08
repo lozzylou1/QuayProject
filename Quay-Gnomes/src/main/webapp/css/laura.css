@@ -66,11 +66,10 @@
 
 .searchBar {
 	width: 90%;
-	border: 2px solid #DCCBDA;
+	border: 1px solid #49274A;
 	border-radius: 8px;
 	padding: 12px 10px 12px 20px;
 }
-
 .active {
 	background-color: #DCCBDA;
 	color: black;

@@ -14,8 +14,8 @@
 		<h:commandButton class="basket_remove_button" value="Clear Basket"
 			type="submit" action="#{products.clearBasket()}">
 		</h:commandButton>
-
 	</h:form>
+	
 		<ui:repeat var="product" value="#{products.basketDataModel}">
 			<div class="basket_row">
 				<div class="basket_image">
@@ -48,11 +48,7 @@
 					<h:outputText class="basket_price"
 						value="£#{products.basketTotalPrice}" />
 				</div>
-				<br />
-				<f:verbatim>
-					<hr size="10" />
-				</f:verbatim>
-				<br />
+				<hr/>
 			</div>
 		</ui:repeat>
 	</ui:define>
