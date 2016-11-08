@@ -76,24 +76,24 @@ Catalogue
 				<div class="product_holder">
 					<div class="test2">
 						<h:form> 		
-					
+							<h2>Filter By</h2>
 							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>	
 					
-							<h3>Filter By Type</h3>
+							<h3>Type</h3>
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
 			
-							<h3>Filter By Size</h3>
+							<h3>Size</h3>
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
 							<br/>
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
 			
-							<h3>Filter By Price</h3>
+							<h3>Price</h3>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
 								<br/>
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
