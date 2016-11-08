@@ -44,7 +44,8 @@
 
 
 					<h:form>
-						<h:commandLink value = "Add to Basket"
+					<h:inputText value="#{products.quantity}" requireMessage="Quantity"/>
+						<h:commandButton value = "Add to Basket"
 							action="#{products.addItemToBasket()}" />
 					</h:form>
 

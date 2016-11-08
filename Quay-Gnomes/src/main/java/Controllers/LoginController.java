@@ -44,29 +44,30 @@ public class LoginController implements Serializable{
 		this.password = password;
 	}
 
-	
 	/**
 	 * Logs in the user with the specified email
 	 */
-	public void login()
+	public String login()
 	{	
 		isLoggedIn = loginService.loginService(email, password);	
 		customer = loginService.getCustomer(email);
 		
 		password = "";
+		
+		return "AccountPage";
 	}	
 	
 	
 	/**
 	 * Logs the currently logged in user out
 	 */
-	public void logOut()
+	public String logOut()
 	{
 		isLoggedIn = false;
 		password = "";
+		
+		return "Home";
 	}
-
-
 
 	public CustomerAccount getCustomer() {
 		return customer;

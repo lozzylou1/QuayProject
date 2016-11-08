@@ -19,11 +19,11 @@ public class CustomerAccount {
 		@Column (name = "contactNumber", nullable = false)
 		private String contactNumber;
 	
-		@Column (name = "deliveryAddress", nullable = false)
-		private String deliveryAddress;
+		@Column (name = "billingPostCode", nullable = false)
+		private String billingPostCode;
 	
-		@Column (name = "billingAddress", nullable = false)
-		private String billingAddress;
+		@Column (name = "billingAddress1", nullable = false)
+		private String billingAddress1; 
 	
 		@Column (name = "firstName", nullable = false)
 		private String firstName;
@@ -33,6 +33,12 @@ public class CustomerAccount {
 		
 		@Column (name = "userName", nullable = false)
 		private String userName;
+		
+		@Column (name = "deliveryAddress1", nullable = false)
+		private String deliveryAddress1;
+		
+		@Column (name = "deliveryPostCode", nullable = false)
+		private String deliveryPostCode;
 
 		/**
 		 * CustomerAccount constructor
@@ -41,22 +47,26 @@ public class CustomerAccount {
 		 * @param ca_email
 		 * @param ca_password
 		 * @param ca_contactNumber
-		 * @param ca_deliveryAddress
-		 * @param ca_billingAddress
 		 * @param ca_firstName
 		 * @param ca_surname
 		 * @param ca_userName
+		 * @param ca_deliveryAddress1
+		 * @param ca_deliveryPostCode
+		 * @param ca_billingAddress1
+		 * @param ca_billingPostCode
 		 */
-		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname, String ca_userName){
+		public CustomerAccount(String ca_email, String ca_password, String ca_firstName, String ca_surname, String ca_userName, String ca_deliveryAddress1, String ca_deliveryPostCode, String ca_billingAddress1, String ca_billingPostCode){
 			
 			this.email = ca_email;
 			this.password = ca_password;
 			this.firstName = ca_firstName;
 			this.surname = ca_surname;		
 			this.userName = ca_userName;
-						
+			this.deliveryAddress1 = ca_deliveryAddress1;
+			this.deliveryPostCode = ca_deliveryPostCode;
+			this.billingAddress1 = ca_billingAddress1;
+			this.billingPostCode = ca_billingPostCode;					
 		}	
-		
 		/**
 		 * 
 		 * @return customerID the customer id
@@ -127,31 +137,31 @@ public class CustomerAccount {
 			this.contactNumber = contactNumber;
 		}
 		
-		/**
-		 * Returns the customerAccount delivery address
-		 * 
-		 * @return deliveryAddress
-		 */
-		public String getDeliveryAddress() {
-			return deliveryAddress;
-		}
-		
-		/**
-		 * Sets the delivery address
-		 * 
-		 * @param deliveryAddress
-		 */
-		public void setDeliveryAddress(String deliveryAddress) {
-			this.deliveryAddress = deliveryAddress;
-		}
-
+//		/**
+//		 * Returns the customerAccount delivery address
+//		 * 
+//		 * @return deliveryAddress
+//		 */
+//		public String getDeliveryAddress1() {
+//			return deliveryAddress1;
+//		}
+//		
+//		/**
+//		 * Sets the delivery address
+//		 * 
+//		 * @param deliveryAddress
+//		 */
+//		public void setDeliveryAddress1(String deliveryAddress1) {
+//			this.deliveryAddress1 = deliveryAddress1;
+//		}
+//
 		/**
 		 * Returns the billing address
 		 * 
 		 * @return billingAddress returns billing address
 		 */
-		public String getBillingAddress() {
-			return billingAddress;
+		public String getBillingAddress1() {
+			return billingAddress1;
 		}
 		
 		/**
@@ -159,8 +169,8 @@ public class CustomerAccount {
 		 * 
 		 * @param billingAddress
 		 */
-		public void setBillingAddress(String billingAddress) {
-			this.billingAddress = billingAddress;
+		public void setBillingAddress1(String billingAddress1) {
+			this.billingAddress1 = billingAddress1;
 		}
 		
 		/**
@@ -214,6 +224,34 @@ public class CustomerAccount {
 		public void setUserName(String userName) {
 			this.userName = userName;
 		}
+
+		public String getDeliveryAddress1() {
+			return deliveryAddress1;
+		}
+
+		public void setDeliveryAddress1(String deliveryAddress1) {
+			this.deliveryAddress1 = deliveryAddress1;
+		}
+
+		public String getBillingPostCode() {
+			return billingPostCode;
+		}
+
+		public void setBillingPostCode(String billingPostCode) {
+			this.billingPostCode = billingPostCode;
+		}
+
+		public String getDeliveryPostCode() {
+			return deliveryPostCode;
+		}
+
+		public void setDeliveryPostCode(String deliveryPostCode) {
+			this.deliveryPostCode = deliveryPostCode;
+		}
+		
+		
+		
+		
 	
 		
 }

@@ -65,9 +65,10 @@ public class InitialData {
 				+ "You really can't miss these amazing gnomes!", "Gnome", "Small","img/smallerimg/three_gnomes.png"));
 		products.add(new Product(12, "It's a shovel", 789.10f, false, 3, 1111f, "5 x 41 x 3", "Shovel", "It's an amazing shovel", "Accessories", "Medium","img/shovel.jpg"));
 		products.add(new Product(13, "It's a Hot tub", 999.99f, false, 12, 1111f, "18 x 12 x 69", "Hot Tub", "It's a Hot Tub!", "Hot Tub", "Large","img/hotTub.jpg"));
-		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam", "LAdam"));
-		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd", "HLloyd"));
-		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain", "DSwain"));		
+		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam", "LAdam", "98", "huhuh", "101", "BILLINGPOSTCODE"));
+		customers.add(new CustomerAccount("hlloyd64@hotmail.com", "password", "Hannah", "Lloyd", "HLloyd", "98", "huhuh", "101", "BILLINGPOSTCODE"));
+		customers.add(new CustomerAccount("deanswain@hotmail.com", "password",  "Dean", "Swain", "DSwain", "98", "huhuh", "101", "BILLINGPOSTCODE"));		
+		
 	}
 	
 	/**

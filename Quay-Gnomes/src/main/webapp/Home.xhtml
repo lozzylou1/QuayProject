@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
-	<ui:composition 
-				xmlns="https://www.w3.org/1999/xhtml"
-				xmlns:f="http://java.sun.com/jsf/core"
-				xmlns:h="http://java.sun.com/jsf/html"
-				xmlns:ui="http://java.sun.com/jsf/facelets"
-				template="templates/main.xhtml">
-	
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="templates/main.xhtml">
+
 	<meta charset="utf-8" />
 	<ui:define name="title">Home</ui:define>
 	<ui:define name="maincontent">
-	
-	
-	
-		<div>
-			<br/>
-        <div  id="slider">
-            <h:graphicImage
-				value="img/slider1.png"/>
-            <h:graphicImage
-				value="img/slider2.png"/>          
-        </div>
-		</div>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		<h:form>	
-<div id="Product_Nav" align="center" >
-<h:commandLink action="#{products.searchByType('Gnome')}"><h:graphicImage class="Product" value="img/prod1.png"/></h:commandLink>
-	<h:commandLink action="#{products.searchByType('Hot Tub')}"><h:graphicImage	class="Product" value="img/prod2.png"/></h:commandLink>
-	<h:commandLink action="#{products.searchByType('Accessories')}"><h:graphicImage class="Product" value="img/prod3.png"/></h:commandLink>
-</div>
-</h:form>
-<div id="Footer">
-</div>
-</ui:define>
+
+		<h:form>
+			<div>
+				<br />
+				<div id="slider">
+					<h:commandLink action="#{products.getAllProducts()}">
+						<h:graphicImage value="img/slider1.png" />
+					</h:commandLink>
+					<h:commandLink action="#{products.getAllProducts()}">
+						<h:graphicImage value="img/slider2.png" />
+					</h:commandLink>
+				</div>
+			</div>
+		</h:form>
+		<br />
+		<br />
+		<br />
+		<br />
+
+		<h:form>
+			<div id="Product_Nav" align="center">
+				<h:commandLink action="#{products.searchByType('Gnome')}">
+					<h:graphicImage class="Product" value="img/prod1.png" />
+				</h:commandLink>
+				<h:commandLink action="#{products.searchByType('Hot Tub')}">
+					<h:graphicImage class="Product" value="img/prod2.png" />
+				</h:commandLink>
+				<h:commandLink action="#{products.searchByType('Accessories')}">
+					<h:graphicImage class="Product" value="img/prod3.png" />
+				</h:commandLink>
+			</div>
+		</h:form>
+		<div id="Footer"></div>
+	</ui:define>
 </ui:composition>
 </html>

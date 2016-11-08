@@ -20,19 +20,22 @@ import Entities.Product;
 @Stateful
 public final class Basket implements Serializable {
 
-	private static List<Object> basketList = new ArrayList<Object>();
+	private static List<Product> basketList = new ArrayList<Product>();
 
 
 	private double totalPriceOfBasket;
+	
 
 	/**
 	 * Gets the basket.
 	 * 
 	 * @return List<Product>
 	 */
-	public List<Object> getBasketList()
+	public List<Product> getBasketList()
 	{		
-		List<Object> copyList = new ArrayList<Object>(basketList);
+
+		List<Product> copyList = new ArrayList<Product>(basketList);
+
 		return copyList;		
 	}
 
@@ -43,7 +46,7 @@ public final class Basket implements Serializable {
 	 * 
 	 * @param Product
 	 */
-	public void add(Object product, int numberOfItems)
+	public void add(Product product, int numberOfItems)
 	{	
 		for (int i = 0; i < numberOfItems; i++ )
 		{
@@ -75,16 +78,17 @@ public final class Basket implements Serializable {
 	}
 
 	/**
+
 	 * Removes all products specified
 	 * from the basket.
 	 * 
 	 * @param Product
 	 */
-	public void remove(Object product)
+	public void remove(Product product)
 	{
-		for (Object item : basketList)
+		for (Product item : basketList)
 		{
-			if (((Product) product).getProductName().equals(((Product) item).getProductName()))
+			if (product.getProductName().equals(item.getProductName()))
 			{
 				basketList.remove(item);
 			}
@@ -94,6 +98,24 @@ public final class Basket implements Serializable {
 	/**
 	 * Empties the basket.
 	 * 
+	 * @param product
+	 */
+	public void removeItemFromBasket(Product product)
+	{
+		
+		
+		for (int i =0; i < basketList.size(); i++ )
+		{
+			if (product.getProductName().equals(basketList.get(i).getProductName()))
+			{
+				basketList.remove(i);
+			}
+		}
+	}
+	
+	/**
+	 * Clears the basket entirely
+
 	 */
 	public void clear()
 	{

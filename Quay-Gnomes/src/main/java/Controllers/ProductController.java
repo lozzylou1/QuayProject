@@ -23,142 +23,124 @@ import Helpers.PaginationHelper;
 @SessionScoped
 public class ProductController implements Serializable {
 
-
 	@Inject
 	private SearchService searchService;
 	@Inject
 	private ProductManager productManager;
 	@Inject
 	private Basket basket;
-	
+
 	private Product product;
 	private PaginationHelper pagination;
 	private int selected;
-	private DataModel <Product> dataModel = null;
-	private DataModel <Product> basketDataModel = null;
+	private DataModel<Product> dataModel = null;
+	private DataModel<Product> basketDataModel = null;
 	private String term;
 	private String type;
 	private String size;
 	private List<Product> itemsList;
 	private List<Product> basketList;
 	private String action;
+	private int quantity;
 
 	/**
 	 * Search Products by Term
 	 * 
 	 * @return String Products
 	 */
-	public String searchByTerm()
-	{
-		
+	public String searchByTerm() {
+
 		itemsList = searchService.displayListTerm(term);
-//		System.out.println(">>>>>>>>>>>>> searchbyterm");
+		// System.out.println(">>>>>>>>>>>>> searchbyterm");
 		pagination = null;
 		recreateModel();
-		//getDataModel();
+		// getDataModel();
 		return "Products";
-	}	
+	}
+
 	/**
 	 * Search Products by Type
 	 * 
 	 * @return String Products
 	 */
-	public String searchByType(String type)
-	{	
+	public String searchByType(String type) {
 		pagination = null;
 		recreateModel();
-//		System.out.println(">>>>>>>>>>>>> searchbytype" + type);
+		// System.out.println(">>>>>>>>>>>>> searchbytype" + type);
 		itemsList = searchService.displayListType(type);
-		//System.out.println(">>>>>>>>>>>>>" + itemsList.size());
+		// System.out.println(">>>>>>>>>>>>>" + itemsList.size());
 		pagination = null;
 		recreateModel();
-		//getDataModel();
-		return "Products";		
+		// getDataModel();
+		return "Products";
 	}
-	
-	
-	
+
 	/**
-	 * Returns the user to the products page
-	 * so that the page displays the appropriate products
+	 * Returns the user to the products page so that the page displays the
+	 * appropriate products
 	 * 
 	 * @return String "Products"
 	 */
-	public String searchBySize(String size)
-	{
+	public String searchBySize(String size) {
 		pagination = null;
-		recreateModel();	
-//		System.out.println(">>>>>>>>>>>>> searchbysize" + size);
+		recreateModel();
+		// System.out.println(">>>>>>>>>>>>> searchbysize" + size);
 		itemsList = searchService.displayListSize(size);
-		//pagination = null;
-		//recreateModel();
+		// pagination = null;
+		// recreateModel();
 		getDataModel();
 		return "Products";
 	}
-	
-	
-	
-	public String searchByPrice(int price){
+
+	public String searchByPrice(int price) {
 		pagination = null;
 		recreateModel();
-//		System.out.println(">>>>>>>>>>>>> searchbyprice" + price);
+		// System.out.println(">>>>>>>>>>>>> searchbyprice" + price);
 		itemsList = searchService.displayListPrice(price);
-		//pagination = null;
-		//recreateModel();
-		//getDataModel();
+		// pagination = null;
+		// recreateModel();
+		// getDataModel();
 		return "Products";
-				
+
 	}
 
-	
-	public String getAllProducts(){
-		
+	public String getAllProducts() {
+
 		pagination = null;
-		recreateModel();	
-		
-//		System.out.println(">>>>>>>>>>>>> getAllProducts");
+		recreateModel();
+
+		// System.out.println(">>>>>>>>>>>>> getAllProducts");
 		itemsList = searchService.displayList();
 		pagination = null;
 		recreateModel();
 		getDataModel();
 		return "Products";
-				
+
 	}
-	
+
 	/**
-	 * If pagination is null, implements pagination
-	 * By finding a list of all products, then 
-	 * building pagination based on page size in getPageSize()
+	 * If pagination is null, implements pagination By finding a list of all
+	 * products, then building pagination based on page size in getPageSize()
 	 * 
 	 * @return PagioationHelper
 	 */
-	public PaginationHelper getPagination() 
-	{
+	public PaginationHelper getPagination() {
 
-		if (pagination == null)
-		{
-			pagination = new PaginationHelper(12) 
-			{
+		if (pagination == null) {
+			pagination = new PaginationHelper(12) {
 				@Override
-				public int getItemsCount()
-				{
+				public int getItemsCount() {
 
 					return itemsList.size();
 				}
+
 				@Override
-				public DataModel <Product> createPageDataModel ()
-				{
-					try
-					{
-						return new 							
-								ListDataModel <Product> (itemsList.subList(getPageFirstItem(),
-										getPageFirstItem() + getPageSize()));
-					}
-					catch (Exception e)
-					{
-						return new 
-								ListDataModel <Product> (itemsList.subList(getPageFirstItem(),
-										getItemsCount()));
+				public DataModel<Product> createPageDataModel() {
+					try {
+						return new ListDataModel<Product>(
+								itemsList.subList(getPageFirstItem(), getPageFirstItem() + getPageSize()));
+					} catch (Exception e) {
+						return new ListDataModel<Product>(itemsList.subList(getPageFirstItem(), getItemsCount()));
 					}
 				}
 			};
@@ -166,81 +148,63 @@ public class ProductController implements Serializable {
 		return pagination;
 	}
 
-	
 	@SuppressWarnings("unchecked")
 	/**
-	 * Gets the data model. Called 
+	 * Gets the data model. Called
 	 * 
 	 * @return dataModel
 	 */
-	public DataModel <Product> getDataModel()
-	{
-		if (dataModel == null)
-		{
+	public DataModel<Product> getDataModel() {
+		if (dataModel == null) {
 			dataModel = getPagination().createPageDataModel();
 		}
 		return dataModel;
 	}
-	
-	public void setDataModel(ArrayList<Product> model){
+
+	public void setDataModel(ArrayList<Product> model) {
 		dataModel.setWrappedData(model);
 	}
-	
-	
+
 	@SuppressWarnings("unused")
 	/**
 	 * 
 	 */
-	private void updateCurrentItem()
-	{
+	private void updateCurrentItem() {
 		int count = itemsList.size();
 
-		if (selected >= count)
-		{
+		if (selected >= count) {
 			selected = count - 1;
 
-			if (pagination.getPageFirstItem() >= count)
-			{
+			if (pagination.getPageFirstItem() >= count) {
 				pagination.previousPage();
 			}
 		}
 
-		if (selected >= 0)
-		{
-			try
-			{
+		if (selected >= 0) {
+			try {
 				setProduct(itemsList.subList(selected, selected + 1).get(0));
-			}
-			catch (Exception e)
-			{
+			} catch (Exception e) {
 				setProduct(itemsList.subList(selected, count).get(0));
 			}
 		}
 	}
 
-	public String next()
-	{
+	public String next() {
 		getPagination().nextPage();
 		recreateModel();
 		return "Products";
 	}
 
-	public String previous()
-	{
+	public String previous() {
 		getPagination().previousPage();
 		recreateModel();
 		return "Products";
 	}
-	
-	
 
 	public String view() {
-//		System.out.println("VIEW RUNS!!!!!");
 		product = null;
-		
-		
 		product = productManager.findById(new Integer(action));
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>" + product.getProductName() + " " + product.getProductID());
+		quantity = 1;
 		return "ProductDet.xhtml";
 	}
 
@@ -251,10 +215,12 @@ public class ProductController implements Serializable {
 	public String getAction() {
 		return action;
 	}
+
 	public void setAction(String action) {
 		this.action = action;
 	}
-	public void setProduct(Product product){
+
+	public void setProduct(Product product) {
 		this.product = product;
 	}
 
@@ -266,7 +232,7 @@ public class ProductController implements Serializable {
 		this.term = term;
 	}
 
-	private void recreateModel () {
+	private void recreateModel() {
 		dataModel = null;
 	}
 
@@ -277,7 +243,7 @@ public class ProductController implements Serializable {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
+
 	/**
 	 * Get the size from appropriate checkbox
 	 * 
@@ -287,61 +253,84 @@ public class ProductController implements Serializable {
 		return size;
 	}
 	
+	
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
 	/**
 	 * Set the size
 	 * 
-	 * @param Sttring size
+	 * @param Sttring
+	 *            size
 	 */
 	public void setSize(String size) {
 		this.size = size;
 	}
-	
+
 	/**
 	 * Adds the selected item to the basket
 	 * 
 	 * 
 	 */
 	public String addItemToBasket() {
-		basket.add(product, 1);
+
+		if (quantity > 1) {
+			basket.add(product, quantity);
+		} else {
+			basket.add(product, 1);
+		}
 		System.out.println(product.getProductName());
+		return "ProductDet";
+	}
+
+	public String removeItemFromBasket() {
+		System.out.println(action);
+		Product productToRemove = searchService.findById(new Integer(action));
+		System.out.println(productToRemove);
+		basket.removeItemFromBasket(productToRemove);
 		return "Basket";
 	}
-	
-	public void removeItemFromBasket() {
-		basket.remove(product);
+
+	/**
+	 * Gets the total price of all the items in the basket
+	 * 
+	 * @return double totalPrice
+	 */
+	public double getBasketTotalPrice() {
+		return basket.getTotalPrice();
+
 	}
-	
-	public DataModel <Product> createBasketPageDataModel ()
-	{
+
+	/**
+	 * Clears the basket of all added itemsS
+	 */
+	public void clearBasket() {
+		basket.clear();
+	}
+
+	public DataModel<Product> createBasketPageDataModel() {
 		basketDataModel = null;
-		try
-		{
-			return new 							
-					ListDataModel <Product> (basket.getBasketList());
-		}
-		catch (Exception e)
-		{
-			return new 
-					ListDataModel <Product> (basket.getBasketList());
+		try {
+			return new ListDataModel<Product>(basket.getBasketList());
+		} catch (Exception e) {
+			return new ListDataModel<Product>(basket.getBasketList());
 		}
 	}
-	
-	
-	
+
 	public DataModel<Product> getBasketDataModel() {
 		basketDataModel = createBasketPageDataModel();
+			
 		return basketDataModel;
 	}
-	
+
 	public void setBasketDataModel(DataModel<Product> basketDataModel) {
 		this.basketDataModel = basketDataModel;
 	}
-	
-	
-	
-	
 
 }
-
-
-

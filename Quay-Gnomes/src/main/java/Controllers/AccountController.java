@@ -32,6 +32,15 @@ public class AccountController implements Serializable {
 	
 	private String userName = "";
 	
+	private String deliveryAddress1;
+	
+	private String postCode;
+	
+	private String billingAddress1;
+	
+	private String billingPostCode;
+
+	
 	/**
 	 * Creates the customer account 
 	 * 
@@ -45,12 +54,23 @@ public class AccountController implements Serializable {
 					initialPassword, 
 					firstName, 
 					surname,
-					userName);
+					userName,
+					deliveryAddress1,
+					postCode,
+					billingAddress1,
+					billingPostCode);
 			
 			accountService.setCustomerAccount(customerAccount);
 			accountService.addCustomerAccount();
 			
 		}				
+	}
+	
+	public void addBillingAddress() {
+	
+	this.billingAddress1 = getDeliveryAddress1();
+	this.billingPostCode = getPostCode();
+	
 	}
 	
 	/**
@@ -148,4 +168,46 @@ public class AccountController implements Serializable {
 	public void setSurname(String surname) {
 		this.surname = surname;
 	}
+
+	public String getDeliveryAddress1() {
+		return deliveryAddress1;
+	}
+
+	public void setDeliveryAddress1(String deliveryAddress1) {
+			this.deliveryAddress1 = deliveryAddress1;
+
+		}
+		
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+	
+		this.postCode = postCode;
+	}
+
+	public String getBillingAddress1() {
+		return billingAddress1;
+	}
+
+	public void setBillingAddress1(String billingAddress1) {
+		this.billingAddress1 = billingAddress1;
+		
+	}
+
+	public String getBillingPostCode() {
+		return billingPostCode;
+	}
+
+	public void setBillingPostCode(String billingPostCode) {
+		this.billingPostCode = billingPostCode;
+	}
+	
+
+	public String update(){
+		return "AccountPage";
+		
+	}
+	
 }
