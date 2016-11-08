@@ -55,17 +55,18 @@
 }
 
 #form_design {
-	background-color: #DCCBDA width:25%;
+	background-color: #DCCBDA;
 	height: 5%;
+	width:90%;
 	padding: 5px;
 	margin: 1% auto;
 	background-color: #DCCBDA;
-	text-align: center;
+	text-align: right;
 	border-radius: 8px
 }
 
 .searchBar {
-	width: 90%;
+	width: 95%;
 	border: 1px solid #49274A;
 	border-radius: 8px;
 	padding: 12px 10px 12px 20px;

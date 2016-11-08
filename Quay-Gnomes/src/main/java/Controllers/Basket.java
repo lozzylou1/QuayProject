@@ -1,6 +1,7 @@
 package Controllers;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.DoubleStream;
@@ -60,10 +61,10 @@ public final class Basket implements Serializable {
 	 * 
 	 * @return double
 	 */
-	public double getTotalPrice() 
+	public String getTotalPrice() 
 	{
 		double[] price = new double[basketList.size()];
-		double total= 0;
+		String total = "";
 		if (price.length != 0)
 		{
 			for (int i = 0; i < basketList.size(); i++)
@@ -72,7 +73,9 @@ public final class Basket implements Serializable {
 				price[i] =  new Double(((Product) product).getPrice());
 			}
 			totalPriceOfBasket = DoubleStream.of(price).sum();
-			total = totalPriceOfBasket;
+			
+			DecimalFormat numberFormat = new DecimalFormat("#.00");
+			total = numberFormat.format(totalPriceOfBasket);
 		}
 		return total;
 	}

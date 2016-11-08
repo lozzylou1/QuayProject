@@ -18,11 +18,11 @@
 			<f:view>
 			<body id="body">
 			<div class="wrapper">
+			<header>
 			<div>
-			<header >
 						<h:form>
 						<h:link outcome="Home">
-						<h:graphicImage  value="img/logo1.png" style="max-width:100%" ></h:graphicImage>
+						<h:graphicImage  value="img/logo1.png"></h:graphicImage>
 						</h:link>
 						</h:form>
 						<h:form id="form_design">	
@@ -32,6 +32,9 @@
 								<span class="glyphicon glyphicon-search"></span>
 							</h:commandLink>					
 						</h:form>
+				</div>
+				<div>
+				<h:form>
 					<nav class="navbar navbar-inverse" style="background-color:#49274A">
 					  <div class="container-fluid">
 						<div class="navbar-header">
@@ -57,9 +60,10 @@
 						  </ul>
 						</div>
 					  </div>
-					</nav>									
+					</nav>
+					</h:form>
+				</div>									
 				</header>
-				</div>
 				<DIV class="container" id="body">
 					<ui:insert name="maincontent"/>
 				</DIV>	

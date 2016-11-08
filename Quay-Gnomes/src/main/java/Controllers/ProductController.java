@@ -302,7 +302,7 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return double totalPrice
 	 */
-	public double getBasketTotalPrice() {
+	public String getBasketTotalPrice() {
 		return basket.getTotalPrice();
 
 	}
