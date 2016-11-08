@@ -29,7 +29,7 @@ public class PurchaseOrderController implements Serializable {
 
 	private String term;	
 	private int productID;
-	private int numberOfItems;
+	private int numberOfItems = 1;
 
 	private DataModel <PurchaseOrder> dataModel = null;	
 	private DataModel <Product> dataModelProduct = null;
@@ -141,8 +141,10 @@ public class PurchaseOrderController implements Serializable {
 	 */
 	public void submitOrder()
 	{
-		//TODO
-		//imsCreateService.submitOrder(basket.getOrderList(), getTotalPrice());
+		List<Product> orderList = basket.getBasketList();
+		
+		imsService.sumbitOrder(orderList);
+		
 	}
 
 	public int getProductID() {

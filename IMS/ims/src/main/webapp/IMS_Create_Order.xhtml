@@ -72,10 +72,10 @@
 					</h:form>
 					<h:form>
 						<td>
-							<h:inputText placeholder="Quantity" value="#{purchaseOrderController.numberOfItems}"/>
+						
 						</td> 	
 						<td>
-							<h:commandButton type="Submit" value="Add Item" action ="#{purchaseOrderController.addToOrder() }" >
+							<h:commandButton type="Submit" value="Add Item" action ="#{purchaseOrderController.addToOrder()}" >
 								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
 							</h:commandButton>
 						</td>
@@ -96,7 +96,7 @@
 					<th>Supplier Name</th>
 					<th>Threshold</th>
 					<th>Price</th>
-				</tr>
+					</tr>
 				<ui:repeat var="product" value="#{purchaseOrderController.dataModelProduct}">
 				<tr>
 					<td ><h:outputText value="#{product.productID}" /></td>
@@ -104,12 +104,14 @@
 					<td> <h:outputText value="#{product.stockLevel}" /></td>
 					<td><h:outputText value="#{product.supplierName}" /></td> 
 					<td><h:outputText value="#{product.threshold}" /></td> 
-					<td><h:outputText value="#{product.price}" /></td> 
-					<td>
-							<h:commandButton value="Remove Item" action ="#{purchaseOrderController.removeFromBasket() }" >
-								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID} "/>
+					<td><h:outputText value="#{product.price}" /></td>
+						<h:form>
+						<td>
+							<h:commandButton type="Submit" value="Remove Item" action ="#{purchaseOrderController.removeFromBasket()}" >
+								<f:setPropertyActionListener target="#{purchaseOrderController.productID}" value="#{product.productID}"/>
 							</h:commandButton>
 						</td> 
+						</h:form>
 				</tr>		
 				</ui:repeat>			
 			</table>

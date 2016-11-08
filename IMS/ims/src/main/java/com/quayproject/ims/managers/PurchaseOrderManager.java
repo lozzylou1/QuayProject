@@ -22,4 +22,10 @@ public interface PurchaseOrderManager {
 	 */
 	public void createPurchaseOrder(List<Product> orderList, double totalPrice, String orderDate);
 
+	/**
+	 * saving the list of orders
+	 * @param orderList
+	 */
+	public void saveOrder(List<Product> orderList);
+ 
 }

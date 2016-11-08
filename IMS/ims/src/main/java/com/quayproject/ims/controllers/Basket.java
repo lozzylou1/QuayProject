@@ -66,11 +66,12 @@ public final class Basket implements Serializable {
 
 	public void remove(Product product)
 	{
-		for (Product item : basketList)
+		for (int i = 0; i < basketList.size(); i++)
 		{
-			if (product.getProductName().equals(item.getProductName()))
+			if (product.getProductName().equals(basketList.get(i).getProductName()))
 			{
-				basketList.remove(item);
+				basketList.remove(i);
+				break;
 			}
 		}
 	}

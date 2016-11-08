@@ -110,6 +110,7 @@ public class PurchaseOrder {
 		this.order = orderList;
 	}
 	
+	
 	public List<Product> getOrder() {
 		return order;
 	}
