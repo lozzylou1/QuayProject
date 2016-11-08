@@ -34,35 +34,35 @@ public class InitialData {
 		
 		staffAccounts.add(new StaffAccount("Al Stock", "Password"));
 		
-		products.add(new Product(1, "Harry Potter Gnome", 19.99f, false, 10, 5f, "5x6x7", "Harry Potter And The Chamber Of Secrets", "Harry Potter is trying to escape the giant snake.", "Gnome", "Large","img/Gnome1m.png" ));
+		products.add(new Product(1, "Potter Gnome", 19.99f, false, 10, 5f, "5x6x7", "Harry Potter And The Chamber Of Secrets", "Harry Potter is trying to escape the giant snake.", "Gnome", "Large","img/smallerimg/shades_gnome.png" ));
 		products.add(new Product(2, "Zombie Gnome", 19.99f, false, 10, 5f, "5x6x7", "Zombie Is Hungry For Gnome Flesh", "This infected ornament will have your friendly garden gnomes running for cover" +
 				"Made from handcrafted terracotta and weather-resistant paint, the Zombie Gnome will brave the elements to protect your back garden from intruders." +
-				"Don't get too close!", "Gnome", "Large", "img/Gnome2m.png" ));
-		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "Can't get enough of the pond!", "longDesc", "Gnome", "Large", "img/Gnome3m.png" ));
+				"Don't get too close!", "Gnome", "Large", "img/smallerimg/zombie_gnome.png" ));
+		products.add(new Product(3, "Swimming Gnome", 19.99f, false, 10, 5f, "5x6x7", "Can't get enough of the pond!", "longDesc", "Gnome", "Large", "img/smallerimg/shades_gnome.png" ));
 		products.add(new Product(4, "Star Trek Gnome", 19.99f, false, 10, 5f, "5x6x7", "Star Trek", "Did you realize there's a whole subculture of Star Trek horticulturists? "
 				+ "There are daylilies named after Trek, a handful of hostas, and even a Star Trek begonia. The perfect statuary to go with your newly-acquired Star Trek plants? "
-				+ "Why, that would be the Star Trek Garden Gnomes, of course! Boldly Going Where No Gnome Has Gone Before !", "Gnome", "Large", "img/Gnome4m.png" ));
+				+ "Why, that would be the Star Trek Garden Gnomes, of course! Boldly Going Where No Gnome Has Gone Before !", "Gnome", "Large", "img/smallerimg/spok_gnome.png" ));
 		products.add(new Product(5, "Game Of Gnomes", 15.17f, false, 20, 794f, "18.1 x 15.9 x 24.8", "Game of Gnomes Garden Gnome", "A must for any Game of Thrones fan, "
 				+ "this statue of gnomed nature doth lay claim to the territory henceforth known as thy garden"
-				+ "Collect them all!!", "Gnome", "Large", "img/Gnome5m.png"));
+				+ "Collect them all!!", "Gnome", "Large", "img/smallerimg/game_of_gnomes.png"));
 		products.add(new Product(6, "Mankini Gnome", 12.99f, false, 33, 694f, "18.1 x 15.9 x 24.8", "Mankini Gnome", "Surfer dude standing gnome wearing a mankini, and holding a life ring whilst 'posing' the peace moto! "
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome",  "Large", "img/Gnome6m.png"));
+				+ "Highly detailed. Matching 'surf board' gnome also available. Excellent gift.", "Gnome",  "Large", "img/smallerimg/shades_gnome.png"));
 		products.add(new Product(7, "Glasses Gnome", 69.69f, false, 7, 694f, "18.1 x 15.9 x 24.8", "A gnome wearing Glasses", "A gnome wearing some funky glasses!"
 				+ "Very funny! Sure to raise a smile in anybody!! "
-				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/Gnome7m.png"));
+				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/smallerimg/shades_gnome.png"));
 		products.add(new Product(8, "Biker Gnome", 88.88f, false, 8, 888f, "10 x 10 x 10", "A gnome riding a bike", "A gnome Riding a bike!"
 				+ "He can ride a bike so well!"
-				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium","img/Gnome8m.png"));
+				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium","img/smallerimg/shades_gnome.png"));
 		products.add(new Product(9, "bent over gnome", 99.99f, false, 8, 999f, "99 x 99 x 99", "A gnome bent over", "A gnome bent over!"
 				+ "A cheeky gnome for any occasion"
-				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/bentOverGnome.PNG"));
+				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/smallerimg/bent_over.png"));
 		products.add(new Product(10, "Selfie Gnomes", 10.10f, false, 8, 1010f, "1010 x 876 x 99", "2 Gnomes taking a selfie", "2 Gnomes taking a selfie! #2016"
 				+ "Perfect for that hipster in your life"
-				+ "You really can't miss this amazing gnome!", "Gnome", "Medium", "img/selfieGnome.PNG"));
-		products.add(new Product(11, "Set of 3 solar powered Gnomes", 10.10f, false, 8, 1111f, "1111 x 11 x 1", "3 Solar Powered Gnomes", "3 Solar Powered Gnomes"
+				+ "You really can't miss this amazing gnome!", "Gnome", "Medium", "img/smallerimg/selfie_gnomes.png"));
+		products.add(new Product(11, "Solar Gnomes", 10.10f, false, 8, 1111f, "1111 x 11 x 1", "3 Solar Powered Gnomes", "3 Solar Powered Gnomes"
 				+ "Perfect for Lighting up your garden for those late summer eves"
-				+ "You really can't miss these amazing gnomes!", "Gnome", "Small","img/setOfThreeGnomes.jpg"));
+				+ "You really can't miss these amazing gnomes!", "Gnome", "Small","img/smallerimg/three_gnomes.png"));
 		products.add(new Product(12, "It's a shovel", 789.10f, false, 3, 1111f, "5 x 41 x 3", "Shovel", "It's an amazing shovel", "Accessories", "Medium","img/shovel.jpg"));
 		products.add(new Product(13, "It's a Hot tub", 999.99f, false, 12, 1111f, "18 x 12 x 69", "Hot Tub", "It's a Hot Tub!", "Hot Tub", "Large","img/hotTub.jpg"));
 		customers.add(new CustomerAccount( "laura_adam@live.co.uk", "password",  "Laura", "Adam", "LAdam", "98", "huhuh", "101", "BILLINGPOSTCODE"));

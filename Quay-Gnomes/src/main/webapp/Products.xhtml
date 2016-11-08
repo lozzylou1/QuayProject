@@ -16,6 +16,7 @@ Catalogue
 		</div>
 
 		<style>
+
 .test1>* {
 	display: inline-block;
 }
@@ -23,17 +24,28 @@ Catalogue
 .test1 {
 	float: left;
 	height: 319px;
-	margin-Right: 20px;
+	margin:10px;
+	border: 5px solid #49274A;
+	background-color: #DCCBDA;
 }
 
 .test2 {
 	background-color: #DCCBDA;
 	float: left;
-	height: 365px;
-	margin-Right: 20px;
-	margin-bottom: 20px;
+	height: 375px;
+	border: 5px solid #49274A;
+	margin:20px;
 	color: #000000;
 	font-size: 16px;
+}
+
+.productsPrice{
+	float: right;
+	font-size: 30px;				
+}
+.productsTitle{
+	color: black;
+	float: left;
 }
 
 .product_holder {
@@ -56,6 +68,7 @@ width: 100%;
 min-height: 30px;
 }
 </style>
+
 		<div class="row">
 			<div class = "bread_crumb">
 			<h:form>
@@ -106,34 +119,33 @@ min-height: 30px;
 					</div>
 					<div id="product_container">
 						<ui:repeat var="product" value="#{products.dataModel}">
-							<div class="test1">
-								<h:form>
-									<div id="image-content" style="float: left">
 
-										<h:commandLink action="#{products.view()}">
-											<h:graphicImage value="#{product.image1}" />
-											<f:setPropertyActionListener target="#{products.action}"
-												value="#{product.productID}" />
-										</h:commandLink>
+						<div class="test1">
+							<h:form>								
+								<div style="text-align: center; background-color: white; border-bottom: 5px solid #49274A;">
+									<h:commandLink action="#{products.view()}">
+										<h:graphicImage value="#{product.image1}" />
+										<f:setPropertyActionListener target="#{products.action}"
+											value="#{product.productID}" />
+									</h:commandLink>	
+								</div>
+								<div style="width:77px; padding: 3px;">
+									<h:commandLink class="productsTitle" action="#{products.view()}"
+										value="#{product.productName}">
+										<f:setPropertyActionListener target="#{products.action}"
+											value="#{product.productID}" />
+									</h:commandLink>
+								</div>
+								<div style="padding: 3px;">
+									<h:commandLink action="#{products.view()}" />									
+									<h:outputText class="productsPrice" value="£#{product.price}" />
+									<h:outputText />
+								</div>
+							</h:form>
+						</div>						
 
-										<br />
-
-										<h:commandLink action="#{products.view()}"
-											value="#{product.productName}">
-											<f:setPropertyActionListener target="#{products.action}"
-												value="#{product.productID}" />
-										</h:commandLink>
-										<br />
-
-										<h:commandLink action="#{products.view()}" />
-										<h:outputText value="£" />
-										<h:outputText value="#{product.price}" />
-										<h:outputText />
-
-									</div>
-								</h:form>
-							</div>
 						</ui:repeat>
+						<br/>
 					</div>
 				</div>
 

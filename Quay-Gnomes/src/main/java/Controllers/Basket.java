@@ -9,6 +9,13 @@ import javax.ejb.Stateful;
 
 import Entities.Product;
 
+/**
+ * 
+ * 
+ * @author Ryan
+ *
+ */
+
 @SuppressWarnings("serial")
 @Stateful
 public final class Basket implements Serializable {
@@ -17,22 +24,27 @@ public final class Basket implements Serializable {
 
 
 	private double totalPriceOfBasket;
+	
 
 	/**
-	 * Gets a copy of the basket list and returns it
+	 * Gets the basket.
 	 * 
 	 * @return List<Product>
 	 */
 	public List<Product> getBasketList()
 	{		
+
 		List<Product> copyList = new ArrayList<Product>(basketList);
+
 		return copyList;		
 	}
 
 	/**
-	 * Adds an Item to the basket
+	 * Adds the specified amount of
+	 * the specified product to the 
+	 * basket.
 	 * 
-	 * @param product
+	 * @param Product
 	 */
 	public void add(Product product, int numberOfItems)
 	{	
@@ -43,9 +55,10 @@ public final class Basket implements Serializable {
 	}
 
 	/**
-	 * Gets the total price of the basket
+	 * Gets the total price of all the
+	 * combined objects in the basket.
 	 * 
-	 * @return the totalPrice
+	 * @return double
 	 */
 	public double getTotalPrice() 
 	{
@@ -55,19 +68,21 @@ public final class Basket implements Serializable {
 		{
 			for (int i = 0; i < basketList.size(); i++)
 			{
-				Product product = basketList.get(i);
-				price[i] = product.getPrice();
+				Object product = basketList.get(i);
+				price[i] = ((Product) product).getPrice();
 			}
 			totalPriceOfBasket = DoubleStream.of(price).sum();
 			total = totalPriceOfBasket;
 		}
-		return   total;
+		return total;
 	}
 
 	/**
-	 * Remove an item from the basket
+
+	 * Removes all products specified
+	 * from the basket.
 	 * 
-	 * @param product
+	 * @param Product
 	 */
 	public void remove(Product product)
 	{
@@ -81,7 +96,7 @@ public final class Basket implements Serializable {
 	}
 	
 	/**
-	 * Remove an item from the basket
+	 * Empties the basket.
 	 * 
 	 * @param product
 	 */
@@ -100,6 +115,7 @@ public final class Basket implements Serializable {
 	
 	/**
 	 * Clears the basket entirely
+
 	 */
 	public void clear()
 	{

@@ -25,6 +25,14 @@
 
 				<div class="basket_content">
 					<h:outputText class="basket_quantity" value="Quantity" />
+					<h:form>
+					<h:commandButton class="basket_quantity" value="+" type="submit"/>
+					
+					</h:form>
+					<h:form>
+					<h:commandButton class="basket_quantity" value="-" type="submit"/>
+					
+					</h:form>
 
 					<h:outputText class="basket_price" value="£#{product.price}" />
 
