@@ -69,7 +69,7 @@ public final class Basket implements Serializable {
 			for (int i = 0; i < basketList.size(); i++)
 			{
 				Object product = basketList.get(i);
-				price[i] = ((Product) product).getPrice();
+				price[i] =  new Double(((Product) product).getPrice());
 			}
 			totalPriceOfBasket = DoubleStream.of(price).sum();
 			total = totalPriceOfBasket;
