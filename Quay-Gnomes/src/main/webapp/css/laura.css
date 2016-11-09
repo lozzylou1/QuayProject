@@ -44,11 +44,10 @@
 	position: absolute;
 	width: 100%;
 	height:60px; /* Height of the footer */
-	background: #DCCBDA;
+	background: #49274A;
 	text-align: center;
 	font-size: 12px;
 	padding: 15px;
-	
 }
 
 .nav {
@@ -130,6 +129,53 @@ table, th, td {
 	float: right;
 }
 
+.register_email{
+	position:relative;
+	float:left;
+}
+
+.register_password{
+	position:relative;
+	float:left;
+}
+
+.confirm_password{
+	position:relative;
+	float:left;
+}
+
+.form_title{
+	height:50%;
+}
+
+.myInput {
+    width: 50%;
+}
+
+.sign_in{
+	background: #DCCBDA;
+	width:50%;
+	padding-right:2.0833333333%;
+	float:left;
+	list-style:none;
+	display:block;
+	border-size:5px;
+	border-style:solid;
+	border-color:white;
+}
+
+.register{
+	background: #DCCBDA;
+	width:50%;
+	padding-right:2.0833333333%;
+	float:left;
+	list-style:none;
+	display:block;
+	border-size:5px;
+	border-style:solid;
+	border-color:white;
+}
+
 #searchBox {
 	background-color: #eaf8fc;
 	background-image: linear-gradient(#fff, #d4e8ec);
@@ -149,6 +195,11 @@ table, th, td {
 	bottom: 0;
 }
 
+.Product{
+	margin: 1%;
+	border: 5px solid #49274A;
+	border_radius: 8px;
+}
 
 .Left-nav {
 	float: left;
@@ -158,20 +209,21 @@ table, th, td {
 .basket_row {
 	float: left;
 	width:100%;
-	````
 }
 
 .basket_image{
 	float:left;
 	width:30%;
 	height:100%;
-	
+	text-align:center;
+	padding-top:5%;
 }
 
 .basket_content{
-	width:70%;
+	width:50%;
+	height:100%;
 	text-align:center;
-	padding-top:5%;
+	padding-top:12.5%;
 	float:left;
 }
 
@@ -182,17 +234,18 @@ table, th, td {
 
 
 .basket_quantity{
-	float:left;
+	text-align:center;
+	padding-top:5%;
+	margin: 1%
 }
 
-.basket_price{
-	
-}
 
 .basket_remove{
 	float:right;
 	width:20%;
-	
+	height:100%;
+	text-align:center;
+	padding-top:11%;
 }
 
 .basket_remove_button{
@@ -208,6 +261,7 @@ table, th, td {
 	background: #DCCBDA;
 	padding: 25px;
 	margin: 25px;
+	border-radius: 8px;
 }
 
 #image-content {
