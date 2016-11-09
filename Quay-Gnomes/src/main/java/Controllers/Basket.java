@@ -74,12 +74,43 @@ public final class Basket implements Serializable {
 		}
 	}
 
-	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
 	public HashMap<Product, Integer> addFrontEnd(Product product, Integer numOfItems){
 		list.put(product, numOfItems);
 		System.out.println("HASHMAP" + list.toString());
 		return list;
 	}
+	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
+	public HashMap<Product, Integer> decrementQuantity(Product product, Integer numOfItems){
+		list.put(product, numOfItems);
+		System.out.println("HASHMAP" + list.toString());
+		return list;
+	}
+	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
+	public HashMap<Product, Integer> incrementQuantity(Product product, Integer numOfItems){
+		list.put(product, numOfItems);
+		System.out.println("HASHMAP" + list.toString());
+		return list;
+	}
+	
+	
 	
 	
 	
@@ -134,14 +165,14 @@ public final class Basket implements Serializable {
 	public void removeItemFromBasket(Product product)
 	{
 		
-		
-		for (int i =0; i < basketList.size(); i++ )
-		{
-			if (product.getProductName().equals(basketList.get(i).getProductName()))
-			{
-				basketList.remove(i);
-			}
-		}
+		list.remove(product);
+//		for (int i =0; i < basketList.size(); i++ )
+//		{
+//			if (product.getProductName().equals(basketList.get(i).getProductName()))
+//			{
+//				basketList.remove(i);
+//			}
+//		}
 	}
 	
 	/**
@@ -150,6 +181,8 @@ public final class Basket implements Serializable {
 	 */
 	public void clear()
 	{
-		basketList.clear();
+		list.clear();
 	}
+	
+	
 }

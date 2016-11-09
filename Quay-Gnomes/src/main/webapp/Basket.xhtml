@@ -25,14 +25,19 @@
 				</div>
 
 				<div class="basket_content">
-					<h:outputText class="basket_quantity" value="Quantity: #{product.value}" />
-					<h:form>
-					<h:commandButton class="basket_quantity" value="+" type="submit"/>
 					
-					</h:form>
-					<h:form>
-					<h:commandButton class="basket_quantity" value="-" type="submit"/>
+					<h:form id = "basketQuantityForm">
+					<h:outputText id = "quantityID" class="basket_quantity" value="Quantity: #{product.value}" />
+						<h:commandButton class="basket_quantity" value="+">
+							<f:ajax event="click" listener="#{products.incrementQuantity(product.value)}" 
+							render="basketQuantityForm"/>
+						</h:commandButton>
 					
+					
+						<h:commandButton class="basket_quantity" value="-">
+							<f:ajax event="click" listener="#{products.decrementQuantity(product.value)}" 
+							render="basketQuantityForm"/>
+						</h:commandButton>
 					</h:form>
 
 					<h:outputText class="basket_price" value="£#{product.key.price}" />
@@ -44,7 +49,7 @@
 						<h:commandButton class="basket_remove_button" value="Remove"
 							type="submit" action="#{products.removeItemFromBasket()}">
 							<f:setPropertyActionListener target="#{products.action}"
-								value="#{product.productID}" />
+								value="#{product.key.productID}" />
 						</h:commandButton>
 					</h:form>
 					<h:outputText class="basket_price"
