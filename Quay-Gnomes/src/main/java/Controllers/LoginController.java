@@ -56,7 +56,9 @@ public class LoginController implements Serializable{
 		if(isLoggedIn == true){
 		return "AccountPage";
 		}
+		else{
 		return "Login";
+		}
 	}	
 	
 	

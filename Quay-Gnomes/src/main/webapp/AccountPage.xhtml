@@ -15,17 +15,25 @@
 	text-align: center;
 	border-color: black;
 	border-bottom: dashed;
+	
+}
+.order-header {
+	text-align: center;
+	border-color: black;
+	border-bottom: dashed;
+	margin-bottom: 20px;
 }
 
 .account-details {
 	border-color: black;
 	float: left;
-	width: 50%;
+	width: 40%;
+	text-align: left;
 }
 
 .address-details {
 	float: right;
-	width: 50%;
+	width: 60%;
 	text-align: Left;
 }
 
@@ -39,6 +47,7 @@
 
 .account-container {
 	min-height: 400px;
+	
 }
 
 .edit-address {
@@ -47,23 +56,28 @@
 
 .delivery-address {
 	float: Left;
+	width:50%;
 }
 
 .billing-address {
 	float: right;
+	width:50%;
 }
 
 .edit-bAddress {
 	display: none;
 }
+.table{
+text-align: -webkit-center;
+}
 </style>
 		<article>
 			<div>
 
-				<div class="account-header">
+				<div class="order-header">
 					<h1>Orders</h1>
 				</div>
-				<h:form>
+				<h:form class = "table">
 					<h:dataTable id="table1" value="#{products.h.entrySet().toArray()}"
 						var="key" border="1">
 					
@@ -73,24 +87,28 @@
 							</f:facet>
 							<h:outputText value="#{key.key.productName}" />
 						</h:column>
+						
 						<h:column>
 							<f:facet name="header">
 								<h:outputText value="Item Description" />
 							</f:facet>
 							<h:outputText value="#{key.key.shortDescription}" />
 						</h:column>
+						
 							<h:column>
 							<f:facet name="header">
 								<h:outputText value="Quantity" />
 							</f:facet>
 							<h:outputText value="#{key.value}" />
 						</h:column>
+						
 						<h:column>
 							<f:facet name="header">
 								<h:outputText value="Price" />
 							</f:facet>
 							<h:outputText value="#{key.key.price}" />
 						</h:column>
+						
 						<f:facet name="footer">
 							<h:outputText value="Total: #{basket.totalPrice}" />
 						</f:facet>
