@@ -53,8 +53,10 @@ public class LoginController implements Serializable{
 		customer = loginService.getCustomer(email);
 		
 		password = "";
-		
+		if(isLoggedIn == true){
 		return "AccountPage";
+		}
+		return "Login";
 	}	
 	
 	

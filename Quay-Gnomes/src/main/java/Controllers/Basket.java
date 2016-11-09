@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.stream.DoubleStream;
 
 import javax.ejb.Stateful;
+import javax.inject.Named;
 
 import Entities.ItemInBasket;
 import Entities.Product;
@@ -22,6 +23,7 @@ import Entities.Product;
  */
 
 @SuppressWarnings("serial")
+@Named("basket")
 @Stateful
 public final class Basket implements Serializable {
 
@@ -41,6 +43,7 @@ public final class Basket implements Serializable {
 	public static void setList(HashMap<Product, Integer> list) {
 		Basket.list = list;
 	}
+	
 
 	/**
 	 * Gets the basket.
@@ -152,4 +155,13 @@ public final class Basket implements Serializable {
 	{
 		basketList.clear();
 	}
+
+	public float getTotalPriceOfBasket() {
+		return totalPriceOfBasket;
+	}
+
+	public void setTotalPriceOfBasket(float totalPriceOfBasket) {
+		this.totalPriceOfBasket = totalPriceOfBasket;
+	}
+	
 }
