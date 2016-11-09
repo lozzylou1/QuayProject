@@ -107,9 +107,14 @@ public final class Basket implements Serializable {
 	 * @param numOfItems
 	 * @return list
 	 */
-	public HashMap<Product, Integer> incrementQuantity(Product product, Integer numOfItems){
-		list.put(product, numOfItems);
-		System.out.println("HASHMAP" + list.toString());
+	public HashMap<Product, Integer> incrementQuantity(Product product){
+		
+		Integer i = list.get(product);
+		list.put(product, i+1);		
+		
+		
+		
+		System.out.println("HASHMAP" + i.toString());
 		return list;
 	}
 	

@@ -320,9 +320,9 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return String
 	 */
-	public String incrementQuantity(int quantity)
+	public String incrementQuantity()
 	{
-		h = basket.incrementQuantity(product, quantity+1);
+		h = basket.incrementQuantity(product);
 		
 		return "Basket";
 	}

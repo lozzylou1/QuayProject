@@ -10,6 +10,12 @@
 		Basket
 	</ui:define>
 	<ui:define name="maincontent">
+	
+	<style>
+	.hide_stuff{
+	display: none;
+	}
+	</style>
 		<h:form id="totalPrice" style="float:right">
 			<div>
 				<h:commandButton class="btn btn-warning" value="Clear Basket"
@@ -17,6 +23,17 @@
 					style="border: 1px solid #49274A;">
 				</h:commandButton>
 			</div>
+			
+				<div>
+				<h:commandButton class="btn btn-warning" value="Place Order"
+					type="submit" action="#{products.clearBasket()}"
+					style="border: 1px solid #49274A;">
+				</h:commandButton>
+				<button type="button" onClick="processOrder()">Process Order
+				</button>
+			</div>
+			
+			
 			<div>
 			
 				<h:outputText  class="basket_price"
@@ -25,7 +42,7 @@
 			</div>
 
 		</h:form>
-
+<div class = "hide_stuff">
 		<ui:repeat var="product" value="#{products.h.entrySet().toArray()}">
 			<div class="basket_row"
 				style="border-bottom: 1px solid #000; height: 500px">
@@ -42,7 +59,7 @@
 						<h:commandButton class="btn btn-warning" value="+" type="Submit"
 							style="margin: 0.5%; border: 1px solid #49274A;">
 							<f:ajax event="click"
-								listener="#{products.incrementQuantity(product.value)}"
+								listener="#{products.incrementQuantity()}"
 								render="basketQuantityForm totalPrice" />
 
 						</h:commandButton>
@@ -77,6 +94,12 @@
 				</div>
 			</div>
 		</ui:repeat>
+		</div>
+		<script>
+				function processOrder() {
+					$(".hide_stuff").toggle(500);
+				}
+		</script>
 	</ui:define>
 </ui:composition>
 </html>
