@@ -59,22 +59,44 @@
 </style>
 		<article>
 			<div>
-				<table class="table table-responsive"
-					style="background-color: #DCCBDA">
-					<tr>
-						<th><h2>Orders</h2></th>
-						<th><h:commandButton class="btn btn-warning">Track Orders</h:commandButton></th>
-					</tr>
-					<tr>
-						<td><img src="Orders.png" alt="Orders"> </img></td>
-						<td>
-							<p>some text</p>
-						</td>
-						<td>
-							<p>some text</p>
-						</td>
-					</tr>
-				</table>
+
+				<div class="account-header">
+					<h1>Orders</h1>
+				</div>
+				<h:form>
+					<h:dataTable id="table1" value="#{products.h.entrySet().toArray()}"
+						var="key" border="1">
+					
+							<h:column>
+							<f:facet name="header">
+								<h:outputText value="Name" />
+							</f:facet>
+							<h:outputText value="#{key.key.productName}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Item Description" />
+							</f:facet>
+							<h:outputText value="#{key.key.shortDescription}" />
+						</h:column>
+							<h:column>
+							<f:facet name="header">
+								<h:outputText value="Quantity" />
+							</f:facet>
+							<h:outputText value="#{key.value}" />
+						</h:column>
+						<h:column>
+							<f:facet name="header">
+								<h:outputText value="Price" />
+							</f:facet>
+							<h:outputText value="#{key.key.price}" />
+						</h:column>
+						<f:facet name="footer">
+							<h:outputText value="Total: #{basket.totalPrice}" />
+						</f:facet>
+					</h:dataTable>
+				</h:form>
+
 			</div>
 		</article>
 		<br />
@@ -109,7 +131,8 @@
 							<h4>Post Code:</h4>
 							<h:outputText value="#{login.customer.deliveryPostCode}" />
 							<br />
-							<button type="button" onClick="editAddress()">Edit Delivery Address</button>
+							<button type="button" onClick="editAddress()">Edit
+								Delivery Address</button>
 
 
 							<div class="edit-address">
@@ -121,10 +144,12 @@
 									id="insertdPostCode"
 									onfocus="if(this.value != ' '){this.value = ' ';}" />
 								<br />
-							
+
+								<h:form>
 									<h:commandButton value="Update" type="submit"
 										action="#{register.update()}" />
-							
+								</h:form>
+
 							</div>
 
 						</form>
@@ -137,7 +162,8 @@
 							<h4>Post Code:</h4>
 							<h:outputText value="#{login.customer.billingPostCode}" />
 							<br />
-							<button type="button" onClick="editbAddress()">Edit Billing Address</button>
+							<button type="button" onClick="editbAddress()">Edit
+								Billing Address</button>
 
 
 							<div class="edit-bAddress">

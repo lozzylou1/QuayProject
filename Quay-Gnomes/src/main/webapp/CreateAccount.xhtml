@@ -13,8 +13,12 @@
 	<style>
 	.account-header{
 	text-align: center;
-	border-color: black;
-	border-bottom: dashed;
+	color:white;
+	background-color:#49274a;
+	width: 95%;
+	
+	margin: 25px
+	
 	
 	}
 	.account-details{
@@ -35,63 +39,64 @@
 	
 	</style>
 	
+	
+			
+
 		<article>
 				<div class = "account-container">
-				<div class = "account-header">
-				<h1>Create Account</h1>
+				<div class="create_account_header">
+					<h1>Create Account</h1>
 				</div>
+				<h:form>	
+				<div class = "account-details">	
+				<h:outputLabel value="First Name"/>
+				<br/>
+				<h:inputText value="#{register.firstName}"/>
+				<br/>
+				<h:outputLabel value="Surname"/>
+				<br/>
+				<h:inputText value="#{register.surname}"/>
+				<br/>
+				<h:outputLabel value="Email Address"/>
+				<br/>
+				<h:inputText value="#{register.initialEmail}" p:type="email"
+					required="true" requireMessage="Please Enter Email" />
+				<br/>
+				<h:outputLabel value="Confirm Email Address"/>
+				<br/>
+				<h:inputText value="#{register.confirmationEmail}" p:type="email"
+					required="true" 
+					requireMessage="Please Confirm Email" />
+				<br/>		
+				<h:outputLabel value="Password"/>
+					<br/>
+				<h:inputSecret value="#{register.initialPassword}" 
+					required="true" 
+					requiremessage="Please enter a password"	/>
+				<br/>
+				<h:outputLabel value="Confirm Password"/>
+				<br/>
+				<h:inputSecret value="#{register.confirmationPassword}" 
+					required="true" 
+					requiremessage="Please enter a password"	/>
+				<br/>
+				<h:commandButton type="submit" class="btn btn-warning" action="#{register.createAccount()}"
+					value="Register" style="float:right;">
+				<f:actionListener binding="#{register.addBillingAddress()}"/>
+				</h:commandButton>
+				</div>
+				<div class = "address-details">
+				<h:outputLabel value="address line 1"/>
+				<br/>
+				<h:inputText value="#{register.deliveryAddress1}"/>
+				<br/>
+				<h:outputLabel value="Post Code"/>
+				<br/>
+				<h:inputText value="#{register.postCode}"/>
+				<br/>
 					
-			
-					<h:form>	
-					<div class = "account-details">	
-						<h:outputLabel value="First Name"/>
-					<br/>
-						<h:inputText value="#{register.firstName}"/>
-					<br/>
-						<h:outputLabel value="Surname"/>
-					<br/>
-						<h:inputText value="#{register.surname}"/>
-					<br/>
-						<h:outputLabel value="Email Address"/>
-					<br/>
-						<h:inputText value="#{register.initialEmail}" p:type="email"
-						required="true" requireMessage="Please Enter Email" />
-					<br/>
-					<h:outputLabel value="Confirm Email Address"/>
-						<br/>
-						<h:inputText value="#{register.confirmationEmail}" p:type="email"
-						required="true" 
-						requireMessage="Please Confirm Email" />
-					<br/>		
-					<h:outputLabel value="Password"/>
-						<br/>
-						<h:inputSecret value="#{register.initialPassword}" 
-						required="true" 
-						requiremessage="Please enter a password"	/>
-					<br/>
-					<h:outputLabel value="Confirm Password"/>
-					<br/>
-						<h:inputSecret value="#{register.confirmationPassword}" 
-						required="true" 
-						requiremessage="Please enter a password"	/>
-					<br/>
-					<h:commandButton type="submit" action="#{register.createAccount()}"
-					value="Register">
-					<f:actionListener binding="#{register.addBillingAddress()}"/>
-					</h:commandButton>
-					</div>
-					<div class = "address-details">
-					<h:outputLabel value="address line 1"/>
-					<br/>
-						<h:inputText value="#{register.deliveryAddress1}"/>
-					<br/>
-						<h:outputLabel value="Post Code"/>
-					<br/>
-						<h:inputText value="#{register.postCode}"/>
-					<br/>
-					
-					</div>
-					</h:form>
+				</div>
+				</h:form>
 					
 			</div>	
 		</article>
