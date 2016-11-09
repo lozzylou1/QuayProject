@@ -359,6 +359,8 @@ public class ProductController implements Serializable {
 	public void setH(HashMap<Product, Integer> h) {
 		this.h = h;
 	}
+
+	
 	
 
 	
