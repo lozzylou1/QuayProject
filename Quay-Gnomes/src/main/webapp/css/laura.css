@@ -15,6 +15,47 @@
 	color: #9d9d9d;
 }
 
+.contact_us_email{
+	margin-top: 10%;
+	width:50%;
+}
+.contact_us_align{
+	margin-top: 2%;
+}
+
+.contact_us_align_top{
+	
+}
+.contact_us_left{
+	
+	float:left;
+	width:50%;
+}
+
+.contact_us_wrapper{
+	
+	text-align: center;
+}
+.contact_us_right{
+	
+	
+	float:left;
+	width:50%;
+}
+
+.contactUs{
+	width:50%;
+	
+}
+.contact_header{
+	text-align: center;
+}
+
+.text_area{
+	margin-top: 10%;
+	width:25%;
+}
+
 .navbar-inverse .navbar-nav>li>a {
 	color: white;
 }
