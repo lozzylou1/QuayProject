@@ -1,9 +1,11 @@
 package Controllers;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -15,6 +17,7 @@ import javax.inject.Named;
 
 import Managers.ProductManager;
 import services.SearchService;
+import Entities.ItemInBasket;
 import Entities.Product;
 import Helpers.PaginationHelper;
 
@@ -42,7 +45,8 @@ public class ProductController implements Serializable {
 	private List<Product> basketList;
 	private String action;
 	private int quantity;
-
+	private List<ItemInBasket> basketQuantity;
+	
 	/**
 	 * Search Products by Term
 	 * 
@@ -278,13 +282,17 @@ public class ProductController implements Serializable {
 	 * 
 	 * 
 	 */
+	
+	HashMap<Product, Integer> h;
 	public String addItemToBasket() {
 
 		if (quantity > 1) {
-			basket.add(product, quantity);
+			h = basket.addFrontEnd(product, quantity);
 		} else {
-			basket.add(product, 1);
+			h = basket.addFrontEnd(product, 1);
 		}
+		
+		System.out.println("HASHMAP IN PROD CON" + h.toString());
 		System.out.println(product.getProductName());
 		return "ProductDet";
 	}
@@ -302,8 +310,14 @@ public class ProductController implements Serializable {
 	 * 
 	 * @return double totalPrice
 	 */
-	public double getBasketTotalPrice() {
-		return basket.getTotalPrice();
+	public String getBasketTotalPrice() {
+
+		
+		DecimalFormat df = new DecimalFormat("#.##");
+		
+		
+		return df.format(basket.getTotalPrice());
+
 
 	}
 
@@ -322,6 +336,11 @@ public class ProductController implements Serializable {
 			return new ListDataModel<Product>(basket.getBasketList());
 		}
 	}
+	
+	public int quantityInBasket(int productId)
+	{
+		return quantity;
+	}
 
 	public DataModel<Product> getBasketDataModel() {
 		basketDataModel = createBasketPageDataModel();
@@ -332,5 +351,16 @@ public class ProductController implements Serializable {
 	public void setBasketDataModel(DataModel<Product> basketDataModel) {
 		this.basketDataModel = basketDataModel;
 	}
+
+	public HashMap<Product, Integer> getH() {
+		return h;
+	}
+
+	public void setH(HashMap<Product, Integer> h) {
+		this.h = h;
+	}
+	
+
+	
 
 }

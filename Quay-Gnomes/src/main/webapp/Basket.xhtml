@@ -21,17 +21,18 @@
 		<h:commandButton class="basket_remove_button" value="Clear Basket"
 			type="submit" action="#{products.clearBasket()}">
 		</h:commandButton>
-
 	</h:form>
-		<ui:repeat var="product" value="#{products.basketDataModel}">
+
+		<ui:repeat var="product" value="#{products.h.entrySet().toArray()}" >
+
 			<div class="basket_row">
 				<div class="basket_image">
-					<h:graphicImage value="#{product.image1}" />
+					<h:graphicImage value="#{product.key.image1}" />
 
 				</div>
 
 				<div class="basket_content">
-					<h:outputText class="basket_quantity" value="Quantity" />
+					<h:outputText class="basket_quantity" value="Quantity: #{product.value}" />
 					<h:form>
 					<h:commandButton class="basket_quantity" value="+" type="submit"/>
 					
@@ -41,7 +42,8 @@
 					
 					</h:form>
 
-					<h:outputText class="basket_price" value="£#{product.price}" />
+					<h:outputText class="basket_price" value="£#{product.key.price}" />
+					
 
 				</div>
 				<div class="basket_remove">
@@ -55,11 +57,7 @@
 					<h:outputText class="basket_price"
 						value="£#{products.basketTotalPrice}" />
 				</div>
-				<br />
-				<f:verbatim>
-					<hr size="10" />
-				</f:verbatim>
-				<br />
+				<hr/>
 			</div>
 		</ui:repeat>
 		</div>

@@ -14,6 +14,7 @@
 	width:100%;
 	min-height: 20px;
 	}
+
 	
 	</style>
 <div class = "bread_crumb">
@@ -32,19 +33,20 @@
 
 				<div class="col-1 col-m-1">
 
-					<h:graphicImage value="img/got side.png" />
+					<h:graphicImage value="img/got side.png" style="border: 5px solid #49274A;" />
 					<br /> <br />
-					<h:graphicImage value="img/got back.png" />
+					<h:graphicImage value="img/got back.png" style="border: 5px solid #49274A;" />
 					<br /> <br />
-					<h:graphicImage value="img/gotinuse2.png" />
+					<h:graphicImage value="img/gotinuse2.png" style="border: 5px solid #49274A;" />
 					<br />
 				</div>
 
-				<div class="col-3 col-m-3">
+				<div class="col-3 col-m-3" >
 					<img src="#{products.product.image1}" alt="Product Image 1"
-						style="width: 500px; height: 500px;" /> <br /> <br /> <br />
-
-
+						 style="border: 5px solid #49274A;" /> 
+						<br /> 
+						<br /> 
+						<br />
 				</div>
 
 				<div class="col-7 col-m-6">
@@ -53,59 +55,43 @@
 						<h:outputText value="#{products.product.productName}" />
 					</H1>
 					<H1>
-						<h:outputText value="£#{products.product.price}" />
+						<h:outputText style="font-size: 20px" value="£#{products.product.price}" />
 					</H1>
 					<H1>
-						<h:outputText value="#{products.product.productID}" />
+						<h:outputText style="font-size: 16px" value="Catalogue Number: #{products.product.productID}" />
 					</H1>
 
 
 					<h:form>
-					<h:inputText value="#{products.quantity}" requireMessage="Quantity"/>
-						<h:commandButton value = "Add to Basket"
+					<h:inputText style="width: 50px; margin: 10px; border: 1px solid #49274A;" value="#{products.quantity}" requireMessage="Quantity"/>
+						<h:commandButton style="border: 1px solid #49274A;" class="btn btn-warning" value = "Add to Basket"
 							action="#{products.addItemToBasket()}" />
 					</h:form>
 
 				</div>
 
 				<div class="col-3"></div>
-
 			</div>
-
-
-
-			<div class="col-7 col-m-6">
-				<h2>Short Description</h2>
+		</article>
+		
+		
+		<div class="col-12 col-m-12">
+		
+		<h2>Short Description</h2>
 				<h:outputText value="#{products.product.shortDescription}" />
 				<h:outputText value="#{products.product.weight}" />
-
+				<hr/>
 				<h2>Long Description</h2>
 				<h:outputText value="#{products.product.longDescription}" />
 
-
+				<hr/>
 
 				<h2>Dimensions</h2>
 				<h:outputText value="#{products.product.dimensions}" />
-
-			</div>
-
-
-		</article>
-
-		<hr />
-
-
-
-
-
-
-
-		<div class="col-12 col-m-12">
+			<hr/>
+			
+			<div class="col-12 col-m-12">
 			<h2>Similar Items..</h2>
-
-
-			<div class="col-2 col-m-2"></div>
-
 			<div class="col-3 col-m-3">
 				<img src="img/gotinuse2.png" alt="Product Image 3"
 					style="width: 120px; height: 150px;" />
@@ -122,27 +108,18 @@
 				<img src="img/gotinuse2.png" alt="Product Image 3"
 					style="width: 120px; height: 150px;" />
 			</div>
-
-
-		</div>
-
-
-		<div class="col-2"></div>
-		<div class="col-3 col-m-12">
-
+			</div>
+			
+			<div class="col-12 col-m-12">
+			<hr/>
 			<h2>Product Reviews</h2>
 			<br />
 			<h:outputText value="" />
-
 			<br />
-
 			<h:outputText value="" />
-
-
-
+			</div>
 
 		</div>
-
 	</ui:define>
 </ui:composition>
 </html>

@@ -1,4 +1,6 @@
 package Entities;
+import java.text.DecimalFormat;
+
 import javax.persistence.*;
 
 /**
@@ -193,6 +195,7 @@ public class Product {
 	 * @return price
 	 */
 	public float getPrice() {
+	
 		return price;
 	}
 

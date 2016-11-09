@@ -32,11 +32,11 @@ Catalogue
 .test2 {
 	background-color: #DCCBDA;
 	float: left;
-	height: 375px;
 	border: 5px solid #49274A;
 	margin:20px;
 	color: #000000;
 	font-size: 16px;
+	padding: 25px;
 }
 
 .productsPrice{
@@ -70,10 +70,10 @@ min-height: 30px;
 </style>
 
 		<div class="row">
-			<div class = "bread_crumb">
-			<h:form>
+			<div  class = "bread_crumb">
+			<h:form >
 			<h:commandLink action="Home">Home </h:commandLink>
-			>
+			
 			<h:commandLink action="Products"> Products</h:commandLink>
 			</h:form>
 			
@@ -93,24 +93,33 @@ min-height: 30px;
 
 				<div class="product_holder">
 					<div class="test2">
+
 						<h:form>
+							<h2>Filter By</h2>
+							
+							<hr/>
+					
+							<h3>Type</h3>			
+						
 							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>
 
-							<h3>Filter By Type</h3>
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
 							<br />
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
-							<br />
-							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>
 
-							<h3>Filter By Size</h3>
+								<br/>
+							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
+							<hr/>
+			
+							<h3>Size</h3>
 							<h:commandLink action="#{products.searchBySize('Small')}">Small </h:commandLink>
 							<br />
 							<h:commandLink action="#{products.searchBySize('Medium')}">Medium</h:commandLink>
 							<br />
 							<h:commandLink action="#{products.searchBySize('Large')}">Large</h:commandLink>
-
-							<h3>Filter By Price</h3>
+							<hr/>
+			
+							<h3>Price</h3>
 							<h:commandLink action="#{products.searchByPrice(20)}"> Under 20</h:commandLink>
 							<br />
 							<h:commandLink action="#{products.searchByPrice(100)}">Under 100</h:commandLink>
