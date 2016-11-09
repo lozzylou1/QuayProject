@@ -142,10 +142,8 @@ public class PurchaseOrderController implements Serializable {
 	public void submitOrder()
 	{
 		List<Product> orderList = basket.getBasketList();
-		
-		System.out.println("!!!!!!!!!!!!!!!!" + orderList.toString());
-		
 		imsService.sumbitOrder(basket.getTotalPrice(), orderList);
+		basket.clear();
 		
 	}
 

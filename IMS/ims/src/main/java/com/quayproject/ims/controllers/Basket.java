@@ -59,7 +59,7 @@ public final class Basket implements Serializable {
 				price[i] = product.getPrice();
 			}
 			totalPriceOfBasket = DoubleStream.of(price).sum();
-			total = totalPriceOfBasket;
+			total = Math.round(totalPriceOfBasket * 100.0) / 100.0;
 		}
 		return   total;
 	}

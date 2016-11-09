@@ -39,10 +39,10 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 		
 		String supplierName = "Supplier";
 		
-		Math.round(orderTotal);
+		double orderTotalRound = Math.round(orderTotal * 100.0) / 100.0;
 		
 		
-		initialData.getPurchaseOrders().add(new PurchaseOrder(newOrderID, supplierName, orderTotal, dateOfOrder, orderList));
+		initialData.getPurchaseOrders().add(new PurchaseOrder(newOrderID, supplierName, orderTotalRound, dateOfOrder, orderList));
 	}
 
 	
@@ -51,6 +51,7 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 	public void saveOrder(List<Product> orderList) {
 		System.out.println(">>>>>" + orderList);
 		initialData.getPurchaseOrders().add(new PurchaseOrder(orderList));
+		//orderList.clear();
 		
 	}
 

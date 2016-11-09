@@ -71,8 +71,8 @@ public class ImsCreateService {
 	{
 		/*DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		Date date = new Date();*/
-		String s = "28/10/2016";
-		purchaseOrderManager.createPurchaseOrder(orderList, totalPrice, s);
+		
+		purchaseOrderManager.createPurchaseOrder(totalPrice, orderList);
 	}
 
 	/**
