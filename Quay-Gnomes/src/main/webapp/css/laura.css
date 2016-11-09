@@ -198,6 +198,7 @@ table, th, td {
 .Product{
 	margin: 1%;
 	border: 5px solid #49274A;
+	border_radius: 8px;
 }
 
 .Left-nav {
@@ -238,9 +239,6 @@ table, th, td {
 	margin: 1%
 }
 
-.basket_price{
-	
-}
 
 .basket_remove{
 	float:right;
@@ -263,6 +261,7 @@ table, th, td {
 	background: #DCCBDA;
 	padding: 25px;
 	margin: 25px;
+	border-radius: 8px;
 }
 
 #image-content {
