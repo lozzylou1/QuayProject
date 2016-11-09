@@ -10,22 +10,33 @@
 	<ui:define name="title">Create Account</ui:define>
 	<ui:define name="maincontent">
 	
-	<article>
-			<div align="center" id="contactUs">
-			<h1>Contact Us</h1>
-			<p>Email us at customersupport@nbgardens.co.uk
-			<h:graphicImage value="img/envelope.png" width="30px" height="30px"/>
-			</p>
-			<br/>
-			<p>Call us on 01268 123456
-			<h:graphicImage value="img/phone-call.png" width="30px" height="30px"/>
-			</p>
+	<article class="contact_us_wrapper">
+			<div>
+			<h1 >Contact Us</h1>
 			</div>
-		</article>
-	
-	
-	
-	
+			<div>
+			<h:outputLabel class="contact_us_align" value="Enter Email-Address"/>
+			<h:inputText class="contact_us_align" type="email" placeholder="Enter Email" name="email" value=""/>
+			</div>
+			<div>
+			<h:outputLabel class="contact_us_align_top" value="Send Us A Message"/>
+			<h:inputTextarea class="contact_us_align"></h:inputTextarea>
+			</div>
+			<br></br>
+			<div>
+			<h:commandButton value="Submit" type="button" class="btn btn-warning"></h:commandButton>
+			</div> 
+			
+			
+			<div>
+			<h:outputLabel class="contact_us_align" value="Email us at customersupport@nbgardens.co.uk"/>
+			<h:graphicImage value="img/envelope.png" width="30px" height="30px"/>
+			</div>
+			<div>
+			<h:outputLabel class="contact_us_align" value="Call us on 01268 123456"/>
+			<h:graphicImage value="img/phone-call.png" width="30px" height="30px"/>
+			</div>	
+	</article>
 	</ui:define>
 	</ui:composition>
 </html>

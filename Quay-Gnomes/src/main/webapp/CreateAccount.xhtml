@@ -45,7 +45,7 @@
 		<article>
 				<div class = "account-container">
 				<div class="create_account_header">
-					<h1>Create Account</h1>
+					<h1 style="background-color: #49274a; color: white">Create Account</h1>
 				</div>
 				<h:form>	
 				<div class = "account-details">	
@@ -81,7 +81,7 @@
 					requiremessage="Please enter a password"	/>
 				<br/>
 				<h:commandButton type="submit" class="btn btn-warning" action="#{register.createAccount()}"
-					value="Register" style="float:right;">
+					value="Register" style="float:right; border: 1px solid #49274A;">
 				<f:actionListener binding="#{register.addBillingAddress()}"/>
 				</h:commandButton>
 				</div>
