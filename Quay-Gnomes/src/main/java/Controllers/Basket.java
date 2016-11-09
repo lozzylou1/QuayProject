@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.stream.DoubleStream;
 
 import javax.ejb.Stateful;
+import javax.inject.Named;
 
 import Entities.ItemInBasket;
 import Entities.Product;
@@ -22,6 +23,7 @@ import Entities.Product;
  */
 
 @SuppressWarnings("serial")
+@Named("basket")
 @Stateful
 public final class Basket implements Serializable {
 
@@ -41,6 +43,7 @@ public final class Basket implements Serializable {
 	public static void setList(HashMap<Product, Integer> list) {
 		Basket.list = list;
 	}
+	
 
 	/**
 	 * Gets the basket.
@@ -74,12 +77,43 @@ public final class Basket implements Serializable {
 		}
 	}
 
-	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
 	public HashMap<Product, Integer> addFrontEnd(Product product, Integer numOfItems){
 		list.put(product, numOfItems);
 		System.out.println("HASHMAP" + list.toString());
 		return list;
 	}
+	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
+	public HashMap<Product, Integer> decrementQuantity(Product product, Integer numOfItems){
+		list.put(product, numOfItems);
+		System.out.println("HASHMAP" + list.toString());
+		return list;
+	}
+	
+	/**
+	 * 
+	 * @param product
+	 * @param numOfItems
+	 * @return list
+	 */
+	public HashMap<Product, Integer> incrementQuantity(Product product, Integer numOfItems){
+		list.put(product, numOfItems);
+		System.out.println("HASHMAP" + list.toString());
+		return list;
+	}
+	
+	
 	
 	
 	
@@ -134,14 +168,14 @@ public final class Basket implements Serializable {
 	public void removeItemFromBasket(Product product)
 	{
 		
-		
-		for (int i =0; i < basketList.size(); i++ )
-		{
-			if (product.getProductName().equals(basketList.get(i).getProductName()))
-			{
-				basketList.remove(i);
-			}
-		}
+		list.remove(product);
+//		for (int i =0; i < basketList.size(); i++ )
+//		{
+//			if (product.getProductName().equals(basketList.get(i).getProductName()))
+//			{
+//				basketList.remove(i);
+//			}
+//		}
 	}
 	
 	/**
@@ -150,6 +184,17 @@ public final class Basket implements Serializable {
 	 */
 	public void clear()
 	{
-		basketList.clear();
+		list.clear();
 	}
+
+
+	public float getTotalPriceOfBasket() {
+		return totalPriceOfBasket;
+	}
+
+	public void setTotalPriceOfBasket(float totalPriceOfBasket) {
+		this.totalPriceOfBasket = totalPriceOfBasket;
+	}
+
+	
 }

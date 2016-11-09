@@ -304,6 +304,28 @@ public class ProductController implements Serializable {
 		basket.removeItemFromBasket(productToRemove);
 		return "Basket";
 	}
+	
+	/**
+	 * 
+	 * @return String
+	 */
+	public String decrementQuantity(int quantity)
+	{
+		h = basket.decrementQuantity(product, quantity-1);
+		
+		return "Basket";
+	}
+	
+	/**
+	 * 
+	 * @return String
+	 */
+	public String incrementQuantity(int quantity)
+	{
+		h = basket.incrementQuantity(product, quantity+1);
+		
+		return "Basket";
+	}
 
 	/**
 	 * Gets the total price of all the items in the basket
@@ -359,6 +381,8 @@ public class ProductController implements Serializable {
 	public void setH(HashMap<Product, Integer> h) {
 		this.h = h;
 	}
+
+	
 	
 
 	

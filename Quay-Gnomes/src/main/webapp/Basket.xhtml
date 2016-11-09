@@ -27,13 +27,21 @@
 				<div class="basket_image">
 					<h:graphicImage value="#{product.key.image1}" />
 				</div>
-				<vr/>
 				<div class="basket_content">
 					
-					<h:form>
-					<h:commandButton class="btn btn-warning" value="-" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>								
-					<h:outputText class="basket_quantity" value="#{product.value}" style="font-size: 150%"/>
-					<h:commandButton class="btn btn-warning" value="+" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>							
+
+					<h:form id = "basketQuantityForm">
+					<h:outputText id = "quantityID" class="basket_quantity" value="Quantity: #{product.value}" />
+						<h:commandButton class="basket_quantity" value="+">
+							<f:ajax event="click" listener="#{products.incrementQuantity(product.value)}" 
+							render="basketQuantityForm"/>
+						</h:commandButton>
+					
+					
+						<h:commandButton class="basket_quantity" value="-">
+							<f:ajax event="click" listener="#{products.decrementQuantity(product.value)}" 
+							render="basketQuantityForm"/>
+						</h:commandButton>
 					</h:form>
 					
 				</div>

@@ -16,6 +16,25 @@
 		<div class="form_title">
 		<h2>Existing Customer</h2>
 		</div>
+		<div id="login">
+			<div class="login_username">
+				<h:outputLabel value="username"/>
+			</div>
+			<div class="login_username_input">
+				<h:inputText type="username" placeholder="Enter Email" name="email" value="#{login.email}"/>			
+			</div>
+			<div class="login_password">
+				<h:outputLabel value="password"/>
+			</div>
+			<div class="login_password_input">	 
+				<h:inputSecret type="password"
+					placeholder="Enter Password" name="psw" required="true" value="#{login.password}"/>
+			</div>
+			<div class="button">
+				<h:commandButton value="Login" type="button" action="#{login.login()}" class="btn btn-default">
+				</h:commandButton>
+			</div>	
+			</div>
 		</div>
 	
 		<div class="register">
@@ -24,22 +43,35 @@
 		</div>
 		<div class="register_email">
 			<h:outputLabel value="Email Address"/>
+			<div class="register_email_input">
 			<h:inputText value="#{register.initialEmail}" p:type="email"
 				required="true" requireMessage="Please Enter Email"/>
+			</div>
 		</div>
 		<div class="register_password">
 		<h:outputLabel value="Password"/>
+			<div class="register_password_input">
 			<h:inputSecret value="#{register.initialPassword}" 
 				required="true" 
 				requiremessage="Please enter a password"/>
+			</div>
 		</div>
 		<div class="confirm_password">
 			<h:outputLabel value="Confirm Password"/>
+			<div class="confirm_password_input">
 			<h:inputSecret value="#{register.confirmationPassword}" 
 				required="true" 
 				requiremessage="Please enter a password"/>
+				</div>
+		</div>
+		<div class="button">
+			<h:commandButton type="submit" action="#{register.createAccount()}"
+				value="Register">
+			</h:commandButton>
 		</div>
 		</div>
+		
+		
 	
 	</div>
 
