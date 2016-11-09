@@ -6,7 +6,9 @@
 #sliderFrame 
 {
     width:auto;
-    margin:0 auto; /*center-aligned*/
+    margin:0 auto;
+    
+     /*center-aligned*/
 }
 
 #slider, #slider .sliderInner {
