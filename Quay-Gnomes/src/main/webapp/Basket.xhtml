@@ -10,13 +10,6 @@
 		Basket
 	</ui:define>
 	<ui:define name="maincontent">
-	<style>
-	.container{
-	min-height: 610px;
-	}
-	
-	</style>
-	<div class = "container">
 	<h:form>
 		<h:commandButton class="basket_remove_button" value="Clear Basket"
 			type="submit" action="#{products.clearBasket()}">
@@ -60,7 +53,6 @@
 				<hr/>
 			</div>
 		</ui:repeat>
-		</div>
 	</ui:define>
 </ui:composition>
 </html>

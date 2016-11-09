@@ -44,11 +44,10 @@
 	position: absolute;
 	width: 100%;
 	height:60px; /* Height of the footer */
-	background: #DCCBDA;
+	background: #49274A;
 	text-align: center;
 	font-size: 12px;
 	padding: 15px;
-	
 }
 
 .nav {
@@ -149,6 +148,10 @@ table, th, td {
 	bottom: 0;
 }
 
+.Product{
+	margin: 1%;
+	border: 5px solid #49274A;
+}
 
 .Left-nav {
 	float: left;
@@ -158,7 +161,6 @@ table, th, td {
 .basket_row {
 	float: left;
 	width:100%;
-	````
 }
 
 .basket_image{

@@ -57,10 +57,10 @@ public class InitialData {
 		products.add(new Product(9, "bent over gnome", 99.99f, false, 8, 999f, "99 x 99 x 99", "A gnome bent over", "A gnome bent over!"
 				+ "A cheeky gnome for any occasion"
 				+ "You really can't miss this amazing gnome!", "Gnome",  "Medium", "img/smallerimg/bent_over.png"));
-		products.add(new Product(10, "Selfie Gnomes", 10.14f, false, 8, 1010f, "1010 x 876 x 99", "2 Gnomes taking a selfie", "2 Gnomes taking a selfie! #2016"
+		products.add(new Product(10, "Selfie Gnomes", 10.10f, false, 8, 1010f, "1010 x 876 x 99", "2 Gnomes taking a selfie", "2 Gnomes taking a selfie! #2016"
 				+ "Perfect for that hipster in your life"
 				+ "You really can't miss this amazing gnome!", "Gnome", "Medium", "img/smallerimg/selfie_gnomes.png"));
-		products.add(new Product(11, "Solar Gnomes", 10.15f, false, 8, 1111f, "1111 x 11 x 1", "3 Solar Powered Gnomes", "3 Solar Powered Gnomes"
+		products.add(new Product(11, "Solar Gnomes", 10.10f, false, 8, 1111f, "1111 x 11 x 1", "3 Solar Powered Gnomes", "3 Solar Powered Gnomes"
 				+ "Perfect for Lighting up your garden for those late summer eves"
 				+ "You really can't miss these amazing gnomes!", "Gnome", "Small","img/smallerimg/three_gnomes.png"));
 		products.add(new Product(12, "It's a shovel", 789.10f, false, 3, 1111f, "5 x 41 x 3", "Shovel", "It's an amazing shovel", "Accessories", "Medium","img/shovel.jpg"));
