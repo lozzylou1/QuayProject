@@ -10,7 +10,7 @@
 		Basket
 	</ui:define>
 	<ui:define name="maincontent">
-		<h:form style="float:right">
+		<h:form id="totalPrice" style="float:right">
 			<div>
 				<h:commandButton class="btn btn-warning" value="Clear Basket"
 					type="submit" action="#{products.clearBasket()}"
@@ -18,8 +18,10 @@
 				</h:commandButton>
 			</div>
 			<div>
-				<h:outputText class="basket_price"
+			
+				<h:outputText  class="basket_price"
 					value="£#{products.basketTotalPrice}" style="font-size: 200%" />
+			
 			</div>
 
 		</h:form>
@@ -37,20 +39,20 @@
 
 
 
-						<h:commandButton class="btn btn-warning" value="+" type="submit"
+						<h:commandButton class="btn btn-warning" value="+" type="Submit"
 							style="margin: 0.5%; border: 1px solid #49274A;">
 							<f:ajax event="click"
 								listener="#{products.incrementQuantity(product.value)}"
-								render="basketQuantityForm" />
+								render="basketQuantityForm totalPrice" />
 
 						</h:commandButton>
 						<h:outputText class="basket_quantity" value="#{product.value}"
 							style="font-size: 150%" />
-						<h:commandButton class="btn btn-warning" value="-" type="submit"
+						<h:commandButton class="btn btn-warning" value="-" type="Submit"
 							style="margin: 0.5%; border: 1px solid #49274A;">
 							<f:ajax event="click"
 								listener="#{products.decrementQuantity(product.value)}"
-								render="basketQuantityForm" />
+								render="basketQuantityForm totalPrice" />
 						</h:commandButton>
 
 
