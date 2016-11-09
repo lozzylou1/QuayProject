@@ -209,6 +209,10 @@ table, th, td {
 .basket_row {
 	float: left;
 	width:100%;
+	border-width: 2px;
+   	border-bottom-width:2px;
+   	border-bottom-color:White;
+   	border-bottom-style: solid;
 }
 
 .basket_image{

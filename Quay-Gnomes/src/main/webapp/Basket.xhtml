@@ -22,18 +22,18 @@
 						
 	</h:form>
 
-		<ui:repeat var="product" value="#{products.h.entrySet().toArray()}" >
-			<div class="basket_row">
+		<ui:repeat var="product" value="#{products.h.entrySet().toArray()}">
+			<div class="basket_row" style="border-bottom:1px solid #000;height:500px">
 				<div class="basket_image">
 					<h:graphicImage value="#{product.key.image1}" />
 				</div>
-
+				<vr/>
 				<div class="basket_content">
 					
 					<h:form>
-					<h:commandButton class="btn btn-warning" value="+" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>					
+					<h:commandButton class="btn btn-warning" value="-" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>								
 					<h:outputText class="basket_quantity" value="#{product.value}" style="font-size: 150%"/>
-					<h:commandButton class="btn btn-warning" value="-" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>					
+					<h:commandButton class="btn btn-warning" value="+" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>							
 					</h:form>
 					
 				</div>
@@ -49,9 +49,7 @@
 						</h:commandButton>
 					</h:form>
 				</div>
-				<hr/>
-			</div>
-			
+			</div>	
 		</ui:repeat>
 	</ui:define>
 </ui:composition>

@@ -24,7 +24,7 @@ Catalogue
 .test1 {
 	float: left;
 	height: 319px;
-	margin:10px;
+	margin:5%;
 	border: 5px solid #49274A;
 	background-color: #DCCBDA;
 }
@@ -49,23 +49,24 @@ Catalogue
 }
 
 .product_holder {
-	margin-top: 10px;
+	
+	margin-left: 1%;
+	width: 100%;
 }
 
 .container {
-	width: 100%;
-	margin-left: 10px;
+	margin-left: 1%;
 }
 
 #product_container {
 	display: inline-block;
-	width: 80%;
-	margin-left: 50px;
+	width: 75%;
+	margin-left: 2.5%;
 }
 
 .bread_crumb {
-width: 100%;
-min-height: 30px;
+	width: 100%;
+	min-height: 3%;
 }
 </style>
 
@@ -75,39 +76,28 @@ min-height: 30px;
 			<h:commandLink action="Home">Home </h:commandLink>
 			
 			<h:commandLink action="Products"> Products</h:commandLink>
-			</h:form>
-			
+			</h:form>			
 			</div>
-			<h:outputText escape="false" value="No Products Found"
-				rendered="#{products.dataModel.rowCount == 0}" />
-			<br />
-			<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
-				<h:form>
-					<h:commandLink action="#{products.previous}"
-						value="Previous #{products.pagination.pageSize}"
-						rendered="#{products.pagination.hasPreviousPage}" />
-					<h:commandLink action="#{products.next}"
-						rendered="#{products.pagination.hasNextPage}"
-						value="Next #{products.pagination.pageSize}" />
-				</h:form>
+			
+		
 
 				<div class="product_holder">
 					<div class="test2">
-
-						<h:form>
-							<h2>Filter By</h2>
-							
-							<hr/>
-					
+						<div class="panel-group">						
+      					<h4><a data-toggle="collapse" href="#collapse1">Filter By</a>
+      					</h4>
+      					</div>
+      					<div id="collapse1" class="panel-collapse collapse">
+						<h:form>						
+							<hr/>					
 							<h3>Type</h3>			
 						
 							<h:commandLink action="#{products.getAllProducts()}">All Products </h:commandLink>
-
+							<br/>
 							<h:commandLink action="#{products.searchByType('Gnome')}">Gnome </h:commandLink>
 							<br />
 							<h:commandLink action="#{products.searchByType('Accessories')}">Accessories</h:commandLink>
-
-								<br/>
+							<br/>
 							<h:commandLink action="#{products.searchByType('Hot Tub')}">Hot Tubs</h:commandLink>		
 							<hr/>
 			
@@ -126,6 +116,26 @@ min-height: 30px;
 							<br />
 						</h:form>
 					</div>
+					</div>
+					
+					
+					<h:outputText escape="false" value="No Products Found"
+				rendered="#{products.dataModel.rowCount == 0}" />
+				
+				<br />
+			
+				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
+				<h:form>
+					<h:commandLink action="#{products.previous}"
+						value="Previous #{products.pagination.pageSize}"
+						rendered="#{products.pagination.hasPreviousPage}" />
+					<h:commandLink action="#{products.next}"
+						rendered="#{products.pagination.hasNextPage}"
+						value="Next #{products.pagination.pageSize}" />
+				</h:form>
+				</h:panelGroup>
+					
+					
 					<div id="product_container">
 						<ui:repeat var="product" value="#{products.dataModel}">
 
@@ -163,7 +173,6 @@ min-height: 30px;
 					<h:outputText
 						value="#{products.pagination.pageFirstItem } of #{products.pagination.pageLastItem + 1}" />
 				</div>
-			</h:panelGroup>
 
 		</div>
 	</ui:define>
