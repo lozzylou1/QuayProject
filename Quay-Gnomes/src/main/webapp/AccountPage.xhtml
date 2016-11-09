@@ -59,14 +59,21 @@
 </style>
 		<article>
 			<div>
-				<table class="table table-responsive"
-					style="background-color: #DCCBDA">
+			<div class = "account-header">
+			<h1> Orders</h1>
+			</div>
+			<h:form>
+				<h:dataTable class="table table-responsive"
+					style="background-color: #DCCBDA; Margin-top : 20px" >
 					<tr>
 						<th><h2>Orders</h2></th>
 						<th><h:commandButton class="btn btn-warning">Track Orders</h:commandButton></th>
 					</tr>
 					<tr>
-						<td><img src="Orders.png" alt="Orders"> </img></td>
+						<td><h:graphicImage value="#{product.image1}"/> </td>
+						<td>
+							<p>some text</p>
+						</td>
 						<td>
 							<p>some text</p>
 						</td>
@@ -74,7 +81,8 @@
 							<p>some text</p>
 						</td>
 					</tr>
-				</table>
+				</h:dataTable>
+				</h:form>
 			</div>
 		</article>
 		<br />
@@ -121,10 +129,10 @@
 									id="insertdPostCode"
 									onfocus="if(this.value != ' '){this.value = ' ';}" />
 								<br />
-							
+							<h:form>
 									<h:commandButton value="Update" type="submit"
 										action="#{register.update()}" />
-							
+							</h:form>
 							</div>
 
 						</form>

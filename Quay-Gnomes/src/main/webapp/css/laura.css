@@ -48,6 +48,7 @@
 	text-align: center;
 	font-size: 12px;
 	padding: 15px;
+	
 }
 
 .nav {
@@ -157,6 +158,7 @@ table, th, td {
 .basket_row {
 	float: left;
 	width:100%;
+	````
 }
 
 .basket_image{
