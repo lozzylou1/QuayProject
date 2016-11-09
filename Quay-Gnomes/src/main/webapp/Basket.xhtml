@@ -30,27 +30,23 @@
 
 				<div class="basket_content">
 					
-<<<<<<< HEAD
+
 					<h:form id = "basketQuantityForm">
-					<h:outputText id = "quantityID" class="basket_quantity" value="Quantity: #{product.value}" />
-						<h:commandButton class="basket_quantity" value="+">
-							<f:ajax event="click" listener="#{products.incrementQuantity(product.value)}" 
-							render="basketQuantityForm"/>
-						</h:commandButton>
+						
+
 					
-					
-						<h:commandButton class="basket_quantity" value="-">
-							<f:ajax event="click" listener="#{products.decrementQuantity(product.value)}" 
+					<h:commandButton class="btn btn-warning" value="+" type="submit" style="margin: 0.5%; border: 1px solid #49274A;">
+						<f:ajax event="click" listener="#{products.incrementQuantity(product.value)}" 
 							render="basketQuantityForm"/>
-						</h:commandButton>
-=======
-					<h:form>
-					<h:commandButton class="btn btn-warning" value="+" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>					
+					</h:commandButton>					
 					<h:outputText class="basket_quantity" value="#{product.value}" style="font-size: 150%"/>
-					<h:commandButton class="btn btn-warning" value="-" type="submit" style="margin: 0.5%; border: 1px solid #49274A;"/>					
->>>>>>> 058c02702509e0f1daff94d361d3db2193055521
-					</h:form>
+					<h:commandButton class="btn btn-warning" value="-" type="submit" style="margin: 0.5%; border: 1px solid #49274A;">	
+					<f:ajax event="click" listener="#{products.decrementQuantity(product.value)}" 
+							render="basketQuantityForm"/>
+					</h:commandButton>				
+
 					
+					</h:form>
 				</div>
 				<div class="basket_remove">
 				<h:form>
