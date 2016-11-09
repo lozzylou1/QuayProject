@@ -129,6 +129,49 @@ table, th, td {
 	float: right;
 }
 
+.register_email{
+	position:relative;
+	float:left;
+}
+
+.register_password{
+	position:relative;
+	float:left;
+}
+
+.confirm_password{
+	position:relative;
+	float:left;
+}
+
+.myInput {
+    width: 50%;
+}
+
+.sign_in{
+	background: #DCCBDA;
+	width:50%;
+	padding-right:2.0833333333%;
+	float:left;
+	list-style:none;
+	display:block;
+	border-size:5px;
+	border-style:solid;
+	border-color:white;
+}
+
+.register{
+	background: #DCCBDA;
+	width:50%;
+	padding-right:2.0833333333%;
+	float:left;
+	list-style:none;
+	display:block;
+	border-size:5px;
+	border-style:solid;
+	border-color:white;
+}
+
 #searchBox {
 	background-color: #eaf8fc;
 	background-image: linear-gradient(#fff, #d4e8ec);

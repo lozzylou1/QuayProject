@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<ui:composition xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://java.sun.com/jsf/passthrough"	
+	template="templates/main.xhtml">
+	<meta charset="utf-8" />
+	<ui:define name="title">Create Account</ui:define>
+	<ui:define name="maincontent">
+	
+	<div class="register_wrapper">
+	
+		<div class="sign_in">
+		<div class="form_title">
+		<h2>Existing Customer</h2>
+		</div>
+		</div>
+	
+		<div class="register">
+		<div class="form_title">
+		<h2>New Customer</h2>
+		</div>
+		<div class="register_email">
+			<h:outputLabel value="Email Address"/>
+			<h:inputText value="#{register.initialEmail}" p:type="email"
+				required="true" requireMessage="Please Enter Email"/>
+		</div>
+		<div class="register_password">
+		<h:outputLabel value="Password"/>
+			<h:inputSecret value="#{register.initialPassword}" 
+				required="true" 
+				requiremessage="Please enter a password"/>
+		</div>
+		<div class="confirm_password">
+			<h:outputLabel value="Confirm Password"/>
+			<h:inputSecret value="#{register.confirmationPassword}" 
+				required="true" 
+				requiremessage="Please enter a password"/>
+		</div>
+		</div>
+	
+	</div>
+
+	</ui:define>
+</ui:composition>
+</html>

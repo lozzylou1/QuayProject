@@ -13,8 +13,12 @@
 	<style>
 	.account-header{
 	text-align: center;
-	border-color: black;
-	border-bottom: dashed;
+	color:white;
+	background-color:#49274a;
+	width: 95%;
+	
+	margin: 25px
+	
 	
 	}
 	.account-details{
@@ -35,11 +39,12 @@
 	
 	</style>
 	
-		<article>
-				<div class = "account-container">
-				<div class = "account-header">
+	<div class = "account-header">
 				<h1>Create Account</h1>
 				</div>
+		<article>
+				<div class = "account-container">
+				
 					
 			
 					<h:form>	
@@ -76,7 +81,7 @@
 						requiremessage="Please enter a password"	/>
 					<br/>
 					<h:commandButton type="submit" action="#{register.createAccount()}"
-					value="Register">
+					value="Register" style="float:right;">
 					<f:actionListener binding="#{register.addBillingAddress()}"/>
 					</h:commandButton>
 					</div>
