@@ -15,21 +15,28 @@ Login
 <br/>
 			<div id="login" align="center" class="col-12 col-m-12">
 				<h:form id="formdesign">
-				<p>
-					<h:outputLabel><b>Username</b></h:outputLabel> 
+				<div class="login_header">
+				<h2>Login</h2>
+				</div>
+				<div>
+					<h:outputLabel value="Username"/>
+				</div>
+				<div class="lgn">
 					<h:inputText type="username" placeholder="Enter Email" name="email" value="#{login.email}"/>			
-				</p>
-				<p>
-					<h:outputLabel><b>Password </b></h:outputLabel> 
+				</div>
+				<div>
+					<h:outputLabel value="Password"/>
+				</div>
+				<div class="psswd">
 					<h:inputSecret type="password"
 						placeholder="Enter Password" name="psw" required="true" value="#{login.password}"/>
-				</p>
-				<p>
+				</div>
+				<div class="login_button">
+				<h:commandLink type="button" action="#{login.login()}" class="btn btn-default">Login</h:commandLink>
+				</div>
 				<font color = "blue" size ="-1">
-						<u>Forgotten your password?</u>
+					<u>Forgotten your password?</u>
 				</font>
-				</p>
-					<h:commandLink type="button" action="#{login.login()}" class="btn btn-default">Login</h:commandLink>
 				</h:form>			
 			</div>
 </ui:define>
