@@ -214,13 +214,15 @@ table, th, td {
 	float:left;
 	width:30%;
 	height:100%;
-	
+	text-align:center;
+	padding-top:5%;
 }
 
 .basket_content{
-	width:70%;
+	width:50%;
+	height:100%;
 	text-align:center;
-	padding-top:5%;
+	padding-top:12.5%;
 	float:left;
 }
 
@@ -231,7 +233,9 @@ table, th, td {
 
 
 .basket_quantity{
-	float:left;
+	text-align:center;
+	padding-top:5%;
+	margin: 1%
 }
 
 .basket_price{
@@ -241,7 +245,9 @@ table, th, td {
 .basket_remove{
 	float:right;
 	width:20%;
-	
+	height:100%;
+	text-align:center;
+	padding-top:11%;
 }
 
 .basket_remove_button{
