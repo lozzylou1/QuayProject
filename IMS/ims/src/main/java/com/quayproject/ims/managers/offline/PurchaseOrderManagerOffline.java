@@ -24,15 +24,32 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 		return initialData.getPurchaseOrders();
 	}
 
+	
+	
+	
 	@Override
-	public void createPurchaseOrder(List<Product> orderList, double totalPrice, String orderDate) {
+	public void createPurchaseOrder(double orderTotal, List<Product> orderList) {
 		
-		initialData.getPurchaseOrders().add(new PurchaseOrder(orderList));
+		int listLength = initialData.getPurchaseOrders().size();
+		PurchaseOrder lastProducts = initialData.getPurchaseOrders().get(listLength - 1);
+		
+		int newOrderID = lastProducts.getPurchaseOrderID() + 1;
+		
+		String dateOfOrder = "09/11/2016";
+		
+		String supplierName = "Supplier";
+		
+		Math.round(orderTotal);
+		
+		
+		initialData.getPurchaseOrders().add(new PurchaseOrder(newOrderID, supplierName, orderTotal, dateOfOrder, orderList));
 	}
 
+	
+	
 	@Override
 	public void saveOrder(List<Product> orderList) {
-		
+		System.out.println(">>>>>" + orderList);
 		initialData.getPurchaseOrders().add(new PurchaseOrder(orderList));
 		
 	}

@@ -91,12 +91,13 @@ public class PurchaseOrder {
 	 * @param dateOfOrder
 	 * @param dateOfDelivery
 	 */
-	public PurchaseOrder( int purchaseOrderID, String  supplierName, double orderTotal, String dateOfOrder) {
+	public PurchaseOrder( int purchaseOrderID, String supplierName, double orderTotal, String dateOfOrder, List<Product> orderList) {
 		
 		this.purchaseOrderID = purchaseOrderID;
 		this.supplierName = supplierName;
 		this.orderTotal = orderTotal;
 		this.dateOfOrder = dateOfOrder;
+		this.order = orderList;
 		this.status = "Pending Approval";
 		}
 	

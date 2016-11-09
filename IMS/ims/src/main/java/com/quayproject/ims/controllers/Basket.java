@@ -64,6 +64,11 @@ public final class Basket implements Serializable {
 		return   total;
 	}
 
+	
+	/**
+	 * 
+	 * @param product
+	 */
 	public void remove(Product product)
 	{
 		for (int i = 0; i < basketList.size(); i++)

@@ -143,9 +143,9 @@ public Product findProductByID (int productID) throws NullPointerException
 	
 }
 
-public void sumbitOrder(List<Product> orderList) {
+public void sumbitOrder(double orderTotal,  List<Product> orderList) {
 	
-	purchaseOrderManager.saveOrder(orderList);
+	purchaseOrderManager.createPurchaseOrder(orderTotal, orderList);
 
 	
 }
