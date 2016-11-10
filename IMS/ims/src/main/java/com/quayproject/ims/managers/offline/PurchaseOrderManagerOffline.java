@@ -35,7 +35,7 @@ public class PurchaseOrderManagerOffline implements PurchaseOrderManager {
 		
 		int newOrderID = lastProducts.getPurchaseOrderID() + 1;
 		
-		String dateOfOrder = "09/11/2016";
+		String dateOfOrder = "10/11/2016";
 		
 		String supplierName = "Supplier";
 		
