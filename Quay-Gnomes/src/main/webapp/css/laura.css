@@ -3,7 +3,7 @@
 }
 
 .logout {
-	color: #777;
+	color: white;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,7 +12,10 @@
 	float: left;
 	position: relative;
 	display: block;
-	color: #9d9d9d;
+}
+
+.whitetext{
+	color: white;	
 }
 
 .contact_us_email{
@@ -362,6 +365,7 @@ table, th, td {
 
 .basket_row {
 	float: left;
+	max-height: 350px;
 	width:100%;
 	border-width: 2px;
    	border-bottom-width:2px;

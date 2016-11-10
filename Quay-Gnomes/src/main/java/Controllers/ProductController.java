@@ -88,7 +88,6 @@ public class ProductController implements Serializable {
 	public String searchBySize(String size) {
 		pagination = null;
 		recreateModel();
-		// System.out.println(">>>>>>>>>>>>> searchbysize" + size);
 		itemsList = searchService.displayListSize(size);
 		// pagination = null;
 		// recreateModel();
@@ -99,11 +98,7 @@ public class ProductController implements Serializable {
 	public String searchByPrice(int price) {
 		pagination = null;
 		recreateModel();
-		// System.out.println(">>>>>>>>>>>>> searchbyprice" + price);
 		itemsList = searchService.displayListPrice(price);
-		// pagination = null;
-		// recreateModel();
-		// getDataModel();
 		return "Products";
 
 	}
@@ -112,8 +107,6 @@ public class ProductController implements Serializable {
 
 		pagination = null;
 		recreateModel();
-
-		// System.out.println(">>>>>>>>>>>>> getAllProducts");
 		itemsList = searchService.displayList();
 		pagination = null;
 		recreateModel();
@@ -131,7 +124,7 @@ public class ProductController implements Serializable {
 	public PaginationHelper getPagination() {
 
 		if (pagination == null) {
-			pagination = new PaginationHelper(12) {
+			pagination = new PaginationHelper(6) {
 				@Override
 				public int getItemsCount() {
 

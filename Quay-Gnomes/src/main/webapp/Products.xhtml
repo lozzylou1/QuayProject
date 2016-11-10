@@ -61,7 +61,7 @@ Catalogue
 #product_container {
 	display: inline-block;
 	width: 75%;
-	margin-left: 2.5%;
+	margin-left:2.5%;
 }
 
 .bread_crumb {
@@ -127,11 +127,11 @@ Catalogue
 				<h:panelGroup rendered="#{products.dataModel.rowCount > 0}">
 				<h:form>
 					<h:commandLink action="#{products.previous}"
-						value="Previous #{products.pagination.pageSize}"
+						value="Previous #{products.pagination.pageSize}   "
 						rendered="#{products.pagination.hasPreviousPage}" />
 					<h:commandLink action="#{products.next}"
 						rendered="#{products.pagination.hasNextPage}"
-						value="Next #{products.pagination.pageSize}" />
+						value="   Next #{products.pagination.pageSize}" />
 				</h:form>
 				</h:panelGroup>
 					
@@ -167,13 +167,6 @@ Catalogue
 						<br/>
 					</div>
 				</div>
-
-				<div class="page-details">
-					<h:outputText value="#{products.dataModel.rowCount}" />
-					<h:outputText
-						value="#{products.pagination.pageFirstItem } of #{products.pagination.pageLastItem + 1}" />
-				</div>
-
 		</div>
 	</ui:define>
 </ui:composition>
