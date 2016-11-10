@@ -25,18 +25,36 @@ nav {
 .red
 {
 	color: red;
+	font-size: 20px;
 }
 
 .blue
 {
 	color: #0080ff;
+	font-size: 20px;
 }
 
 .green
 {
 	color: #008000;
+	font-size: 20px;
 }
 
+.ims-alerts a {
+	font-size: 20px;
+	font-style: italic;
+	color: #49274A;
+	padding-left: 50px;
+	
+}
+
+.ims-updates a {
+	font-size: 20px;
+	font-style: italic;
+	color: #49274A;
+	padding-left: 50px;
+	
+}
 .menu-item {
   background: #49274A;
   width: 30%; 

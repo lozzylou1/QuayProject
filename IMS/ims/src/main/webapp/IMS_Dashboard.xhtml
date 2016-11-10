@@ -16,7 +16,7 @@
 		<h4>Alerts</h4>
 		<ui:repeat var="alert" value = "#{alerts.dataModel}">
 		<div>
-		<h:outputText value= "#{alert.getMessage()}" class="#{alert.color}"/>
+		<h:outputText value= "#{alert.getMessage()}" class="#{alert.color}"/><h:link value="Create Order" outcome="IMS_Create_Order.xhtml"/>
 		</div>
 		</ui:repeat>
 		</div>
@@ -25,7 +25,7 @@
 		<h4>Updates</h4>
 		<ui:repeat  var="update" value = "#{updates.dataModel}">
 		<div>
-		<h:outputText value="#{update.getMessage()}" class = "#{update.color}"/>
+		<h:outputText value="#{update.getMessage()}" class = "#{update.color}"/><h:link value="View Orders" outcome="IMS_Orders.xhtml"/>
 		</div>
 		</ui:repeat>
 		</div>
